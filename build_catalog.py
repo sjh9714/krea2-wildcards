@@ -187,7 +187,7 @@ def gh_anchor(text: str) -> str:
 
 
 def counts(data: dict, s: str) -> str:
-    """Substitute {generations}, {kept} and {failures} from the manifest.
+    """Substitute count placeholders from the manifest.
 
     These numbers drifted once and it was the worst possible kind of drift. The
     hands category was withdrawn, the subtitle and the findings were updated to
@@ -201,6 +201,7 @@ def counts(data: dict, s: str) -> str:
     for token, value in (("{generations}", data.get("generations", 0)),
                          ("{kept}", len(data.get("entries", []))),
                          ("{failures}", len(data.get("failures", {}).get("entries", []))),
+                         ("{discarded}", data.get("discarded_generations", 0)),
                          ("{findings}", len(data.get("findings", {}).get("items", [])))):
         s = s.replace(token, f"{value:,}" if value >= 10000 else str(value))
     return s

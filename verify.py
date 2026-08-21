@@ -98,10 +98,24 @@ def main() -> int:
       f"not found: {unknown[:5]}")
 
     print("\ncounts")
+    schema_version = d.get("schema_version")
+    c(isinstance(schema_version, str)
+      and re.fullmatch(r"\d+\.\d+\.\d+", schema_version) is not None,
+      "manifest declares a semantic schema version",
+      f"got {schema_version!r}")
+
     gens = d.get("generations")
     c(isinstance(gens, int) and gens >= len(both),
       f"generations ({gens}) >= kept + documented failures ({len(both)})",
       "a total lower than what is on disk cannot be right")
+    discarded = d.get("discarded_generations")
+    c(isinstance(discarded, int) and not isinstance(discarded, bool) and discarded >= 0,
+      "discarded generations is a non-negative integer",
+      f"got {discarded!r}")
+    c(isinstance(gens, int) and isinstance(discarded, int)
+      and not isinstance(discarded, bool) and gens == len(both) + discarded,
+      "total generations reconcile with published, documented, and discarded records",
+      f"{gens!r} != {len(entries)} + {len(failures)} + {discarded!r}")
 
     declared = set(d.get("categories") or {})
     used = {e["category"] for e in entries}

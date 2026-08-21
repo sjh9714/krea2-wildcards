@@ -293,6 +293,26 @@ def main() -> int:
         c(False, "index.html exists")
     else:
         h = page.read_text(encoding="utf-8")
+        repo_url = f"https://github.com/{d['repo']}"
+        site_url = f"https://{d['repo'].split('/')[0]}.github.io/{d['repo'].split('/')[-1]}/"
+        release_zip = f"{repo_url}/releases/latest/download/krea2-wildcards.zip"
+        c(f'<link rel="canonical" href="{site_url}">' in h,
+          "the gallery declares its canonical URL")
+        og_tags = [
+            '<meta property="og:type" content="website">',
+            '<meta property="og:title"',
+            '<meta property="og:description"',
+            f'<meta property="og:url" content="{site_url}">',
+            f'<meta property="og:image" content="{site_url}hero.webp">',
+        ]
+        missing_og = [tag for tag in og_tags if tag not in h]
+        c(not missing_og, "the gallery publishes a complete Open Graph card",
+          f"missing {missing_og}")
+        actions = [release_zip, repo_url, f"{repo_url}/subscription",
+                   "Download wildcards", "Star on GitHub", "Watch releases"]
+        missing_actions = [action for action in actions if action not in h]
+        c(not missing_actions, "the gallery exposes download, star, and release actions",
+          f"missing {missing_actions}")
         cats = sorted({e["category"] for e in entries})
         missing = [x for x in cats if f'id="{x}"' not in h]
         c(not missing, f"every one of the {len(cats)} categories has an anchor",
@@ -518,6 +538,7 @@ def main() -> int:
     # down, so the sizes are checked against the files rather than trusted.
     slug = json.loads((HERE / "prompts.json").read_text(encoding="utf-8"))["repo"]
     RAW = f"https://raw.githubusercontent.com/{slug}/main/wildcards/"
+    RELEASE_ZIP = f"https://github.com/{slug}/releases/latest/download/krea2-wildcards.zip"
     zip_path = HERE / "wildcards/krea2-wildcards.zip"
     c(zip_path.exists(), "wildcards/krea2-wildcards.zip is built")
     # The first screen advertises one file, not three. A visitor who wants the
@@ -525,7 +546,11 @@ def main() -> int:
     # lists every artefact is an inventory again, which is what this repo was
     # rewritten to stop doing.
     c(RAW + "all.txt" in readme, "README.md links the raw all.txt")
+    c(RELEASE_ZIP in readme, "README.md links the stable release zip")
     c("](wildcards/)" in readme, "README.md links the wildcards folder")
+    wildcard_readme = (HERE / "wildcards/README.md").read_text(encoding="utf-8")
+    c(RELEASE_ZIP in wildcard_readme and "no custom node" in wildcard_readme.lower(),
+      "the wildcard README links the release and requires no custom node")
     for f in ("all.txt", "krea2-wildcards.zip", "styles.txt"):
         c((HERE / "wildcards" / f).exists(), f"wildcards/{f} exists to be linked")
     for f, claimed in re.findall(

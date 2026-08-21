@@ -394,6 +394,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
     # sixty-three files deep in a subfolder. Distance was the whole problem.
     if repo_slug:
         raw = f"https://raw.githubusercontent.com/{repo_slug}/main/wildcards/"
+        release_zip = (f"https://github.com/{repo_slug}/releases/latest/download/"
+                       "krea2-wildcards.zip")
         alltxt = HERE / "wildcards/all.txt"
         # Two things, ordered by how many people can do them. The old version gave
         # three paths equal weight and spent its longest paragraph on __wildcard__
@@ -410,6 +412,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
             L.append(f"**[Download all.txt]({raw}all.txt)** "
                      f"({round(alltxt.stat().st_size / 1024)} KB), one prompt per line. "
                      "Paste any of them into anything.\n")
+        L.append(f"**[Download the wildcard zip]({release_zip})** for all category "
+                 "files in one archive.\n")
         L.append("On ComfyUI you can wire it up instead: put "
                  "[wildcards/](wildcards/) in `ComfyUI/wildcards/` and write `__all__` "
                  "in a prompt. That needs a dynamic prompts node, which ComfyUI does not "

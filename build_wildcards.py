@@ -70,18 +70,25 @@ def main() -> int:
 
     everything = [p for ps in by.values() for p in ps]
     (out / "all.txt").write_text("\n".join(everything) + "\n", encoding="utf-8")
+    repo_url = d.get("repo") and "https://github.com/" + d["repo"] or ".."
+    release_zip = f"{repo_url}/releases/latest/download/{ZIP_NAME}"
 
     # The seeds live in prompts.json, and a wildcard file cannot carry them.
     # Say so here rather than letting someone think a re-roll should match.
     (out / "README.md").write_text(f"""# Wildcards
 
-{total} prompts from [this catalog]({d.get('repo') and 'https://github.com/' + d['repo'] or '..'}),
+{total} prompts from [this catalog]({repo_url}),
 one per line, ready for a wildcard or dynamic-prompt node.
 
 - `all.txt`. Every prompt, {len(everything)} lines
 - one file per category ({len(by)} of them), if you want to sample within a style
 
+[Download every category as one zip]({release_zip}).
+
 ## ComfyUI
+
+This repository provides prompt files, not a custom node. No custom node from
+this repository is required.
 
 Drop this folder into `ComfyUI/wildcards/`, then reference it from a dynamic
 prompt node:

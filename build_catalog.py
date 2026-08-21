@@ -81,6 +81,7 @@ MANIFEST = HERE / "prompts.json"
 IMAGES = HERE / "images"
 
 SCAFFOLD = {
+    "schema_version": "1.0.0",
     "model": "REPLACE-ME (exact model name and version, e.g. 'Nano Banana Pro')",
     "model_url": "",
     "launched": "2026-01-01",
@@ -109,6 +110,8 @@ SCAFFOLD = {
             "notes": "Reproduces reliably. Seed matters for the rim light.",
         }
     ],
+    "generations": 1,
+    "discarded_generations": 0,
 }
 
 
@@ -187,7 +190,7 @@ def gh_anchor(text: str) -> str:
 
 
 def counts(data: dict, s: str) -> str:
-    """Substitute {generations}, {kept} and {failures} from the manifest.
+    """Substitute count placeholders from the manifest.
 
     These numbers drifted once and it was the worst possible kind of drift. The
     hands category was withdrawn, the subtitle and the findings were updated to
@@ -201,6 +204,7 @@ def counts(data: dict, s: str) -> str:
     for token, value in (("{generations}", data.get("generations", 0)),
                          ("{kept}", len(data.get("entries", []))),
                          ("{failures}", len(data.get("failures", {}).get("entries", []))),
+                         ("{discarded}", data.get("discarded_generations", 0)),
                          ("{findings}", len(data.get("findings", {}).get("items", [])))):
         s = s.replace(token, f"{value:,}" if value >= 10000 else str(value))
     return s
@@ -393,6 +397,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
     # sixty-three files deep in a subfolder. Distance was the whole problem.
     if repo_slug:
         raw = f"https://raw.githubusercontent.com/{repo_slug}/main/wildcards/"
+        release_zip = (f"https://github.com/{repo_slug}/releases/latest/download/"
+                       "krea2-wildcards.zip")
         alltxt = HERE / "wildcards/all.txt"
         # Two things, ordered by how many people can do them. The old version gave
         # three paths equal weight and spent its longest paragraph on __wildcard__
@@ -409,6 +415,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
             L.append(f"**[Download all.txt]({raw}all.txt)** "
                      f"({round(alltxt.stat().st_size / 1024)} KB), one prompt per line. "
                      "Paste any of them into anything.\n")
+        L.append(f"**[Download the wildcard zip]({release_zip})** for all category "
+                 "files in one archive.\n")
         L.append("On ComfyUI you can wire it up instead: put "
                  "[wildcards/](wildcards/) in `ComfyUI/wildcards/` and write `__all__` "
                  "in a prompt. That needs a dynamic prompts node, which ComfyUI does not "

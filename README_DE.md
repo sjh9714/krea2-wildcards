@@ -23,6 +23,8 @@ Open the [gallery](https://sjh9714.github.io/krea2-wildcards/), press **copy** u
 
 **[Download all.txt](https://raw.githubusercontent.com/sjh9714/krea2-wildcards/main/wildcards/all.txt)** (104 KB), one prompt per line. Paste any of them into anything.
 
+**[Download the wildcard zip](https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip)** for all category files in one archive.
+
 On ComfyUI you can wire it up instead: put [wildcards/](wildcards/) in `ComfyUI/wildcards/` and write `__all__` in a prompt. That needs a dynamic prompts node, which ComfyUI does not come with, so install [comfyui-dynamicprompts](https://github.com/adieyal/comfyui-dynamicprompts) first or the underscores end up in your picture.
 
 ## 🗂 Kategorien

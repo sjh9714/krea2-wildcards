@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 raw/
+.worktrees/
 
 # API keys. This MUST stay here: instantiate.py copies the toolkit's .env into
 # the new repo so batch generation works from a sibling directory, and without

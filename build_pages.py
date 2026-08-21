@@ -46,6 +46,10 @@ h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 10px;letter-spacing:-.02em}
 .sub{color:var(--mut);max-width:60ch;margin:0}
 .meta{margin-top:18px;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut)}
 .meta b{color:var(--fg)}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 0}
+.actions a{display:inline-block;padding:7px 11px;border:1px solid var(--line);border-radius:6px;text-decoration:none;font-size:.86rem;font-weight:600}
+.actions a:first-child{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.actions a:hover{border-color:var(--acc)}
 h2{font-size:1.35rem;margin:56px 0 6px;letter-spacing:-.01em;scroll-margin-top:12px}
 /* Anchors on a page this tall are useless if the browser lands mid-image,
    and lazy-loaded figures above the target shift it as they resolve. The
@@ -143,11 +147,24 @@ def main() -> int:
     kept = [e for e in d["entries"] if (root / e["image"]).exists()]
     model = d.get("model", "the model")
     repo = d.get("repo", "")
+    repo_url = f"https://github.com/{repo}"
+    site_url = f"https://{repo.split('/')[0]}.github.io/{repo.split('/')[-1]}/"
+    release_zip = f"{repo_url}/releases/latest/download/krea2-wildcards.zip"
+    title = f"{len(kept)} {model} prompts with reproducible outputs"
+    nfail = len(d.get("failures", {}).get("entries", []))
+    description = (f"Browse {len(kept)} {model} prompts and {nfail} documented failures. "
+                   "Copy prompts or download ComfyUI wildcards.")
 
     L = ['<!doctype html><html lang="en"><head><meta charset="utf-8">',
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
-         f"<title>{len(kept)} {html.escape(model)} prompts</title>",
-         f'<meta name="description" content="{len(kept)} {html.escape(model)} prompts you can copy, each with the image it produced.">',
+         f"<title>{html.escape(title)}</title>",
+         f'<meta name="description" content="{html.escape(description, quote=True)}">',
+         f'<link rel="canonical" href="{site_url}">',
+         '<meta property="og:type" content="website">',
+         f'<meta property="og:title" content="{html.escape(title, quote=True)}">',
+         f'<meta property="og:description" content="{html.escape(description, quote=True)}">',
+         f'<meta property="og:url" content="{site_url}">',
+         f'<meta property="og:image" content="{site_url}hero.webp">',
          f"<style>{CSS}</style></head><body><div class=wrap>"]
 
     L.append('<header id="top">')
@@ -156,7 +173,11 @@ def main() -> int:
     L.append(f"<h1>{len(kept)} {html.escape(model)} prompts</h1>")
     L.append('<p class=sub>Find one you like, press copy. Raw model output, nothing '
              'retouched.</p>')
-    L.append(f'<p class=meta><a href="https://github.com/{html.escape(repo)}">'
+    L.append('<nav class=actions aria-label="Project actions">'
+             f'<a href="{release_zip}">Download wildcards</a>'
+             f'<a href="{repo_url}">Star on GitHub</a>'
+             f'<a href="{repo_url}/subscription">Watch releases</a></nav>')
+    L.append(f'<p class=meta><a href="{repo_url}">'
              f'github.com/{html.escape(repo)}</a></p>')
     L.append("</header>")
 

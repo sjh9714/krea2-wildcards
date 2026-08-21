@@ -1,6 +1,6 @@
 # What this model actually does
 
-Everything below was measured while building this catalog, not quoted from the model card. 561 generations across eight batches; 475 are here, and 65 more are kept as failures with the reason each one was cut. Each claim names the entries that demonstrate it; every entry carries its seed and its batch number, so you can check any of this against the images in this repo.
+Everything below was measured while building this catalog, not quoted from the model card. 561 generations were run across eight batches. 475 are published, 65 are documented failures, and 21 additional generations were discarded without a surviving record. Each claim names the entries that demonstrate it; every published entry and documented failure carries its seed and batch number, so you can check it against the images in this repo.
 
 Five of these findings replace earlier ones. Four were overturned by experiments built to confirm them, the last of those by a prediction written down before the images existed. The fifth was overturned by a reader on Reddit two hours after this was published, who counted fingers I had only glanced at.
 

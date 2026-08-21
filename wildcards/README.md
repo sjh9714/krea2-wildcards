@@ -6,7 +6,12 @@ one per line, ready for a wildcard or dynamic-prompt node.
 - `all.txt`. Every prompt, 475 lines
 - one file per category (61 of them), if you want to sample within a style
 
+[Download every category as one zip](https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip).
+
 ## ComfyUI
+
+This repository provides prompt files, not a custom node. No custom node from
+this repository is required.
 
 Drop this folder into `ComfyUI/wildcards/`, then reference it from a dynamic
 prompt node:

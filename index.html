@@ -1,7 +1,13 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>475 Krea 2 Turbo prompts</title>
-<meta name="description" content="475 Krea 2 Turbo prompts you can copy, each with the image it produced.">
+<title>475 Krea 2 Turbo prompts with reproducible outputs</title>
+<meta name="description" content="Browse 475 Krea 2 Turbo prompts and 65 documented failures. Copy prompts or download ComfyUI wildcards.">
+<link rel="canonical" href="https://sjh9714.github.io/krea2-wildcards/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="475 Krea 2 Turbo prompts with reproducible outputs">
+<meta property="og:description" content="Browse 475 Krea 2 Turbo prompts and 65 documented failures. Copy prompts or download ComfyUI wildcards.">
+<meta property="og:url" content="https://sjh9714.github.io/krea2-wildcards/">
+<meta property="og:image" content="https://sjh9714.github.io/krea2-wildcards/hero.webp">
 <style>
 :root{--bg:#faf9f7;--fg:#17191a;--mut:#6a6f70;--line:#e0dedb;--acc:#1f5d4c;--card:#fff}
 @media(prefers-color-scheme:dark){:root{--bg:#111312;--fg:#e9ebe6;--mut:#8b918c;--line:#2a2e2b;--acc:#62bfa1;--card:#181b19}}
@@ -13,6 +19,10 @@ h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 10px;letter-spacing:-.02em}
 .sub{color:var(--mut);max-width:60ch;margin:0}
 .meta{margin-top:18px;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut)}
 .meta b{color:var(--fg)}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 0}
+.actions a{display:inline-block;padding:7px 11px;border:1px solid var(--line);border-radius:6px;text-decoration:none;font-size:.86rem;font-weight:600}
+.actions a:first-child{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.actions a:hover{border-color:var(--acc)}
 h2{font-size:1.35rem;margin:56px 0 6px;letter-spacing:-.01em;scroll-margin-top:12px}
 /* Anchors on a page this tall are useless if the browser lands mid-image,
    and lazy-loaded figures above the target shift it as they resolve. The
@@ -60,6 +70,7 @@ h2 .cp{margin:0 0 0 10px;font-size:.72rem;font-weight:400}
 <header id="top">
 <h1>475 Krea 2 Turbo prompts</h1>
 <p class=sub>Find one you like, press copy. Raw model output, nothing retouched.</p>
+<nav class=actions aria-label="Project actions"><a href="https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip">Download wildcards</a><a href="https://github.com/sjh9714/krea2-wildcards">Star on GitHub</a><a href="https://github.com/sjh9714/krea2-wildcards/subscription">Watch releases</a></nav>
 <p class=meta><a href="https://github.com/sjh9714/krea2-wildcards">github.com/sjh9714/krea2-wildcards</a></p>
 </header>
 <div class=find><input id=q type=search placeholder="Search 475 prompts, try night, macro, letterpress" aria-label="Search the prompts"><span id=qn></span></div>
@@ -786,7 +797,7 @@ h2 .cp{margin:0 0 0 10px;font-size:.72rem;font-weight:400}
 <figure><img loading=lazy src="images/seasonal-008.webp" alt="Ice on a puddle, broken"><figcaption><div class=t>Ice on a puddle, broken</div><pre>A thin sheet of ice over a puddle, broken through in the middle by a boot so the plates have tilted and refrozen at angles, trapped air white beneath them. Shot <mark>straight down</mark>, cold <mark>flat light</mark>, <mark>macro</mark>-ish.</pre><button class=cp data-p="A thin sheet of ice over a puddle, broken through in the middle by a boot so the plates have tilted and refrozen at angles, trapped air white beneath them. Shot straight down, cold flat light, macro-ish." aria-label="Copy the prompt for Ice on a puddle, broken">copy</button><button class=more aria-expanded=false>show all</button><div class=seed>seed 353654491</div></figcaption></figure>
 </div>
 <h2 id="failures">The failures<span class=n>65</span><a class=top href="#top">top</a></h2>
-<p class=cat-desc>Deliberately reproduced failures. Every claim in the README&#x27;s findings section points at one of these, with the seed that produced it, so the limits are checkable rather than asserted. These are NOT part of the 85-entry catalog.</p>
+<p class=cat-desc>Deliberately reproduced failures. Every claim in the findings points at one of these, with the seed that produced it, so the limits are checkable rather than asserted. These are not part of the 475-entry published catalog.</p>
 <div class=grid>
 <figure class=fail><img loading=lazy src="images/failures/abstract-004.webp" alt="Colour: &#x27;coloured light trails&#x27; came back as four pale near-white lines"><figcaption><div class=t>Colour: &#x27;coloured light trails&#x27; came back as four pale near-white lines</div><pre>asked for: Crossing, looping, coloured trails
 
@@ -985,7 +996,7 @@ A kanban board with three columns headed by short labels and a count badge each,
 A figure-eight knot tied in a length of natural hemp rope on a plain grey concrete surface, shot from directly above under <mark>soft even light</mark>. The rope crosses itself twice before passing through the loop. Fibre twist clearly visible. Nothing else in frame.</pre><button class=cp data-p="A figure-eight knot tied in a length of natural hemp rope on a plain grey concrete surface, shot from directly above under soft even light. The rope crosses itself twice before passing through the loop. Fibre twist clearly visible. Nothing else in frame." aria-label="Copy the prompt for Knot: asked for a figure-eight knot, returned a figure-eight shape. Two loops with a single crossing, never tied">copy</button><button class=more aria-expanded=false>show all</button><div class=seed>seed 518928111</div></figcaption></figure>
 </div>
 <h2 id="findings">What this model actually does<a class=top href="#top">top</a></h2>
-<p class=cat-desc>Everything below was measured while building this catalog, not quoted from the model card. 561 generations across eight batches; 475 are here, and 65 more are kept as failures with the reason each one was cut. Each claim names the entries that demonstrate it; every entry carries its seed and its batch number, so you can check any of this against the images in this repo.
+<p class=cat-desc>Everything below was measured while building this catalog, not quoted from the model card. 561 generations were run across eight batches. 475 are published, 65 are documented failures, and 21 additional generations were discarded without a surviving record. Each claim names the entries that demonstrate it; every published entry and documented failure carries its seed and batch number, so you can check it against the images in this repo.
 
 Five of these findings replace earlier ones. Four were overturned by experiments built to confirm them, the last of those by a prediction written down before the images existed. The fifth was overturned by a reader on Reddit two hours after this was published, who counted fingers I had only glanced at.</p>
 <div class=finding><h3>It renders text you write. It cannot invent text.</h3><p><strong>This replaces the finding that stood here for three batches, and the replacement came from an experiment designed to confirm it.</strong></p><p>The old claim was that text fails by *count*: one sign holds, a list collapses, and somewhere between four strings and six there is a ceiling. To find the ceiling I built a ladder, the same brass nameplate, the same style, the same short word-like strings, varying only in how many share the frame. <code>stringcount-1</code> through <code>stringcount-8</code>.</p><p><strong>Every string I asked for rendered, at every rung.</strong> VULCAN. 1938. MODEL 7. SHEFFIELD. SERIAL 4412. 440 VOLTS. 50 CYCLES. MADE IN ENGLAND. Legible, spelled correctly, on a plate, at eight independent strings.</p><p><strong>Two rungs also engraved something I did not ask for</strong>, and this paragraph used to open with &quot;all eight are correct&quot;, which is not the same claim and should never have been written. <code>stringcount-5</code> puts a spurious <code>7</code> beside SHEFFIELD, a sixth element on a five-string plate. And <code>stringcount-2</code> engraves the <code>/</code> I was using as a separator, so the plate literally reads <code>VULCAN / 1938</code>. A reader on r/StableDiffusion, <strong>u/FotografoVirtual</strong>, caught the first one by reading the plate against the prompt; the second turned up when I went back and checked all eight because of it.</p><p>So the ladder answers the question it was built to answer, count is not the limit. And it does not license the sentence &quot;the plates are flawless&quot;. What is added is not a failure of the strings, it is a failure to suppress everything else.</p><p>So count was never the variable. Going back through every text failure in this repo, the split is exact and it is about <strong>who wrote the string</strong>:</p><p>- The chalkboard menu specified <code>FILTER 4.50</code>, <code>CORTADO 4.00</code> and <code>OAT +0.60</code> and asked the model to fill the rest of the board. <strong>Those three rendered correctly.</strong> The unspecified rows came back <code>CAPEME</code>, <code>CABIELO</code>, <code>PANSRUR</code>.

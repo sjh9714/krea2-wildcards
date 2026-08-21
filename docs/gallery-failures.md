@@ -2,7 +2,7 @@
 
 ## The failures
 
-Deliberately reproduced failures. Every claim in the README's findings section points at one of these, with the seed that produced it, so the limits are checkable rather than asserted. These are NOT part of the 85-entry catalog.
+Deliberately reproduced failures. Every claim in the findings points at one of these, with the seed that produced it, so the limits are checkable rather than asserted. These are not part of the 475-entry published catalog.
 
 | | What was asked for | What came back |
 |---|---|---|

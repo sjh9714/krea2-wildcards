@@ -63,7 +63,7 @@ python3 verify.py
 
 ## What CI checks
 
-`verify.py` runs 187 checks that tie the prose to the data: every count quoted in
+`verify.py` runs 195 checks that tie the prose to the data. Every count quoted in
 a document against the manifest, every seed present, every category anchored and
 reachable, the download table's file sizes against the files, the vocabulary
 rule, and that the generated files are in sync. It is not a linter. It exists

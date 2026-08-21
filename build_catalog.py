@@ -81,6 +81,7 @@ MANIFEST = HERE / "prompts.json"
 IMAGES = HERE / "images"
 
 SCAFFOLD = {
+    "schema_version": "1.0.0",
     "model": "REPLACE-ME (exact model name and version, e.g. 'Nano Banana Pro')",
     "model_url": "",
     "launched": "2026-01-01",
@@ -109,6 +110,8 @@ SCAFFOLD = {
             "notes": "Reproduces reliably. Seed matters for the rim light.",
         }
     ],
+    "generations": 1,
+    "discarded_generations": 0,
 }
 
 

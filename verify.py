@@ -100,7 +100,8 @@ def main() -> int:
     print("\ncounts")
     schema_version = d.get("schema_version")
     c(isinstance(schema_version, str)
-      and re.fullmatch(r"\d+\.\d+\.\d+", schema_version) is not None,
+      and re.fullmatch(r"(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)",
+                       schema_version) is not None,
       "manifest declares a semantic schema version",
       f"got {schema_version!r}")
 

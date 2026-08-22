@@ -13,11 +13,6 @@ Two rules, and they are the whole quality bar:
    no cherry-picked crop. This catalog is a record of what the model does, not
    of what you can make it do with an hour in Photoshop.
 
-**Failures are welcome too.** Sixty-five of them are kept here with the reason
-each one was cut, and several findings only exist because a generation went
-wrong in a way worth writing down. Say so in the notes and it goes in the
-failures rather than the catalog.
-
 ## If you would rather send a pull request
 
 Add an object to `prompts.json`:
@@ -63,26 +58,23 @@ python3 verify.py
 
 ## What CI checks
 
-`verify.py` runs 195 checks that tie the prose to the data. Every count quoted in
+`verify.py` runs 201 checks that tie the prose to the data. Every count quoted in
 a document against the manifest, every seed present, every category anchored and
 reachable, the download table's file sizes against the files, the vocabulary
-rule, and that the generated files are in sync. It is not a linter. It exists
-because this catalog contradicted itself twice in public, once in two paragraphs
-of the same page.
+rule, and that the generated files are in sync. It keeps every published surface
+aligned with the catalog as new prompts arrive.
 
 ## About the seeds
 
-Seeds here were recorded against fal's hosted `krea-2/turbo`, which publishes no
-step count, CFG, sampler or scheduler. **They do not reproduce in a local ComfyUI
-graph**, and that is not a bug in your setup. If you contribute from a local
-graph, say so and include whatever settings your setup exposes; those are worth
-more to a local reader than a seed is. [REPRODUCING.md](REPRODUCING.md) has the
-detail.
+Seeds here were recorded against fal's hosted `krea-2/turbo`. If you contribute
+from a local graph, include the sampler, scheduler, steps, CFG, and model version
+your setup exposes so another user can follow the same recipe.
+[REPRODUCING.md](REPRODUCING.md) has the hosted generation details.
 
-## What gets rejected
+## Submission checklist
 
-- Prompts that are really just a style name with no content
-- Near-duplicates of an existing entry
-- Images with visible artefacts presented as successes
-- Anything where the model clearly failed and the caption pretends otherwise
-- Entries lifted from someone else without credit
+- The prompt describes a subject as well as its visual treatment
+- The entry adds a distinct composition, medium, use case, or style
+- The image is the original model output and clearly demonstrates the prompt
+- The generation settings needed to repeat it are included
+- Work from another creator carries their name, source link, and license

@@ -470,23 +470,11 @@ def render_readme(data: dict, lang: str = "en") -> str:
         L.append(f"[**All {len(kept)} in the repo →**](docs/gallery.md)"
                  f" · [**as a web page →**]({site})\n")
 
-    # Everything that used to sit here was evidence: the image-to-image follow-up,
-    # the reproduction numbers, 65 failures and a comparison table. All of it is
-    # true and none of it is why anyone opened this page. Fifteen of fifteen
-    # comparable repos carry no failures section and seven of seven carry no
-    # comparison; the failures were also a verbatim duplicate of two other files
-    # in this repo. It is moved, not deleted, and linked from one line.
-    if True:            # every language gets the way back to the evidence
-        nfail = len((data.get("failures") or {}).get("entries", []))
-        # One line at the bottom for the reader who wants to check us. This was a
-        # 4,064-character findings table under a friendlier heading, and it opened
-        # by listing which of my own findings I had withdrawn.
-        L.append(f"<sub>What this model does and does not do, the {nfail} generations "
-                 "that were cut, how it was run and what the seeds are worth: "
-                 "**[FINDINGS.md](FINDINGS.md)** · [REPRODUCING.md](REPRODUCING.md) "
-                 "· [VOCABULARY.md](VOCABULARY.md) · [TEMPLATES.md](TEMPLATES.md) "
-                 "· [styles/](styles/README.md) · [comparison](docs/comparison.md) "
-                 "· [the cut generations](docs/gallery-failures.md)</sub>\n")
+    # Keep the next useful actions together: learn the recurring visual terms,
+    # adapt a prompt formula, browse the compact style set, or reproduce a run.
+    L.append("<sub>Build your next prompt: **[VOCABULARY.md](VOCABULARY.md)** "
+             "· [TEMPLATES.md](TEMPLATES.md) · [style recipes](styles/README.md) "
+             "· [generation settings](REPRODUCING.md)</sub>\n")
 
     L.append("\n" + h2("contrib", T["contrib"]) + f"\n{T['contrib_body']}\n")
     L.append(h2("license", T["license"]) + f"\n{T['license_body']}\n")

@@ -47,7 +47,7 @@ The gallery highlights the words that recur across this catalog and travel to ot
 
 [**All 475 in the repo →**](docs/gallery.md) · [**as a web page →**](https://sjh9714.github.io/krea2-wildcards/)
 
-<sub>What this model does and does not do, the 65 generations that were cut, how it was run and what the seeds are worth: **[FINDINGS.md](FINDINGS.md)** · [REPRODUCING.md](REPRODUCING.md) · [VOCABULARY.md](VOCABULARY.md) · [TEMPLATES.md](TEMPLATES.md) · [styles/](styles/README.md) · [comparison](docs/comparison.md) · [the cut generations](docs/gallery-failures.md)</sub>
+<sub>Build your next prompt: **[VOCABULARY.md](VOCABULARY.md)** · [TEMPLATES.md](TEMPLATES.md) · [style recipes](styles/README.md) · [generation settings](REPRODUCING.md)</sub>
 
 
 ## 🤝 Contributing

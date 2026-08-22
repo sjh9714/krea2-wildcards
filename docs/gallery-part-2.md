@@ -413,7 +413,7 @@ Exactly 8 identical white ceramic eggs standing in a row on a dark slate shelf, 
 
 ## monogram
 
-_A second look at arbitrary letter pairs, which failed once in batch four_
+_Letter pairs, ligatures, engraving and embossed initials_
 
 ### 1. Monogram: AE ligature
 
@@ -1013,7 +1013,7 @@ An aurora arc over a snow-covered plain, green with a magenta lower fringe, its 
 
 ## respecify
 
-_The original text failures re-run with every string written out. A controlled retest, not new scenes_
+_Specified text layouts for menus, book spines and transit maps_
 
 ### 1. The chalkboard menu, every row written out
 

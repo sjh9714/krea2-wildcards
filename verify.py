@@ -221,7 +221,10 @@ def main() -> int:
         c(gap < 8000, f"{name}: hero to catalog is scannable",
           f"{gap:,} characters of prose before the first catalog entry: "
           f"move the long form into FINDINGS.md")
-        c("FINDINGS.md" in text, f"{name} links to FINDINGS.md")
+        resources = ("VOCABULARY.md", "TEMPLATES.md", "styles/README.md",
+                     "REPRODUCING.md")
+        c(all(resource in text for resource in resources),
+          f"{name} links to the practical prompt resources")
 
     # Deleted 2026-08-07. This required every translation to carry the findings
     # between the header and the catalog, which is exactly the shape the README
@@ -240,7 +243,6 @@ def main() -> int:
     cmp_p = HERE / "docs/comparison.md"
     c(cmp_p.exists(), "docs/comparison.md is built")
     cmp_text = cmp_p.read_text(encoding="utf-8") if cmp_p.exists() else ""
-    c("docs/comparison.md" in readme or "docs/comparison.md" in findings_md, "README links the comparison")
     row = re.search(r"^\|\s*\*\*this repo\*\*\s*\|(.+)$", cmp_text, re.M)
     if row is None:
         c(False, "comparison table has a 'this repo' row")
@@ -318,12 +320,12 @@ def main() -> int:
         missing = [x for x in cats if f'id="{x}"' not in h]
         c(not missing, f"every one of the {len(cats)} categories has an anchor",
           f"{missing[:5]}")
-        untargeted = [x for x in cats if f'href="#{x}"' not in h]
-        c(not untargeted, "every category is reachable from the jump list",
+        untargeted = [x for x in cats if f'<option value="{x}">' not in h]
+        c(not untargeted, "every category is reachable from the category filter",
           f"{untargeted[:5]}")
         c('id="top"' in h and 'href="#top"' in h,
           "the page has a top anchor and links back to it")
-        c('id="failures"' in h, "the failures section has an anchor")
+        c('id="failures"' not in h, "the main gallery contains only usable prompts")
         c("scroll-margin-top" in h,
           "headings carry a scroll margin",
           "without it an anchor lands under the viewport edge")
@@ -464,7 +466,7 @@ def main() -> int:
     if idx.exists():
         html_t = idx.read_text(encoding="utf-8")
         dd3 = json.loads((HERE / "prompts.json").read_text(encoding="utf-8"))
-        shown = sum(1 for e in dd3["entries"] + dd3.get("failures", {}).get("entries", [])
+        shown = sum(1 for e in dd3["entries"]
                     if (HERE / e["image"]).exists())
         btns = len(re.findall(r'<button class=cp data-p=', html_t))
         c(btns == shown, f"every one of the {shown} gallery entries has a copy button"
@@ -486,6 +488,25 @@ def main() -> int:
           f"{noname} have none")
         c('id=q' in html_t and 'aria-label="Search the prompts"' in html_t,
           "the gallery has a labelled search box")
+        c('id=category' in html_t and 'aria-label="Filter by category"' in html_t,
+          "the gallery has a labelled category filter")
+        c('id=favonly' in html_t and 'aria-pressed=false' in html_t
+          and "localStorage" in html_t,
+          "the gallery can save prompts locally and filter to saved prompts")
+        favs = len(re.findall(r'<button class=fav[^>]*aria-label=', html_t))
+        c(favs == shown, f"every one of the {shown} entries has an accessible save button"
+                         + (f", found {favs}" if favs != shown else ""))
+        stable = len(re.findall(r'<figure data-id="[^"]+" data-cat=', html_t))
+        c(stable == shown, f"every one of the {shown} entries has a stable browser-save id"
+                           + (f", found {stable}" if stable != shown else ""))
+        c('<dialog id=viewer' in html_t and 'aria-label="Close image viewer"' in html_t,
+          "the gallery has an accessible full-size image viewer")
+        c('id=empty' in html_t, "the gallery has an empty state for combined filters")
+        c('id="failures"' not in html_t and 'class=fail' not in html_t,
+          "the prompt gallery stays focused on usable prompts")
+        meta = re.search(r'<meta name="description" content="([^"]+)', html_t)
+        c(bool(meta) and "failure" not in meta.group(1).lower(),
+          "the gallery description leads with practical value")
         # The findings prose sat between the header and the first image: 9,758
         # pixels, eleven and a half screens, on the page the README points at.
         first_fig = html_t.find("<figure")
@@ -613,7 +634,6 @@ def main() -> int:
     c("images/failures/" not in readme,
       "the README does not re-inline the failures",
       f"{readme.count('images/failures/')} failure images are back in it")
-    c("docs/gallery-failures.md" in readme or "docs/gallery-failures.md" in findings_md, "README links where the failures live")
     for token in ("ComfyUI/wildcards/", "__all__"):
         c(token in readme, f"the usage section names {token}")
     # __wildcard__ is not a ComfyUI feature. Someone without the extension gets
@@ -660,13 +680,12 @@ def main() -> int:
 
     # An em dash in a reply to the subreddit this repo launched in got the account
     # labelled "worthless LLM slop" inside four minutes, and the label stuck harder
-    # than any of the corrections. The prose here carries none. The 29 inside
+    # than any of the corrections. The prose here carries none. The ones inside
     # prompt strings stay, because a prompt is the exact text that produced its
     # image and editing it would break the one thing this catalog sells.
     DASH = ("—", "–")
     dd2 = json.loads((HERE / "prompts.json").read_text(encoding="utf-8"))
     in_prompts = sum(p.count(x) for e in dd2["entries"]
-                     + dd2.get("failures", {}).get("entries", [])
                      for p in [e["prompt"]] for x in DASH)
     prose = ["README.md", "FINDINGS.md", "VOCABULARY.md", "TEMPLATES.md",
              "REPRODUCING.md", "CONTRIBUTING.md", "styles/README.md",

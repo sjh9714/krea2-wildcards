@@ -2,16 +2,9 @@
 """
 build_pages.py, emit a single-file gallery for GitHub Pages from the manifest.
 
-Why this exists: 67% of Show HN posts above 300 points point at a hosted page on
-the author's own domain rather than at a repository. A README is not a demo. This
-is the smallest thing that satisfies that without becoming a web app. One HTML
-file, no JavaScript, no build step, served from the ROOT of the default branch
-so that images/ is reachable without duplicating it.
-
-It deliberately does NOT add search. "searchable" is a measured winning word in
-Show HN titles (8.9% hit rate against a 0.2% baseline), which makes it tempting,
-and that is exactly why it must not go in a title unless the feature exists.
-Ctrl+F is not a search feature.
+This stays deliberately small: one generated HTML file, no framework, no CDN,
+and no separate build tool. It is served from the root of the default branch so
+that the existing images/ directory remains reachable without duplication.
 
     python3 build_pages.py            # writes docs/index.html
 """
@@ -25,19 +18,14 @@ from build_vocabulary import load as load_vocab, mark, term_pattern
 import json
 from pathlib import Path
 
-# Shared with the README builder rather than copied. The gallery and the README
-# print the same intro paragraph, so two copies of the substitution would be two
-# places for the counts to drift apart. Which is the bug this fixes.
-from build_catalog import counts
-
 HERE = Path(__file__).resolve().parent
 
 _V, _D = load_vocab()
 VOCAB = term_pattern([x["t"] for x in _V["terms"]])
 
 CSS = """
-:root{--bg:#faf9f7;--fg:#17191a;--mut:#6a6f70;--line:#e0dedb;--acc:#1f5d4c;--card:#fff}
-@media(prefers-color-scheme:dark){:root{--bg:#111312;--fg:#e9ebe6;--mut:#8b918c;--line:#2a2e2b;--acc:#62bfa1;--card:#181b19}}
+:root{--bg:#f6f5f1;--fg:#171918;--mut:#656b68;--line:#d9d8d2;--acc:#175c49;--card:#fff;--panel:#eeede8}
+@media(prefers-color-scheme:dark){:root{--bg:#101210;--fg:#e9ebe7;--mut:#929892;--line:#30342f;--acc:#6dc9a8;--card:#191c19;--panel:#202420}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo",Roboto,sans-serif}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px 96px}
@@ -47,24 +35,25 @@ h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 10px;letter-spacing:-.02em}
 .meta{margin-top:18px;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mut)}
 .meta b{color:var(--fg)}
 .actions{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 0}
-.actions a{display:inline-block;padding:7px 11px;border:1px solid var(--line);border-radius:6px;text-decoration:none;font-size:.86rem;font-weight:600}
+.actions a{display:inline-block;padding:7px 11px;border:1px solid var(--line);border-radius:5px;text-decoration:none;font-size:.86rem;font-weight:600}
 .actions a:first-child{background:var(--acc);border-color:var(--acc);color:var(--bg)}
 .actions a:hover{border-color:var(--acc)}
+.actions a:active,.cp:active,.fav:active,#favonly:active,#close:active{transform:translateY(1px)}
 h2{font-size:1.35rem;margin:56px 0 6px;letter-spacing:-.01em;scroll-margin-top:12px}
 /* Anchors on a page this tall are useless if the browser lands mid-image,
    and lazy-loaded figures above the target shift it as they resolve. The
    scroll margin keeps the heading clear of the viewport edge. */
-.toc{margin:28px 0 0;padding:14px 16px;border:1px solid var(--bd);border-radius:8px;font-size:.86rem;line-height:2}
-.toc b{display:block;margin-bottom:6px;font-size:.8rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
-.toc a{color:inherit}
 h2 .top{float:right;font:11px ui-monospace,monospace;color:var(--mut);font-weight:400;text-decoration:none}
 h2 .top:hover{text-decoration:underline}
 h2:first-of-type{margin-top:0}
 h2 .n{font:12px ui-monospace,monospace;color:var(--mut);margin-left:8px}
 .cat-desc{color:var(--mut);margin:0 0 20px;max-width:70ch;font-size:.94rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
-figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:border-color .16s ease}
+figure:hover{border-color:var(--acc)}
 figure img{width:100%;display:block;aspect-ratio:1;object-fit:cover;background:var(--line)}
+.zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.zoom:focus-visible{outline:3px solid var(--acc);outline-offset:-3px}
 figcaption{padding:12px 14px}
 mark{background:#e8f0ec;color:inherit;padding:0 1px;border-radius:2px}
 @media(prefers-color-scheme:dark){mark{background:#24413a}}
@@ -75,34 +64,34 @@ figure.open pre{display:block;-webkit-line-clamp:none}
 .nojs .more{display:none}
 .nojs pre{display:block;-webkit-line-clamp:none}
 .seed{margin-top:8px;font:11px ui-monospace,monospace;color:var(--mut)}
-.finding{border-left:3px solid var(--acc);padding:2px 0 2px 18px;margin:0 0 30px;max-width:74ch}
-.finding h3{margin:0 0 8px;font-size:1.05rem}
-.finding p{margin:0 0 10px;color:var(--mut)}
-.finding code{background:var(--line);padding:.1em .35em;border-radius:3px;font-size:.88em;color:var(--fg)}
-.fail{border-color:#9e2b25}
-@media(prefers-color-scheme:dark){.fail{border-color:#e0776c}}
-.fail .t{color:#9e2b25}
-@media(prefers-color-scheme:dark){.fail .t{color:#e0776c}}
 a{color:var(--acc)}
 footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem;max-width:74ch}
-.find{margin:0 0 14px}
-#q{width:100%;max-width:34rem;padding:9px 12px;font:inherit;border:1px solid var(--line);border-radius:7px;background:transparent;color:inherit}
-#qn{margin-left:10px;color:var(--mut);font-size:.9rem}
+.tools{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:minmax(15rem,1fr) minmax(11rem,15rem) auto auto;gap:9px;align-items:center;margin:0 -8px 14px;padding:10px 8px;background:var(--bg);border-bottom:1px solid var(--line)}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#q,#category,#favonly{min-height:42px;padding:8px 11px;font:inherit;border:1px solid var(--line);border-radius:5px;background:var(--card);color:inherit}
+#q{width:100%}
+#category{width:100%}
+#favonly{cursor:pointer;font-weight:600;white-space:nowrap}
+#favonly[aria-pressed=true]{color:var(--bg);background:var(--acc);border-color:var(--acc)}
+#qn{color:var(--mut);font-size:.86rem;white-space:nowrap;text-align:right}
+#empty{margin:70px auto;text-align:center;color:var(--mut)}
 .cp{margin:8px 0 0;padding:4px 10px;font:inherit;font-size:.82rem;cursor:pointer;border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--mut)}
 .cp:hover{color:inherit;border-color:var(--acc)}
 .cp.done{color:var(--acc);border-color:var(--acc)}
+.fav{float:right;margin:8px 0 0;padding:4px 9px;font:inherit;font-size:.82rem;cursor:pointer;border:1px solid transparent;border-radius:5px;background:transparent;color:var(--mut)}
+.fav:hover{color:inherit;border-color:var(--line)}
+.fav[aria-pressed=true]{color:var(--acc);border-color:var(--acc);font-weight:650}
 h2 .cp{margin:0 0 0 10px;font-size:.72rem;font-weight:400}
 .nojs .cp{display:none}
+.nojs .fav,.nojs #favonly{display:none}
+dialog{width:min(92vw,980px);padding:0;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--fg);box-shadow:0 24px 80px #0008}
+dialog::backdrop{background:#000b}
+#viewer img{display:block;width:100%;max-height:82vh;object-fit:contain;background:#080908}
+.viewerbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 12px}
+#viewtitle{margin:0;font-size:.9rem;color:var(--mut);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#close{padding:6px 10px;border:1px solid var(--line);border-radius:5px;background:transparent;color:inherit;cursor:pointer}
+@media(max-width:760px){.tools{grid-template-columns:1fr 1fr}.find{grid-column:1/-1}#qn{text-align:left}}
 """
-
-
-def md_lite(s: str) -> str:
-    """Just enough markdown for the findings prose: bold, code, paragraphs."""
-    out = html.escape(s)
-    import re
-    out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out, flags=re.S)
-    out = re.sub(r"`([^`]+)`", r"<code>\1</code>", out)
-    return "".join(f"<p>{p.strip()}</p>" for p in out.split("\n\n") if p.strip())
 
 
 def credit(e: dict) -> str:
@@ -150,12 +139,11 @@ def main() -> int:
     repo_url = f"https://github.com/{repo}"
     site_url = f"https://{repo.split('/')[0]}.github.io/{repo.split('/')[-1]}/"
     release_zip = f"{repo_url}/releases/latest/download/krea2-wildcards.zip"
-    title = f"{len(kept)} {model} prompts with reproducible outputs"
-    nfail = len(d.get("failures", {}).get("entries", []))
-    description = (f"Browse {len(kept)} {model} prompts and {nfail} documented failures. "
-                   "Copy prompts or download ComfyUI wildcards.")
+    title = f"{len(kept)} {model} prompts with images"
+    description = (f"Browse {len(kept)} {model} prompts with generated examples. "
+                   "Search, save favorites, copy prompts, or download ComfyUI wildcards.")
 
-    L = ['<!doctype html><html lang="en"><head><meta charset="utf-8">',
+    L = ['<!doctype html><html lang="en" class=nojs><head><meta charset="utf-8">',
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
          f"<title>{html.escape(title)}</title>",
          f'<meta name="description" content="{html.escape(description, quote=True)}">',
@@ -168,11 +156,9 @@ def main() -> int:
          f"<style>{CSS}</style></head><body><div class=wrap>"]
 
     L.append('<header id="top">')
-    # The header sold the seeds and the failures in three lines before anyone saw
-    # a picture. Same framing the README was rewritten out of. One line now.
     L.append(f"<h1>{len(kept)} {html.escape(model)} prompts</h1>")
-    L.append('<p class=sub>Find one you like, press copy. Raw model output, nothing '
-             'retouched.</p>')
+    L.append('<p class=sub>Browse by category, save the ones you like, and copy any '
+             'prompt. Every card includes the image it generated.</p>')
     L.append('<nav class=actions aria-label="Project actions">'
              f'<a href="{release_zip}">Download wildcards</a>'
              f'<a href="{repo_url}">Star on GitHub</a>'
@@ -184,23 +170,19 @@ def main() -> int:
     by = {}
     for e in kept:
         by.setdefault(e["category"], []).append(e)
-    # A table of contents and an id per category. Without them the only way into
-    # a 475-image page is to scroll it, and a link to one category cannot be
-    # given to anyone. A reader who arrives from a comment asking about portrait
-    # work should land on portrait work.
-    # The page is 540 images. Scrolling it to find "night" is not a search, and
-    # the category list only helps if you already know which category it is in.
-    L.append('<div class=find><input id=q type=search placeholder="Search 475 prompts, '
-             'try night, macro, letterpress" aria-label="Search the prompts">'
-             '<span id=qn></span></div>')
-    L.append('<nav class=toc><b>Jump to</b> ')
-    L.append(" · ".join(
-        f'<a href="#{html.escape(c)}">{html.escape(c)}</a> <span class=n>{len(v)}</span>'
-        for c, v in by.items()))
-    L.append(' · <a href="#failures">the failures</a>'
-             ' · <a href="#findings">what this model does</a></nav>')
-
+    L.append('<div class=tools>')
+    L.append(f'<div class=find><label class=sr for=q>Search prompts</label>'
+             f'<input id=q type=search placeholder="Search {len(kept)} prompts" '
+             'aria-label="Search the prompts"></div>')
+    L.append('<label class=sr for=category>Filter by category</label>'
+             '<select id=category aria-label="Filter by category">'
+             '<option value="">All categories</option>')
+    for cat in by:
+        L.append(f'<option value="{html.escape(cat, quote=True)}">{html.escape(cat)}</option>')
+    L.append('</select><button id=favonly type=button aria-pressed=false>Saved only</button>'
+             f'<span id=qn aria-live=polite>{len(kept)} prompts</span></div>')
     for cat, items in by.items():
+        L.append(f'<section class=category data-cat="{html.escape(cat, quote=True)}">')
         L.append(f'<h2 id="{html.escape(cat)}">{html.escape(cat)}'
                  f'<span class=n>{len(items)}</span>'
                  f'<button class="cp all" data-cat="{html.escape(cat, quote=True)}" '
@@ -217,65 +199,36 @@ def main() -> int:
             # data-p carries the prompt as it was run. The <pre> shows the same
             # string with <mark> around the vocabulary terms; if the button ever
             # copied the rendered version the reader would paste markup.
-            L.append(f'<figure><img loading=lazy src="{up}{html.escape(e["image"])}" alt="{html.escape(e["title"])}">'
+            L.append(f'<figure data-id="{html.escape(e["id"], quote=True)}" '
+                     f'data-cat="{html.escape(cat, quote=True)}">'
+                     f'<button class=zoom type=button data-src="{up}{html.escape(e["image"], quote=True)}" '
+                     f'data-title="{html.escape(e["title"], quote=True)}" '
+                     f'aria-label="View full-size image for {html.escape(e["title"], quote=True)}">'
+                     f'<img loading=lazy src="{up}{html.escape(e["image"])}" '
+                     f'alt="{html.escape(e["title"])}"></button>'
                      f'<figcaption><div class=t>{html.escape(e["title"])}</div>'
                      f'<pre>{mark(e["prompt"], VOCAB)}</pre>'
                      f'<button class=cp data-p="{html.escape(e["prompt"], quote=True)}" '
                      f'aria-label="Copy the prompt for {html.escape(e["title"], quote=True)}">'
                      f'copy</button>'
                      f'<button class=more aria-expanded=false>show all</button>'
+                     f'<button class=fav type=button aria-pressed=false '
+                     f'aria-label="Save {html.escape(e["title"], quote=True)}">save</button>'
                      f'<div class=seed>seed {seed}{extra}{credit(e)}</div></figcaption></figure>')
-        L.append("</div>")
+        L.append("</div></section>")
 
-    fails = [x for x in (d.get("failures") or {}).get("entries", []) if (root / x["image"]).exists()]
-    if fails:
-        L.append(f'<h2 id="failures">The failures<span class=n>{len(fails)}</span>'
-                 f'<a class=top href="#top">top</a></h2>')
-        L.append(f'<p class=cat-desc>{html.escape((d["failures"]).get("_what",""))}</p>')
-        L.append("<div class=grid>")
-        for x in fails:
-            seed = (x.get("params") or {}).get("seed")
-            L.append(f'<figure class=fail><img loading=lazy src="{up}{html.escape(x["image"])}" alt="{html.escape(x["claim"])}">'
-                     f'<figcaption><div class=t>{html.escape(x["claim"])}</div>'
-                     f'<pre>asked for: {html.escape(x.get("expected",""))}\n\n{mark(x["prompt"], VOCAB)}</pre>'
-                     f'<button class=cp data-p="{html.escape(x["prompt"], quote=True)}" '
-                     f'aria-label="Copy the prompt for {html.escape(x["claim"], quote=True)}">'
-                     f'copy</button>'
-                     f'<button class=more aria-expanded=false>show all</button>'
-                     f'<div class=seed>seed {seed}</div></figcaption></figure>')
-        L.append("</div>")
+    L.append('<p id=empty hidden>No prompts match these filters. Try another search or category.</p>')
+    L.append('<dialog id=viewer aria-label="Full-size prompt image">'
+             '<img id=viewimage alt="">'
+             '<div class=viewerbar><p id=viewtitle></p>'
+             '<button id=close type=button aria-label="Close image viewer">close</button>'
+             '</div></dialog>')
 
-    # The findings used to sit between the header and the first image: fifteen of
-    # them, 9,758 pixels, eleven and a half screens. Someone who came to the
-    # gallery to look at pictures and take a prompt had to scroll all of it
-    # first, and the search box was underneath it too. Same mistake the README
-    # had, on the page the README now sends people to. It goes after the images.
-    f = d.get("findings")
-    if f:
-        L.append('<h2 id="findings">What this model actually does'
-                 '<a class=top href="#top">top</a></h2>')
-        L.append(f'<p class=cat-desc>{html.escape(counts(d, f.get("_intro","")))}</p>')
-        for it in f.get("items", []):
-            L.append(f'<div class=finding><h3>{html.escape(it["title"])}</h3>{md_lite(it["body"])}</div>')
-
-    # The reproducibility sentence has to be exact, because the whole claim here
-    # is that you can check it yourself. Measured 2026-07-25: the endpoint is
-    # deterministic, same seed, strength, prompt and input bytes returned a
-    # pixel-identical image across two runs (0 of 1,048,576 pixels differed). But
-    # the images in this repo are lossy WebP re-encodes, so re-running an
-    # image-to-image entry against the copy here does not hand the model the
-    # bytes that produced the original. Composition, palette and medium come
-    # back; brush-level texture does not. Text-to-image entries take no image
-    # input and are unaffected.
     L.append('<footer>Prompts are MIT. The images are AI-generated output from '
              f'{html.escape(model)}, presented as model output rather than as photographs or human '
              'artwork, and were produced by the repository owner under the Krea 2 Community '
-             'License. The safety checker was left enabled for every request; one image it '
-             'flagged was dropped. Images are re-encoded from PNG to WebP to keep the repository '
-             'clonable. The endpoint is deterministic, so a recorded seed regenerates a '
-             'text-to-image entry exactly. The five image-to-image entries are re-runnable from '
-             'the WebP source in this repo rather than the original PNG, so they reproduce the '
-             'edit, composition, palette, medium. But not the exact pixels.</footer>')
+             'License. Recorded seeds and generation settings are included in the repository. '
+             'Images are re-encoded from PNG to WebP to keep the repository easy to clone.</footer>')
     # No framework, no CDN, no build step. The page has to keep working as a
     # plain file, so this is one inline script and it degrades by hiding itself:
     # a copy button that does nothing when the clipboard API is unavailable is
@@ -314,8 +267,7 @@ if (!navigator.clipboard && !document.queryCommandSupported) {
     if (!b) return;
     var text;
     if (b.dataset.cat) {
-      var grid = b.closest('h2').nextElementSibling;
-      while (grid && !grid.classList.contains('grid')) grid = grid.nextElementSibling;
+      var grid = b.closest('.category').querySelector('.grid');
       text = Array.prototype.map.call(grid.querySelectorAll('.cp[data-p]'),
         function (x) { return x.dataset.p; }).join('\\n');
     } else {
@@ -352,36 +304,90 @@ document.querySelectorAll('figure .more').forEach(function (m) {
   var pre = m.closest('figcaption').querySelector('pre');
   if (pre.scrollHeight <= pre.clientHeight + 2) m.remove();
 });
-var q = document.getElementById('q'), qn = document.getElementById('qn');
-if (q) {
-  var figs = Array.prototype.map.call(document.querySelectorAll('figure'), function (f) {
-    return { el: f, hay: f.textContent.toLowerCase() };
-  });
-  q.addEventListener('input', function () {
-    var s = q.value.trim().toLowerCase(), shown = 0;
-    figs.forEach(function (f) {
-      var hit = !s || f.hay.indexOf(s) !== -1;
-      f.el.style.display = hit ? '' : 'none';
-      if (hit) shown++;
-    });
-    document.querySelectorAll('.grid').forEach(function (g) {
-      var any = Array.prototype.some.call(g.querySelectorAll('figure'),
-        function (f) { return f.style.display !== 'none'; });
-      g.style.display = any ? '' : 'none';
-      var h = g.previousElementSibling;
-      while (h && h.tagName !== 'H2') h = h.previousElementSibling;
-      if (h) h.style.display = any ? '' : 'none';
-    });
-    qn.textContent = s ? shown + ' of ' + figs.length : '';
-  });
+var q = document.getElementById('q');
+var category = document.getElementById('category');
+var favonly = document.getElementById('favonly');
+var qn = document.getElementById('qn');
+var empty = document.getElementById('empty');
+var figs = Array.prototype.map.call(document.querySelectorAll('figure'), function (f) {
+  return { el: f, id: f.dataset.id, cat: f.dataset.cat, hay: f.textContent.toLowerCase() };
+});
+var storageKey = 'krea2-favorites';
+var saved = new Set();
+try {
+  saved = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
+} catch (e) {
+  saved = new Set();
 }
+function storeSaved() {
+  try { localStorage.setItem(storageKey, JSON.stringify(Array.from(saved))); } catch (e) {}
+}
+function paintFavorite(fig) {
+  var b = fig.querySelector('.fav');
+  var on = saved.has(fig.dataset.id);
+  var title = fig.querySelector('.t').textContent;
+  b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  b.setAttribute('aria-label', (on ? 'Remove saved ' : 'Save ') + title);
+  b.textContent = on ? 'saved' : 'save';
+}
+function applyFilters() {
+  var s = q.value.trim().toLowerCase();
+  var selected = category.value;
+  var onlySaved = favonly.getAttribute('aria-pressed') === 'true';
+  var shown = 0;
+  figs.forEach(function (f) {
+    var hit = (!s || f.hay.indexOf(s) !== -1)
+      && (!selected || f.cat === selected)
+      && (!onlySaved || saved.has(f.id));
+    f.el.style.display = hit ? '' : 'none';
+    if (hit) shown++;
+  });
+  document.querySelectorAll('.category').forEach(function (section) {
+    var any = Array.prototype.some.call(section.querySelectorAll('figure'),
+      function (f) { return f.style.display !== 'none'; });
+    section.style.display = any ? '' : 'none';
+  });
+  qn.textContent = shown === figs.length ? shown + ' prompts' : shown + ' of ' + figs.length;
+  empty.hidden = shown !== 0;
+}
+figs.forEach(function (f) { paintFavorite(f.el); });
+q.addEventListener('input', applyFilters);
+category.addEventListener('change', applyFilters);
+favonly.addEventListener('click', function () {
+  var on = favonly.getAttribute('aria-pressed') === 'true';
+  favonly.setAttribute('aria-pressed', on ? 'false' : 'true');
+  applyFilters();
+});
+document.addEventListener('click', function (ev) {
+  var b = ev.target.closest('.fav');
+  if (!b) return;
+  var fig = b.closest('figure'), id = fig.dataset.id;
+  if (saved.has(id)) saved.delete(id); else saved.add(id);
+  storeSaved();
+  paintFavorite(fig);
+  applyFilters();
+});
+var viewer = document.getElementById('viewer');
+var viewimage = document.getElementById('viewimage');
+var viewtitle = document.getElementById('viewtitle');
+document.addEventListener('click', function (ev) {
+  var b = ev.target.closest('.zoom');
+  if (!b) return;
+  viewimage.src = b.dataset.src;
+  viewimage.alt = b.dataset.title;
+  viewtitle.textContent = b.dataset.title;
+  if (viewer.showModal) viewer.showModal(); else viewer.setAttribute('open', '');
+});
+document.getElementById('close').addEventListener('click', function () { viewer.close(); });
+viewer.addEventListener('click', function (ev) { if (ev.target === viewer) viewer.close(); });
+applyFilters();
 """)
     L.append("</script>")
     L.append("</div></body></html>")
 
     out.write_text("\n".join(L), encoding="utf-8")
     kb = out.stat().st_size // 1024
-    print(f"wrote {out} ({kb} KB, {len(kept)} entries + {len(fails)} failures)")
+    print(f"wrote {out} ({kb} KB, {len(kept)} entries)")
     print("\nEnable Pages: Settings -> Pages -> Deploy from branch -> main / (root)")
     print(f"Then the page is https://<owner>.github.io/{repo.split('/')[-1]}/")
     return 0

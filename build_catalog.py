@@ -416,6 +416,9 @@ def render_readme(data: dict, lang: str = "en") -> str:
                      "Paste any of them into anything.\n")
         L.append(f"**[Download the wildcard zip]({release_zip})** for all category "
                  "files in one archive.\n")
+        if lang == "en":
+            L.append("**[JSONL dataset](dataset/prompts.jsonl)**: 499 prompt records "
+                     "with stable IDs, provenance, and output URLs.\n")
         L.append("**[Download the native ComfyUI workflow](workflows/krea2-native-starter.json)** "
                  "to paste one prompt, or use the "
                  "**[wildcard workflow](workflows/krea2-wildcards-starter.json)** to sample a "

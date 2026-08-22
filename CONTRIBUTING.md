@@ -57,6 +57,7 @@ python3 scripts/build_workflows.py
 python3 build_pages.py
 python3 build_site.py
 python3 build_social.py
+python3 scripts/build_dataset.py
 python3 build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
 python3 scripts/audit_prompts.py
 python3 verify.py

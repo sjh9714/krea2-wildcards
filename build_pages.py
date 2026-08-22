@@ -39,6 +39,7 @@ h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 10px;letter-spacing:-.02em}
 .actions a:first-child{background:var(--acc);border-color:var(--acc);color:var(--bg)}
 .actions a:hover{border-color:var(--acc)}
 .actions a:active,.cp:active,.fav:active,.select:active,.cardshare:active,.toolbtn:active,#favonly:active,#close:active,#closecompare:active{transform:translateY(1px)}
+.guides{display:flex;flex-wrap:wrap;gap:7px 14px;margin:24px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:.82rem}.guides b{color:var(--fg)}.guides a{text-decoration:none}.guides a:hover{text-decoration:underline}
 h2{font-size:1.35rem;margin:56px 0 6px;letter-spacing:-.01em;scroll-margin-top:12px}
 /* Anchors on a page this tall are useless if the browser lands mid-image,
    and lazy-loaded figures above the target shift it as they resolve. The
@@ -164,9 +165,36 @@ def main() -> int:
     repo_url = f"https://github.com/{repo}"
     site_url = f"https://{repo.split('/')[0]}.github.io/{repo.split('/')[-1]}/"
     release_zip = f"{repo_url}/releases/latest/download/krea2-wildcards.zip"
+    campaign = "utm_source=pages&utm_medium=website&utm_campaign=v1_2_launch"
+    workflow_json = f"{repo_url}/releases/latest/download/krea2-native-starter.json"
     title = f"{len(kept)} {model} prompts with images"
     description = (f"Browse {len(kept)} {model} prompts with generated examples. "
                    "Search, save favorites, copy prompts, or download ComfyUI wildcards.")
+
+    structured = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": title,
+        "description": description,
+        "url": site_url,
+        "mainEntity": {
+            "@type": "Dataset",
+            "name": f"{model} prompt and image catalog",
+            "description": description,
+            "url": site_url,
+            "license": f"{repo_url}/blob/main/LICENSE",
+            "creator": {"@type": "Person", "name": "sjh9714",
+                        "url": "https://github.com/sjh9714"},
+            "distribution": [
+                {"@type": "DataDownload", "encodingFormat": "application/zip",
+                 "contentUrl": release_zip},
+                {"@type": "DataDownload", "encodingFormat": "application/json",
+                 "contentUrl": f"{repo_url}/raw/main/prompts.json"},
+            ],
+        },
+    }
+    structured_json = json.dumps(structured, ensure_ascii=False,
+                                 separators=(",", ":")).replace("</", "<\\/")
 
     L = ['<!doctype html><html lang="en" class=nojs><head><meta charset="utf-8">',
          '<meta name="viewport" content="width=device-width,initial-scale=1">',
@@ -177,7 +205,12 @@ def main() -> int:
          f'<meta property="og:title" content="{html.escape(title, quote=True)}">',
          f'<meta property="og:description" content="{html.escape(description, quote=True)}">',
          f'<meta property="og:url" content="{site_url}">',
-         f'<meta property="og:image" content="{site_url}hero.webp">',
+         f'<meta property="og:image" content="{site_url}social-preview.webp">',
+         '<meta name="twitter:card" content="summary_large_image">',
+         f'<meta name="twitter:title" content="{html.escape(title, quote=True)}">',
+         f'<meta name="twitter:description" content="{html.escape(description, quote=True)}">',
+         f'<meta name="twitter:image" content="{site_url}social-preview.webp">',
+         f'<script type="application/ld+json">{structured_json}</script>',
          f"<style>{CSS}</style></head><body><div class=wrap>"]
 
     L.append('<header id="top">')
@@ -185,9 +218,17 @@ def main() -> int:
     L.append('<p class=sub>Browse by category, save the ones you like, and copy any '
              'prompt. Every card includes the image it generated.</p>')
     L.append('<nav class=actions aria-label="Project actions">'
-             f'<a href="{release_zip}">Download wildcards</a>'
-             f'<a href="{repo_url}">Star on GitHub</a>'
-             f'<a href="{repo_url}/subscription">Watch releases</a></nav>')
+             f'<a href="{release_zip}?{campaign}&utm_content=catalog_zip">Download wildcards</a>'
+             f'<a href="{workflow_json}?{campaign}&utm_content=catalog_workflow">ComfyUI workflow</a>'
+             f'<a href="{repo_url}?{campaign}&utm_content=catalog_github">Star on GitHub</a>'
+             f'<a href="{repo_url}/subscription?{campaign}&utm_content=catalog_watch">Watch releases</a></nav>')
+    L.append('<nav class=guides aria-label="Focused guides"><b>Guides</b>'
+             '<a href="guides/comfyui-krea2-workflow/">ComfyUI workflow</a>'
+             '<a href="guides/krea2-product-photography-prompts/">Product</a>'
+             '<a href="guides/krea2-editorial-fashion-prompts/">Fashion</a>'
+             '<a href="guides/krea2-interior-architecture-prompts/">Interiors</a>'
+             '<a href="guides/krea2-prompt-guide/">Prompt guide</a>'
+             '<a href="guides/krea2-image-editing-recipes/">Image editing</a></nav>')
     L.append(f'<p class=meta><a href="{repo_url}">'
              f'github.com/{html.escape(repo)}</a></p>')
     L.append("</header>")
@@ -280,11 +321,16 @@ def main() -> int:
              '<p class=comparNote id=comparenote></p><div class=comparegrid id=comparegrid></div>'
              '</dialog>')
 
-    L.append('<footer>Prompts are MIT. The images are AI-generated output from '
+    L.append('<footer><p><a href="guides/comfyui-krea2-workflow/">ComfyUI workflow</a> · '
+             '<a href="guides/krea2-product-photography-prompts/">Product prompts</a> · '
+             '<a href="guides/krea2-editorial-fashion-prompts/">Fashion prompts</a> · '
+             '<a href="guides/krea2-interior-architecture-prompts/">Interior prompts</a> · '
+             '<a href="guides/krea2-image-editing-recipes/">Editing recipes</a></p>'
+             '<p>Prompts are MIT. The images are AI-generated output from '
              f'{html.escape(model)}, presented as model output rather than as photographs or human '
              'artwork, and were produced by the repository owner under the Krea 2 Community '
              'License. Recorded seeds or Krea generation asset IDs are included in the repository. '
-             'Images are re-encoded from PNG to WebP to keep the repository easy to clone.</footer>')
+             'Images are re-encoded from PNG to WebP to keep the repository easy to clone.</p></footer>')
     # No framework, no CDN, no build step. The page has to keep working as a
     # plain file, so this is one inline script and it degrades by hiding itself:
     # a copy button that does nothing when the clipboard API is unavailable is

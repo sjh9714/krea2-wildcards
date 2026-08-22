@@ -2,6 +2,13 @@
 
 The MIT licence in `LICENSE` covers the prompt text, the manifest and the scripts.
 
+## ComfyUI workflow template
+
+The workflow files under `workflows/` derive from Comfy-Org's official Krea 2
+Turbo template at commit `e95e3b20567bea8df16510c8390b7f897b7e6d4b`.
+The upstream template is MIT licensed, Copyright (c) 2023-present Comfy Org.
+Its full licence is included in `workflows/UPSTREAM_LICENSE`.
+
 ## Generated images
 
 This licence covers the prompt text, the manifest and the scripts.

@@ -416,6 +416,11 @@ def render_readme(data: dict, lang: str = "en") -> str:
                      "Paste any of them into anything.\n")
         L.append(f"**[Download the wildcard zip]({release_zip})** for all category "
                  "files in one archive.\n")
+        L.append("**[Download the native ComfyUI workflow](workflows/krea2-native-starter.json)** "
+                 "to paste one prompt, or use the "
+                 "**[wildcard workflow](workflows/krea2-wildcards-starter.json)** to sample a "
+                 "new library prompt on every run. Both are also available as drag-and-drop PNGs "
+                 "in [workflows/](workflows/).\n")
         L.append("On ComfyUI you can wire it up instead: put "
                  "[wildcards/](wildcards/) in `ComfyUI/wildcards/` and write `__all__` "
                  "in a prompt. That needs a dynamic prompts node, which ComfyUI does not "
@@ -473,6 +478,7 @@ def render_readme(data: dict, lang: str = "en") -> str:
     # adapt a prompt formula, browse the compact style set, or reproduce a run.
     L.append("<sub>Build your next prompt: **[prompt field guide](FINDINGS.md)** "
              "· [VOCABULARY.md](VOCABULARY.md) · [TEMPLATES.md](TEMPLATES.md) "
+             "· [editing recipes](EDITING_RECIPES.md) "
              "· [style recipes](styles/README.md) "
              "· [generation settings](REPRODUCING.md)</sub>\n")
 

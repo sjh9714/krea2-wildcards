@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sjh9714.github.io/krea2-wildcards/sitemap.xml

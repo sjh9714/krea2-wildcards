@@ -7,7 +7,12 @@
 <meta property="og:title" content="499 Krea 2 Turbo prompts with images">
 <meta property="og:description" content="Browse 499 Krea 2 Turbo prompts with generated examples. Search, save favorites, copy prompts, or download ComfyUI wildcards.">
 <meta property="og:url" content="https://sjh9714.github.io/krea2-wildcards/">
-<meta property="og:image" content="https://sjh9714.github.io/krea2-wildcards/hero.webp">
+<meta property="og:image" content="https://sjh9714.github.io/krea2-wildcards/social-preview.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="499 Krea 2 Turbo prompts with images">
+<meta name="twitter:description" content="Browse 499 Krea 2 Turbo prompts with generated examples. Search, save favorites, copy prompts, or download ComfyUI wildcards.">
+<meta name="twitter:image" content="https://sjh9714.github.io/krea2-wildcards/social-preview.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"499 Krea 2 Turbo prompts with images","description":"Browse 499 Krea 2 Turbo prompts with generated examples. Search, save favorites, copy prompts, or download ComfyUI wildcards.","url":"https://sjh9714.github.io/krea2-wildcards/","mainEntity":{"@type":"Dataset","name":"Krea 2 Turbo prompt and image catalog","description":"Browse 499 Krea 2 Turbo prompts with generated examples. Search, save favorites, copy prompts, or download ComfyUI wildcards.","url":"https://sjh9714.github.io/krea2-wildcards/","license":"https://github.com/sjh9714/krea2-wildcards/blob/main/LICENSE","creator":{"@type":"Person","name":"sjh9714","url":"https://github.com/sjh9714"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/zip","contentUrl":"https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://github.com/sjh9714/krea2-wildcards/raw/main/prompts.json"}]}}</script>
 <style>
 :root{--bg:#f6f5f1;--fg:#171918;--mut:#656b68;--line:#d9d8d2;--acc:#175c49;--card:#fff;--panel:#eeede8}
 @media(prefers-color-scheme:dark){:root{--bg:#101210;--fg:#e9ebe7;--mut:#929892;--line:#30342f;--acc:#6dc9a8;--card:#191c19;--panel:#202420}}
@@ -24,6 +29,7 @@ h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 10px;letter-spacing:-.02em}
 .actions a:first-child{background:var(--acc);border-color:var(--acc);color:var(--bg)}
 .actions a:hover{border-color:var(--acc)}
 .actions a:active,.cp:active,.fav:active,.select:active,.cardshare:active,.toolbtn:active,#favonly:active,#close:active,#closecompare:active{transform:translateY(1px)}
+.guides{display:flex;flex-wrap:wrap;gap:7px 14px;margin:24px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:.82rem}.guides b{color:var(--fg)}.guides a{text-decoration:none}.guides a:hover{text-decoration:underline}
 h2{font-size:1.35rem;margin:56px 0 6px;letter-spacing:-.01em;scroll-margin-top:12px}
 /* Anchors on a page this tall are useless if the browser lands mid-image,
    and lazy-loaded figures above the target shift it as they resolve. The
@@ -105,7 +111,8 @@ dialog::backdrop{background:#000b}
 <header id="top">
 <h1>499 Krea 2 Turbo prompts</h1>
 <p class=sub>Browse by category, save the ones you like, and copy any prompt. Every card includes the image it generated.</p>
-<nav class=actions aria-label="Project actions"><a href="https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip">Download wildcards</a><a href="https://github.com/sjh9714/krea2-wildcards">Star on GitHub</a><a href="https://github.com/sjh9714/krea2-wildcards/subscription">Watch releases</a></nav>
+<nav class=actions aria-label="Project actions"><a href="https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip?utm_source=pages&utm_medium=website&utm_campaign=v1_2_launch&utm_content=catalog_zip">Download wildcards</a><a href="https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-native-starter.json?utm_source=pages&utm_medium=website&utm_campaign=v1_2_launch&utm_content=catalog_workflow">ComfyUI workflow</a><a href="https://github.com/sjh9714/krea2-wildcards?utm_source=pages&utm_medium=website&utm_campaign=v1_2_launch&utm_content=catalog_github">Star on GitHub</a><a href="https://github.com/sjh9714/krea2-wildcards/subscription?utm_source=pages&utm_medium=website&utm_campaign=v1_2_launch&utm_content=catalog_watch">Watch releases</a></nav>
+<nav class=guides aria-label="Focused guides"><b>Guides</b><a href="guides/comfyui-krea2-workflow/">ComfyUI workflow</a><a href="guides/krea2-product-photography-prompts/">Product</a><a href="guides/krea2-editorial-fashion-prompts/">Fashion</a><a href="guides/krea2-interior-architecture-prompts/">Interiors</a><a href="guides/krea2-prompt-guide/">Prompt guide</a><a href="guides/krea2-image-editing-recipes/">Image editing</a></nav>
 <p class=meta><a href="https://github.com/sjh9714/krea2-wildcards">github.com/sjh9714/krea2-wildcards</a></p>
 </header>
 <div class=tools>
@@ -993,7 +1000,7 @@ dialog::backdrop{background:#000b}
 <p id=empty hidden>No prompts match these filters. Try another search or category.</p>
 <dialog id=viewer aria-label="Full-size prompt image"><img id=viewimage alt=""><div class=viewerbar><p id=viewtitle></p><button id=close type=button aria-label="Close image viewer">close</button></div></dialog>
 <dialog id=compareviewer aria-label="Compare selected prompts"><div class=dialoghead><h2>Compare selected prompts</h2><button id=closecompare type=button aria-label="Close comparison">close</button></div><p class=comparNote id=comparenote></p><div class=comparegrid id=comparegrid></div></dialog>
-<footer>Prompts are MIT. The images are AI-generated output from Krea 2 Turbo, presented as model output rather than as photographs or human artwork, and were produced by the repository owner under the Krea 2 Community License. Recorded seeds or Krea generation asset IDs are included in the repository. Images are re-encoded from PNG to WebP to keep the repository easy to clone.</footer>
+<footer><p><a href="guides/comfyui-krea2-workflow/">ComfyUI workflow</a> · <a href="guides/krea2-product-photography-prompts/">Product prompts</a> · <a href="guides/krea2-editorial-fashion-prompts/">Fashion prompts</a> · <a href="guides/krea2-interior-architecture-prompts/">Interior prompts</a> · <a href="guides/krea2-image-editing-recipes/">Editing recipes</a></p><p>Prompts are MIT. The images are AI-generated output from Krea 2 Turbo, presented as model output rather than as photographs or human artwork, and were produced by the repository owner under the Krea 2 Community License. Recorded seeds or Krea generation asset IDs are included in the repository. Images are re-encoded from PNG to WebP to keep the repository easy to clone.</p></footer>
 <script>
 
 document.documentElement.classList.remove('nojs');

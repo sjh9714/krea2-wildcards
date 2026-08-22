@@ -59,10 +59,16 @@ def main() -> int:
     both = entries + failures
     c = Check()
 
-    print("seeds")
+    print("generation provenance")
     seed = lambda e: (e.get("params") or {}).get("seed")
-    missing = [e["id"] for e in both if seed(e) is None]
-    c(not missing, f"all {len(both)} generations carry a seed", f"missing on {missing[:5]}")
+    asset = lambda e: (e.get("params") or {}).get("generation_id")
+    missing = [e["id"] for e in both if seed(e) is None and not asset(e)]
+    c(not missing, f"all {len(both)} generations carry a seed or asset ID",
+      f"missing on {missing[:5]}")
+    web = [e for e in entries if (e.get("params") or {}).get("provider") == "krea-web"]
+    web_bad = [e["id"] for e in web if not asset(e) or not e["params"].get("aspect_ratio")]
+    c(not web_bad, f"all {len(web)} Krea web entries carry asset ID and aspect ratio",
+      f"missing on {web_bad[:5]}")
 
     print("\nimages")
     named = {e["image"] for e in both}
@@ -437,11 +443,23 @@ def main() -> int:
         favs = len(re.findall(r'<button class=fav[^>]*aria-label=', html_t))
         c(favs == shown, f"every one of the {shown} entries has an accessible save button"
                          + (f", found {favs}" if favs != shown else ""))
-        stable = len(re.findall(r'<figure data-id="[^"]+" data-cat=', html_t))
+        stable = len(re.findall(r'<figure[^>]*data-id="[^"]+"[^>]*data-cat=', html_t))
         c(stable == shown, f"every one of the {shown} entries has a stable browser-save id"
                            + (f", found {stable}" if stable != shown else ""))
         c('<dialog id=viewer' in html_t and 'aria-label="Close image viewer"' in html_t,
           "the gallery has an accessible full-size image viewer")
+        selects = len(re.findall(r'<button class=select[^>]*aria-label=', html_t))
+        c(selects == shown, f"every one of the {shown} entries can be selected for comparison"
+                             + (f", found {selects}" if selects != shown else ""))
+        c('<dialog id=compareviewer' in html_t and 'id=compareselected' in html_t
+          and 'id=downloadselected' in html_t,
+          "the gallery compares and downloads selected prompts")
+        c('id=exportsaved' in html_t and 'id=importsaved' in html_t
+          and 'krea2-wildcards-favorites' in html_t,
+          "saved prompts can be exported and imported")
+        c('URLSearchParams' in html_t and 'history.replaceState' in html_t
+          and 'id=share' in html_t and 'cardshare' in html_t,
+          "filters and individual cards have shareable URLs")
         c('id=empty' in html_t, "the gallery has an empty state for combined filters")
         c('id="failures"' not in html_t and 'class=fail' not in html_t,
           "the prompt gallery stays focused on usable prompts")
@@ -557,8 +575,9 @@ def main() -> int:
         edits = [e for e in d["entries"] if e["category"] == "editing"]
         c(all("strength" in e and "source" in e for e in edits),
           f"all {len(edits)} editing entries carry source and strength")
-        c(all("seed" in e.get("params", {}) for e in d["entries"]),
-          "every entry carries a seed")
+        c(all("seed" in e.get("params", {}) or "generation_id" in e.get("params", {})
+              for e in d["entries"]),
+          "every entry carries a seed or Krea generation asset ID")
 
     # The README carried 19,605 characters of failure table, 56% of the file and a
     # verbatim duplicate of docs/gallery-failures.md and index.html, while the

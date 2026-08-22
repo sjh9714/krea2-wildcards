@@ -459,7 +459,7 @@ A weathered enamel tin sign nailed to a barn wall reading exactly "FRESH EGGS" i
 
 ## product
 
-_Product and packaging shots, studio and in-context_
+_Products shown as clean hero images, studio still lifes, and campaign-ready details_
 
 ### 1. Perfume bottle, hard light
 
@@ -710,6 +710,60 @@ A road bike's rear cassette and derailleur photographed side-on, chain grimy wit
 `seed: 1450341996` · `product-018`
 
 <sub>vocabulary: `macro` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 19. Frosted serum on travertine
+
+<img src="../images/product-019.webp" width="420" alt="Frosted serum on travertine">
+
+```text
+Premium skincare serum product photograph, one frosted glass dropper bottle without readable text on a warm travertine block, three-quarter hero angle, hard morning sunlight casting a clean diagonal shadow, pale sand backdrop, tiny condensation beads, crisp commercial retouching.
+```
+
+`Krea asset: 8cb14e75-77dc-479c-93ed-cc46a5f9edd4` · `aspect: 1:1` · `product-019`
+
+<sub>vocabulary: `frosted`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 20. Headphones over polished chrome
+
+<img src="../images/product-020.webp" width="420" alt="Headphones over polished chrome">
+
+```text
+Matte black over-ear headphones suspended just above a polished chrome surface, front three-quarter product view, two narrow white strip lights defining the earcups, deep charcoal studio background, precise reflections, premium technology campaign, no text or extra objects.
+```
+
+`Krea asset: 31279c4e-1b11-4bca-a797-247aee1d096a` · `aspect: 1:1` · `product-020`
+
+<sub>vocabulary: `matte`, `polished`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 21. Coral performance running shoe
+
+<img src="../images/product-021.webp" width="420" alt="Coral performance running shoe">
+
+```text
+Single coral-red performance running shoe in a dynamic side profile on a softly rippled grey surface, small dust particles kicked up behind the heel, hard rim light and large soft key, visible mesh and foam texture, energetic sports advertising image, no logos or text.
+```
+
+`Krea asset: 13d51978-d404-44a1-b622-4f3df6885cfb` · `aspect: 1:1` · `product-021`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 22. Green-dial steel watch
+
+<img src="../images/product-022.webp" width="420" alt="Green-dial steel watch">
+
+```text
+Luxury wristwatch macro product photograph, brushed steel case and dark green dial resting on folded charcoal fabric, low three-quarter angle, controlled pin highlights tracing the bezel, deep soft shadows, 100mm macro lens, sharp material detail, understated horology campaign.
+```
+
+`Krea asset: 2c38e709-cfd8-4cc2-a737-0963d1610d4e` · `aspect: 1:1` · `product-022`
+
+<sub>vocabulary: `macro`, `soft shadow`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1719,7 +1773,7 @@ Open bamboo steamer of pleated dumplings, translucent wrappers showing the filli
 
 ## interior
 
-_Rooms, architecture, spatial light_
+_Rooms, hospitality spaces, practical layouts, and spatial light_
 
 ### 1. Sunlit reading corner
 
@@ -1856,6 +1910,70 @@ A loft mid-renovation: plaster dust, a stepladder, plastic sheeting over a windo
 ```
 
 `seed: 736283544` · `interior-010`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 11. Pale birch Japandi living room
+
+<img src="../images/interior-011.webp" width="420" alt="Pale birch Japandi living room">
+
+```text
+Wide interior photograph of a calm Japandi living room with pale birch joinery, low linen sofa and one black ceramic vessel, eye-level view from the doorway, soft overcast north light, honest wood grain and woven texture, warm off-white walls, uncluttered lived-in realism.
+```
+
+`Krea asset: b295907a-aa89-4246-a591-4295a6b6799c` · `aspect: 3:2` · `interior-011`
+
+<sub>vocabulary: `grain` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 12. Oxblood counter neighborhood cafe
+
+<img src="../images/interior-012.webp" width="420" alt="Oxblood counter neighborhood cafe">
+
+```text
+Compact neighborhood cafe interior combining 1970s chrome, oxblood-red laminate and cream tile, wide view from the entrance toward a curved counter, late-morning sunlight across the floor, three occupied stools without prominent faces, candid architectural photography, crisp material detail.
+```
+
+`Krea asset: ba45b5e2-a224-4e56-8324-1178e6ac05a2` · `aspect: 3:2` · `interior-012`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 13. Brutalist clerestory bedroom
+
+<img src="../images/interior-013.webp" width="420" alt="Brutalist clerestory bedroom">
+
+```text
+Brutalist bedroom interior with board-formed concrete walls, a low walnut bed and rust-colored wool blanket, symmetrical frontal composition, narrow clerestory daylight creating one soft band across the room, restrained warm-grey palette, quiet tactile architectural photography.
+```
+
+`Krea asset: 4cc318da-8974-4809-937b-fe5808dda385` · `aspect: 3:2` · `interior-013`
+
+<sub>vocabulary: `palette`, `symmetrical` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 14. Plaster stair hotel lobby
+
+<img src="../images/interior-014.webp" width="420" alt="Plaster stair hotel lobby">
+
+```text
+Boutique hotel lobby with a sculptural cream plaster staircase, deep green velvet seating and a large paper pendant, wide corner composition showing circulation and scale, warm indirect evening light with subtle practical lamps, editorial hospitality photography, refined but welcoming.
+```
+
+`Krea asset: 51f6d09a-af04-4cad-8b1d-9d58e02dbdec` · `aspect: 3:2` · `interior-014`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 15. Compact sage apartment kitchen
+
+<img src="../images/interior-015.webp" width="420" alt="Compact sage apartment kitchen">
+
+```text
+Small city apartment kitchen designed for real use, sage-green flat-panel cabinets, stainless worktop and open oak shelf with a few everyday ceramics, diagonal view from the dining area, bright diffuse morning light, realistic proportions, clean contemporary interiors magazine photograph.
+```
+
+`Krea asset: bad60e27-460d-45f9-bc5c-e18e70dbef07` · `aspect: 3:2` · `interior-015`
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2532,245 +2650,5 @@ A horse turning in a dusty paddock with low sun directly behind, the raised dust
 `seed: 2049057806` · `animal-010`
 
 <sub>vocabulary: `silhouette` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## landscape
-
-_Land, weather and light at scale_
-
-### 1. Storm light over ridgeline
-
-<img src="../images/landscape-001.webp" width="420" alt="Storm light over ridgeline">
-
-```text
-A mountain ridgeline under breaking storm light: dark cloud filling the upper frame, a single shaft of sun striking one slope and leaving the rest in shadow. Wet rock, no people, no path. 70mm, high contrast, cold shadows and warm highlight.
-```
-
-`seed: 1853365286` · `landscape-001`
-
-<sub>vocabulary: `high contrast` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Salt flat at dusk
-
-<img src="../images/landscape-002.webp" width="420" alt="Salt flat at dusk">
-
-```text
-A cracked salt flat stretching to a flat horizon at dusk, the polygon crust catching low pink light, a thin film of water in the nearest cracks reflecting the sky. Ultra-wide, horizon low, nothing else in frame.
-```
-
-`seed: 1866698437` · `landscape-002`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Beech wood in mist
-
-<img src="../images/landscape-003.webp" width="420" alt="Beech wood in mist">
-
-```text
-A beech wood in early morning mist, pale trunks receding in even ranks until they dissolve, leaf litter deep and orange underfoot, light coming from behind the trees. No sky visible, no path, no people. 85mm, compressed.
-```
-
-`seed: 1947533128` · `landscape-003`
-
-<sub>vocabulary: `85mm` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Basalt columns at low tide
-
-<img src="../images/landscape-004.webp" width="420" alt="Basalt columns at low tide">
-
-```text
-Hexagonal basalt columns exposed at low tide, wet and dark, seaweed in the joints, the sea flat and pale behind under overcast light. Shot low so the column tops recede as a stepped surface. Long exposure smoothing the water.
-```
-
-`seed: 1022031261` · `landscape-004`
-
-<sub>vocabulary: `long exposure`, `overcast light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Wheat field before rain
-
-<img src="../images/landscape-005.webp" width="420" alt="Wheat field before rain">
-
-```text
-A wheat field under a bruised sky just before rain, wind laying the crop in moving waves, one distant line of trees, no buildings. The light green-grey and flat except for one pale gap in the cloud. Wide, horizon on the lower third.
-```
-
-`seed: 1820685942` · `landscape-005`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 6. Glacier snout, cold light
-
-<img src="../images/landscape-006.webp" width="420" alt="Glacier snout, cold light">
-
-```text
-The snout of a glacier meeting grey moraine, deep blue compressed ice visible in the crevasses, meltwater running out from beneath. Flat overcast light, no sun, no sky in frame. Scale ambiguous — no people or objects for reference.
-```
-
-`seed: 1365266474` · `landscape-006`
-
-<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 7. Desert dune ridge, first light
-
-<img src="../images/landscape-007.webp" width="420" alt="Desert dune ridge, first light">
-
-```text
-A single dune ridge at first light, the windward face lit warm and the lee face in deep blue shadow, the ridgeline running diagonally across the frame with a crisp unbroken edge. Ripples in the sand catching side light. Nothing else.
-```
-
-`seed: 1077975326` · `landscape-007`
-
-<sub>vocabulary: `side light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 8. Rice terraces in cloud
-
-<img src="../images/landscape-008.webp" width="420" alt="Rice terraces in cloud">
-
-```text
-Flooded rice terraces on a steep hillside with low cloud sitting in the valley below, the water surfaces reflecting a white sky so the terraces read as bright ribbons against dark banks. Overcast, aerial three-quarter view.
-```
-
-`seed: 1381739119` · `landscape-008`
-
-<sub>vocabulary: `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 9. Frozen lake, cracked ice
-
-<img src="../images/landscape-009.webp" width="420" alt="Frozen lake, cracked ice">
-
-```text
-A frozen lake surface shot low and close, cracks radiating and trapped bubbles suspended in the ice, a distant far shore reduced to a thin dark line. Cold blue light, thin snow drifted into the cracks. Ultra-wide, foreground dominant.
-```
-
-`seed: 267516027` · `landscape-009`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 10. Coastal cliff in gale
-
-<img src="../images/landscape-010.webp" width="420" alt="Coastal cliff in gale">
-
-```text
-A coastal cliff in a gale, spray thrown high up the rock face, grass on the clifftop flattened, the sea below white and confused. Grey flat light, no sun. Shot from the clifftop looking along the coast, 35mm, everything wet.
-```
-
-`seed: 1122641191` · `landscape-010`
-
-<sub>vocabulary: `35mm`, `flat light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## fashion
-
-_Garments, textile detail, lookbook and flat lay_
-
-### 1. Wool coat flat lay
-
-<img src="../images/fashion-001.webp" width="420" alt="Wool coat flat lay">
-
-```text
-A charcoal wool overcoat laid flat and shot directly overhead on a pale linen surface, sleeves arranged symmetrically, collar open, horn buttons visible. Soft even light, the wool texture and the twill weave both readable. No model, no props.
-```
-
-`seed: 1025323172` · `fashion-001`
-
-<sub>vocabulary: `overhead`, `soft even light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Denim detail, macro
-
-<img src="../images/fashion-002.webp" width="420" alt="Denim detail, macro">
-
-```text
-Macro of a selvedge denim seam: the red-line selvedge edge, chain-stitch run-off, copper rivet, and the indigo faded unevenly along the fold. Raking light so the twill diagonal is visible. Extremely shallow depth of field.
-```
-
-`seed: 374180050` · `fashion-002`
-
-<sub>vocabulary: `macro`, `raking light`, `shallow depth of field` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Silk in motion, studio
-
-<img src="../images/fashion-003.webp" width="420" alt="Silk in motion, studio">
-
-```text
-A length of oyster-coloured silk thrown into the air in a studio and frozen mid-fall, the fabric catching light along its folds and going translucent where it is single-layered. Black background, one hard light from the right, 1/8000s.
-```
-
-`seed: 74128835` · `fashion-003`
-
-<sub>vocabulary: `hard light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Knitwear texture close-up
-
-<img src="../images/fashion-004.webp" width="420" alt="Knitwear texture close-up">
-
-```text
-Close-up of a hand-knitted Aran sweater: cable panels, moss stitch, and a visible join where the yarn changed. Undyed cream wool with the natural halo of the fibre catching soft side light. Fills the frame, slight depth falloff.
-```
-
-`seed: 1554099169` · `fashion-004`
-
-<sub>vocabulary: `close-up`, `side light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Boot on wet cobbles
-
-<img src="../images/fashion-005.webp" width="420" alt="Boot on wet cobbles">
-
-```text
-A single worn leather boot standing on wet cobblestones, laces uneven, the toe scuffed pale, welt stitching visible, reflections in the water between the stones. Overcast light, low camera, shallow focus falling off behind.
-```
-
-`seed: 2059154957` · `fashion-005`
-
-<sub>vocabulary: `overcast light`, `shallow focus`, `worn` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 6. Sunglasses on stone, hard light
-
-<img src="../images/fashion-006.webp" width="420" alt="Sunglasses on stone, hard light">
-
-```text
-A pair of tortoiseshell sunglasses resting on warm limestone in hard midday sun, the frame casting a crisp double shadow, the lenses reflecting a slice of blue sky. Product-grade but shot outdoors. Macro, top-down, high contrast.
-```
-
-`seed: 1961244750` · `fashion-006`
-
-<sub>vocabulary: `high contrast`, `macro`, `top-down` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 7. Pleated skirt, wind
-
-<img src="../images/fashion-008.webp" width="420" alt="Pleated skirt, wind">
-
-```text
-A pleated midi skirt caught by wind against a plain concrete wall, the pleats opening into a fan and each fold catching a different value of the same colour. Waist down only, hard afternoon side light, sharp shadow on the wall.
-```
-
-`seed: 1497786953` · `fashion-008`
-
-<sub>vocabulary: `side light` · [what each one does](../VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>

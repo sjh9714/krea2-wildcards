@@ -1,4 +1,354 @@
 [← the categories](gallery.md)
+## landscape
+
+_Land, weather and light at scale_
+
+### 1. Storm light over ridgeline
+
+<img src="../images/landscape-001.webp" width="420" alt="Storm light over ridgeline">
+
+```text
+A mountain ridgeline under breaking storm light: dark cloud filling the upper frame, a single shaft of sun striking one slope and leaving the rest in shadow. Wet rock, no people, no path. 70mm, high contrast, cold shadows and warm highlight.
+```
+
+`seed: 1853365286` · `landscape-001`
+
+<sub>vocabulary: `high contrast` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Salt flat at dusk
+
+<img src="../images/landscape-002.webp" width="420" alt="Salt flat at dusk">
+
+```text
+A cracked salt flat stretching to a flat horizon at dusk, the polygon crust catching low pink light, a thin film of water in the nearest cracks reflecting the sky. Ultra-wide, horizon low, nothing else in frame.
+```
+
+`seed: 1866698437` · `landscape-002`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Beech wood in mist
+
+<img src="../images/landscape-003.webp" width="420" alt="Beech wood in mist">
+
+```text
+A beech wood in early morning mist, pale trunks receding in even ranks until they dissolve, leaf litter deep and orange underfoot, light coming from behind the trees. No sky visible, no path, no people. 85mm, compressed.
+```
+
+`seed: 1947533128` · `landscape-003`
+
+<sub>vocabulary: `85mm` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Basalt columns at low tide
+
+<img src="../images/landscape-004.webp" width="420" alt="Basalt columns at low tide">
+
+```text
+Hexagonal basalt columns exposed at low tide, wet and dark, seaweed in the joints, the sea flat and pale behind under overcast light. Shot low so the column tops recede as a stepped surface. Long exposure smoothing the water.
+```
+
+`seed: 1022031261` · `landscape-004`
+
+<sub>vocabulary: `long exposure`, `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 5. Wheat field before rain
+
+<img src="../images/landscape-005.webp" width="420" alt="Wheat field before rain">
+
+```text
+A wheat field under a bruised sky just before rain, wind laying the crop in moving waves, one distant line of trees, no buildings. The light green-grey and flat except for one pale gap in the cloud. Wide, horizon on the lower third.
+```
+
+`seed: 1820685942` · `landscape-005`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 6. Glacier snout, cold light
+
+<img src="../images/landscape-006.webp" width="420" alt="Glacier snout, cold light">
+
+```text
+The snout of a glacier meeting grey moraine, deep blue compressed ice visible in the crevasses, meltwater running out from beneath. Flat overcast light, no sun, no sky in frame. Scale ambiguous — no people or objects for reference.
+```
+
+`seed: 1365266474` · `landscape-006`
+
+<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 7. Desert dune ridge, first light
+
+<img src="../images/landscape-007.webp" width="420" alt="Desert dune ridge, first light">
+
+```text
+A single dune ridge at first light, the windward face lit warm and the lee face in deep blue shadow, the ridgeline running diagonally across the frame with a crisp unbroken edge. Ripples in the sand catching side light. Nothing else.
+```
+
+`seed: 1077975326` · `landscape-007`
+
+<sub>vocabulary: `side light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 8. Rice terraces in cloud
+
+<img src="../images/landscape-008.webp" width="420" alt="Rice terraces in cloud">
+
+```text
+Flooded rice terraces on a steep hillside with low cloud sitting in the valley below, the water surfaces reflecting a white sky so the terraces read as bright ribbons against dark banks. Overcast, aerial three-quarter view.
+```
+
+`seed: 1381739119` · `landscape-008`
+
+<sub>vocabulary: `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 9. Frozen lake, cracked ice
+
+<img src="../images/landscape-009.webp" width="420" alt="Frozen lake, cracked ice">
+
+```text
+A frozen lake surface shot low and close, cracks radiating and trapped bubbles suspended in the ice, a distant far shore reduced to a thin dark line. Cold blue light, thin snow drifted into the cracks. Ultra-wide, foreground dominant.
+```
+
+`seed: 267516027` · `landscape-009`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 10. Coastal cliff in gale
+
+<img src="../images/landscape-010.webp" width="420" alt="Coastal cliff in gale">
+
+```text
+A coastal cliff in a gale, spray thrown high up the rock face, grass on the clifftop flattened, the sea below white and confused. Grey flat light, no sun. Shot from the clifftop looking along the coast, 35mm, everything wet.
+```
+
+`seed: 1122641191` · `landscape-010`
+
+<sub>vocabulary: `35mm`, `flat light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+## fashion
+
+_Garments, textile detail, lookbook and flat lay_
+
+### 1. Wool coat flat lay
+
+<img src="../images/fashion-001.webp" width="420" alt="Wool coat flat lay">
+
+```text
+A charcoal wool overcoat laid flat and shot directly overhead on a pale linen surface, sleeves arranged symmetrically, collar open, horn buttons visible. Soft even light, the wool texture and the twill weave both readable. No model, no props.
+```
+
+`seed: 1025323172` · `fashion-001`
+
+<sub>vocabulary: `overhead`, `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Denim detail, macro
+
+<img src="../images/fashion-002.webp" width="420" alt="Denim detail, macro">
+
+```text
+Macro of a selvedge denim seam: the red-line selvedge edge, chain-stitch run-off, copper rivet, and the indigo faded unevenly along the fold. Raking light so the twill diagonal is visible. Extremely shallow depth of field.
+```
+
+`seed: 374180050` · `fashion-002`
+
+<sub>vocabulary: `macro`, `raking light`, `shallow depth of field` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Silk in motion, studio
+
+<img src="../images/fashion-003.webp" width="420" alt="Silk in motion, studio">
+
+```text
+A length of oyster-coloured silk thrown into the air in a studio and frozen mid-fall, the fabric catching light along its folds and going translucent where it is single-layered. Black background, one hard light from the right, 1/8000s.
+```
+
+`seed: 74128835` · `fashion-003`
+
+<sub>vocabulary: `hard light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Knitwear texture close-up
+
+<img src="../images/fashion-004.webp" width="420" alt="Knitwear texture close-up">
+
+```text
+Close-up of a hand-knitted Aran sweater: cable panels, moss stitch, and a visible join where the yarn changed. Undyed cream wool with the natural halo of the fibre catching soft side light. Fills the frame, slight depth falloff.
+```
+
+`seed: 1554099169` · `fashion-004`
+
+<sub>vocabulary: `close-up`, `side light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 5. Boot on wet cobbles
+
+<img src="../images/fashion-005.webp" width="420" alt="Boot on wet cobbles">
+
+```text
+A single worn leather boot standing on wet cobblestones, laces uneven, the toe scuffed pale, welt stitching visible, reflections in the water between the stones. Overcast light, low camera, shallow focus falling off behind.
+```
+
+`seed: 2059154957` · `fashion-005`
+
+<sub>vocabulary: `overcast light`, `shallow focus`, `worn` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 6. Sunglasses on stone, hard light
+
+<img src="../images/fashion-006.webp" width="420" alt="Sunglasses on stone, hard light">
+
+```text
+A pair of tortoiseshell sunglasses resting on warm limestone in hard midday sun, the frame casting a crisp double shadow, the lenses reflecting a slice of blue sky. Product-grade but shot outdoors. Macro, top-down, high contrast.
+```
+
+`seed: 1961244750` · `fashion-006`
+
+<sub>vocabulary: `high contrast`, `macro`, `top-down` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 7. Pleated skirt, wind
+
+<img src="../images/fashion-008.webp" width="420" alt="Pleated skirt, wind">
+
+```text
+A pleated midi skirt caught by wind against a plain concrete wall, the pleats opening into a fan and each fold catching a different value of the same colour. Waist down only, hard afternoon side light, sharp shadow on the wall.
+```
+
+`seed: 1497786953` · `fashion-008`
+
+<sub>vocabulary: `side light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 8. Sculptural silver ear cuff beauty
+
+<img src="../images/fashion-009.webp" width="420" alt="Sculptural silver ear cuff beauty">
+
+```text
+Editorial beauty portrait of a model with a sculptural silver ear cuff and wet-look black hair, head and shoulders against warm grey paper, direct gaze, soft frontal light with a narrow rim, quiet luxury mood, fine 35mm grain, visible skin texture, restrained charcoal and silver palette.
+```
+
+`Krea asset: 9363ad22-9743-474f-af61-d5b0942f560f` · `aspect: 2:3` · `fashion-009`
+
+<sub>vocabulary: `35mm`, `grain`, `palette`, `warm grey` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 9. Camel tailoring on cobalt stairs
+
+<img src="../images/fashion-010.webp" width="420" alt="Camel tailoring on cobalt stairs">
+
+```text
+Full-length editorial photograph of a model in an oversized camel wool suit on cobalt-blue concrete stairs, low camera angle, precise triangular pose, hard late-afternoon side light, crisp tailoring texture, deep blue shadows, 50mm lens, refined modern campaign.
+```
+
+`Krea asset: 9d6ffdea-b1f7-46f7-a1d9-56a6d59d19b7` · `aspect: 2:3` · `fashion-010`
+
+<sub>vocabulary: `50mm`, `side light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 10. Black satin in a concrete gallery
+
+<img src="../images/fashion-011.webp" width="420" alt="Black satin in a concrete gallery">
+
+```text
+Full-length fashion editorial of a model in a liquid black satin evening dress inside a raw concrete gallery, centered stance with generous negative space, soft bounced flash and cool skylight, restrained monochrome palette, subtle film grain, quiet dramatic luxury.
+```
+
+`Krea asset: 2627782b-7105-4043-8dfd-f5c4dd3c076d` · `aspect: 2:3` · `fashion-011`
+
+<sub>vocabulary: `grain`, `monochrome`, `palette` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 11. Vermilion knitwear in motion
+
+<img src="../images/fashion-012.webp" width="420" alt="Vermilion knitwear in motion">
+
+```text
+Dynamic studio fashion photograph of a model wearing sculptural vermilion knitwear, fabric and sleeves caught in a strong side wind against a powder-blue cyclorama, mid-stride pose, sharp 1/500-second motion freeze, bright clean light, tactile wool fibers.
+```
+
+`Krea asset: aa027599-cb09-4cea-a106-f9095c6f1b81` · `aspect: 2:3` · `fashion-012`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 12. Technical trench after rain
+
+<img src="../images/fashion-013.webp" width="420" alt="Technical trench after rain">
+
+```text
+Night street-style editorial of a model in a translucent technical trench coat after rain, three-quarter walking pose, wet pavement reflecting magenta and amber storefront light, direct on-camera flash balanced with neon ambience, 50mm documentary framing, premium magazine finish.
+```
+
+`Krea asset: f7b3019f-bdb1-4aa7-b02c-6fa094a9ab21` · `aspect: 2:3` · `fashion-013`
+
+<sub>vocabulary: `50mm`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 13. Cobalt eyeliner beauty
+
+<img src="../images/fashion-014.webp" width="420" alt="Cobalt eyeliner beauty">
+
+```text
+Close beauty editorial of a freckled model wearing graphic cobalt eyeliner and a single pearl earring, face turned slightly toward a broad north-window light, off-white plaster background, natural skin texture, 85mm lens, clean cosmetic campaign, restrained blue and ivory palette.
+```
+
+`Krea asset: edb581d6-89c1-496f-8436-e35add65758d` · `aspect: 2:3` · `fashion-014`
+
+<sub>vocabulary: `85mm`, `palette`, `window light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 14. Cream linen on the salt flat
+
+<img src="../images/fashion-015.webp" width="420" alt="Cream linen on the salt flat">
+
+```text
+Menswear editorial on a pale salt flat at golden hour, model in an unstructured cream linen suit and open-collar shirt, relaxed full-body stance, long soft shadow, warm backlight with a silver reflector on the face, airy tonal palette, fine analog grain.
+```
+
+`Krea asset: c57c881b-55e7-44d8-9868-9174ffffa314` · `aspect: 2:3` · `fashion-015`
+
+<sub>vocabulary: `grain`, `palette`, `soft shadow` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 15. Oxblood handbag campaign
+
+<img src="../images/fashion-016.webp" width="420" alt="Oxblood handbag campaign">
+
+```text
+Accessories campaign portrait of a model holding a geometric oxblood leather handbag at shoulder height, cropped waist-up against dark burgundy seamless paper, one narrow softbox carving the bag edges, calm direct gaze, glossy leather detail, elegant tonal styling.
+```
+
+`Krea asset: b1b02081-67c1-480f-af72-bb13c2a2cee5` · `aspect: 2:3` · `fashion-016`
+
+<sub>vocabulary: `seamless` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
 ## automotive
 
 _Cars and motorcycles, studio and location_
@@ -2618,303 +2968,5 @@ A long queue of people waiting along a plain brick wall in flat overcast light, 
 `seed: 1179753599` · `crowd-008`
 
 <sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## weave
-
-_A controlled experiment: rope and chain from separable to fully interpenetrating, one surface and one light throughout_
-
-### 1. Weave: three separate ropes
-
-<img src="../images/weave-1.webp" width="420" alt="Weave: three separate ropes">
-
-```text
-Three separate lengths of natural hemp rope lying parallel and not touching on a plain grey concrete surface, shot from directly above under soft even light. Fibre twist clearly visible on each. Nothing else in frame.
-```
-
-`seed: 806878733` · `weave-1`
-
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Weave: two ropes crossing
-
-<img src="../images/weave-2.webp" width="420" alt="Weave: two ropes crossing">
-
-```text
-Two lengths of natural hemp rope crossing over each other in a simple X on a plain grey concrete surface, shot from directly above under soft even light. Fibre twist clearly visible, one rope plainly lying on top of the other. Nothing else in frame.
-```
-
-`seed: 1857044032` · `weave-2`
-
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Weave: overhand knot
-
-<img src="../images/weave-3.webp" width="420" alt="Weave: overhand knot">
-
-```text
-A single overhand knot tied loosely in a length of natural hemp rope on a plain grey concrete surface, shot from directly above under soft even light. The rope passes through its own loop once. Fibre twist clearly visible. Nothing else in frame.
-```
-
-`seed: 620932301` · `weave-3`
-
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Weave: two chain links
-
-<img src="../images/weave-5.webp" width="420" alt="Weave: two chain links">
-
-```text
-Exactly 2 steel chain links interlocked with each other, lying on a plain grey concrete surface, shot from directly above under soft even light. Each link a closed oval of round bar, one passing through the other. Nothing else in frame.
-```
-
-`seed: 728314033` · `weave-5`
-
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Weave: a length of chain
-
-<img src="../images/weave-6.webp" width="420" alt="Weave: a length of chain">
-
-```text
-A short length of heavy steel chain lying in a loose S on a plain grey concrete surface, shot from directly above under soft even light. Every link a closed oval of round bar passing through its two neighbours. Nothing else in frame.
-```
-
-`seed: 488066171` · `weave-6`
-
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 6. Weave: basket wall
-
-<img src="../images/weave-7.webp" width="420" alt="Weave: basket wall">
-
-```text
-A close view of the woven wall of a willow basket, the horizontal weavers passing alternately in front of and behind the vertical stakes. Soft even light, shot square on, the weave filling the frame. Nothing else visible.
-```
-
-`seed: 1404524049` · `weave-7`
-
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 7. Weave: drawn knotwork
-
-<img src="../images/weave-8.webp" width="420" alt="Weave: drawn knotwork">
-
-```text
-A drawn Celtic knotwork panel in black ink on cream paper: a single continuous interlaced band that passes alternately over and under itself throughout, no breaks, no colour, no border decoration. Flat, straight on, filling the frame.
-```
-
-`seed: 1984874786` · `weave-8`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## tattoo
-
-_Flash sheets and applied work_
-
-### 1. American traditional flash sheet
-
-<img src="../images/tattoo-001.webp" width="420" alt="American traditional flash sheet">
-
-```text
-An American traditional tattoo flash sheet on aged paper: a swallow, an anchor, a dagger and a rose arranged with space between them, bold black outlines, limited flat colour in red, green and yellow. No text, no border.
-```
-
-`seed: 1798763568` · `tattoo-001`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Fine-line botanical, forearm
-
-<img src="../images/tattoo-002.webp" width="420" alt="Fine-line botanical, forearm">
-
-```text
-A fine-line botanical tattoo on a forearm, single-weight black line with no shading, a sprig of yarrow following the muscle. Skin slightly reddened around the fresh work, natural window light, the rest of the arm out of focus.
-```
-
-`seed: 586501771` · `tattoo-002`
-
-<sub>vocabulary: `window light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Japanese sleeve, wave and koi
-
-<img src="../images/tattoo-003.webp" width="420" alt="Japanese sleeve, wave and koi">
-
-```text
-A Japanese-style tattoo sleeve photographed on an upper arm: a koi against stylised wave patterns, bold black linework with grey wash and limited colour, the background waves flowing around the muscle. Studio light, plain backdrop.
-```
-
-`seed: 1099487398` · `tattoo-003`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Blackwork geometric
-
-<img src="../images/tattoo-004.webp" width="420" alt="Blackwork geometric">
-
-```text
-A blackwork geometric tattoo on a calf: dense solid black shapes with negative-space skin lines between them, sharp edges, no grey and no colour. Raking light so the fresh ink sits slightly proud. Plain background.
-```
-
-`seed: 472089204` · `tattoo-004`
-
-<sub>vocabulary: `raking light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Stick and poke, small
-
-<img src="../images/tattoo-005.webp" width="420" alt="Stick and poke, small">
-
-```text
-A small hand-poked tattoo on the inside of a wrist: a simple crescent moon in slightly uneven dots, the line wobbling where the hand moved. Macro, natural light, skin texture and fine hairs visible.
-```
-
-`seed: 445435906` · `tattoo-005`
-
-<sub>vocabulary: `macro` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 6. Woodcut-style raven
-
-<img src="../images/tattoo-006.webp" width="420" alt="Woodcut-style raven">
-
-```text
-A woodcut-style tattoo of a raven on a shoulder blade, heavy parallel hatching for the shading and bold contour lines, no grey wash, no colour. Soft directional light, the shoulder turned away from camera.
-```
-
-`seed: 708038755` · `tattoo-006`
-
-<sub>vocabulary: `directional light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 7. Flash sheet, ocean set
-
-<img src="../images/tattoo-007.webp" width="420" alt="Flash sheet, ocean set">
-
-```text
-A tattoo flash sheet of ocean motifs on off-white paper: a lighthouse, a whale tail, a compass rose and a knotted rope, evenly spaced, bold outlines with muted flat colour. No text anywhere on the sheet.
-```
-
-`seed: 943002415` · `tattoo-007`
-
-<sub>vocabulary: `muted` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## pixel-art
-
-_Low-resolution sprite and tile work_
-
-### 1. Pixel tileset, dungeon
-
-<img src="../images/pixel-art-001.webp" width="420" alt="Pixel tileset, dungeon">
-
-```text
-A pixel-art tileset for a dungeon: stone floor, wall, door and stair tiles laid out in a grid, hard-edged pixels with no anti-aliasing, a limited palette of about sixteen colours. Chunky and readable at small size. No text.
-```
-
-`seed: 808571885` · `pixel-art-001`
-
-<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Isometric pixel room
-
-<img src="../images/pixel-art-003.webp" width="420" alt="Isometric pixel room">
-
-```text
-An isometric pixel-art room: a desk, a bed, a rug and a window, drawn on a strict 2:1 isometric grid with hard pixel edges and dithered shading. Muted palette, no anti-aliasing, no text.
-```
-
-`seed: 1079501690` · `pixel-art-003`
-
-<sub>vocabulary: `isometric`, `muted palette` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Pixel landscape, parallax
-
-<img src="../images/pixel-art-004.webp" width="420" alt="Pixel landscape, parallax">
-
-```text
-A pixel-art side-scrolling landscape with three depth layers: dark foreground trees, mid-ground hills, pale distant mountains, each flatter and lighter than the last. Hard pixel edges, dithered skies, limited palette.
-```
-
-`seed: 1194676723` · `pixel-art-004`
-
-<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Pixel food icons
-
-<img src="../images/pixel-art-005.webp" width="420" alt="Pixel food icons">
-
-```text
-A grid of sixteen pixel-art food icons — bread, fish, apple, cheese and so on — each drawn in a small square cell with hard pixel edges, black outlines and a limited palette. Even spacing, plain background, no text.
-```
-
-`seed: 25307749` · `pixel-art-005`
-
-<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Dithered gradient sky
-
-<img src="../images/pixel-art-006.webp" width="420" alt="Dithered gradient sky">
-
-```text
-A pixel-art sunset sky rendered entirely with ordered dithering between four colours, the dither pattern clearly visible as alternating pixels, a flat black horizon line across the lower third. No smooth gradients anywhere.
-```
-
-`seed: 1733307886` · `pixel-art-006`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 6. Pixel portrait, 32x32 feel
-
-<img src="../images/pixel-art-007.webp" width="420" alt="Pixel portrait, 32x32 feel">
-
-```text
-A pixel-art portrait bust at very low resolution, perhaps thirty-two pixels across, so each pixel is a large visible square. Limited palette, hard edges, readable features built from very few pixels. Plain background.
-```
-
-`seed: 324325015` · `pixel-art-007`
-
-<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 7. Pixel shop interface
-
-<img src="../images/pixel-art-008.webp" width="420" alt="Pixel shop interface">
-
-```text
-A pixel-art game shop interface: a bordered panel with item slots in a grid, a coin icon and a scroll bar, drawn with hard pixel edges and a limited palette. The panel border built from repeated corner and edge tiles. No text.
-```
-
-`seed: 1430458668` · `pixel-art-008`
-
-<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>

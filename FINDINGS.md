@@ -1,6 +1,6 @@
 # Krea 2 prompt field guide
 
-A practical starting point drawn from **475 prompt-and-image pairs across 61 categories**.
+A practical starting point drawn from **499 prompt-and-image pairs across 63 categories**.
 
 ## A prompt order that is easy to adapt
 

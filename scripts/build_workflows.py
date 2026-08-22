@@ -8,12 +8,10 @@ generator and wires this repository's ``__product__`` wildcard into it.
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 from urllib.request import urlopen
-
-from embed_workflow_png import embed
-
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "workflows"
@@ -166,17 +164,28 @@ def write(graph: dict, name: str) -> Path:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--json-only",
+        action="store_true",
+        help="rebuild portable JSON only; useful in cross-platform CI",
+    )
+    args = parser.parse_args()
     OUT.mkdir(exist_ok=True)
     entry = catalog_entry(EXAMPLE_ID)
     native = prepare_base(load_official(), entry["prompt"])
     native_path = write(native, "krea2-native-starter.json")
-    embed(native_path, ROOT / entry["image"], OUT / "krea2-native-starter.png", announce=False)
-    print("workflows/krea2-native-starter.png")
+    if not args.json_only:
+        from embed_workflow_png import embed
+        embed(native_path, ROOT / entry["image"], OUT / "krea2-native-starter.png", announce=False)
+        print("workflows/krea2-native-starter.png")
 
     wildcard = add_dynamic_prompts(prepare_base(load_official(), entry["prompt"]))
     wildcard_path = write(wildcard, "krea2-wildcards-starter.json")
-    embed(wildcard_path, ROOT / entry["image"], OUT / "krea2-wildcards-starter.png", announce=False)
-    print("workflows/krea2-wildcards-starter.png")
+    if not args.json_only:
+        from embed_workflow_png import embed
+        embed(wildcard_path, ROOT / entry["image"], OUT / "krea2-wildcards-starter.png", announce=False)
+        print("workflows/krea2-wildcards-starter.png")
     return 0
 
 

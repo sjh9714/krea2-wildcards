@@ -38,10 +38,9 @@ jobs:
           python3 build_vocabulary.py
           python3 build_gallery.py
           python3 build_templates.py
-          python3 scripts/build_workflows.py
+          python3 scripts/build_workflows.py --json-only
           python3 build_pages.py
           python3 build_site.py
-          python3 build_social.py
           python3 build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
       - name: Nothing ships that does not verify
         run: |

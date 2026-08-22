@@ -98,6 +98,30 @@ def main() -> int:
     orphans = sorted(on_disk - named - {"hero.webp"})
     c(not orphans, f"no orphan images among {len(on_disk)} on disk", f"{orphans[:5]}")
 
+    print("\ndataset export")
+    dataset_path = HERE / "dataset/prompts.jsonl"
+    dataset_card = HERE / "dataset/README.md"
+    c(dataset_path.exists(), "the JSONL dataset export exists")
+    if dataset_path.exists():
+        try:
+            rows = [json.loads(line) for line in
+                    dataset_path.read_text(encoding="utf-8").splitlines()]
+        except json.JSONDecodeError as error:
+            rows = []
+            c(False, "every dataset row is valid JSON", str(error))
+        else:
+            c(True, "every dataset row is valid JSON")
+        c(len(rows) == len(entries),
+          f"the dataset contains all {len(entries)} published prompts",
+          f"found {len(rows)}")
+        c({row.get("id") for row in rows} == {entry["id"] for entry in entries},
+          "dataset IDs match the canonical catalog")
+        c(all(str(row.get("image_url", "")).startswith("https://") for row in rows),
+          "every dataset row links its generated output")
+    c(dataset_card.exists() and "community dataset" in
+      dataset_card.read_text(encoding="utf-8").lower(),
+      "the dataset card identifies this as a community resource")
+
     print("\nComfyUI workflows")
     workflow_dir = HERE / "workflows"
     expected = {
@@ -869,7 +893,7 @@ def main() -> int:
         c("prompt_author" in ct, "CONTRIBUTING.md documents the attribution fields")
         for b in ("build_gallery.py", "build_vocabulary.py", "build_site.py",
                   "build_social.py", "scripts/build_workflows.py",
-                  "scripts/audit_prompts.py"):
+                  "scripts/build_dataset.py", "scripts/audit_prompts.py"):
             c(b in ct, f"CONTRIBUTING.md lists {b} in the build order")
 
     print()

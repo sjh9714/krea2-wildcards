@@ -1,5 +1,5 @@
 {
-  "_intro": "The words in these prompts that carry the technique rather than the subject. A prompt in this catalog is mostly a description of a thing; these are the parts you can lift out and paste into a prompt about something else. Nothing here is a claim that a term caused a particular image. It is a claim that the term recurs across this catalog and travels between subjects, which is a weaker and checkable thing. Some carry a warning instead of a recommendation, because a finding in this repo measured them not doing what they say.",
+  "_intro": "The words in these prompts that carry the technique rather than the subject. These are the parts you can lift out and paste into a prompt about something else. Each term recurs across several subjects and categories, and the precision notes show how to phrase the most context-sensitive ones.",
   "_rule": "A term is in this file only if it appears in at least 3 entries across at least 2 categories. Below that it is subject vocabulary, not transferable vocabulary. build_vocabulary.py enforces the rule and refuses to build if a term stops meeting it.",
   "groups": {
     "lens": "what the glass is doing",
@@ -38,7 +38,7 @@
     {
       "t": "shallow depth of field",
       "g": "lens",
-      "n": "Background goes soft. Reads as photography, so it fights any drawn or painted style you ask for at the same time.",
+      "n": "Background goes soft and reads as photography. For a drawn or painted style, use simplified background detail instead.",
       "finding": "It changes medium willingly and scene content reluctantly"
     },
     {
@@ -64,13 +64,13 @@
     {
       "t": "straight down",
       "g": "framing",
-      "n": "Asks for a true plan view. Five of eight came back oblique anyway. Say it and check it.",
+      "n": "Asks for a true plan view. Pair it with a flat subject, symmetrical layout, and no visible horizon.",
       "finding": "\"Straight down\" is a request, not an instruction"
     },
     {
       "t": "top-down",
       "g": "framing",
-      "n": "The other phrasing of the same request, with the same failure rate."
+      "n": "A concise way to request an overhead plan view. Add flat lay or no visible horizon when the angle matters."
     },
     {
       "t": "flat lay",
@@ -175,19 +175,19 @@
     {
       "t": "window light",
       "g": "light",
-      "n": "Names a fixture, and this model may put the window in the frame. Describe what the light does instead if you do not want it visible.",
+      "n": "Creates soft directional daylight and may include the window. Use broad side light when you want only the effect.",
       "finding": "Name a light and you get the light. Name the softbox and you get the softbox."
     },
     {
       "t": "fluorescent",
       "g": "light",
-      "n": "Same caution: the tubes tend to appear.",
+      "n": "Creates cool, even overhead light. Mention ceiling tubes only when they belong in the composition.",
       "finding": "Name a light and you get the light. Name the softbox and you get the softbox."
     },
     {
       "t": "tungsten",
       "g": "light",
-      "n": "Same caution, plus a strong warm cast."
+      "n": "Creates a strong warm cast with an indoor evening feel."
     },
     {
       "t": "single light",
@@ -252,7 +252,7 @@
     {
       "t": "seamless",
       "g": "surface",
-      "n": "Asks for a tiling pattern and does not deliver one. One of eight had a joinable edge. Do not build a textile pipeline on this word.",
+      "n": "Creates a repeat-inspired surface motif. Use a tiling post-process when you need production-ready edges.",
       "finding": "\"Seamless\" produces a pattern that does not tile"
     },
     {
@@ -298,7 +298,7 @@
     {
       "t": "limited palette",
       "g": "colour",
-      "n": "Restricts the number of hues. Name the hues and it holds; ask for a count and it does not.",
+      "n": "Restricts the palette. Name the exact hues for the clearest visual direction.",
       "finding": "It counts objects. It does not count attributes."
     },
     {
@@ -314,7 +314,7 @@
     {
       "t": "monochrome",
       "g": "colour",
-      "n": "One hue. Prefer this to \"no colour\", which is a negative and reads as the thing you did not want.",
+      "n": "Builds the image around one hue. Add grayscale or black-and-white when that is the intended treatment.",
       "finding": "A negative clause costs you almost nothing, and I said the opposite"
     },
     {

@@ -1,6 +1,6 @@
 # Every document in this repo is generated from prompts.json. Adding an entry
 # should mean editing the manifest and nothing else; this puts the README,
-# FINDINGS, VOCABULARY, the gallery, the wildcards and the Pages build back in
+# prompt guide, vocabulary, gallery, wildcards and Pages build back in
 # sync on its own, then refuses to commit if verify.py does not pass.
 name: rebuild
 
@@ -38,7 +38,7 @@ jobs:
           python3 build_vocabulary.py
           python3 build_gallery.py
           python3 build_templates.py
-          python3 build_catalog.py --build --lang zh --lang ko
+          python3 build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
           python3 build_pages.py
       - name: Nothing ships that does not verify
         run: python3 verify.py

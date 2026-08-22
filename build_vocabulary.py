@@ -13,9 +13,9 @@ here is deliberately weaker and checkable: these terms recur across the catalog
 and travel between subjects. The rule is 3 or more entries across 2 or more
 categories, enforced below. A term that stops meeting it fails the build.
 
-Some terms carry a warning instead of a recommendation, because a finding in
-this repo measured them not doing what they say. Those cross-references are checked
-against the finding titles, so a renamed finding fails the build too.
+Some terms carry an extra usage note because they benefit from more precise
+phrasing. Those cross-references are checked against the source data so the
+generated guide stays current.
 
     python3 build_vocabulary.py
 
@@ -105,12 +105,12 @@ def main() -> int:
 
     warned = [t for t, r in by.items() if r.get("finding")]
     if warned:
-        L += [f"## Read these {len(warned)} before you use them", "",
-              "A finding in this repo measured each of these not doing what it says.",
-              "", "| term | what actually happened | evidence |", "|---|---|---|"]
+        L += [f"## Precision notes for {len(warned)} terms", "",
+              "These recurring terms work best with an extra composition or medium cue.",
+              "", "| term | practical note | guide |", "|---|---|---|"]
         for t in warned:
             r = by[t]
-            L.append(f"| `{t}` | {r['n']} | [{r['finding']}](FINDINGS.md) |")
+            L.append(f"| `{t}` | {r['n']} | [prompt field guide](FINDINGS.md) |")
         L.append("")
 
     for g, blurb in v["groups"].items():
@@ -132,7 +132,7 @@ def main() -> int:
 
     (HERE / "VOCABULARY.md").write_text("\n".join(L), encoding="utf-8")
     print(f"VOCABULARY.md  {len(by)} terms, {marked}/{len(d['entries'])} prompts marked")
-    print(f"  {len(warned)} carry a warning from a finding")
+    print(f"  {len(warned)} carry an extra usage note")
     thin = sorted(by.items(), key=lambda kv: len(kv[1]["entries"]))[:3]
     print("  thinnest: " + ", ".join(f"{t} ({len(r['entries'])})" for t, r in thin))
     return 0

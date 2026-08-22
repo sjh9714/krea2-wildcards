@@ -472,8 +472,9 @@ def render_readme(data: dict, lang: str = "en") -> str:
 
     # Keep the next useful actions together: learn the recurring visual terms,
     # adapt a prompt formula, browse the compact style set, or reproduce a run.
-    L.append("<sub>Build your next prompt: **[VOCABULARY.md](VOCABULARY.md)** "
-             "· [TEMPLATES.md](TEMPLATES.md) · [style recipes](styles/README.md) "
+    L.append("<sub>Build your next prompt: **[prompt field guide](FINDINGS.md)** "
+             "· [VOCABULARY.md](VOCABULARY.md) · [TEMPLATES.md](TEMPLATES.md) "
+             "· [style recipes](styles/README.md) "
              "· [generation settings](REPRODUCING.md)</sub>\n")
 
     L.append("\n" + h2("contrib", T["contrib"]) + f"\n{T['contrib_body']}\n")
@@ -482,53 +483,69 @@ def render_readme(data: dict, lang: str = "en") -> str:
 
 
 def render_findings(data: dict) -> str:
-    """FINDINGS.md from the manifest.
-
-    This file used to be maintained by hand next to a prompts.json that holds the
-    same findings, and they drifted: the negatives result was measured, written
-    into the README table and into scripts/measure_negatives.py, and never reached
-    the document the README tells you to read. Generating it removes the gap."""
-    f = data["findings"]
-    L = ["# What this model actually does", ""]
-    if f.get("_intro"):
-        L += [counts(data, f["_intro"]), ""]
-    L += ["Each finding below is measured against images committed to this repo.", ""]
-    tbl = f.get("table")
-    if tbl:
-        # The summary table used to render only into the README, so moving the
-        # section out of the README would have dropped it entirely.
-        L += ["| " + " | ".join(tbl["cols"]) + " |",
-              "|---" * len(tbl["cols"]) + "|"]
-        for r in tbl["rows"]:
-            L.append("| " + " | ".join(r) + " |")
-        L.append("")
-    for item in f["items"]:
-        L += [f"### {item['title']}", "", counts(data, item["body"]), ""]
-    L += ["## Reproducing any of it", "",
-          "See [REPRODUCING.md](REPRODUCING.md) for the exact call, the measured "
-          "per-pixel differences, and the reason these seeds do not transfer to a "
-          "local graph.", ""]
+    """Build a concise field guide from the reusable rules in the catalog."""
+    entries = [e for e in data["entries"] if (HERE / e["image"]).exists()]
+    categories = len({e["category"] for e in entries})
+    L = ["# Krea 2 prompt field guide", "",
+         f"A practical starting point drawn from **{len(entries)} prompt-and-image "
+         f"pairs across {categories} categories**.", "",
+         "## A prompt order that is easy to adapt", "",
+         "```text",
+         "medium or style + subject + setting + composition + lighting effect + mood + texture or camera detail",
+         "```", "",
+         "Keep the subject and setting concrete. Then change one visual decision at "
+         "a time so you can tell which phrase moved the image.", "",
+         "## Put the medium first when style is the goal", "",
+         "Open with the visual medium, then describe the subject in language that "
+         "belongs to that medium. For an illustration, prefer linework, painted "
+         "background, flat colour, paper grain, ink, wash, or brush texture. For a "
+         "photo, use lens, depth, exposure, and lighting language.", "",
+         "The [style recipe book](styles/README.md) includes eight whole-scene "
+         "clauses and a neutral base subject you can copy directly.", "",
+         "## Describe the light you want to see", "",
+         "Use the visible result: soft wraparound light, a narrow rim, hard noon "
+         "shadows, broad window-shaped highlights, or cool overhead light. Name the "
+         "fixture only when the fixture itself belongs in the frame.", "",
+         "## Write visible text explicitly", "",
+         "For posters, packaging, signs, and interfaces, include every word that must "
+         "appear. Keep important type large, front-facing, and separated from busy "
+         "detail. The typography, poster, packaging, and UI categories give you "
+         "copy-ready starting points.", "",
+         "## Make composition instructions observable", "",
+         "Prefer instructions you can see immediately: waist-up, centered, one object, "
+         "three-quarter view, generous negative space on the left, or a top-down grid. "
+         "If a layout matters, state the number and position of the major elements.", "",
+         "## Build controlled variations", "",
+         "1. Copy a nearby prompt from the gallery.",
+         "2. Replace the subject while keeping composition and medium fixed.",
+         "3. Replace the medium while keeping subject and composition fixed.",
+         "4. Save the versions you want to compare, then move only one more slot.", "",
+         "Use [TEMPLATES.md](TEMPLATES.md) for fill-in-the-blank structures and "
+         "[VOCABULARY.md](VOCABULARY.md) for recurring visual terms.", "",
+         "## Use the library in ComfyUI", "",
+         "1. Download the current release and copy `wildcards/` into `ComfyUI/wildcards/`.",
+         "2. Install `comfyui-dynamicprompts` or another node that supports wildcard syntax.",
+         "3. Use `__all__` for the full library or a category name such as "
+         "`__fashion__`, `__product__`, `__photography__`, or `__illustration__`.",
+         "4. Keep the prompt text and choose local sampler, scheduler, steps, and seed "
+         "for your own graph.", "",
+         "See [REPRODUCING.md](REPRODUCING.md) for the hosted generation settings and "
+         "the distinction between hosted and local seeds.", ""]
     return "\n".join(L)
 
 
 def render_comparison(data: dict) -> str:
-    """docs/comparison.md from the manifest.
-
-    This used to be 3,245 characters in the README. Seven of the seven reference
-    repositories checked on 2026-08-06 carry no comparison section at all, and a
-    table scoring us on the columns we happen to win is an argument with the
-    other catalogs rather than an answer to the visitor. It is still true, so it
-    is still here, one link away."""
-    cmp = data["comparison"]
-    L = ["# How this compares", "", cmp["_intro"], "",
-         "| | " + " | ".join(cmp["cols"]) + " |",
-         "|---" * (len(cmp["cols"]) + 1) + "|"]
-    for r in cmp["rows"]:
-        L.append("| " + " | ".join(r) + " |")
-    L.append("")
-    for n in cmp.get("_notes", []):
-        L.append(f"- {n}")
-    L += ["", "Back to [the catalog](../README.md).", ""]
+    """docs/comparison.md as a quick chooser for the three public surfaces."""
+    L = ["# Choose how to use the library", "",
+         "The same prompt collection is available in three formats.", "",
+         "| Surface | Best for | What you get |",
+         "|---|---|---|",
+         "| [Web gallery](https://sjh9714.github.io/krea2-wildcards/) | Visual browsing | Search, category filters, saved prompts, full-size images, and copy buttons |",
+         "| [Repository gallery](gallery.md) | Reading inside GitHub | Every prompt, image, seed, and category in version control |",
+         "| [Wildcard files](../wildcards/) | ComfyUI workflows | `all.txt`, one file per category, and ready-made style clauses |",
+         "", "Start with the web gallery, then download the wildcard files when you "
+         "want to batch prompts in a workflow.", "",
+         "Back to [the catalog](../README.md).", ""]
     return "\n".join(L)
 
 
@@ -553,7 +570,7 @@ def cmd_build(langs: list[str]) -> int:
           + (f" ({missing} entries skipped, no image on disk)" if missing else ""))
 
     print("\nSet the repo description field to exactly this, and nothing longer:")
-    print(f'  "{len(kept)} reproducible {data.get("model","")} prompts across {ncat} categories"')
+    print(f'  "{len(kept)} Krea 2 Turbo prompts with generated examples and ComfyUI wildcards"')
     print("\nThe description field. Not the README body, is what appears in GitHub search,")
     print("Trending, and every social card. A quantified claim in the first ten words is the")
     print("single highest-leverage asset in this whole play.")

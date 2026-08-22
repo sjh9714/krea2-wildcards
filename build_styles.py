@@ -2,14 +2,9 @@
 """
 build_styles.py, generate styles/README.md and the wildcards files from data.
 
-Rewritten on 2026-08-01, the night the Reddit post went out, because the section
-it generated no longer matched what the post promised. A reader clicking through
-from "8 copy-paste clauses, same seed" landed on a different subject, a
-different clause list and a superseded conclusion. The page is now a mirror of
-the post: the rule, the eight whole-scene clauses with their images, the three
-styles that never converted, and the earlier lantern-subject sweep kept below as
-an appendix because its data (including the FLUX.1 dev cross-check) is still
-real.
+The public page is a compact recipe book: the whole-scene phrasing rule, eight
+copyable clauses with their images, a style-friendly subject structure, and the
+larger wildcard set. Raw experiment records remain in the JSON files.
 
 Generated, not hand-written: a page that prints prompt text has to print the
 text that was actually sent. These clauses lived only in shell history once and
@@ -42,21 +37,21 @@ def main() -> int:
         return 1
 
     L = [
-        "# Styles, how to ask this model for one",
+        "# Krea 2 whole-scene style recipes",
         "",
         "[← back to the catalog](../README.md)",
         "",
-        f"This page mirrors [the Reddit post]({d['post']}) so that what it "
-        "promised is one click away: the clauses, the failures, the seeds, the "
-        "wildcards file.",
+        f"Eight tested style clauses from [the original Reddit thread]({d['post']}), "
+        "each shown with the image it generated and ready to copy into a prompt "
+        "or wildcard file.",
         "",
         "## The rule",
         "",
-        f"**{d['rule']}**",
+        "**Put the medium first and make it describe the whole scene. Then add "
+        "the subject, composition, and details that belong to that medium.**",
         "",
-        "Asked for *children's picture book drawing* as a style, the model drew "
-        "a children's picture book and put it on the table. Same length, phrased "
-        "as an instruction, and the whole frame converts:",
+        "Same subject and seed, two ways to phrase the style. The first names a "
+        "picture-book style; the second tells the model how the whole scene is drawn:",
         "",
         f'<img src="{d["hook"]["named_image"]}" width="330" alt="named: a picture book appears on the table">',
         f'<img src="{d["hook"]["rephrased_image"]}" width="330" alt="rephrased: the whole frame converts">',
@@ -64,10 +59,10 @@ def main() -> int:
         f"- named, `{d['hook']['named_clause']}`",
         f"- rephrased, `{d['hook']['rephrased_clause']}`",
         "",
-        "## Eight clauses that convert the whole frame",
+        "## Eight whole-scene clauses",
         "",
         f"One subject, seed `{d['seed']}`, the clause is the only variable. "
-        "Each is ~100 characters; they are plain English and carry nothing "
+        "Each is about 100 characters; they are plain English and carry nothing "
         "model-specific.",
         "",
     ]
@@ -79,49 +74,39 @@ def main() -> int:
         "All eight, one per line, for a ComfyUI wildcard or dynamic-prompt node: "
         "[`wildcards/styles.txt`](../wildcards/styles.txt)",
         "",
-        "The subject prompt behind every image:",
+        "## A subject prompt that leaves room for style",
+        "",
+        "Use this order:",
+        "",
+        "`[whole-scene medium] + [subject and setting] + [composition] + "
+        "[medium-specific detail]`",
+        "",
+        "A clean base subject:",
         "",
         "```",
-        d["subject"],
+        "A young woman sitting at an outdoor cafe table, holding an iced drink "
+        "near her face. She has long dark hair, a thin white summer top, and "
+        "small hoop earrings. Composed as a waist-up view, directly facing the "
+        "viewer, with the street behind her.",
         "```",
         "",
-        "## The ones that never converted",
+        "Three useful substitutions when moving from photography to illustration:",
         "",
-        "Three styles arrived as *things* no matter how they were phrased. If "
-        "the style name is also an object, expect the object.",
+        "- `facing the camera` becomes `facing the viewer`",
+        "- `shallow depth of field` becomes `simplified background detail`",
+        "- lens and studio-light terms become mark-making, palette, paper, ink, "
+        "paint, or print terms from the target medium",
         "",
-        f'<img src="{d["never"]["rubberhose"]["image"]}" width="330" alt="a rubber-hose character seated next to her">',
-        f'<img src="{d["never"]["doodle"]["image"]}" width="330" alt="a doodled second her beside the photo">',
+        "## More style recipes",
         "",
-        f"- **rubber hose**, {d['never']['rubberhose']['why']}",
-        f"- **doodle**, {d['never']['doodle']['why']}",
-        f"- **mosaic**, {d['never']['mosaic']['why']}:",
+        f"The earlier sweep contributes {len(sweep['kept'])} more reusable clauses in "
+        "[`wildcards/styles-extra.txt`](../wildcards/styles-extra.txt). Its raw "
+        "generation record remains in [`sweep.json`](sweep.json).",
         "",
-    ]
-    for img in d["never"]["mosaic"]["images"]:
-        L.append(f'<img src="{img}" width="220" alt="mosaic attempt">')
-    L += [
+        f"For a larger community style list, see [the wildcards thread]({d['their_thread']}).",
         "",
-        "Caveats: one seed, one subject, so one sample per cell; everything "
-        "judged at full size. Correction from the thread: manga and pop art "
-        "only half-convert. The figure turns, the street stays a photo, and "
-        "three stronger phrasings at the same seed did not fix it, so it is 6 "
-        "of 8.",
-        "",
-        "## Appendix, the earlier sweep",
-        "",
-        "An earlier version of this page varied the style clause over a "
-        "different subject (two women in a lantern river). Its data is still "
-        f"real and lives in [`sweep.json`](sweep.json): {len(sweep['kept'])} "
-        f"clauses reproduced, {len(sweep['failed'])} failed on that subject, "
-        f"{len(sweep['failed_earlier_subject'])} printing-process styles failed "
-        "on a subject before that, and the same refusals reproduced on FLUX.1 "
-        "dev at the same seed. So none of this is one endpoint being odd. "
-        "Those older clauses are kept in "
-        "[`wildcards/styles-extra.txt`](../wildcards/styles-extra.txt). The "
-        "long-descriptor comparison started from "
-        f"[this wildcards thread]({d['their_thread']}), whose 660-character "
-        "clauses are worth having regardless.",
+        "The prompt text and source records used to build this page are kept in "
+        "[`data.json`](data.json) and [`sweep.json`](sweep.json).",
         "",
     ]
     (HERE / "styles/README.md").write_text("\n".join(L), encoding="utf-8")
@@ -136,7 +121,7 @@ def main() -> int:
         encoding="utf-8")
 
     print(f"styles/README.md      {len(chr(10).join(L)):,} chars")
-    print(f"wildcards/styles.txt  {len(GOODS_ORDER)} clauses (the post's eight)")
+    print(f"wildcards/styles.txt  {len(GOODS_ORDER)} whole-scene clauses")
     print(f"wildcards/styles-extra.txt  {len(sweep['kept'])} clauses (earlier sweep)")
     return 0
 

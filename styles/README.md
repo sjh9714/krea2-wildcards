@@ -1,14 +1,14 @@
-# Styles, how to ask this model for one
+# Krea 2 whole-scene style recipes
 
 [← back to the catalog](../README.md)
 
-This page mirrors [the Reddit post](https://www.reddit.com/r/StableDiffusion/comments/1vco6ra/) so that what it promised is one click away: the clauses, the failures, the seeds, the wildcards file.
+Eight tested style clauses from [the original Reddit thread](https://www.reddit.com/r/StableDiffusion/comments/1vco6ra/), each shown with the image it generated and ready to copy into a prompt or wildcard file.
 
 ## The rule
 
-**Name a style and the model may draw it as an object in the scene. Describe the whole scene as the medium and the entire frame converts.**
+**Put the medium first and make it describe the whole scene. Then add the subject, composition, and details that belong to that medium.**
 
-Asked for *children's picture book drawing* as a style, the model drew a children's picture book and put it on the table. Same length, phrased as an instruction, and the whole frame converts:
+Same subject and seed, two ways to phrase the style. The first names a picture-book style; the second tells the model how the whole scene is drawn:
 
 <img src="images/cafe/book-named.webp" width="330" alt="named: a picture book appears on the table">
 <img src="images/cafe/book-rephrased.webp" width="330" alt="rephrased: the whole frame converts">
@@ -16,9 +16,9 @@ Asked for *children's picture book drawing* as a style, the model drew a childre
 - named, `Children's picture book drawing, soft crayon and gouache, simple rounded shapes, gentle flat colour.`
 - rephrased, `Drawn the way a children's picture book is drawn: soft crayon and gouache, simple rounded shapes, flat gentle colour.`
 
-## Eight clauses that convert the whole frame
+## Eight whole-scene clauses
 
-One subject, seed `77220`, the clause is the only variable. Each is ~100 characters; they are plain English and carry nothing model-specific.
+One subject, seed `77220`, the clause is the only variable. Each is about 100 characters; they are plain English and carry nothing model-specific.
 
 <img src="images/cafe/manga.webp" width="330" alt="Manga">
 
@@ -54,29 +54,28 @@ One subject, seed `77220`, the clause is the only variable. Each is ~100 charact
 
 All eight, one per line, for a ComfyUI wildcard or dynamic-prompt node: [`wildcards/styles.txt`](../wildcards/styles.txt)
 
-The subject prompt behind every image:
+## A subject prompt that leaves room for style
+
+Use this order:
+
+`[whole-scene medium] + [subject and setting] + [composition] + [medium-specific detail]`
+
+A clean base subject:
 
 ```
-A pretty young woman sitting at an outdoor cafe table in the late afternoon, holding an iced drink up near her face. Long dark hair, a thin white summer top, small gold earrings. Waist-up, facing the camera, warm side light, the street softly out of focus behind her.
+A young woman sitting at an outdoor cafe table, holding an iced drink near her face. She has long dark hair, a thin white summer top, and small hoop earrings. Composed as a waist-up view, directly facing the viewer, with the street behind her.
 ```
 
-## The ones that never converted
+Three useful substitutions when moving from photography to illustration:
 
-Three styles arrived as *things* no matter how they were phrased. If the style name is also an object, expect the object.
+- `facing the camera` becomes `facing the viewer`
+- `shallow depth of field` becomes `simplified background detail`
+- lens and studio-light terms become mark-making, palette, paper, ink, paint, or print terms from the target medium
 
-<img src="images/cafe/rubberhose-guest.webp" width="330" alt="a rubber-hose character seated next to her">
-<img src="images/cafe/doodle-twin.webp" width="330" alt="a doodled second her beside the photo">
+## More style recipes
 
-- **rubber hose**, asked for rubber-hose style; it seated a rubber-hose character next to her
-- **doodle**, asked for a doodle of the scene; it doodled a second her beside the photograph
-- **mosaic**, three phrasings - named, a 685-character description, and 'no photographic surface anywhere' - all return a mosaic tabletop or grout drawn on the photo:
+The earlier sweep contributes 15 more reusable clauses in [`wildcards/styles-extra.txt`](../wildcards/styles-extra.txt). Its raw generation record remains in [`sweep.json`](sweep.json).
 
-<img src="images/cafe/mosaic-named.webp" width="220" alt="mosaic attempt">
-<img src="images/cafe/mosaic-long.webp" width="220" alt="mosaic attempt">
-<img src="images/cafe/mosaic-explicit.webp" width="220" alt="mosaic attempt">
+For a larger community style list, see [the wildcards thread](https://www.reddit.com/r/StableDiffusion/comments/1uzdj7o/krea_2_styles_wildcards_txt/).
 
-Caveats: one seed, one subject, so one sample per cell; everything judged at full size. Correction from the thread: manga and pop art only half-convert. The figure turns, the street stays a photo, and three stronger phrasings at the same seed did not fix it, so it is 6 of 8.
-
-## Appendix, the earlier sweep
-
-An earlier version of this page varied the style clause over a different subject (two women in a lantern river). Its data is still real and lives in [`sweep.json`](sweep.json): 15 clauses reproduced, 5 failed on that subject, 7 printing-process styles failed on a subject before that, and the same refusals reproduced on FLUX.1 dev at the same seed. So none of this is one endpoint being odd. Those older clauses are kept in [`wildcards/styles-extra.txt`](../wildcards/styles-extra.txt). The long-descriptor comparison started from [this wildcards thread](https://www.reddit.com/r/StableDiffusion/comments/1uzdj7o/krea_2_styles_wildcards_txt/), whose 660-character clauses are worth having regardless.
+The prompt text and source records used to build this page are kept in [`data.json`](data.json) and [`sweep.json`](sweep.json).

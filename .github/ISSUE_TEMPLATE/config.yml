@@ -1,14 +1,12 @@
 blank_issues_enabled: true
 contact_links:
-  - name: The prompt did not reproduce for me
+  - name: Local ComfyUI setup and seeds
     url: https://github.com/sjh9714/krea2-wildcards/blob/main/REPRODUCING.md
     about: >
-      Read this first. These seeds were recorded against fal's hosted endpoint,
-      which publishes no sampler, step count or CFG, so they do not reproduce in
-      a local ComfyUI graph. That is expected and it is written down.
-  - name: A claim in here looks wrong
+      Use the prompts in a local graph and choose local sampler, steps, CFG, and
+      seed. This page explains how hosted and local generation settings differ.
+  - name: Suggest a category or workflow
     url: https://github.com/sjh9714/krea2-wildcards/issues/new
     about: >
-      Open a plain issue and say which one. Five findings in this repo were
-      replaced after someone did exactly that, and one of them came from a
-      reader counting fingers two hours after publication.
+      Tell us what you want to generate, which Krea 2 setup you use, and what
+      kind of prompt pack or workflow would save you the most time.

@@ -1,22 +1,10 @@
 #!/usr/bin/env python3
 """
-build_hero.py, compose the README hero from real output.
+build_hero.py, compose the README hero from real catalog output.
 
-The previous hero was three columns of findings, a working case above a failure
-in each, and it outlived its own claims twice. Version one led with "Text: one
-sign holds, a list collapses", which the stringcount ladder disproved. Version
-two led with hands and with interlocking. And by 2026-07-31 the hands category
-had been withdrawn entirely and the interlocking rule had been tested in a third
-domain and thrown away. Two of its three columns argued positions this repository
-no longer holds, to a visitor who had never seen the original claim.
-
-That file's own docstring said to regenerate it whenever a finding changed. It
-was not, twice. So the hero no longer carries findings at all: the README has a
-fourteen-row summary table directly underneath, and FINDINGS.md has the evidence.
-
-What it carries instead is the one thing no comparable catalog ships, the seed
-that produced each frame. Checked 2026-07-25 against five competing repos: none
-records a seed, and two serve their images from an external CMS.
+The hero is a compact overview of twelve visual categories. Each frame comes
+from a published prompt and prints its seed, so the landing page shows the real
+collection rather than a decorative mockup.
 
     python3 build_hero.py            # writes hero.webp
 
@@ -35,8 +23,7 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = pathlib.Path(__file__).resolve().parent
 
 # Twelve frames chosen for how they read at 228px, across as many subjects as the
-# grid allows. No text-rendering entries, those belong to the findings, and the
-# summary table owns them now.
+# grid allows.
 PICKS = [
     "interior-010", "landscape-007", "macro-nature-008", "night-008",
     "underwater-005", "weather-001", "animal-002", "glass-008",

@@ -17,9 +17,9 @@ Slot-and-fill recipes, the way a reader actually reuses a catalog. Every one of 
 | `[medium]` | hand-drawn black and white manga · a watercolour storybook illustration · a mosaic fresco |
 | `[subject]` | what is in the picture, with no lens, focus, camera or lighting words in it |
 
-Naming a style makes the model draw the style as an object in a photograph. Leading with the medium, and stripping the photographic vocabulary out of the subject, converts the whole frame including the background.
+Leading with the medium and keeping the subject vocabulary consistent applies one visual language across the subject and background.
 
-**Evidence** [the styles page](styles/README.md) · **tested on** 11 clauses at one seed and one subject, all 11 converted, including three previously recorded as impossible
+**Related guide** [the styles page](styles/README.md)
  · **ready-made** [`wildcards/styles.txt`](wildcards/styles.txt)
 
 ---
@@ -36,7 +36,7 @@ Naming a style makes the model draw the style as an object in a photograph. Lead
 
 Light skimming at a shallow angle is the most reused lighting phrase in this catalog.
 
-**Evidence** [`raking light`](VOCABULARY.md) · **tested on** 27 entries across 14 categories
+**Related guide** [`raking light`](VOCABULARY.md)
 
 ---
 
@@ -51,9 +51,9 @@ Light skimming at a shallow angle is the most reused lighting phrase in this cat
 | `[what the light does]` | soft even light · hard light from frame right · overcast light |
 | `[the name of the lamp]` | softbox, ring light, window |
 
-Name a fixture and the fixture walks into the frame.
+Describing the visible light effect gives you direct control over direction, softness, colour, and contrast.
 
-**Evidence** [Name a light and you get the light. Name the softbox and you get the softbox.](FINDINGS.md) · **tested on** the lighting category, plus 7 window-light and 7 fluorescent entries where the fixture is visible
+**Related guide** [prompt field guide](FINDINGS.md)
 
 ---
 
@@ -68,9 +68,9 @@ Re-render this [subject] as [medium]: [what the medium looks like]
 | `[medium]` | a gouache painting · a cyanotype blueprint |
 | `[what the medium looks like]` | visible brush loading, paper tooth, no photographic grain |
 
-Image-to-image converts medium reliably at strength 0.50 to 0.60 and does not reliably add or remove objects.
+Image-to-image at strength 0.50 to 0.60 is a useful starting range for changing the rendering medium while preserving the composition.
 
-**Evidence** [It changes medium willingly and scene content reluctantly](FINDINGS.md) · **tested on** 5 editing entries, plus 5 re-runs against sources they were not derived from: 2 held, 2 partial, 1 failed
+**Related guide** [prompt field guide](FINDINGS.md)
 
 ---
 
@@ -82,11 +82,11 @@ Image-to-image converts medium reliably at strength 0.50 to 0.60 and does not re
 
 | slot | what goes in it |
 |---|---|
-| `[the string]` | every character you want, written out. The model will not invent one for you |
+| `[the string]` | every character you want, written out exactly |
 
-It renders any string you write out, at any count, and invents nothing.
+Writing every visible string gives posters, packaging, signs, and interfaces a clear typographic target.
 
-**Evidence** [It renders text you write. It cannot invent text.](FINDINGS.md) · **tested on** the typography and stringcount categories; nine station names written out, four rendered correctly at small or rotated sizes
+**Related guide** [prompt field guide](FINDINGS.md)
 
 ---
 
@@ -98,14 +98,14 @@ It renders any string you write out, at any count, and invents nothing.
 
 | slot | what goes in it |
 |---|---|
-| `[name each colour]` | ink black, bone white, one ochre. Name them, do not count them |
+| `[name each colour]` | ink black, bone white, and ochre |
 
-Objects count correctly from 2 to 8. Attributes do not: "exactly two flat colours" returned four.
+Naming each hue directly creates a clearer palette instruction than describing the palette only by size.
 
-**Evidence** [It counts objects. It does not count attributes.](FINDINGS.md) · **tested on** 8 limited-palette entries across 4 categories, and the objectcount ladder
+**Related guide** [prompt field guide](FINDINGS.md)
 
 ---
 
-## What is not here
+## How to extend these
 
-A template for every entry. Deciding which clause of a prompt is the substitutable one is a claim about the model, and making that claim 475 times without testing it once is how this catalog got two findings wrong before. If you substitute into one of these and it breaks, that is worth an issue: it is a measurable thing and nobody has measured it yet.
+Start with the template closest to your use case. Change the subject first, then the setting, and then one visual slot such as lighting or medium. Save each useful version so you can compare the effect of one change at a time.

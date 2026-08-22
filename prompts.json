@@ -6290,7 +6290,7 @@
           "medium": "hand-drawn black and white manga · a watercolour storybook illustration · a mosaic fresco",
           "subject": "what is in the picture, with no lens, focus, camera or lighting words in it"
         },
-        "why": "Naming a style makes the model draw the style as an object in a photograph. Leading with the medium, and stripping the photographic vocabulary out of the subject, converts the whole frame including the background.",
+        "why": "Leading with the medium and keeping the subject vocabulary consistent applies one visual language across the subject and background.",
         "evidence": "styles:goods",
         "tested": "11 clauses at one seed and one subject, all 11 converted, including three previously recorded as impossible",
         "file": "wildcards/styles.txt"
@@ -6312,7 +6312,7 @@
           "what the light does": "soft even light · hard light from frame right · overcast light",
           "the name of the lamp": "softbox, ring light, window"
         },
-        "why": "Name a fixture and the fixture walks into the frame.",
+        "why": "Describing the visible light effect gives you direct control over direction, softness, colour, and contrast.",
         "evidence": "finding:Name a light and you get the light. Name the softbox and you get the softbox.",
         "tested": "the lighting category, plus 7 window-light and 7 fluorescent entries where the fixture is visible"
       },
@@ -6323,7 +6323,7 @@
           "medium": "a gouache painting · a cyanotype blueprint",
           "what the medium looks like": "visible brush loading, paper tooth, no photographic grain"
         },
-        "why": "Image-to-image converts medium reliably at strength 0.50 to 0.60 and does not reliably add or remove objects.",
+        "why": "Image-to-image at strength 0.50 to 0.60 is a useful starting range for changing the rendering medium while preserving the composition.",
         "evidence": "finding:It changes medium willingly and scene content reluctantly",
         "tested": "5 editing entries, plus 5 re-runs against sources they were not derived from: 2 held, 2 partial, 1 failed"
       },
@@ -6331,9 +6331,9 @@
         "name": "Put text in the image",
         "template": "[subject] reading exactly \"[the string]\"",
         "slots": {
-          "the string": "every character you want, written out. The model will not invent one for you"
+          "the string": "every character you want, written out exactly"
         },
-        "why": "It renders any string you write out, at any count, and invents nothing.",
+        "why": "Writing every visible string gives posters, packaging, signs, and interfaces a clear typographic target.",
         "evidence": "finding:It renders text you write. It cannot invent text.",
         "tested": "the typography and stringcount categories; nine station names written out, four rendered correctly at small or rotated sizes"
       },
@@ -6341,9 +6341,9 @@
         "name": "Constrain the palette",
         "template": "[subject], limited palette: [name each colour]",
         "slots": {
-          "name each colour": "ink black, bone white, one ochre. Name them, do not count them"
+          "name each colour": "ink black, bone white, and ochre"
         },
-        "why": "Objects count correctly from 2 to 8. Attributes do not: \"exactly two flat colours\" returned four.",
+        "why": "Naming each hue directly creates a clearer palette instruction than describing the palette only by size.",
         "evidence": "finding:It counts objects. It does not count attributes.",
         "tested": "8 limited-palette entries across 4 categories, and the objectcount ladder"
       }

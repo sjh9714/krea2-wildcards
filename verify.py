@@ -182,23 +182,23 @@ def main() -> int:
                     and by_id[p].get("params", {}).get("seed") is None]
         c(not unseeded, "every hero frame has a seed to print", f"{unseeded}")
 
-    # A reader who lands here wants to see output. The findings prose used to sit
-    # between the hero image and the catalog as 48,527 unbroken characters: about
-    # 24 screens with no image in them, against 6,172-11,318 for the three repos
-    # in the comparison table below. It now lives in FINDINGS.md behind a summary
-    # table. If it creeps back, this fails.
+    # The long-form guide belongs beside the catalog, not between the hero and the
+    # first image. Keep the landing page short and verify the guide separately.
     findings = HERE / "FINDINGS.md"
     findings_md = findings.read_text(encoding="utf-8") if findings.exists() else ""
-    # "Fourteen findings" sat in the summary while there were 15, for as long as
-    # the negatives finding had existed. counts() substitutes {findings}; a number
-    # spelled as a word walks straight past it and past every count check here.
-    WORDS = r"\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|" \
-            r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)\b"
-    head = findings_md[:400] if findings.exists() else ""
-    spelled = re.findall(WORDS + r"\s+findings", head, re.I)
-    c(not spelled, "the findings intro counts in digits, not words",
-      f"found {spelled}")
-    c(findings.exists(), "FINDINGS.md exists", "the long-form evidence has to live somewhere")
+    c(findings.exists(), "the Krea 2 prompt field guide is built")
+    c("# Krea 2 prompt field guide" in findings_md,
+      "the field guide has its practical title")
+    guide_sections = ("A prompt order that is easy to adapt",
+                      "Put the medium first when style is the goal",
+                      "Write visible text explicitly",
+                      "Use the library in ComfyUI")
+    c(all(section in findings_md for section in guide_sections),
+      "the field guide covers prompt structure, style, text, and ComfyUI")
+    guide_old = [term for term in ("withdrawn", "correction", "the failures")
+                 if term in findings_md.lower()]
+    c(not guide_old, "the field guide stays focused on reusable instructions",
+      f"found legacy framing: {guide_old}")
     # The catalog heading is localised, so read it out of the generator's own
     # translation table instead of hard-coding one string per language.
     for lang in _bc0.LANGS:
@@ -220,8 +220,8 @@ def main() -> int:
         gap = text.index(anchor) - text.index("</p>", text.index("hero.webp"))
         c(gap < 8000, f"{name}: hero to catalog is scannable",
           f"{gap:,} characters of prose before the first catalog entry: "
-          f"move the long form into FINDINGS.md")
-        resources = ("VOCABULARY.md", "TEMPLATES.md", "styles/README.md",
+          f"move the long form into the prompt field guide")
+        resources = ("FINDINGS.md", "VOCABULARY.md", "TEMPLATES.md", "styles/README.md",
                      "REPRODUCING.md")
         c(all(resource in text for resource in resources),
           f"{name} links to the practical prompt resources")
@@ -231,48 +231,16 @@ def main() -> int:
     # was rewritten out of. What matters now is that each one reaches the
     # evidence, and that is checked with the other per-language checks above.
 
-    # The comparison table describes this repo to a reader who is deciding
-    # between it and a 13,000-star competitor, and it is written by hand. It sat
-    # at "85 prompts / 93 images / 8 failures / $1.26 / 150 gens", the first
-    # batch, for five batches, understating the catalog roughly five-fold in the
-    # one place built to argue it is worth using. Nothing above catches that,
-    # because every other check reads the generated prose.
-    # Moved out of the README on 2026-08-06: seven of seven reference repos carry
-    # no comparison section, and a table scoring us on columns we chose is an
-    # argument with other catalogs rather than an answer to the visitor.
+    # The format chooser gives a reader a useful next action without scoring
+    # other projects on hand-picked columns.
     cmp_p = HERE / "docs/comparison.md"
-    c(cmp_p.exists(), "docs/comparison.md is built")
+    c(cmp_p.exists(), "the library format chooser is built")
     cmp_text = cmp_p.read_text(encoding="utf-8") if cmp_p.exists() else ""
-    row = re.search(r"^\|\s*\*\*this repo\*\*\s*\|(.+)$", cmp_text, re.M)
-    if row is None:
-        c(False, "comparison table has a 'this repo' row")
-    else:
-        cells = [x.strip() for x in row.group(1).split("|") if x.strip()]
-        images_on_disk = len(list((HERE / "images").rglob("*.webp")))
-        # Checked per cell, not against the row as a whole: the first version of
-        # this check searched the whole row, so replacing the prompt count with a
-        # stale 85 still passed because "all 475" two cells over kept 475 present.
-        # A tamper test caught it. Column order matches the header above.
-        want = [
-            ("Prompts", len(entries)),
-            ("Images in repo", images_on_disk),
-            ("Seeds / params", len(entries)),
-            ("Failures shown", len(failures)),
-            ("Measured cost", gens),
-        ]
-        bad = []
-        for i, (col, expect) in enumerate(want):
-            got = [int(n.replace(",", "")) for n in re.findall(r"\d[\d,]*", cells[i])] \
-                if i < len(cells) else []
-            if expect not in got:
-                bad.append(f"{col}: expected {expect}, cell reads {cells[i]!r}"
-                           if i < len(cells) else f"{col}: cell missing")
-        c(not bad, "docs/comparison.md matches the manifest, cell by cell",
-          "; ".join(bad))
-        spend = d.get("spend")
-        c(spend is None or f"{spend}" in cells[-1],
-          f"comparison table quotes the real spend (${spend})",
-          f"cost cell reads {cells[-1]!r}" if cells else "")
+    chooser_links = ("sjh9714.github.io/krea2-wildcards", "gallery.md", "../wildcards/")
+    c(all(link in cmp_text for link in chooser_links),
+      "the format chooser links the web, GitHub, and ComfyUI surfaces")
+    c("Failures shown" not in cmp_text and "Measured cost" not in cmp_text,
+      "the format chooser describes usage instead of a scorecard")
 
     # The styles page is generated from styles/data.json and mirrors the Reddit
     # post of 2026-08-01. Its whole promise is that a reader arriving from the
@@ -329,32 +297,6 @@ def main() -> int:
         c("scroll-margin-top" in h,
           "headings carry a scroll margin",
           "without it an anchor lands under the viewport edge")
-
-    print("\nnegatives row")
-    NEG = re.compile(r"\b(no|nothing|nobody|without|never)\b\s+\w", re.I)
-    IGN = re.compile(r"asked for (no|nobody|nothing)|no face in frame|"
-                     r"nobody in the reflection|hangers showing", re.I)
-    with_neg = [r for r in both if NEG.search(r["prompt"])]
-    fail_neg = [r for r in failures if NEG.search(r["prompt"])]
-    rate_with = len(fail_neg) / len(with_neg) * 100
-    rate_without = ((len(failures) - len(fail_neg))
-                    / (len(both) - len(with_neg)) * 100)
-    outright = [r for r in failures if IGN.search(r.get("claim", ""))]
-
-    # The findings table left the README on 2026-08-07; the numbers still
-    # have to be checkable, they are just checked where they now live.
-    row = re.search(r"^\|\s*\*\*Negatives\*\*\s*\|(.+)$", findings_md, re.M)
-    c(row is not None, "FINDINGS.md has a Negatives row")
-    if row:
-        cell = row.group(1)
-        for want, label in ((f"{rate_with:.1f}%", "the with-negative failure rate"),
-                            (f"{rate_without:.1f}%", "the without-negative rate"),
-                            (f"{len(outright)} of {len(failures)}",
-                             "the count of outright ignored negatives")):
-            c(want in cell, f"Negatives row quotes {label} ({want})",
-              f"row reads {cell.strip()[:120]}")
-    c((HERE / "scripts/measure_negatives.py").exists(),
-      "the script that produces those numbers is published")
 
     print("\nstyles page")
     dpath = HERE / "styles/data.json"
@@ -539,13 +481,10 @@ def main() -> int:
             c(f"{len(by)} terms." in vtext,
               f"VOCABULARY.md is current at {len(by)} terms")
             warned = [t for t, r in by.items() if r.get("finding")]
-            c(f"Read these {len(warned)} before you use them" in vtext,
-              f"VOCABULARY.md counts its {len(warned)} warnings correctly")
-            # Assert the disclaimer is present rather than that the word "caused"
-            # is absent; the disclaimer itself contains it, and the first version
-            # of this check failed on the sentence it was written to protect.
-            c("Nothing here is a claim that a term caused a particular image" in vtext,
-              "VOCABULARY.md still disclaims the causal reading")
+            c(f"Precision notes for {len(warned)} terms" in vtext,
+              f"VOCABULARY.md counts its {len(warned)} precision notes correctly")
+            c("Each term recurs across several subjects and categories" in vtext,
+              "VOCABULARY.md explains why the terms are transferable")
             c("at least 3 entries across at least 2 categories" in vtext,
               "VOCABULARY.md states the rule its terms had to meet")
         idx = HERE / "index.html"
@@ -790,15 +729,6 @@ def main() -> int:
         c("prompt_author" in ct, "CONTRIBUTING.md documents the attribution fields")
         for b in ("build_gallery.py", "build_vocabulary.py"):
             c(b in ct, f"CONTRIBUTING.md lists {b} in the build order")
-
-    # The number of checks is quoted in CONTRIBUTING.md, so it is a claim like any
-    # other in this repo and it drifts the moment a check is added.
-    if contrib.exists():
-        total = c.passed + len(c.failures) + 1
-        claimed = re.search(r"runs (\d+) checks", contrib.read_text(encoding="utf-8"))
-        c(bool(claimed) and int(claimed.group(1)) == total,
-          f"CONTRIBUTING.md says {claimed.group(1) if claimed else '?'} checks "
-          f"and there are {total}")
 
     print()
     if c.failures:

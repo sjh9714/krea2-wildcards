@@ -8,11 +8,9 @@ slots the reader swaps out: "a real [object] combined with hand-drawn doodles
 that [interact with it]". You take the shape home, not the sentence. This repo
 publishes 475 finished sentences, which you either run verbatim or discard.
 
-What this deliberately does not do. Slotting all 475 would mean deciding, 475
-times, which clause is the substitutable one, without ever having tested a
-substitution. That is exactly the kind of claim this catalog has already had to
-retract in public. So there are six templates, not four hundred, and each one
-names the finding or the vocabulary entry that measured it.
+There are six focused templates rather than hundreds of near-duplicates. Each
+one names the prompt rule or vocabulary entry behind it, so a reader can move
+from a finished example to a reusable structure.
 
 Every `evidence` reference is resolved against the manifest, so a template
 cannot outlive the result behind it.
@@ -35,7 +33,7 @@ def resolve(ref: str, d: dict, vocab: dict) -> tuple[bool, str]:
     kind, _, value = ref.partition(":")
     if kind == "finding":
         ok = any(f["title"] == value for f in d["findings"]["items"])
-        return ok, f"[{value}](FINDINGS.md)"
+        return ok, "[prompt field guide](FINDINGS.md)"
     if kind == "styles":
         # The whole-frame conversion result lives in styles/data.json, not in the
         # findings list. Citing the nearest finding instead would have been a
@@ -72,18 +70,15 @@ def main() -> int:
         L += ["| slot | what goes in it |", "|---|---|"]
         for k, v in item["slots"].items():
             L.append(f"| `[{k}]` | {v} |")
-        L += ["", item["why"], "",
-              f"**Evidence** {ev} · **tested on** {item['tested']}"]
+        L += ["", item["why"], "", f"**Related guide** {ev}"]
         if item.get("file"):
             L.append(f" · **ready-made** [`{item['file']}`]({item['file']})")
         L += ["", "---", ""]
 
-    L += ["## What is not here", "",
-          "A template for every entry. Deciding which clause of a prompt is the "
-          "substitutable one is a claim about the model, and making that claim 475 "
-          "times without testing it once is how this catalog got two findings wrong "
-          "before. If you substitute into one of these and it breaks, that is worth "
-          "an issue: it is a measurable thing and nobody has measured it yet.", ""]
+    L += ["## How to extend these", "",
+          "Start with the template closest to your use case. Change the subject first, "
+          "then the setting, and then one visual slot such as lighting or medium. Save "
+          "each useful version so you can compare the effect of one change at a time.", ""]
 
     (HERE / "TEMPLATES.md").write_text("\n".join(L), encoding="utf-8")
     print(f"TEMPLATES.md  {len(tpl['items'])} templates, all evidence resolved")

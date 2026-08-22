@@ -1,24 +1,24 @@
 # The vocabulary
 
-The words in these prompts that carry the technique rather than the subject. A prompt in this catalog is mostly a description of a thing; these are the parts you can lift out and paste into a prompt about something else. Nothing here is a claim that a term caused a particular image. It is a claim that the term recurs across this catalog and travels between subjects, which is a weaker and checkable thing. Some carry a warning instead of a recommendation, because a finding in this repo measured them not doing what they say.
+The words in these prompts that carry the technique rather than the subject. These are the parts you can lift out and paste into a prompt about something else. Each term recurs across several subjects and categories, and the precision notes show how to phrase the most context-sensitive ones.
 
 *A term is in this file only if it appears in at least 3 entries across at least 2 categories. Below that it is subject vocabulary, not transferable vocabulary. build_vocabulary.py enforces the rule and refuses to build if a term stops meeting it.*
 
 62 terms. 353 of 475 prompts carry at least one of them.
 
-## Read these 7 before you use them
+## Precision notes for 7 terms
 
-A finding in this repo measured each of these not doing what it says.
+These recurring terms work best with an extra composition or medium cue.
 
-| term | what actually happened | evidence |
+| term | practical note | guide |
 |---|---|---|
-| `shallow depth of field` | Background goes soft. Reads as photography, so it fights any drawn or painted style you ask for at the same time. | [It changes medium willingly and scene content reluctantly](FINDINGS.md) |
-| `straight down` | Asks for a true plan view. Five of eight came back oblique anyway. Say it and check it. | ["Straight down" is a request, not an instruction](FINDINGS.md) |
-| `window light` | Names a fixture, and this model may put the window in the frame. Describe what the light does instead if you do not want it visible. | [Name a light and you get the light. Name the softbox and you get the softbox.](FINDINGS.md) |
-| `fluorescent` | Same caution: the tubes tend to appear. | [Name a light and you get the light. Name the softbox and you get the softbox.](FINDINGS.md) |
-| `seamless` | Asks for a tiling pattern and does not deliver one. One of eight had a joinable edge. Do not build a textile pipeline on this word. | ["Seamless" produces a pattern that does not tile](FINDINGS.md) |
-| `limited palette` | Restricts the number of hues. Name the hues and it holds; ask for a count and it does not. | [It counts objects. It does not count attributes.](FINDINGS.md) |
-| `monochrome` | One hue. Prefer this to "no colour", which is a negative and reads as the thing you did not want. | [A negative clause costs you almost nothing, and I said the opposite](FINDINGS.md) |
+| `shallow depth of field` | Background goes soft and reads as photography. For a drawn or painted style, use simplified background detail instead. | [prompt field guide](FINDINGS.md) |
+| `straight down` | Asks for a true plan view. Pair it with a flat subject, symmetrical layout, and no visible horizon. | [prompt field guide](FINDINGS.md) |
+| `window light` | Creates soft directional daylight and may include the window. Use broad side light when you want only the effect. | [prompt field guide](FINDINGS.md) |
+| `fluorescent` | Creates cool, even overhead light. Mention ceiling tubes only when they belong in the composition. | [prompt field guide](FINDINGS.md) |
+| `seamless` | Creates a repeat-inspired surface motif. Use a tiling post-process when you need production-ready edges. | [prompt field guide](FINDINGS.md) |
+| `limited palette` | Restricts the palette. Name the exact hues for the clearest visual direction. | [prompt field guide](FINDINGS.md) |
+| `monochrome` | Builds the image around one hue. Add grayscale or black-and-white when that is the intended treatment. | [prompt field guide](FINDINGS.md) |
 
 ## lens
 
@@ -30,7 +30,7 @@ A finding in this repo measured each of these not doing what it says.
 | `shallow focus` | **18** in 14 categories | Same idea, phrased as a result rather than a setting. |
 | `long exposure` | **15** in 10 categories | Moving things smear, still things stay sharp. Water and cloud respond most. |
 | `35mm` | **13** in 10 categories | Reportage width. Keeps the surroundings in the story. |
-| `shallow depth of field` ⚠️ | **13** in 11 categories | Background goes soft. Reads as photography, so it fights any drawn or painted style you ask for at the same time. |
+| `shallow depth of field` ⚠️ | **13** in 11 categories | Background goes soft and reads as photography. For a drawn or painted style, use simplified background detail instead. |
 | `long lens` | **7** in 7 categories | Flattens distance and stacks the background against the subject. |
 | `50mm` | **6** in 6 categories | Roughly what the eye does. The neutral choice. |
 | `85mm` | **4** in 4 categories | Compresses and separates. Portrait glass. |
@@ -43,7 +43,7 @@ A finding in this repo measured each of these not doing what it says.
 | term | entries | what it does |
 |---|---|---|
 | `overhead` | **26** in 17 categories | Camera above the subject looking down, not necessarily square to it. |
-| `straight down` ⚠️ | **17** in 10 categories | Asks for a true plan view. Five of eight came back oblique anyway. Say it and check it. |
+| `straight down` ⚠️ | **17** in 10 categories | Asks for a true plan view. Pair it with a flat subject, symmetrical layout, and no visible horizon. |
 | `three-quarter` | **13** in 12 categories | Turned partly away. The default product and portrait angle. |
 | `isometric` | **12** in 3 categories | Parallel projection, no vanishing point. Reliable enough to be its own category here. |
 | `symmetrical` | **10** in 8 categories | Mirrors the composition about a centre line. Holds well. |
@@ -51,7 +51,7 @@ A finding in this repo measured each of these not doing what it says.
 | `centred` | **5** in 4 categories | Subject on the axis. Useful when a layout keeps drifting. |
 | `exploded` | **5** in 4 categories | Parts separated along their assembly axes. |
 | `cutaway` | **5** in 4 categories | Section removed to show the inside. |
-| `top-down` | **4** in 3 categories | The other phrasing of the same request, with the same failure rate. |
+| `top-down` | **4** in 3 categories | A concise way to request an overhead plan view. Add flat lay or no visible horizon when the angle matters. |
 | `flat lay` | **3** in 2 categories | Objects arranged on a plane, seen from above. More reliable than asking for the angle directly. |
 | `close-up` | **3** in 3 categories | Tight on the subject without the optical character of macro. |
 
@@ -69,15 +69,15 @@ A finding in this repo measured each of these not doing what it says.
 | `silhouette` | **12** in 9 categories | Subject dark against a bright field. Removes surface detail on purpose. |
 | `side light` | **7** in 6 categories | From one side. Modelling and shadow across the form. |
 | `warm light` | **7** in 7 categories | Colour temperature as an instruction. Note that a colour word in a black-and-white prompt will fight it. |
-| `window light` ⚠️ | **7** in 7 categories | Names a fixture, and this model may put the window in the frame. Describe what the light does instead if you do not want it visible. |
-| `fluorescent` ⚠️ | **7** in 7 categories | Same caution: the tubes tend to appear. |
+| `window light` ⚠️ | **7** in 7 categories | Creates soft directional daylight and may include the window. Use broad side light when you want only the effect. |
+| `fluorescent` ⚠️ | **7** in 7 categories | Creates cool, even overhead light. Mention ceiling tubes only when they belong in the composition. |
 | `even light` | **6** in 5 categories | The shorter form. |
 | `flat light` | **6** in 6 categories | Frontal, minimal modelling. |
 | `directional light` | **6** in 5 categories | Says there is an axis without naming a fixture. |
 | `light source` | **6** in 4 categories | Used to place the origin explicitly. |
 | `long shadow` | **5** in 5 categories | Implies a low source without naming one. |
 | `warm side` | **3** in 3 categories | Direction and temperature together. |
-| `tungsten` | **3** in 2 categories | Same caution, plus a strong warm cast. |
+| `tungsten` | **3** in 2 categories | Creates a strong warm cast with an indoor evening feel. |
 | `single light` | **3** in 3 categories | One source. Constrains the shadow story. |
 | `soft shadow` | **3** in 2 categories | Large source, diffuse edge. |
 
@@ -92,7 +92,7 @@ A finding in this repo measured each of these not doing what it says.
 | `polished` | **12** in 10 categories | Specular, reflective. Brings the surroundings into the surface. |
 | `matte` | **10** in 6 categories | No specular highlight. |
 | `worn` | **9** in 7 categories | Use damage: rubbed edges, thinned paint, softened corners. |
-| `seamless` ⚠️ | **8** in 4 categories | Asks for a tiling pattern and does not deliver one. One of eight had a joinable edge. Do not build a textile pipeline on this word. |
+| `seamless` ⚠️ | **8** in 4 categories | Creates a repeat-inspired surface motif. Use a tiling post-process when you need production-ready edges. |
 | `patina` | **6** in 6 categories | Aged metal specifically. |
 | `frosted` | **5** in 5 categories | Diffusing, translucent rather than transparent. |
 
@@ -117,10 +117,10 @@ A finding in this repo measured each of these not doing what it says.
 |---|---|---|
 | `muted` | **18** in 17 categories | Pulls saturation down across the frame. |
 | `palette` | **12** in 9 categories | The general handle. Almost always worth naming explicitly. |
-| `limited palette` ⚠️ | **8** in 4 categories | Restricts the number of hues. Name the hues and it holds; ask for a count and it does not. |
+| `limited palette` ⚠️ | **8** in 4 categories | Restricts the palette. Name the exact hues for the clearest visual direction. |
 | `high contrast` | **8** in 8 categories | Widens the tonal range, crushes the middle. |
 | `muted palette` | **5** in 5 categories | The same, stated as a constraint on the whole palette. |
-| `monochrome` ⚠️ | **5** in 5 categories | One hue. Prefer this to "no colour", which is a negative and reads as the thing you did not want. |
+| `monochrome` ⚠️ | **5** in 5 categories | Builds the image around one hue. Add grayscale or black-and-white when that is the intended treatment. |
 | `desaturated` | **4** in 4 categories | Stronger than muted. |
 | `warm grey` | **4** in 4 categories | A named neutral. Neutrals drift unless you say which way. |
 

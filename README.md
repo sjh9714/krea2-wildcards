@@ -47,7 +47,7 @@ The gallery highlights the words that recur across this catalog and travel to ot
 
 [**All 475 in the repo →**](docs/gallery.md) · [**as a web page →**](https://sjh9714.github.io/krea2-wildcards/)
 
-<sub>Build your next prompt: **[VOCABULARY.md](VOCABULARY.md)** · [TEMPLATES.md](TEMPLATES.md) · [style recipes](styles/README.md) · [generation settings](REPRODUCING.md)</sub>
+<sub>Build your next prompt: **[prompt field guide](FINDINGS.md)** · [VOCABULARY.md](VOCABULARY.md) · [TEMPLATES.md](TEMPLATES.md) · [style recipes](styles/README.md) · [generation settings](REPRODUCING.md)</sub>
 
 
 ## 🤝 Contributing

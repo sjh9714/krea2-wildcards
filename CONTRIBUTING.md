@@ -38,7 +38,8 @@ on anything that did not come from this repo's own runs, and `verify.py`
 enforces that.
 
 **Do not edit the generated files.** `README.md`, `README_ZH.md`, `README_KO.md`,
-`FINDINGS.md`, `VOCABULARY.md`, `TEMPLATES.md`, `docs/gallery*.md`, `docs/comparison.md`, `wildcards/` and `index.html`
+`FINDINGS.md`, `VOCABULARY.md`, `TEMPLATES.md`, `docs/gallery*.md`,
+`docs/comparison.md`, `wildcards/` and `index.html`
 are all built from `prompts.json` and `vocabulary.json`. A workflow rebuilds them
 when the manifest changes, and CI fails a pull request whose generated files do
 not match its data.
@@ -51,18 +52,17 @@ python3 build_wildcards.py
 python3 build_vocabulary.py
 python3 build_gallery.py
 python3 build_templates.py
-python3 build_catalog.py --build --lang zh --lang ko
+python3 build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
 python3 build_pages.py
 python3 verify.py
 ```
 
 ## What CI checks
 
-`verify.py` runs 201 checks that tie the prose to the data. Every count quoted in
-a document against the manifest, every seed present, every category anchored and
-reachable, the download table's file sizes against the files, the vocabulary
-rule, and that the generated files are in sync. It keeps every published surface
-aligned with the catalog as new prompts arrive.
+`verify.py` checks that the prose matches the data, every seed is present, every
+category anchor is reachable, download sizes match the files, vocabulary rules
+hold, and generated files are in sync. It keeps every published surface aligned
+with the catalog as new prompts arrive.
 
 ## About the seeds
 

@@ -12,6 +12,7 @@ HERE = Path(__file__).resolve().parent
 SITE = "https://sjh9714.github.io/krea2-wildcards/"
 REPO = "https://github.com/sjh9714/krea2-wildcards"
 CAMPAIGN = "utm_source=pages&utm_medium=website&utm_campaign=v1_2_launch"
+COMFY_CLOUD = "https://cloud.comfy.org/?share=78d328f1548e"
 
 CSS = """
 :root{--bg:#f6f5f1;--fg:#171918;--mut:#606762;--line:#d7d6d0;--acc:#175c49;--card:#fff;--panel:#eae9e4}
@@ -28,19 +29,20 @@ PAGES = [
     {
         "slug": "comfyui-krea2-workflow",
         "title": "Krea 2 ComfyUI workflows you can drag in",
-        "description": "Download a native Krea 2 Turbo ComfyUI workflow or a Dynamic Prompts wildcard version, both based on Comfy-Org's official template.",
+        "description": "Open the native Krea 2 Turbo graph directly in Comfy Cloud, or download the native and Dynamic Prompts versions for local ComfyUI. Both derive from Comfy-Org's official template.",
         "eyebrow": "ComfyUI starter",
         "metric": "2 graphs",
         "metric_note": "Native paste mode and randomized wildcard mode",
         "categories": ["product", "fashion", "interior"],
         "formula": "prompt -> optional wildcard expansion -> official Krea 2 Turbo subgraph -> Save Image",
         "steps": [
-            ("01", "Download the graph", "Use the JSON file, or drag the PNG example directly onto the ComfyUI canvas."),
+            ("01", "Open or download the graph", "Copy the native graph in Comfy Cloud, use the JSON file, or drag the PNG example onto a local ComfyUI canvas."),
             ("02", "Place three model files", "Put the official diffusion model, text encoder, and VAE in their matching ComfyUI model folders."),
             ("03", "Queue at eight steps", "The official Turbo subgraph already carries the sampler settings. Change the prompt, size, or seed."),
         ],
-        "primary": ("Download native JSON", f"{REPO}/releases/latest/download/krea2-native-starter.json?{CAMPAIGN}&utm_content=workflow_native"),
-        "secondary": ("Download wildcard JSON", f"{REPO}/releases/latest/download/krea2-wildcards-starter.json?{CAMPAIGN}&utm_content=workflow_wildcard"),
+        "primary": ("Open in Comfy Cloud", COMFY_CLOUD),
+        "secondary": ("Download native JSON", f"{REPO}/releases/latest/download/krea2-native-starter.json?{CAMPAIGN}&utm_content=workflow_native"),
+        "tertiary": ("Download wildcard JSON", f"{REPO}/releases/latest/download/krea2-wildcards-starter.json?{CAMPAIGN}&utm_content=workflow_wildcard"),
     },
     {
         "slug": "krea2-product-photography-prompts",
@@ -194,6 +196,13 @@ def build_page(spec: dict, all_entries: list[dict]) -> str:
         "Download all wildcards",
         f"{REPO}/releases/latest/download/krea2-wildcards.zip?{CAMPAIGN}&utm_content={spec['slug']}_zip",
     )
+    actions = [primary, secondary]
+    if spec.get("tertiary"):
+        actions.append(spec["tertiary"])
+    action_html = "".join(
+        f'<a class="button{" primary" if index == 0 else ""}" href="{url}">{escape(label)}</a>'
+        for index, (label, url) in enumerate(actions)
+    )
     steps = "".join(
         f'<article class="step"><b>{escape(number)}</b><h3>{escape(title)}</h3><p>{escape(body)}</p></article>'
         for number, title, body in spec["steps"]
@@ -234,12 +243,12 @@ def build_page(spec: dict, all_entries: list[dict]) -> str:
 <style>{CSS}</style></head><body><div class="wrap">
 <header class="topbar"><a class="brand" href="{SITE}">Krea 2 Wildcards</a><nav aria-label="Primary"><a href="{SITE}">Catalog</a><a href="{SITE}guides/comfyui-krea2-workflow/">Workflow</a><a href="{REPO}">GitHub</a></nav></header>
 <div class="crumb"><a href="{SITE}">Catalog</a> / Guides / {escape(spec['eyebrow'])}</div>
-<header class="hero"><div><p class="eyebrow">{escape(spec['eyebrow'])}</p><h1>{escape(spec['title'])}</h1><p class="lede">{escape(spec['description'])}</p><div class="actions"><a class="button primary" href="{primary[1]}">{escape(primary[0])}</a><a class="button" href="{secondary[1]}">{escape(secondary[0])}</a></div></div><aside class="heroaside"><div class="metric">{escape(spec['metric'])}</div><div class="small">{escape(spec['metric_note'])}</div></aside></header>
+<header class="hero"><div><p class="eyebrow">{escape(spec['eyebrow'])}</p><h1>{escape(spec['title'])}</h1><p class="lede">{escape(spec['description'])}</p><div class="actions">{action_html}</div></div><aside class="heroaside"><div class="metric">{escape(spec['metric'])}</div><div class="small">{escape(spec['metric_note'])}</div></aside></header>
 <main><section><h2>A repeatable prompt order</h2><p class="sectionintro">Start with the part that defines the image, then move from the large composition to visible surface detail. The order below is short enough to edit without losing track of the variable you changed.</p><div class="formula">{escape(spec['formula'])}</div></section>
 <section><h2>Use it in three moves</h2><div class="steps">{steps}</div></section>
 <section><h2>Generated examples, prompt included</h2><p class="sectionintro">These are catalog entries with the exact prompt and generated output kept together. Copy a prompt, then change one clause at a time.</p>{cards(entries)}</section>
 {recipe_html}<section><h2>What is in the library</h2><div class="facts">{fact_html}</div></section>
-<section><div class="callout"><div><h2>Take the prompts into your own workflow</h2><p>Download the wildcard pack, or use the starter graph to render a prompt in ComfyUI.</p></div><a class="button" href="{event_url(REPO, spec['slug'] + '_github')}">View the repository</a></div></section></main>
+<section><div class="callout"><div><h2>Take the prompts into your own workflow</h2><p>{'Open the native graph in Comfy Cloud, or download either starter for local ComfyUI.' if spec['slug'] == 'comfyui-krea2-workflow' else 'Download the wildcard pack, or use the starter graph to render a prompt in ComfyUI.'}</p></div><a class="button" href="{COMFY_CLOUD if spec['slug'] == 'comfyui-krea2-workflow' else event_url(REPO, spec['slug'] + '_github')}">{'Open the Cloud starter' if spec['slug'] == 'comfyui-krea2-workflow' else 'View the repository'}</a></div></section></main>
 <footer>Prompts are MIT. Images are AI-generated Krea 2 output and are published with generation provenance in the repository. The workflows derive from Comfy-Org's official Krea 2 template.</footer>
 </div><script>
 document.addEventListener('click',function(event){{var button=event.target.closest('.copy');if(!button)return;var value=button.dataset.prompt;var done=function(){{var old=button.textContent;button.textContent='Copied';setTimeout(function(){{button.textContent=old}},1000)}};var fallback=function(){{var area=document.createElement('textarea');area.value=value;document.body.appendChild(area);area.select();var ok=false;try{{ok=document.execCommand('copy')}}catch(error){{ok=false}}area.remove();if(ok)done()}};if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(value).then(done,fallback);else fallback()}});

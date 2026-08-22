@@ -15,6 +15,12 @@ The same graphs are embedded in
 [`krea2-native-starter.png`](krea2-native-starter.png) and
 [`krea2-wildcards-starter.png`](krea2-wildcards-starter.png).
 
+## Open in Comfy Cloud
+
+[Open the native six-node starter in Comfy Cloud](https://cloud.comfy.org/?share=78d328f1548e)
+to copy it into your workspace without downloading a file. The wildcard graph
+is intended for local ComfyUI with `ComfyUI-DynamicPrompts` installed.
+
 ## Model files
 
 Update ComfyUI, then download the official files from

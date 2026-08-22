@@ -25,9 +25,9 @@ Open the [gallery](https://sjh9714.github.io/krea2-wildcards/), press **copy** u
 
 **[Download the wildcard zip](https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip)** for all category files in one archive.
 
-**[JSONL dataset](dataset/prompts.jsonl)**: 499 prompt records with stable IDs, provenance, and output URLs.
+**[Hugging Face](https://huggingface.co/datasets/sjh9714/krea2-wildcards)**: 499 JSONL prompt records.
 
-**[Download the native ComfyUI workflow](workflows/krea2-native-starter.json)** to paste one prompt, or use the **[wildcard workflow](workflows/krea2-wildcards-starter.json)** to sample a new library prompt on every run. Both are also available as drag-and-drop PNGs in [workflows/](workflows/).
+**[Open in Comfy Cloud](https://cloud.comfy.org/?share=78d328f1548e)**, or download the [native](workflows/krea2-native-starter.json) and [wildcard](workflows/krea2-wildcards-starter.json) workflows as JSON or drag-and-drop PNG.
 
 On ComfyUI you can wire it up instead: put [wildcards/](wildcards/) in `ComfyUI/wildcards/` and write `__all__` in a prompt. That needs a dynamic prompts node, which ComfyUI does not come with, so install [comfyui-dynamicprompts](https://github.com/adieyal/comfyui-dynamicprompts) first or the underscores end up in your picture.
 

@@ -21,8 +21,8 @@
     "ui": "gallery-part-1.md",
     "stringcount": "gallery-part-1.md",
     "animal": "gallery-part-1.md",
-    "landscape": "gallery-part-1.md",
-    "fashion": "gallery-part-1.md",
+    "landscape": "gallery-part-2.md",
+    "fashion": "gallery-part-2.md",
     "automotive": "gallery-part-2.md",
     "exterior": "gallery-part-2.md",
     "abstract": "gallery-part-2.md",
@@ -50,9 +50,9 @@
     "glass": "gallery-part-2.md",
     "material": "gallery-part-2.md",
     "crowd": "gallery-part-2.md",
-    "weave": "gallery-part-2.md",
-    "tattoo": "gallery-part-2.md",
-    "pixel-art": "gallery-part-2.md",
+    "weave": "gallery-part-3.md",
+    "tattoo": "gallery-part-3.md",
+    "pixel-art": "gallery-part-3.md",
     "anatomy": "gallery-part-3.md",
     "sculpture": "gallery-part-3.md",
     "plant": "gallery-part-3.md",
@@ -61,6 +61,8 @@
     "silhouette": "gallery-part-3.md",
     "mirror": "gallery-part-3.md",
     "mineral": "gallery-part-3.md",
-    "seasonal": "gallery-part-3.md"
+    "seasonal": "gallery-part-3.md",
+    "packaging": "gallery-part-3.md",
+    "architecture": "gallery-part-3.md"
   }
 }

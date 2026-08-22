@@ -225,34 +225,33 @@ def render_readme(data: dict, lang: str = "en") -> str:
         "en": {
             "gallery_link": "Browse the gallery →",
             "copy_h": "Copy one",
-            "all_h": "Or take all 475",
-            "toc_entries": "prompts, every one with its seed",
+            "all_h": f"Or take all {n}",
+            "toc_entries": "prompts, each paired with its output",
             "tagline": f"{n} {model} prompts, each with the picture it made. Click to copy.",
             "toc": "Categories",
             "prompt": "Prompt",
             "contrib": "Contributing",
-            "contrib_body": "Open a PR adding an entry to `prompts.json` plus your output image. Two rules: the prompt must reproduce, and the image must be the unedited output.",
+            "contrib_body": "Open a PR adding an entry to `prompts.json` plus the unedited output image. Include the exact prompt and either the generation seed or provider asset ID.",
             "license": "License",
             "license_body": ("Prompts are MIT, take them.\n\n"
                 "**The images are AI-generated.** They were produced with Krea 2 Turbo and are "
                 "presented as model output, not as photographs or human artwork. Under the Krea 2 "
                 "Community License you own outputs you generate yourself; commercial use is "
                 "permitted below $1M annual company revenue, and the licence separately requires "
-                "content filtering, which was left enabled for every image here. One entry was "
-                "dropped after the safety checker flagged it.\n\n"
-                "Nothing here was retouched, upscaled or cropped. Every seed is recorded so you "
-                "can regenerate the exact file."),
+                "content filtering, which was left enabled for every image here.\n\n"
+                "Nothing here was retouched, upscaled or cropped. Every entry records either a "
+                "fal seed or the Krea generation asset ID that produced it."),
         },
         "zh": {
             "gallery_link": "浏览画廊 →",
             "copy_h": "复制一条",
             "all_h": "或者全部拿走",
-            "toc_entries": "条提示词，每条都有 seed",
+            "toc_entries": "条提示词，每条都有输出图",
             "tagline": f"{n} 条 {model} 提示词，每条都配着它生成的图。点一下就复制。",
             "toc": "类别",
             "prompt": "提示词",
             "contrib": "参与贡献",
-            "contrib_body": "提交 PR，在 `prompts.json` 中添加条目并附上你的输出图片。两条规则：提示词必须可复现，图片必须是未经编辑的原始输出。",
+            "contrib_body": "提交 PR，在 `prompts.json` 中添加完整提示词、未经编辑的输出图片，以及生成 seed 或提供商资产 ID。",
             "license": "许可",
             "license_body": "提示词采用 MIT 许可。生成的图片受模型提供方条款约束，商用前请自行确认。",
         },
@@ -260,12 +259,12 @@ def render_readme(data: dict, lang: str = "en") -> str:
             "gallery_link": "갤러리 보기 →",
             "copy_h": "하나만 복사",
             "all_h": "아니면 전부 가져가기",
-            "toc_entries": "개 프롬프트, 전부 시드 기록",
+            "toc_entries": "개 프롬프트, 전부 출력 이미지 포함",
             "tagline": f"{model} 프롬프트 {n}개, 각각 그걸로 나온 사진까지. 눌러서 복사.",
             "toc": "카테고리",
             "prompt": "프롬프트",
             "contrib": "기여하기",
-            "contrib_body": "`prompts.json`에 항목을 추가하고 출력 이미지를 첨부해 PR을 보내주세요. 규칙 두 개: 프롬프트는 재현 가능해야 하고, 이미지는 편집하지 않은 원본이어야 합니다.",
+            "contrib_body": "`prompts.json`에 정확한 프롬프트와 편집하지 않은 출력 이미지, 생성 시드 또는 제공자 자산 ID를 함께 추가해 PR을 보내주세요.",
             "license": "라이선스",
             "license_body": "프롬프트는 MIT입니다. 생성된 이미지는 모델 제공자의 약관을 따릅니다, 상업적 사용 전 확인하세요.",
         },
@@ -273,12 +272,12 @@ def render_readme(data: dict, lang: str = "en") -> str:
             "gallery_link": "ギャラリーを見る →",
             "copy_h": "1 つコピー",
             "all_h": "まとめて持っていく",
-            "toc_entries": "件のプロンプト、すべてシード付き",
+            "toc_entries": "件のプロンプト、すべて生成画像付き",
             "tagline": f"{model} プロンプト {n} 件、それぞれ生成された画像つき。押せばコピー。",
             "toc": "カテゴリ",
             "prompt": "プロンプト",
             "contrib": "コントリビュート",
-            "contrib_body": "`prompts.json` にエントリを追加し、出力画像を添えて PR を送ってください。ルールは 2 つ、プロンプトは再現可能であること、画像は未編集の出力であることです。",
+            "contrib_body": "`prompts.json` に正確なプロンプト、未編集の出力画像、生成 seed またはプロバイダーのアセット ID を追加して PR を送ってください。",
             "license": "ライセンス",
             "license_body": "プロンプトは MIT です。生成画像はモデル提供者の規約に従います。商用利用の前に確認してください。",
         },
@@ -286,25 +285,25 @@ def render_readme(data: dict, lang: str = "en") -> str:
             "gallery_link": "Ver la galería →",
             "copy_h": "Copia uno",
             "all_h": "O llévatelos todos",
-            "toc_entries": "prompts, cada uno con su semilla",
+            "toc_entries": "prompts, cada uno con su imagen",
             "tagline": f"{n} prompts de {model}, cada uno con la imagen que produjo. Pulsa y copia.",
             "toc": "Categorías",
             "prompt": "Prompt",
             "contrib": "Contribuir",
-            "contrib_body": "Añade una entrada a `prompts.json` con tu imagen de salida y abre un PR. Dos reglas: el prompt tiene que reproducirse y la imagen tiene que ser la salida sin editar.",
+            "contrib_body": "Añade a `prompts.json` el prompt exacto, la imagen sin editar y la semilla o el ID de recurso del proveedor, y abre un PR.",
             "license": "Licencia",
             "license_body": "Los prompts son MIT. Las imágenes generadas se rigen por los términos del proveedor del modelo; compruébalos antes de un uso comercial.",
         },
         "fr": {
             "gallery_link": "Voir la galerie →",
             "copy_h": "Copier un prompt",
-            "all_h": "Ou prenez les 475",
-            "toc_entries": "prompts, chacun avec sa graine",
+            "all_h": f"Ou prenez les {n}",
+            "toc_entries": "prompts, chacun avec son image",
             "tagline": f"{n} prompts {model}, chacun avec l'image qu'il a produite. Un clic pour copier.",
             "toc": "Catégories",
             "prompt": "Prompt",
             "contrib": "Contribuer",
-            "contrib_body": "Ajoutez une entrée à `prompts.json` avec votre image de sortie et ouvrez une PR. Deux règles : le prompt doit être reproductible et l'image doit être la sortie non retouchée.",
+            "contrib_body": "Ajoutez à `prompts.json` le prompt exact, l'image non retouchée et la graine ou l'identifiant de ressource du fournisseur, puis ouvrez une PR.",
             "license": "Licence",
             "license_body": "Les prompts sont sous MIT. Les images générées relèvent des conditions du fournisseur du modèle ; vérifiez-les avant tout usage commercial.",
         },
@@ -312,25 +311,25 @@ def render_readme(data: dict, lang: str = "en") -> str:
             "gallery_link": "Zur Galerie →",
             "copy_h": "Einen kopieren",
             "all_h": "Oder alle mitnehmen",
-            "toc_entries": "Prompts, jeder mit seinem Seed",
+            "toc_entries": "Prompts, jeder mit seinem Bild",
             "tagline": f"{n} {model}-Prompts, jeder mit dem Bild, das er erzeugt hat. Klicken und kopieren.",
             "toc": "Kategorien",
             "prompt": "Prompt",
             "contrib": "Mitmachen",
-            "contrib_body": "Füge einen Eintrag in `prompts.json` hinzu, leg dein Ausgabebild dazu und öffne einen PR. Zwei Regeln: Der Prompt muss reproduzierbar sein, und das Bild muss die unbearbeitete Ausgabe sein.",
+            "contrib_body": "Füge den exakten Prompt, das unbearbeitete Ausgabebild und den Seed oder die Asset-ID des Anbieters zu `prompts.json` hinzu und öffne einen PR.",
             "license": "Lizenz",
             "license_body": "Die Prompts stehen unter MIT. Für die erzeugten Bilder gelten die Bedingungen des Modellanbieters; prüfe sie vor kommerzieller Nutzung.",
         },
         "pt": {
             "gallery_link": "Ver a galeria →",
             "copy_h": "Copiar um",
-            "all_h": "Ou leve os 475",
-            "toc_entries": "prompts, cada um com a sua seed",
+            "all_h": f"Ou leve os {n}",
+            "toc_entries": "prompts, cada um com a imagem gerada",
             "tagline": f"{n} prompts do {model}, cada um com a imagem que gerou. Clique para copiar.",
             "toc": "Categorias",
             "prompt": "Prompt",
             "contrib": "Contribuir",
-            "contrib_body": "Adicione uma entrada em `prompts.json` com a sua imagem de saída e abra um PR. Duas regras: o prompt tem de reproduzir e a imagem tem de ser a saída sem edição.",
+            "contrib_body": "Adicione a `prompts.json` o prompt exato, a imagem sem edição e a seed ou o ID de recurso do fornecedor, e abra um PR.",
             "license": "Licença",
             "license_body": "Os prompts são MIT. As imagens geradas seguem os termos do fornecedor do modelo; confirme antes de uso comercial.",
         },
@@ -353,7 +352,7 @@ def render_readme(data: dict, lang: str = "en") -> str:
         # build_hero.py stopped drawing one. Read the image before editing this.
         L.append('  <img src="hero.webp" width="912" '
                  'alt="Twelve Krea 2 Turbo outputs in a four by three grid, under the heading '
-                 '475 tested Krea 2 Turbo prompts: a loft under renovation, a desert dune '
+                 f'{n} tested Krea 2 Turbo prompts: a loft under renovation, a desert dune '
                  'ridge at first light, a backlit seed head, an aurora over snow, ice '
                  'diving seen from below, a shelf cloud, a barn owl in flight, a prism '
                  'spectrum on a wall, an icebreaker bow, a quartz point, cut stems in '

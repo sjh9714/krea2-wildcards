@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "model": "Krea 2 Turbo",
   "model_url": "https://huggingface.co/krea/Krea-2-Turbo",
   "launched": "2026-06-22",
@@ -8,7 +8,8 @@
   "categories": {
     "photography": "Photoreal scenes, lighting, lens behaviour, film stock",
     "typography": "Short-string text rendering. Krea 2 holds a single sign or label at any length, including an eight-word plaque, but degrades once several independent strings or a paragraph share the frame.",
-    "product": "Product and packaging shots, studio and in-context",
+    "product": "Products shown as clean hero images, studio still lifes, and campaign-ready details",
+    "packaging": "Label-free packaging studies for coffee, drinks, skincare, and gift products",
     "illustration": "Stylised, painterly, editorial",
     "isometric-3d": "Isometric scenes, dioramas, game-ready assets",
     "editing": "Image-to-image edits whose source is another entry in this catalog",
@@ -18,7 +19,8 @@
     "collectible": "Figurines, pins, keycaps, trading cards: physical-object mockups",
     "stationery": "Cards, letterheads, packaging inserts",
     "food": "Food and drink, studio and in-context",
-    "interior": "Rooms, architecture, spatial light",
+    "interior": "Rooms, hospitality spaces, practical layouts, and spatial light",
+    "architecture": "Exterior buildings and climate-responsive structures photographed in context",
     "pattern": "Repeating surface design, textile, wallpaper, wrapping",
     "brand-mark": "Logos and marks. Single short strings, which the typography findings predict is the model's strongest text case",
     "miniature": "Tilt-shift, dioramas, scale models of places",
@@ -5309,6 +5311,342 @@
         "seed": 353654491
       },
       "batch": 8
+    },
+    {
+      "id": "fashion-009",
+      "category": "fashion",
+      "title": "Sculptural silver ear cuff beauty",
+      "image": "images/fashion-009.webp",
+      "prompt": "Editorial beauty portrait of a model with a sculptural silver ear cuff and wet-look black hair, head and shoulders against warm grey paper, direct gaze, soft frontal light with a narrow rim, quiet luxury mood, fine 35mm grain, visible skin texture, restrained charcoal and silver palette.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "9363ad22-9743-474f-af61-d5b0942f560f",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-010",
+      "category": "fashion",
+      "title": "Camel tailoring on cobalt stairs",
+      "image": "images/fashion-010.webp",
+      "prompt": "Full-length editorial photograph of a model in an oversized camel wool suit on cobalt-blue concrete stairs, low camera angle, precise triangular pose, hard late-afternoon side light, crisp tailoring texture, deep blue shadows, 50mm lens, refined modern campaign.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "9d6ffdea-b1f7-46f7-a1d9-56a6d59d19b7",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-011",
+      "category": "fashion",
+      "title": "Black satin in a concrete gallery",
+      "image": "images/fashion-011.webp",
+      "prompt": "Full-length fashion editorial of a model in a liquid black satin evening dress inside a raw concrete gallery, centered stance with generous negative space, soft bounced flash and cool skylight, restrained monochrome palette, subtle film grain, quiet dramatic luxury.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "2627782b-7105-4043-8dfd-f5c4dd3c076d",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-012",
+      "category": "fashion",
+      "title": "Vermilion knitwear in motion",
+      "image": "images/fashion-012.webp",
+      "prompt": "Dynamic studio fashion photograph of a model wearing sculptural vermilion knitwear, fabric and sleeves caught in a strong side wind against a powder-blue cyclorama, mid-stride pose, sharp 1/500-second motion freeze, bright clean light, tactile wool fibers.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "aa027599-cb09-4cea-a106-f9095c6f1b81",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-013",
+      "category": "fashion",
+      "title": "Technical trench after rain",
+      "image": "images/fashion-013.webp",
+      "prompt": "Night street-style editorial of a model in a translucent technical trench coat after rain, three-quarter walking pose, wet pavement reflecting magenta and amber storefront light, direct on-camera flash balanced with neon ambience, 50mm documentary framing, premium magazine finish.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "f7b3019f-bdb1-4aa7-b02c-6fa094a9ab21",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-014",
+      "category": "fashion",
+      "title": "Cobalt eyeliner beauty",
+      "image": "images/fashion-014.webp",
+      "prompt": "Close beauty editorial of a freckled model wearing graphic cobalt eyeliner and a single pearl earring, face turned slightly toward a broad north-window light, off-white plaster background, natural skin texture, 85mm lens, clean cosmetic campaign, restrained blue and ivory palette.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "edb581d6-89c1-496f-8436-e35add65758d",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-015",
+      "category": "fashion",
+      "title": "Cream linen on the salt flat",
+      "image": "images/fashion-015.webp",
+      "prompt": "Menswear editorial on a pale salt flat at golden hour, model in an unstructured cream linen suit and open-collar shirt, relaxed full-body stance, long soft shadow, warm backlight with a silver reflector on the face, airy tonal palette, fine analog grain.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "c57c881b-55e7-44d8-9868-9174ffffa314",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-016",
+      "category": "fashion",
+      "title": "Oxblood handbag campaign",
+      "image": "images/fashion-016.webp",
+      "prompt": "Accessories campaign portrait of a model holding a geometric oxblood leather handbag at shoulder height, cropped waist-up against dark burgundy seamless paper, one narrow softbox carving the bag edges, calm direct gaze, glossy leather detail, elegant tonal styling.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "b1b02081-67c1-480f-af72-bb13c2a2cee5",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "product-019",
+      "category": "product",
+      "title": "Frosted serum on travertine",
+      "image": "images/product-019.webp",
+      "prompt": "Premium skincare serum product photograph, one frosted glass dropper bottle without readable text on a warm travertine block, three-quarter hero angle, hard morning sunlight casting a clean diagonal shadow, pale sand backdrop, tiny condensation beads, crisp commercial retouching.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "8cb14e75-77dc-479c-93ed-cc46a5f9edd4",
+        "aspect_ratio": "1:1"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "product-020",
+      "category": "product",
+      "title": "Headphones over polished chrome",
+      "image": "images/product-020.webp",
+      "prompt": "Matte black over-ear headphones suspended just above a polished chrome surface, front three-quarter product view, two narrow white strip lights defining the earcups, deep charcoal studio background, precise reflections, premium technology campaign, no text or extra objects.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "31279c4e-1b11-4bca-a797-247aee1d096a",
+        "aspect_ratio": "1:1"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "product-021",
+      "category": "product",
+      "title": "Coral performance running shoe",
+      "image": "images/product-021.webp",
+      "prompt": "Single coral-red performance running shoe in a dynamic side profile on a softly rippled grey surface, small dust particles kicked up behind the heel, hard rim light and large soft key, visible mesh and foam texture, energetic sports advertising image, no logos or text.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "13d51978-d404-44a1-b622-4f3df6885cfb",
+        "aspect_ratio": "1:1"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "product-022",
+      "category": "product",
+      "title": "Green-dial steel watch",
+      "image": "images/product-022.webp",
+      "prompt": "Luxury wristwatch macro product photograph, brushed steel case and dark green dial resting on folded charcoal fabric, low three-quarter angle, controlled pin highlights tracing the bezel, deep soft shadows, 100mm macro lens, sharp material detail, understated horology campaign.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "2c38e709-cfd8-4cc2-a737-0963d1610d4e",
+        "aspect_ratio": "1:1"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "packaging-001",
+      "category": "packaging",
+      "title": "Kraft coffee bag still life",
+      "image": "images/packaging-001.webp",
+      "prompt": "Minimal specialty coffee packaging still life, one unprinted warm kraft paper bag with a small cream label shape beside scattered roasted beans, centered tabletop composition, soft window light from the left, deep brown backdrop, tactile paper fibers, modern independent roaster mood, no readable text.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "e3fe01e4-402b-4310-91dd-d56bd5f305ea",
+        "aspect_ratio": "1:1"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "packaging-002",
+      "category": "packaging",
+      "title": "Citrus can on wet acrylic",
+      "image": "images/packaging-002.webp",
+      "prompt": "Cold sparkling citrus beverage can with a blank satin-yellow surface, upright on wet translucent acrylic, fresh condensation droplets and one curled lemon peel, strong golden backlight through a pale aqua background, crisp summer campaign, clean negative space, no readable text.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "30d9edaf-455c-4cb1-9281-0d20b8273e72",
+        "aspect_ratio": "1:1"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "packaging-003",
+      "category": "packaging",
+      "title": "Peach skincare packaging set",
+      "image": "images/packaging-003.webp",
+      "prompt": "Skincare packaging set with one matte peach squeeze tube and one matching paper carton, both unbranded, arranged on overlapping blush-pink planes, broad softbox overhead with a narrow side shadow, front three-quarter view, refined direct-to-consumer beauty campaign, no readable text.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "d5b651dd-3a23-4113-9ac7-1c6eb9196a4a",
+        "aspect_ratio": "1:1"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "packaging-004",
+      "category": "packaging",
+      "title": "Navy and gold chocolate wrap",
+      "image": "images/packaging-004.webp",
+      "prompt": "Artisan chocolate packaging still life, one deep navy paper sleeve and one gold-foil inner wrapper beside two dark chocolate squares, top-down composition on cream stone, warm directional light, precise paper creases and subtle metallic glints, elegant gift-ready presentation, no readable text.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "23048f6f-bcb4-4272-b7da-c6b975c08ea7",
+        "aspect_ratio": "1:1"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "interior-011",
+      "category": "interior",
+      "title": "Pale birch Japandi living room",
+      "image": "images/interior-011.webp",
+      "prompt": "Wide interior photograph of a calm Japandi living room with pale birch joinery, low linen sofa and one black ceramic vessel, eye-level view from the doorway, soft overcast north light, honest wood grain and woven texture, warm off-white walls, uncluttered lived-in realism.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "b295907a-aa89-4246-a591-4295a6b6799c",
+        "aspect_ratio": "3:2"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "interior-012",
+      "category": "interior",
+      "title": "Oxblood counter neighborhood cafe",
+      "image": "images/interior-012.webp",
+      "prompt": "Compact neighborhood cafe interior combining 1970s chrome, oxblood-red laminate and cream tile, wide view from the entrance toward a curved counter, late-morning sunlight across the floor, three occupied stools without prominent faces, candid architectural photography, crisp material detail.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "ba45b5e2-a224-4e56-8324-1178e6ac05a2",
+        "aspect_ratio": "3:2"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "interior-013",
+      "category": "interior",
+      "title": "Brutalist clerestory bedroom",
+      "image": "images/interior-013.webp",
+      "prompt": "Brutalist bedroom interior with board-formed concrete walls, a low walnut bed and rust-colored wool blanket, symmetrical frontal composition, narrow clerestory daylight creating one soft band across the room, restrained warm-grey palette, quiet tactile architectural photography.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "4cc318da-8974-4809-937b-fe5808dda385",
+        "aspect_ratio": "3:2"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "interior-014",
+      "category": "interior",
+      "title": "Plaster stair hotel lobby",
+      "image": "images/interior-014.webp",
+      "prompt": "Boutique hotel lobby with a sculptural cream plaster staircase, deep green velvet seating and a large paper pendant, wide corner composition showing circulation and scale, warm indirect evening light with subtle practical lamps, editorial hospitality photography, refined but welcoming.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "51f6d09a-af04-4cad-8b1d-9d58e02dbdec",
+        "aspect_ratio": "3:2"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "interior-015",
+      "category": "interior",
+      "title": "Compact sage apartment kitchen",
+      "image": "images/interior-015.webp",
+      "prompt": "Small city apartment kitchen designed for real use, sage-green flat-panel cabinets, stainless worktop and open oak shelf with a few everyday ceramics, diagonal view from the dining area, bright diffuse morning light, realistic proportions, clean contemporary interiors magazine photograph.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "bad60e27-460d-45f9-bc5c-e18e70dbef07",
+        "aspect_ratio": "3:2"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "architecture-001",
+      "category": "architecture",
+      "title": "Timber cabin at blue hour",
+      "image": "images/architecture-001.webp",
+      "prompt": "Contemporary timber cabin exterior beside a dark pine forest, low rectangular volume with a deep covered terrace, three-quarter view at blue hour, warm interior light through large windows, damp gravel foreground, soft mist between trees, understated architectural photography with natural material detail.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "64fe4bf1-a10e-4157-8fa1-72b1ec151b9f",
+        "aspect_ratio": "3:2"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "architecture-002",
+      "category": "architecture",
+      "title": "Brick corner house after rain",
+      "image": "images/architecture-002.webp",
+      "prompt": "Compact urban brick house on a narrow corner lot, textured red masonry and recessed bronze windows, eye-level street view after rain, one bicycle for scale, overcast daylight and subtle pavement reflections, documentary architecture photography, precise geometry without dramatic distortion.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "3a6ad346-ea10-498d-be62-aa0a3c2ad515",
+        "aspect_ratio": "3:2"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "architecture-003",
+      "category": "architecture",
+      "title": "Rammed-earth desert courtyard",
+      "image": "images/architecture-003.webp",
+      "prompt": "Desert courtyard house formed by low sand-colored rammed-earth walls around a single olive tree, elevated three-quarter architectural view at early morning, long restrained shadows, pale stone ground and distant arid hills, serene climate-responsive design, crisp editorial visualization with believable materials.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "73341cdd-fd20-45c5-bbfa-936cd259eb13",
+        "aspect_ratio": "3:2"
+      },
+      "batch": 9,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
     }
   ],
   "findings": {
@@ -6262,9 +6600,10 @@
       "jamez-bondos has not been pushed since 2025-05-26."
     ]
   },
-  "generations": 561,
-  "discarded_generations": 21,
+  "generations": 657,
+  "discarded_generations": 93,
   "spend": 4.54,
+  "web_credits_spent": 192,
   "attribution": {
     "_default": "Every entry in this catalog was written and generated by the repository owner unless it carries its own attribution. Entries that came from somebody else name them, link them, and say what licence the image is under, and those fields are required rather than encouraged.",
     "owner": "@sjh9714",

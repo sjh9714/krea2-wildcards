@@ -1,6 +1,6 @@
 # Data format
 
-`prompts.json` is the canonical machine readable catalog. The current schema version is `1.0.0`.
+`prompts.json` is the canonical machine readable catalog. The current schema version is `2.0.0`.
 
 ## Compatibility
 
@@ -14,9 +14,10 @@ Readers should accept new unknown fields. A change to the meaning or required sh
 - `categories` maps category names to descriptions
 - `entries` contains published prompt records
 - `failures.entries` contains documented failed generations
-- `generations` is every generation run across the eight batches
+- `generations` is every generation run across all batches and providers
 - `discarded_generations` is the count discarded without a surviving record
 - `spend` is the measured total generation cost in US dollars
+- `web_credits_spent` records non-cash Krea web credits used for the curated web batch
 
 The accounting invariant is shown below.
 
@@ -26,7 +27,12 @@ generations = len(entries) + len(failures.entries) + discarded_generations
 
 ## Published entry fields
 
-Every published entry has `id`, `category`, `title`, `prompt`, `image`, `params.seed`, and `batch`. Editing entries also have `source` and `strength`. Attribution fields appear only when an entry does not use the catalog default.
+Every published entry has `id`, `category`, `title`, `prompt`, `image`, `params`, and `batch`. The `params` object carries one of two provenance routes:
+
+- fal runs record `seed`
+- Krea web runs record `provider: krea-web`, `generation_id`, and `aspect_ratio`
+
+Editing entries also have `source` and `strength`. Attribution fields appear only when an entry does not use the catalog default.
 
 ## Failure fields
 
@@ -39,7 +45,7 @@ import json
 from pathlib import Path
 
 catalog = json.loads(Path("prompts.json").read_text())
-assert catalog["schema_version"].split(".")[0] == "1"
+assert catalog["schema_version"].split(".")[0] == "2"
 for entry in catalog["entries"]:
     print(entry["prompt"])
 ```

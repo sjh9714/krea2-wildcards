@@ -1,16 +1,16 @@
 # Reproducing these images
 
-Short version: **the seeds in this catalog reproduce on fal's `krea-2/turbo`
-endpoint and nowhere else.** If you run the open weights locally, the seed will
-not give you the image in this repo, and this catalog cannot tell you the
-settings that would, because the endpoint does not expose them.
+This catalog records two generation routes. The original fal batch carries seeds
+for deterministic hosted re-runs. The newer Krea web batch carries the exact
+Krea generation asset ID and aspect ratio because the web app does not expose a
+seed. In both routes, the prompt text is the portable part for local workflows.
 
 That is a limitation of how this catalog was built. It is written down here
 rather than left for you to discover.
 
-## The exact call
+## fal route: exact call
 
-Every one of the 475 images was produced by this, and nothing else:
+The original 475 published images were produced by this call:
 
 ```
 POST  https://queue.fal.run/fal-ai/krea-2/turbo
@@ -38,6 +38,22 @@ The five `editing-*` entries go to `fal-ai/krea-2/turbo/image-to-image` instead
 and additionally pass a source image and a strength. Both are recorded on the
 entry: `source` names the catalog entry the image came from, and `strength` is
 0.50 to 0.60 across the five.
+
+## Krea web route: asset provenance
+
+The 24 entries in batch 9 were generated in the signed-in Krea web app with
+Krea 2 Turbo. Each prompt returned four candidates. One candidate was selected
+after visual review and the other three remain counted in the generation total.
+
+These entries record:
+
+- `params.provider: krea-web`
+- the selected image's `params.generation_id`
+- the requested `params.aspect_ratio`
+- `creation_tool: Krea web app, Krea 2 Turbo`
+
+The generation ID is the UUID in Krea's original asset URL. It identifies the
+exact selected output without inventing a seed the interface never supplied.
 
 ## What the endpoint does not accept
 
@@ -99,4 +115,6 @@ Read those five as reproducible edits, not as reproducible pixels.
 
 ## Cost
 
-$4.54 across 561 generations, about $0.0084 per image at the time of the run.
+The fal runs cost $4.54 across 561 generations, about $0.0084 per image at the
+time. Batch 9 used 192 included Krea web credits for 96 outputs and added no cash
+spend. The catalog now accounts for 657 generations in total.

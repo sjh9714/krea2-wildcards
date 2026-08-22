@@ -1,4 +1,302 @@
 [← the categories](gallery.md)
+## weave
+
+_A controlled experiment: rope and chain from separable to fully interpenetrating, one surface and one light throughout_
+
+### 1. Weave: three separate ropes
+
+<img src="../images/weave-1.webp" width="420" alt="Weave: three separate ropes">
+
+```text
+Three separate lengths of natural hemp rope lying parallel and not touching on a plain grey concrete surface, shot from directly above under soft even light. Fibre twist clearly visible on each. Nothing else in frame.
+```
+
+`seed: 806878733` · `weave-1`
+
+<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Weave: two ropes crossing
+
+<img src="../images/weave-2.webp" width="420" alt="Weave: two ropes crossing">
+
+```text
+Two lengths of natural hemp rope crossing over each other in a simple X on a plain grey concrete surface, shot from directly above under soft even light. Fibre twist clearly visible, one rope plainly lying on top of the other. Nothing else in frame.
+```
+
+`seed: 1857044032` · `weave-2`
+
+<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Weave: overhand knot
+
+<img src="../images/weave-3.webp" width="420" alt="Weave: overhand knot">
+
+```text
+A single overhand knot tied loosely in a length of natural hemp rope on a plain grey concrete surface, shot from directly above under soft even light. The rope passes through its own loop once. Fibre twist clearly visible. Nothing else in frame.
+```
+
+`seed: 620932301` · `weave-3`
+
+<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Weave: two chain links
+
+<img src="../images/weave-5.webp" width="420" alt="Weave: two chain links">
+
+```text
+Exactly 2 steel chain links interlocked with each other, lying on a plain grey concrete surface, shot from directly above under soft even light. Each link a closed oval of round bar, one passing through the other. Nothing else in frame.
+```
+
+`seed: 728314033` · `weave-5`
+
+<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 5. Weave: a length of chain
+
+<img src="../images/weave-6.webp" width="420" alt="Weave: a length of chain">
+
+```text
+A short length of heavy steel chain lying in a loose S on a plain grey concrete surface, shot from directly above under soft even light. Every link a closed oval of round bar passing through its two neighbours. Nothing else in frame.
+```
+
+`seed: 488066171` · `weave-6`
+
+<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 6. Weave: basket wall
+
+<img src="../images/weave-7.webp" width="420" alt="Weave: basket wall">
+
+```text
+A close view of the woven wall of a willow basket, the horizontal weavers passing alternately in front of and behind the vertical stakes. Soft even light, shot square on, the weave filling the frame. Nothing else visible.
+```
+
+`seed: 1404524049` · `weave-7`
+
+<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 7. Weave: drawn knotwork
+
+<img src="../images/weave-8.webp" width="420" alt="Weave: drawn knotwork">
+
+```text
+A drawn Celtic knotwork panel in black ink on cream paper: a single continuous interlaced band that passes alternately over and under itself throughout, no breaks, no colour, no border decoration. Flat, straight on, filling the frame.
+```
+
+`seed: 1984874786` · `weave-8`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+## tattoo
+
+_Flash sheets and applied work_
+
+### 1. American traditional flash sheet
+
+<img src="../images/tattoo-001.webp" width="420" alt="American traditional flash sheet">
+
+```text
+An American traditional tattoo flash sheet on aged paper: a swallow, an anchor, a dagger and a rose arranged with space between them, bold black outlines, limited flat colour in red, green and yellow. No text, no border.
+```
+
+`seed: 1798763568` · `tattoo-001`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Fine-line botanical, forearm
+
+<img src="../images/tattoo-002.webp" width="420" alt="Fine-line botanical, forearm">
+
+```text
+A fine-line botanical tattoo on a forearm, single-weight black line with no shading, a sprig of yarrow following the muscle. Skin slightly reddened around the fresh work, natural window light, the rest of the arm out of focus.
+```
+
+`seed: 586501771` · `tattoo-002`
+
+<sub>vocabulary: `window light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Japanese sleeve, wave and koi
+
+<img src="../images/tattoo-003.webp" width="420" alt="Japanese sleeve, wave and koi">
+
+```text
+A Japanese-style tattoo sleeve photographed on an upper arm: a koi against stylised wave patterns, bold black linework with grey wash and limited colour, the background waves flowing around the muscle. Studio light, plain backdrop.
+```
+
+`seed: 1099487398` · `tattoo-003`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Blackwork geometric
+
+<img src="../images/tattoo-004.webp" width="420" alt="Blackwork geometric">
+
+```text
+A blackwork geometric tattoo on a calf: dense solid black shapes with negative-space skin lines between them, sharp edges, no grey and no colour. Raking light so the fresh ink sits slightly proud. Plain background.
+```
+
+`seed: 472089204` · `tattoo-004`
+
+<sub>vocabulary: `raking light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 5. Stick and poke, small
+
+<img src="../images/tattoo-005.webp" width="420" alt="Stick and poke, small">
+
+```text
+A small hand-poked tattoo on the inside of a wrist: a simple crescent moon in slightly uneven dots, the line wobbling where the hand moved. Macro, natural light, skin texture and fine hairs visible.
+```
+
+`seed: 445435906` · `tattoo-005`
+
+<sub>vocabulary: `macro` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 6. Woodcut-style raven
+
+<img src="../images/tattoo-006.webp" width="420" alt="Woodcut-style raven">
+
+```text
+A woodcut-style tattoo of a raven on a shoulder blade, heavy parallel hatching for the shading and bold contour lines, no grey wash, no colour. Soft directional light, the shoulder turned away from camera.
+```
+
+`seed: 708038755` · `tattoo-006`
+
+<sub>vocabulary: `directional light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 7. Flash sheet, ocean set
+
+<img src="../images/tattoo-007.webp" width="420" alt="Flash sheet, ocean set">
+
+```text
+A tattoo flash sheet of ocean motifs on off-white paper: a lighthouse, a whale tail, a compass rose and a knotted rope, evenly spaced, bold outlines with muted flat colour. No text anywhere on the sheet.
+```
+
+`seed: 943002415` · `tattoo-007`
+
+<sub>vocabulary: `muted` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+## pixel-art
+
+_Low-resolution sprite and tile work_
+
+### 1. Pixel tileset, dungeon
+
+<img src="../images/pixel-art-001.webp" width="420" alt="Pixel tileset, dungeon">
+
+```text
+A pixel-art tileset for a dungeon: stone floor, wall, door and stair tiles laid out in a grid, hard-edged pixels with no anti-aliasing, a limited palette of about sixteen colours. Chunky and readable at small size. No text.
+```
+
+`seed: 808571885` · `pixel-art-001`
+
+<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Isometric pixel room
+
+<img src="../images/pixel-art-003.webp" width="420" alt="Isometric pixel room">
+
+```text
+An isometric pixel-art room: a desk, a bed, a rug and a window, drawn on a strict 2:1 isometric grid with hard pixel edges and dithered shading. Muted palette, no anti-aliasing, no text.
+```
+
+`seed: 1079501690` · `pixel-art-003`
+
+<sub>vocabulary: `isometric`, `muted palette` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Pixel landscape, parallax
+
+<img src="../images/pixel-art-004.webp" width="420" alt="Pixel landscape, parallax">
+
+```text
+A pixel-art side-scrolling landscape with three depth layers: dark foreground trees, mid-ground hills, pale distant mountains, each flatter and lighter than the last. Hard pixel edges, dithered skies, limited palette.
+```
+
+`seed: 1194676723` · `pixel-art-004`
+
+<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Pixel food icons
+
+<img src="../images/pixel-art-005.webp" width="420" alt="Pixel food icons">
+
+```text
+A grid of sixteen pixel-art food icons — bread, fish, apple, cheese and so on — each drawn in a small square cell with hard pixel edges, black outlines and a limited palette. Even spacing, plain background, no text.
+```
+
+`seed: 25307749` · `pixel-art-005`
+
+<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 5. Dithered gradient sky
+
+<img src="../images/pixel-art-006.webp" width="420" alt="Dithered gradient sky">
+
+```text
+A pixel-art sunset sky rendered entirely with ordered dithering between four colours, the dither pattern clearly visible as alternating pixels, a flat black horizon line across the lower third. No smooth gradients anywhere.
+```
+
+`seed: 1733307886` · `pixel-art-006`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 6. Pixel portrait, 32x32 feel
+
+<img src="../images/pixel-art-007.webp" width="420" alt="Pixel portrait, 32x32 feel">
+
+```text
+A pixel-art portrait bust at very low resolution, perhaps thirty-two pixels across, so each pixel is a large visible square. Limited palette, hard edges, readable features built from very few pixels. Plain background.
+```
+
+`seed: 324325015` · `pixel-art-007`
+
+<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 7. Pixel shop interface
+
+<img src="../images/pixel-art-008.webp" width="420" alt="Pixel shop interface">
+
+```text
+A pixel-art game shop interface: a bordered panel with item slots in a grid, a coin icon and a scroll bar, drawn with hard pixel edges and a limited palette. The panel border built from repeated corner and edge tiles. No text.
+```
+
+`seed: 1430458668` · `pixel-art-008`
+
+<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
 ## anatomy
 
 _Medical and natural-history illustration of bodies_
@@ -960,5 +1258,107 @@ A thin sheet of ice over a puddle, broken through in the middle by a boot so the
 `seed: 353654491` · `seasonal-008`
 
 <sub>vocabulary: `flat light`, `macro`, `straight down` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+## packaging
+
+_Label-free packaging studies for coffee, drinks, skincare, and gift products_
+
+### 1. Kraft coffee bag still life
+
+<img src="../images/packaging-001.webp" width="420" alt="Kraft coffee bag still life">
+
+```text
+Minimal specialty coffee packaging still life, one unprinted warm kraft paper bag with a small cream label shape beside scattered roasted beans, centered tabletop composition, soft window light from the left, deep brown backdrop, tactile paper fibers, modern independent roaster mood, no readable text.
+```
+
+`Krea asset: e3fe01e4-402b-4310-91dd-d56bd5f305ea` · `aspect: 1:1` · `packaging-001`
+
+<sub>vocabulary: `window light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Citrus can on wet acrylic
+
+<img src="../images/packaging-002.webp" width="420" alt="Citrus can on wet acrylic">
+
+```text
+Cold sparkling citrus beverage can with a blank satin-yellow surface, upright on wet translucent acrylic, fresh condensation droplets and one curled lemon peel, strong golden backlight through a pale aqua background, crisp summer campaign, clean negative space, no readable text.
+```
+
+`Krea asset: 30d9edaf-455c-4cb1-9281-0d20b8273e72` · `aspect: 1:1` · `packaging-002`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Peach skincare packaging set
+
+<img src="../images/packaging-003.webp" width="420" alt="Peach skincare packaging set">
+
+```text
+Skincare packaging set with one matte peach squeeze tube and one matching paper carton, both unbranded, arranged on overlapping blush-pink planes, broad softbox overhead with a narrow side shadow, front three-quarter view, refined direct-to-consumer beauty campaign, no readable text.
+```
+
+`Krea asset: d5b651dd-3a23-4113-9ac7-1c6eb9196a4a` · `aspect: 1:1` · `packaging-003`
+
+<sub>vocabulary: `matte`, `overhead`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Navy and gold chocolate wrap
+
+<img src="../images/packaging-004.webp" width="420" alt="Navy and gold chocolate wrap">
+
+```text
+Artisan chocolate packaging still life, one deep navy paper sleeve and one gold-foil inner wrapper beside two dark chocolate squares, top-down composition on cream stone, warm directional light, precise paper creases and subtle metallic glints, elegant gift-ready presentation, no readable text.
+```
+
+`Krea asset: 23048f6f-bcb4-4272-b7da-c6b975c08ea7` · `aspect: 1:1` · `packaging-004`
+
+<sub>vocabulary: `directional light`, `top-down` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+## architecture
+
+_Exterior buildings and climate-responsive structures photographed in context_
+
+### 1. Timber cabin at blue hour
+
+<img src="../images/architecture-001.webp" width="420" alt="Timber cabin at blue hour">
+
+```text
+Contemporary timber cabin exterior beside a dark pine forest, low rectangular volume with a deep covered terrace, three-quarter view at blue hour, warm interior light through large windows, damp gravel foreground, soft mist between trees, understated architectural photography with natural material detail.
+```
+
+`Krea asset: 64fe4bf1-a10e-4157-8fa1-72b1ec151b9f` · `aspect: 3:2` · `architecture-001`
+
+<sub>vocabulary: `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Brick corner house after rain
+
+<img src="../images/architecture-002.webp" width="420" alt="Brick corner house after rain">
+
+```text
+Compact urban brick house on a narrow corner lot, textured red masonry and recessed bronze windows, eye-level street view after rain, one bicycle for scale, overcast daylight and subtle pavement reflections, documentary architecture photography, precise geometry without dramatic distortion.
+```
+
+`Krea asset: 3a6ad346-ea10-498d-be62-aa0a3c2ad515` · `aspect: 3:2` · `architecture-002`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Rammed-earth desert courtyard
+
+<img src="../images/architecture-003.webp" width="420" alt="Rammed-earth desert courtyard">
+
+```text
+Desert courtyard house formed by low sand-colored rammed-earth walls around a single olive tree, elevated three-quarter architectural view at early morning, long restrained shadows, pale stone ground and distant arid hills, serene climate-responsive design, crisp editorial visualization with believable materials.
+```
+
+`Krea asset: 73341cdd-fd20-45c5-bbfa-936cd259eb13` · `aspect: 3:2` · `architecture-003`
+
+<sub>vocabulary: `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>

@@ -38,7 +38,7 @@ h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 10px;letter-spacing:-.02em}
 .actions a{display:inline-block;padding:7px 11px;border:1px solid var(--line);border-radius:5px;text-decoration:none;font-size:.86rem;font-weight:600}
 .actions a:first-child{background:var(--acc);border-color:var(--acc);color:var(--bg)}
 .actions a:hover{border-color:var(--acc)}
-.actions a:active,.cp:active,.fav:active,#favonly:active,#close:active{transform:translateY(1px)}
+.actions a:active,.cp:active,.fav:active,.select:active,.cardshare:active,.toolbtn:active,#favonly:active,#close:active,#closecompare:active{transform:translateY(1px)}
 h2{font-size:1.35rem;margin:56px 0 6px;letter-spacing:-.01em;scroll-margin-top:12px}
 /* Anchors on a page this tall are useless if the browser lands mid-image,
    and lazy-loaded figures above the target shift it as they resolve. The
@@ -51,6 +51,9 @@ h2 .n{font:12px ui-monospace,monospace;color:var(--mut);margin-left:8px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
 figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:border-color .16s ease}
 figure:hover{border-color:var(--acc)}
+figure.selected{border-color:var(--acc);box-shadow:0 0 0 2px color-mix(in srgb,var(--acc) 28%,transparent)}
+figure.linked{animation:linked 1.8s ease}
+@keyframes linked{0%,35%{box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 55%,transparent)}100%{box-shadow:none}}
 figure img{width:100%;display:block;aspect-ratio:1;object-fit:cover;background:var(--line)}
 .zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
 .zoom:focus-visible{outline:3px solid var(--acc);outline-offset:-3px}
@@ -67,6 +70,13 @@ figure.open pre{display:block;-webkit-line-clamp:none}
 a{color:var(--acc)}
 footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem;max-width:74ch}
 .tools{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:minmax(15rem,1fr) minmax(11rem,15rem) auto auto;gap:9px;align-items:center;margin:0 -8px 14px;padding:10px 8px;background:var(--bg);border-bottom:1px solid var(--line)}
+.collection-tools{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:7px;padding-top:2px}
+.toolbtn,.import-label{min-height:34px;padding:6px 9px;font:inherit;font-size:.78rem;font-weight:600;line-height:1.2;cursor:pointer;border:1px solid var(--line);border-radius:5px;background:var(--card);color:inherit}
+.toolbtn:hover,.import-label:hover{border-color:var(--acc)}
+.toolbtn[aria-pressed=true]{color:var(--bg);background:var(--acc);border-color:var(--acc)}
+.toolbtn:disabled{cursor:not-allowed;opacity:.42}
+.import-label input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+#toolstatus{margin-left:auto;color:var(--mut);font-size:.78rem;min-height:1.2em}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 #q,#category,#favonly{min-height:42px;padding:8px 11px;font:inherit;border:1px solid var(--line);border-radius:5px;background:var(--card);color:inherit}
 #q{width:100%}
@@ -81,16 +91,31 @@ footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--line);color:v
 .fav{float:right;margin:8px 0 0;padding:4px 9px;font:inherit;font-size:.82rem;cursor:pointer;border:1px solid transparent;border-radius:5px;background:transparent;color:var(--mut)}
 .fav:hover{color:inherit;border-color:var(--line)}
 .fav[aria-pressed=true]{color:var(--acc);border-color:var(--acc);font-weight:650}
+.select,.cardshare{float:right;margin:8px 5px 0 0;padding:4px 9px;font:inherit;font-size:.82rem;cursor:pointer;border:1px solid transparent;border-radius:5px;background:transparent;color:var(--mut)}
+.select:hover,.cardshare:hover{color:inherit;border-color:var(--line)}
+.select[aria-pressed=true]{color:var(--bg);background:var(--acc);border-color:var(--acc);font-weight:650}
 h2 .cp{margin:0 0 0 10px;font-size:.72rem;font-weight:400}
 .nojs .cp{display:none}
-.nojs .fav,.nojs #favonly{display:none}
+.nojs .fav,.nojs .select,.nojs .cardshare,.nojs #favonly,.nojs .collection-tools{display:none}
 dialog{width:min(92vw,980px);padding:0;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--fg);box-shadow:0 24px 80px #0008}
 dialog::backdrop{background:#000b}
 #viewer img{display:block;width:100%;max-height:82vh;object-fit:contain;background:#080908}
 .viewerbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 12px}
 #viewtitle{margin:0;font-size:.9rem;color:var(--mut);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #close{padding:6px 10px;border:1px solid var(--line);border-radius:5px;background:transparent;color:inherit;cursor:pointer}
-@media(max-width:760px){.tools{grid-template-columns:1fr 1fr}.find{grid-column:1/-1}#qn{text-align:left}}
+#compareviewer{width:min(94vw,1180px);max-height:90vh;overflow:auto;padding:18px}
+.dialoghead{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
+.dialoghead h2{margin:0;font-size:1.15rem}
+#closecompare{padding:6px 10px;border:1px solid var(--line);border-radius:5px;background:transparent;color:inherit;cursor:pointer}
+.comparegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.comparecard{min-width:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg)}
+.comparecard img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:var(--line)}
+.comparebody{padding:10px 11px}
+.comparebody h3{margin:0 0 6px;font-size:.9rem}
+.comparebody p{margin:0;color:var(--mut);font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+.comparNote{color:var(--mut);font-size:.82rem;margin:0 0 12px}
+@media(max-width:760px){.tools{grid-template-columns:1fr 1fr;position:static}.find{grid-column:1/-1}#qn{text-align:left}.collection-tools{gap:6px}#toolstatus{width:100%;margin-left:0}.toolbtn,.import-label{flex:1 0 auto}.comparegrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.comparegrid{grid-template-columns:1fr}}
 """
 
 
@@ -180,7 +205,17 @@ def main() -> int:
     for cat in by:
         L.append(f'<option value="{html.escape(cat, quote=True)}">{html.escape(cat)}</option>')
     L.append('</select><button id=favonly type=button aria-pressed=false>Saved only</button>'
-             f'<span id=qn aria-live=polite>{len(kept)} prompts</span></div>')
+             f'<span id=qn aria-live=polite>{len(kept)} prompts</span>')
+    L.append('<div class=collection-tools aria-label="Saved and selection tools">'
+             '<button class=toolbtn id=share type=button>Copy filter link</button>'
+             '<button class=toolbtn id=exportsaved type=button>Export saved</button>'
+             '<label class=import-label for=importsaved>Import saved'
+             '<input id=importsaved type=file accept="application/json"></label>'
+             '<button class=toolbtn id=selectvisible type=button>Select visible</button>'
+             '<button class=toolbtn id=compareselected type=button disabled>Compare 0</button>'
+             '<button class=toolbtn id=downloadselected type=button disabled>Download 0</button>'
+             '<button class=toolbtn id=clearselection type=button disabled>Clear</button>'
+             '<span id=toolstatus aria-live=polite></span></div></div>')
     for cat, items in by.items():
         L.append(f'<section class=category data-cat="{html.escape(cat, quote=True)}">')
         L.append(f'<h2 id="{html.escape(cat)}">{html.escape(cat)}'
@@ -194,12 +229,24 @@ def main() -> int:
             L.append(f"<p class=cat-desc>{html.escape(desc)}</p>")
         L.append("<div class=grid>")
         for e in items:
-            seed = (e.get("params") or {}).get("seed")
+            params = e.get("params") or {}
+            seed = params.get("seed")
+            asset = params.get("generation_id")
+            if seed is not None:
+                provenance = f"seed {seed}"
+            elif asset:
+                ratio = params.get("aspect_ratio")
+                ratio_s = f" · {html.escape(str(ratio))}" if ratio else ""
+                provenance = (f'Krea asset <span title="{html.escape(str(asset), quote=True)}">'
+                              f'{html.escape(str(asset)[:8])}</span>{ratio_s}')
+            else:
+                provenance = "generation recorded"
             extra = f' · from <code>{html.escape(e["source"])}</code> at strength {e.get("strength")}' if e.get("source") else ""
             # data-p carries the prompt as it was run. The <pre> shows the same
             # string with <mark> around the vocabulary terms; if the button ever
             # copied the rendered version the reader would paste markup.
             L.append(f'<figure data-id="{html.escape(e["id"], quote=True)}" '
+                     f'id="prompt-{html.escape(e["id"], quote=True)}" '
                      f'data-cat="{html.escape(cat, quote=True)}">'
                      f'<button class=zoom type=button data-src="{up}{html.escape(e["image"], quote=True)}" '
                      f'data-title="{html.escape(e["title"], quote=True)}" '
@@ -214,7 +261,11 @@ def main() -> int:
                      f'<button class=more aria-expanded=false>show all</button>'
                      f'<button class=fav type=button aria-pressed=false '
                      f'aria-label="Save {html.escape(e["title"], quote=True)}">save</button>'
-                     f'<div class=seed>seed {seed}{extra}{credit(e)}</div></figcaption></figure>')
+                     f'<button class=select type=button aria-pressed=false '
+                     f'aria-label="Select {html.escape(e["title"], quote=True)} for comparison">select</button>'
+                     f'<button class=cardshare type=button '
+                     f'aria-label="Copy a link to {html.escape(e["title"], quote=True)}">link</button>'
+                     f'<div class=seed>{provenance}{extra}{credit(e)}</div></figcaption></figure>')
         L.append("</div></section>")
 
     L.append('<p id=empty hidden>No prompts match these filters. Try another search or category.</p>')
@@ -223,11 +274,16 @@ def main() -> int:
              '<div class=viewerbar><p id=viewtitle></p>'
              '<button id=close type=button aria-label="Close image viewer">close</button>'
              '</div></dialog>')
+    L.append('<dialog id=compareviewer aria-label="Compare selected prompts">'
+             '<div class=dialoghead><h2>Compare selected prompts</h2>'
+             '<button id=closecompare type=button aria-label="Close comparison">close</button></div>'
+             '<p class=comparNote id=comparenote></p><div class=comparegrid id=comparegrid></div>'
+             '</dialog>')
 
     L.append('<footer>Prompts are MIT. The images are AI-generated output from '
              f'{html.escape(model)}, presented as model output rather than as photographs or human '
              'artwork, and were produced by the repository owner under the Krea 2 Community '
-             'License. Recorded seeds and generation settings are included in the repository. '
+             'License. Recorded seeds or Krea generation asset IDs are included in the repository. '
              'Images are re-encoded from PNG to WebP to keep the repository easy to clone.</footer>')
     # No framework, no CDN, no build step. The page has to keep working as a
     # plain file, so this is one inline script and it degrades by hiding itself:
@@ -309,18 +365,37 @@ var category = document.getElementById('category');
 var favonly = document.getElementById('favonly');
 var qn = document.getElementById('qn');
 var empty = document.getElementById('empty');
+var toolstatus = document.getElementById('toolstatus');
 var figs = Array.prototype.map.call(document.querySelectorAll('figure'), function (f) {
-  return { el: f, id: f.dataset.id, cat: f.dataset.cat, hay: f.textContent.toLowerCase() };
+  return {
+    el: f,
+    id: f.dataset.id,
+    cat: f.dataset.cat,
+    title: f.querySelector('.t').textContent,
+    prompt: f.querySelector('.cp[data-p]').dataset.p,
+    src: f.querySelector('.zoom').dataset.src,
+    hay: f.textContent.toLowerCase()
+  };
 });
 var storageKey = 'krea2-favorites';
 var saved = new Set();
+var selectedIds = new Set();
 try {
   saved = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
 } catch (e) {
   saved = new Set();
 }
+var initialState = new URLSearchParams(location.search);
+if (initialState.has('q')) q.value = initialState.get('q');
+if (initialState.has('category')) category.value = initialState.get('category');
+if (initialState.get('saved') === '1') favonly.setAttribute('aria-pressed', 'true');
 function storeSaved() {
   try { localStorage.setItem(storageKey, JSON.stringify(Array.from(saved))); } catch (e) {}
+}
+function setStatus(text) {
+  toolstatus.textContent = text;
+  clearTimeout(setStatus.timer);
+  setStatus.timer = setTimeout(function () { toolstatus.textContent = ''; }, 3200);
 }
 function paintFavorite(fig) {
   var b = fig.querySelector('.fav');
@@ -329,6 +404,17 @@ function paintFavorite(fig) {
   b.setAttribute('aria-pressed', on ? 'true' : 'false');
   b.setAttribute('aria-label', (on ? 'Remove saved ' : 'Save ') + title);
   b.textContent = on ? 'saved' : 'save';
+}
+function syncUrl() {
+  if (!history.replaceState) return;
+  var u = new URL(location.href);
+  if (q.value.trim()) u.searchParams.set('q', q.value.trim());
+  else u.searchParams.delete('q');
+  if (category.value) u.searchParams.set('category', category.value);
+  else u.searchParams.delete('category');
+  if (favonly.getAttribute('aria-pressed') === 'true') u.searchParams.set('saved', '1');
+  else u.searchParams.delete('saved');
+  history.replaceState(null, '', u.pathname + u.search + u.hash);
 }
 function applyFilters() {
   var s = q.value.trim().toLowerCase();
@@ -349,6 +435,7 @@ function applyFilters() {
   });
   qn.textContent = shown === figs.length ? shown + ' prompts' : shown + ' of ' + figs.length;
   empty.hidden = shown !== 0;
+  syncUrl();
 }
 figs.forEach(function (f) { paintFavorite(f.el); });
 q.addEventListener('input', applyFilters);
@@ -367,6 +454,134 @@ document.addEventListener('click', function (ev) {
   paintFavorite(fig);
   applyFilters();
 });
+function downloadText(name, text, type) {
+  var blob = new Blob([text], {type: type || 'text/plain;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function () { URL.revokeObjectURL(url); }, 0);
+}
+function copyWithFeedback(b, text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(function () { flash(b); }, function () {
+      if (fallbackCopy(text)) flash(b);
+    });
+  } else if (fallbackCopy(text)) {
+    flash(b);
+  }
+}
+document.getElementById('share').addEventListener('click', function () {
+  copyWithFeedback(this, location.href);
+});
+document.getElementById('exportsaved').addEventListener('click', function () {
+  var payload = {
+    format: 'krea2-wildcards-favorites',
+    version: 1,
+    exported_at: new Date().toISOString(),
+    saved: Array.from(saved)
+  };
+  downloadText('krea2-favorites.json', JSON.stringify(payload, null, 2) + '\\n',
+    'application/json;charset=utf-8');
+  setStatus('Exported ' + saved.size + ' saved prompts');
+});
+document.getElementById('importsaved').addEventListener('change', function () {
+  var input = this, file = input.files && input.files[0];
+  if (!file) return;
+  file.text().then(function (raw) {
+    var parsed = JSON.parse(raw);
+    var ids = Array.isArray(parsed) ? parsed : parsed.saved;
+    if (!Array.isArray(ids)) throw new Error('missing saved list');
+    var known = new Set(figs.map(function (f) { return f.id; }));
+    var valid = ids.filter(function (id) { return typeof id === 'string' && known.has(id); });
+    valid.forEach(function (id) { saved.add(id); });
+    storeSaved();
+    figs.forEach(function (f) { paintFavorite(f.el); });
+    applyFilters();
+    setStatus('Imported ' + valid.length + ' saved prompts');
+  }).catch(function () {
+    setStatus('Import needs a favorites JSON file');
+  }).finally(function () { input.value = ''; });
+});
+function paintSelection(f) {
+  var b = f.el.querySelector('.select');
+  var on = selectedIds.has(f.id);
+  f.el.classList.toggle('selected', on);
+  b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  b.setAttribute('aria-label', (on ? 'Remove ' : 'Select ') + f.title + ' for comparison');
+  b.textContent = on ? 'selected' : 'select';
+}
+function updateSelectionTools() {
+  var n = selectedIds.size;
+  var compare = document.getElementById('compareselected');
+  var down = document.getElementById('downloadselected');
+  var clear = document.getElementById('clearselection');
+  compare.disabled = n < 2;
+  down.disabled = n === 0;
+  clear.disabled = n === 0;
+  compare.textContent = 'Compare ' + n;
+  down.textContent = 'Download ' + n;
+}
+document.addEventListener('click', function (ev) {
+  var b = ev.target.closest('.select');
+  if (!b) return;
+  var f = figs.find(function (item) { return item.el === b.closest('figure'); });
+  if (selectedIds.has(f.id)) selectedIds.delete(f.id); else selectedIds.add(f.id);
+  paintSelection(f);
+  updateSelectionTools();
+});
+document.getElementById('selectvisible').addEventListener('click', function () {
+  var visible = figs.filter(function (f) { return f.el.style.display !== 'none'; });
+  var remove = visible.length && visible.every(function (f) { return selectedIds.has(f.id); });
+  visible.forEach(function (f) { if (remove) selectedIds.delete(f.id); else selectedIds.add(f.id); paintSelection(f); });
+  updateSelectionTools();
+  setStatus((remove ? 'Cleared ' : 'Selected ') + visible.length + ' visible prompts');
+});
+document.getElementById('clearselection').addEventListener('click', function () {
+  selectedIds.clear();
+  figs.forEach(paintSelection);
+  updateSelectionTools();
+});
+document.getElementById('downloadselected').addEventListener('click', function () {
+  var chosen = figs.filter(function (f) { return selectedIds.has(f.id); });
+  downloadText('krea2-selected-prompts.txt', chosen.map(function (f) { return f.prompt; }).join('\\n') + '\\n');
+  setStatus('Downloaded ' + chosen.length + ' prompts');
+});
+document.addEventListener('click', function (ev) {
+  var b = ev.target.closest('.cardshare');
+  if (!b) return;
+  var id = b.closest('figure').dataset.id;
+  var u = new URL(location.href);
+  u.search = '';
+  u.searchParams.set('id', id);
+  u.hash = 'prompt-' + id;
+  copyWithFeedback(b, u.href);
+});
+var compareviewer = document.getElementById('compareviewer');
+var comparegrid = document.getElementById('comparegrid');
+document.getElementById('compareselected').addEventListener('click', function () {
+  var chosen = figs.filter(function (f) { return selectedIds.has(f.id); });
+  comparegrid.replaceChildren();
+  chosen.slice(0, 4).forEach(function (f) {
+    var card = document.createElement('article');
+    card.className = 'comparecard';
+    var img = document.createElement('img');
+    img.src = f.src; img.alt = f.title; img.loading = 'lazy';
+    var body = document.createElement('div'); body.className = 'comparebody';
+    var h = document.createElement('h3'); h.textContent = f.title;
+    var p = document.createElement('p'); p.textContent = f.prompt;
+    body.append(h, p); card.append(img, body); comparegrid.append(card);
+  });
+  document.getElementById('comparenote').textContent = chosen.length > 4
+    ? 'Showing the first 4 of ' + chosen.length + ' selected prompts. The download keeps all of them.'
+    : 'Compare composition, light, material, and wording side by side.';
+  if (compareviewer.showModal) compareviewer.showModal(); else compareviewer.setAttribute('open', '');
+});
+document.getElementById('closecompare').addEventListener('click', function () { compareviewer.close(); });
+compareviewer.addEventListener('click', function (ev) { if (ev.target === compareviewer) compareviewer.close(); });
 var viewer = document.getElementById('viewer');
 var viewimage = document.getElementById('viewimage');
 var viewtitle = document.getElementById('viewtitle');
@@ -380,7 +595,17 @@ document.addEventListener('click', function (ev) {
 });
 document.getElementById('close').addEventListener('click', function () { viewer.close(); });
 viewer.addEventListener('click', function (ev) { if (ev.target === viewer) viewer.close(); });
+figs.forEach(paintSelection);
+updateSelectionTools();
 applyFilters();
+var linkedId = initialState.get('id');
+if (linkedId) {
+  var linked = figs.find(function (f) { return f.id === linkedId; });
+  if (linked) requestAnimationFrame(function () {
+    linked.el.classList.add('linked');
+    linked.el.scrollIntoView({behavior: 'smooth', block: 'center'});
+  });
+}
 """)
     L.append("</script>")
     L.append("</div></body></html>")

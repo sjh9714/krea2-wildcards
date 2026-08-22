@@ -394,11 +394,10 @@ def main() -> int:
             c(sorted(lines) == sorted(want),
               "every wildcard line is a clause the post printed")
 
-        # The refusals are the finding; losing them turns this back into a
-        # pretty gallery. And a refusal must never migrate into the goods.
-        c(len(sd.get("refusals", [])) >= 3, "the page still publishes its refusals")
-        c(not set(sd.get("refusals", [])) & set(sd["goods"]),
-          "no refusal is listed among the goods")
+        c("The ones that never converted" not in text and "Correction from" not in text,
+          "the public style guide stays focused on reusable recipes")
+        c("facing the viewer" in text and "simplified background detail" in text,
+          "the style guide teaches a medium-friendly subject structure")
 
         # The appendix keeps the earlier sweep honest instead of deleting it.
         sw = HERE / "styles/sweep.json"

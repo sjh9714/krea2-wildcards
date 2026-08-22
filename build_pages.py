@@ -165,6 +165,7 @@ def main() -> int:
     repo_url = f"https://github.com/{repo}"
     site_url = f"https://{repo.split('/')[0]}.github.io/{repo.split('/')[-1]}/"
     release_zip = f"{repo_url}/releases/latest/download/krea2-wildcards.zip"
+    cloud_workflow = "https://cloud.comfy.org/?share=78d328f1548e"
     campaign = "utm_source=pages&utm_medium=website&utm_campaign=v1_2_launch"
     workflow_json = f"{repo_url}/releases/latest/download/krea2-native-starter.json"
     title = f"{len(kept)} {model} prompts with images"
@@ -190,6 +191,8 @@ def main() -> int:
                  "contentUrl": release_zip},
                 {"@type": "DataDownload", "encodingFormat": "application/json",
                  "contentUrl": f"{repo_url}/raw/main/prompts.json"},
+                {"@type": "DataDownload", "encodingFormat": "application/x-ndjson",
+                 "contentUrl": "https://huggingface.co/datasets/sjh9714/krea2-wildcards/resolve/main/prompts.jsonl"},
             ],
         },
     }
@@ -218,6 +221,7 @@ def main() -> int:
     L.append('<p class=sub>Browse by category, save the ones you like, and copy any '
              'prompt. Every card includes the image it generated.</p>')
     L.append('<nav class=actions aria-label="Project actions">'
+             f'<a href="{cloud_workflow}">Open in Comfy Cloud</a>'
              f'<a href="{release_zip}?{campaign}&utm_content=catalog_zip">Download wildcards</a>'
              f'<a href="{workflow_json}?{campaign}&utm_content=catalog_workflow">ComfyUI workflow</a>'
              f'<a href="{repo_url}?{campaign}&utm_content=catalog_github">Star on GitHub</a>'

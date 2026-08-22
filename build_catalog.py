@@ -417,13 +417,12 @@ def render_readme(data: dict, lang: str = "en") -> str:
         L.append(f"**[Download the wildcard zip]({release_zip})** for all category "
                  "files in one archive.\n")
         if lang == "en":
-            L.append("**[JSONL dataset](dataset/prompts.jsonl)**: 499 prompt records "
-                     "with stable IDs, provenance, and output URLs.\n")
-        L.append("**[Download the native ComfyUI workflow](workflows/krea2-native-starter.json)** "
-                 "to paste one prompt, or use the "
-                 "**[wildcard workflow](workflows/krea2-wildcards-starter.json)** to sample a "
-                 "new library prompt on every run. Both are also available as drag-and-drop PNGs "
-                 "in [workflows/](workflows/).\n")
+            L.append("**[Hugging Face](https://huggingface.co/datasets/sjh9714/krea2-wildcards)**: "
+                     "499 JSONL prompt records.\n")
+        L.append("**[Open in Comfy Cloud](https://cloud.comfy.org/?share=78d328f1548e)**, "
+                 "or download the [native](workflows/krea2-native-starter.json) and "
+                 "[wildcard](workflows/krea2-wildcards-starter.json) workflows as JSON or "
+                 "drag-and-drop PNG.\n")
         L.append("On ComfyUI you can wire it up instead: put "
                  "[wildcards/](wildcards/) in `ComfyUI/wildcards/` and write `__all__` "
                  "in a prompt. That needs a dynamic prompts node, which ComfyUI does not "

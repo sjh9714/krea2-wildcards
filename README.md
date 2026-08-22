@@ -25,6 +25,8 @@ Open the [gallery](https://sjh9714.github.io/krea2-wildcards/), press **copy** u
 
 **[Download the wildcard zip](https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip)** for all category files in one archive.
 
+**[Download the native ComfyUI workflow](workflows/krea2-native-starter.json)** to paste one prompt, or use the **[wildcard workflow](workflows/krea2-wildcards-starter.json)** to sample a new library prompt on every run. Both are also available as drag-and-drop PNGs in [workflows/](workflows/).
+
 On ComfyUI you can wire it up instead: put [wildcards/](wildcards/) in `ComfyUI/wildcards/` and write `__all__` in a prompt. That needs a dynamic prompts node, which ComfyUI does not come with, so install [comfyui-dynamicprompts](https://github.com/adieyal/comfyui-dynamicprompts) first or the underscores end up in your picture.
 
 ## 🗂 Categories
@@ -47,7 +49,7 @@ The gallery highlights the words that recur across this catalog and travel to ot
 
 [**All 499 in the repo →**](docs/gallery.md) · [**as a web page →**](https://sjh9714.github.io/krea2-wildcards/)
 
-<sub>Build your next prompt: **[prompt field guide](FINDINGS.md)** · [VOCABULARY.md](VOCABULARY.md) · [TEMPLATES.md](TEMPLATES.md) · [style recipes](styles/README.md) · [generation settings](REPRODUCING.md)</sub>
+<sub>Build your next prompt: **[prompt field guide](FINDINGS.md)** · [VOCABULARY.md](VOCABULARY.md) · [TEMPLATES.md](TEMPLATES.md) · [editing recipes](EDITING_RECIPES.md) · [style recipes](styles/README.md) · [generation settings](REPRODUCING.md)</sub>
 
 
 ## 🤝 Contributing

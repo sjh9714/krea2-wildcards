@@ -39,7 +39,8 @@ enforces that.
 
 **Do not edit the generated files.** `README.md`, `README_ZH.md`, `README_KO.md`,
 `FINDINGS.md`, `VOCABULARY.md`, `TEMPLATES.md`, `docs/gallery*.md`,
-`docs/comparison.md`, `wildcards/` and `index.html`
+`docs/comparison.md`, `wildcards/`, `workflows/`, `guides/`, `index.html`,
+`sitemap.xml`, `robots.txt` and `EDITING_RECIPES.md`
 are all built from `prompts.json` and `vocabulary.json`. A workflow rebuilds them
 when the manifest changes, and CI fails a pull request whose generated files do
 not match its data.
@@ -52,8 +53,12 @@ python3 build_wildcards.py
 python3 build_vocabulary.py
 python3 build_gallery.py
 python3 build_templates.py
-python3 build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
+python3 scripts/build_workflows.py
 python3 build_pages.py
+python3 build_site.py
+python3 build_social.py
+python3 build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
+python3 scripts/audit_prompts.py
 python3 verify.py
 ```
 

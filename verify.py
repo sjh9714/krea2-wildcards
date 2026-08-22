@@ -28,6 +28,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import struct
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -45,6 +46,24 @@ class Check:
         else:
             self.failures.append(f"{label}{', ' + detail if detail else ''}")
             print(f"  FAIL  {label}{', ' + detail if detail else ''}")
+
+
+def png_text(path: Path) -> dict[str, str]:
+    """Read the uncompressed tEXt chunks used by ComfyUI workflow PNGs."""
+    data = path.read_bytes()
+    if data[:8] != b"\x89PNG\r\n\x1a\n":
+        return {}
+    found: dict[str, str] = {}
+    pos = 8
+    while pos + 12 <= len(data):
+        size = struct.unpack(">I", data[pos:pos + 4])[0]
+        kind = data[pos + 4:pos + 8]
+        payload = data[pos + 8:pos + 8 + size]
+        pos += size + 12
+        if kind == b"tEXt" and b"\0" in payload:
+            key, value = payload.split(b"\0", 1)
+            found[key.decode("latin-1")] = value.decode("latin-1")
+    return found
 
 
 def main() -> int:
@@ -78,6 +97,44 @@ def main() -> int:
     on_disk = {str(p.relative_to(HERE)) for p in HERE.glob("images/**/*.webp")}
     orphans = sorted(on_disk - named - {"hero.webp"})
     c(not orphans, f"no orphan images among {len(on_disk)} on disk", f"{orphans[:5]}")
+
+    print("\nComfyUI workflows")
+    workflow_dir = HERE / "workflows"
+    expected = {
+        "krea2-native-starter": False,
+        "krea2-wildcards-starter": True,
+    }
+    for stem, wants_dynamic in expected.items():
+        json_path = workflow_dir / f"{stem}.json"
+        png_path = workflow_dir / f"{stem}.png"
+        c(json_path.exists(), f"{stem}: JSON exists")
+        c(png_path.exists(), f"{stem}: drag-and-drop PNG exists")
+        if not json_path.exists():
+            continue
+        graph = json.loads(json_path.read_text(encoding="utf-8"))
+        types = {node.get("type") for node in graph.get("nodes", [])}
+        c("SaveImage" in types and len(graph.get("definitions", {}).get("subgraphs", [])) == 1,
+          f"{stem}: carries the official Krea 2 subgraph and output")
+        c(("DPRandomGenerator" in types) is wants_dynamic,
+          f"{stem}: custom wildcard node matches its label")
+        source = graph.get("extra", {}).get("krea2_wildcards", {}).get("source_commit")
+        c(source == "e95e3b20567bea8df16510c8390b7f897b7e6d4b",
+          f"{stem}: official template revision is pinned", f"got {source!r}")
+        if png_path.exists():
+            embedded = png_text(png_path).get("workflow")
+            c(bool(embedded), f"{stem}: PNG embeds a workflow text chunk")
+            try:
+                same = json.loads(embedded) == graph if embedded else False
+            except json.JSONDecodeError:
+                same = False
+            c(same, f"{stem}: embedded PNG workflow matches its JSON")
+    upstream_license = workflow_dir / "UPSTREAM_LICENSE"
+    notice = (HERE / "NOTICE.md").read_text(encoding="utf-8")
+    c(upstream_license.exists() and "Copyright (c) 2023-present Comfy Org" in
+      (upstream_license.read_text(encoding="utf-8") if upstream_license.exists() else ""),
+      "the official workflow template's MIT licence is included")
+    c("e95e3b20567bea8df16510c8390b7f897b7e6d4b" in notice,
+      "NOTICE.md identifies the pinned upstream workflow revision")
 
     print("\ndocuments")
     import build_catalog as _bc0
@@ -266,13 +323,13 @@ def main() -> int:
     # page that lands mid-image while the lazy figures above it resolve.
     print("\ngallery anchors")
     page = HERE / "index.html"
+    repo_url = f"https://github.com/{d['repo']}"
+    site_url = f"https://{d['repo'].split('/')[0]}.github.io/{d['repo'].split('/')[-1]}/"
+    release_zip = f"{repo_url}/releases/latest/download/krea2-wildcards.zip"
     if not page.exists():
         c(False, "index.html exists")
     else:
         h = page.read_text(encoding="utf-8")
-        repo_url = f"https://github.com/{d['repo']}"
-        site_url = f"https://{d['repo'].split('/')[0]}.github.io/{d['repo'].split('/')[-1]}/"
-        release_zip = f"{repo_url}/releases/latest/download/krea2-wildcards.zip"
         c(f'<link rel="canonical" href="{site_url}">' in h,
           "the gallery declares its canonical URL")
         og_tags = [
@@ -280,7 +337,7 @@ def main() -> int:
             '<meta property="og:title"',
             '<meta property="og:description"',
             f'<meta property="og:url" content="{site_url}">',
-            f'<meta property="og:image" content="{site_url}hero.webp">',
+            f'<meta property="og:image" content="{site_url}social-preview.webp">',
         ]
         missing_og = [tag for tag in og_tags if tag not in h]
         c(not missing_og, "the gallery publishes a complete Open Graph card",
@@ -303,6 +360,50 @@ def main() -> int:
         c("scroll-margin-top" in h,
           "headings carry a scroll margin",
           "without it an anchor lands under the viewport edge")
+
+    print("\nsearch landing pages")
+    import build_site as _site
+    expected_urls = [site_url] if page.exists() else []
+    for spec in _site.PAGES:
+        guide = HERE / "guides" / spec["slug"] / "index.html"
+        canonical = f"{site_url}guides/{spec['slug']}/" if page.exists() else ""
+        expected_urls.append(canonical)
+        c(guide.exists(), f"{spec['slug']}: landing page exists")
+        if not guide.exists():
+            continue
+        text = guide.read_text(encoding="utf-8")
+        needed = (f'<link rel="canonical" href="{canonical}">',
+                  '<meta name="description"',
+                  '<meta name="twitter:card" content="summary_large_image">',
+                  '<script type="application/ld+json">',
+                  "social-preview.webp")
+        missing = [item for item in needed if item not in text]
+        c(not missing, f"{spec['slug']}: search and social metadata is complete",
+          f"missing {missing}")
+        match = re.search(r'<script type="application/ld\+json">(.*?)</script>', text)
+        try:
+            schema = json.loads(match.group(1)) if match else {}
+        except json.JSONDecodeError:
+            schema = {}
+        c(schema.get("@type") == "CollectionPage",
+          f"{spec['slug']}: structured data parses as a collection")
+        refs = set(re.findall(r'src="((?:\.\./)+images/[^"\s]+)', text))
+        broken = [ref for ref in refs if not (guide.parent / ref).resolve().exists()]
+        c(bool(refs) and not broken,
+          f"{spec['slug']}: {len(refs)} generated example images resolve",
+          f"broken {broken[:3]}")
+
+    sitemap = HERE / "sitemap.xml"
+    robots = HERE / "robots.txt"
+    social = HERE / "social-preview.webp"
+    sitemap_text = sitemap.read_text(encoding="utf-8") if sitemap.exists() else ""
+    c(sitemap.exists() and all(f"<loc>{url}</loc>" in sitemap_text for url in expected_urls),
+      f"sitemap publishes all {len(expected_urls)} public URLs")
+    c(robots.exists() and f"Sitemap: {site_url}sitemap.xml" in
+      (robots.read_text(encoding="utf-8") if robots.exists() else ""),
+      "robots.txt points crawlers to the sitemap")
+    c(social.exists() and social.stat().st_size > 20_000,
+      "the large social preview image is built")
 
     print("\nstyles page")
     dpath = HERE / "styles/data.json"
@@ -645,6 +746,7 @@ def main() -> int:
     in_prompts = sum(p.count(x) for e in dd2["entries"]
                      for p in [e["prompt"]] for x in DASH)
     prose = ["README.md", "FINDINGS.md", "VOCABULARY.md", "TEMPLATES.md",
+             "EDITING_RECIPES.md",
              "REPRODUCING.md", "CONTRIBUTING.md", "styles/README.md",
              "wildcards/README.md"] + [f"README_{x.upper()}.md"
                                        for x in _bc0.LANGS if x != "en"]
@@ -699,6 +801,25 @@ def main() -> int:
           "every declared slot appears in its template")
         c("TEMPLATES.md" in readme or "TEMPLATES.md" in findings_md, "README.md links TEMPLATES.md")
 
+    print("\nprompt quality and editing recipes")
+    from scripts.audit_prompts import audit as audit_prompts
+    prompt_errors, prompt_summary = audit_prompts(HERE / "prompts.json")
+    c(not prompt_errors,
+      f"all {prompt_summary['prompts']} prompts pass duplicate and length checks",
+      f"{prompt_errors[:3]}")
+    c(prompt_summary["prompts"] == prompt_summary["unique"],
+      "every published prompt is unique after whitespace normalization")
+    recipes = HERE / "EDITING_RECIPES.md"
+    recipe_text = recipes.read_text(encoding="utf-8") if recipes.exists() else ""
+    c(recipes.exists(), "EDITING_RECIPES.md is built")
+    c(all(f"### {index}. {name}" in recipe_text
+          for index, (name, _) in enumerate(_site.EDIT_RECIPES, 1)),
+      f"the editing guide publishes all {len(_site.EDIT_RECIPES)} reusable recipes")
+    edit_ids = [e["id"] for e in entries if e["category"] == "editing"]
+    c(all(entry_id in recipe_text for entry_id in edit_ids),
+      f"the editing guide links all {len(edit_ids)} generated editing examples")
+    c("EDITING_RECIPES.md" in readme, "README.md links the editing recipes")
+
     # Credit is a growth loop and a debt at the same time. The reference catalog
     # in this niche credits every prompt to whoever wrote it and links the post it
     # came from, and those people carry it further. The debt is that a half-filled
@@ -746,7 +867,9 @@ def main() -> int:
         ct = contrib.read_text(encoding="utf-8")
         c("template=add_entry.yml" in ct, "CONTRIBUTING.md leads with the issue form")
         c("prompt_author" in ct, "CONTRIBUTING.md documents the attribution fields")
-        for b in ("build_gallery.py", "build_vocabulary.py"):
+        for b in ("build_gallery.py", "build_vocabulary.py", "build_site.py",
+                  "build_social.py", "scripts/build_workflows.py",
+                  "scripts/audit_prompts.py"):
             c(b in ct, f"CONTRIBUTING.md lists {b} in the build order")
 
     print()

@@ -26,8 +26,10 @@ jobs:
           python3 build_vocabulary.py
           python3 build_gallery.py
           python3 build_templates.py
-          python3 build_catalog.py --build --lang zh --lang ko
+          python3 scripts/build_workflows.py --json-only
           python3 build_pages.py
+          python3 build_site.py
+          python3 build_catalog.py --build --lang zh --lang ko
       - name: The generated files must already match the manifest
         run: |
           if ! git diff --quiet; then
@@ -35,4 +37,6 @@ jobs:
             git diff --stat
             exit 1
           fi
-      - run: python3 verify.py
+      - run: |
+          python3 scripts/audit_prompts.py
+          python3 verify.py

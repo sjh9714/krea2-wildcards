@@ -1,14 +1,20 @@
 ---
 license: mit
+pretty_name: Krea 2 Turbo Prompt and Output Catalog
 language:
   - en
 task_categories:
   - text-to-image
+size_categories:
+  - n<1K
 tags:
   - krea-2
+  - krea-2-turbo
   - image-generation
   - prompt-engineering
+  - prompt-dataset
   - comfyui
+  - comfyui-workflow
 configs:
   - config_name: default
     data_files:
@@ -16,11 +22,17 @@ configs:
         path: prompts.jsonl
 ---
 
-# Krea 2 Wildcards
+# Krea 2 Turbo Prompt and Output Catalog
 
-This dataset contains 499 curated English prompts across 63 active categories, each paired with the URL of its generated Krea 2 output. It is a compact, row-oriented export of the open [Krea 2 Wildcards](https://github.com/sjh9714/krea2-wildcards) catalog for filtering, analysis, and prompt retrieval.
+This dataset contains 499 usable English prompts across 63 active categories. Every row keeps the exact prompt, the URL of its generated Krea 2 output, and generation provenance for filtering, retrieval, and prompt reuse.
 
-This is a community dataset, not an official Krea release.
+It is the row-oriented export of the open [Krea 2 Wildcards](https://github.com/sjh9714/krea2-wildcards) catalog. This is a community dataset, not an official Krea release.
+
+## Start here
+
+- [Browse prompts beside their generated outputs](https://sjh9714.github.io/krea2-wildcards/).
+- [Open the native six-node starter in Comfy Cloud](https://cloud.comfy.org/?share=78d328f1548e).
+- [Download all 499 prompts and both ComfyUI workflows](https://github.com/sjh9714/krea2-wildcards/releases/tag/v1.2.0).
 
 ## Fields
 
@@ -40,8 +52,6 @@ dataset = load_dataset("sjh9714/krea2-wildcards", split="train")
 product_prompts = dataset.filter(lambda row: row["category"] == "product")
 print(product_prompts[0]["prompt"])
 ```
-
-For visual browsing, exact prompt-to-output comparison, downloadable ComfyUI workflows, and category wildcard files, use the [project gallery](https://sjh9714.github.io/krea2-wildcards/) or the [v1.2.0 release](https://github.com/sjh9714/krea2-wildcards/releases/tag/v1.2.0).
 
 ## Provenance and limitations
 

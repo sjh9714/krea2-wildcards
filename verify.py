@@ -721,6 +721,15 @@ def main() -> int:
     rd_bytes = len(readme.encode("utf-8"))
     c(rd_bytes < 8_000,
       f"README is {rd_bytes // 1024} KB, under the 8 KB ceiling")
+    newest_batch = max(e.get("batch", -1) for e in entries)
+    newest = [e for e in entries if e.get("batch", -1) == newest_batch]
+    newest_category = newest[0]["category"]
+    if any(e["category"] != newest_category for e in newest):
+        newest_category = "mixed"
+    latest_label = f"New: {len(newest)} verified {newest_category} prompts"
+    c(latest_label in readme,
+      "README surfaces the newest verified prompt drop",
+      f"expected {latest_label!r}")
     c("images/failures/" not in readme,
       "the README does not re-inline the failures",
       f"{readme.count('images/failures/')} failure images are back in it")

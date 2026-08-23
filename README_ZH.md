@@ -13,6 +13,8 @@
 
 <p align="center"><a href="README.md">EN</a> · <a href="README_KO.md">KO</a> · <a href="README_JA.md">JA</a> · <a href="README_ES.md">ES</a> · <a href="README_FR.md">FR</a> · <a href="README_DE.md">DE</a> · <a href="README_PT.md">PT</a> · <a href="https://sjh9714.github.io/krea2-wildcards/"><b>浏览画廊 →</b></a></p>
 
+<p align="center"><b><a href="guides/krea2-editorial-fashion-prompts/">最新：12 条实测 fashion 提示词 →</a></b> · ⭐ 加星关注下一批实测内容。</p>
+
 ## 📋 复制一条
 
 Open the [gallery](https://sjh9714.github.io/krea2-wildcards/), press **copy** under any picture, paste it wherever you generate. Nothing to install, no account, and the search box finds the ones you want.

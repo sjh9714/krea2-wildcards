@@ -224,6 +224,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
     T = {
         "en": {
             "gallery_link": "Browse the gallery →",
+            "follow": "⭐ Star for new drops.",
+            "latest": "New: {count} verified {category} prompts →",
             "copy_h": "Copy one",
             "all_h": f"Or take all {n}",
             "toc_entries": "prompts, each paired with its output",
@@ -244,6 +246,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
         },
         "zh": {
             "gallery_link": "浏览画廊 →",
+            "follow": "⭐ 加星关注下一批实测内容。",
+            "latest": "最新：{count} 条实测 {category} 提示词 →",
             "copy_h": "复制一条",
             "all_h": "或者全部拿走",
             "toc_entries": "条提示词，每条都有输出图",
@@ -257,6 +261,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
         },
         "ko": {
             "gallery_link": "갤러리 보기 →",
+            "follow": "⭐ 다음 검증 드롭을 보려면 스타를 눌러주세요.",
+            "latest": "새로 추가됨: 검증된 {category} 프롬프트 {count}개 →",
             "copy_h": "하나만 복사",
             "all_h": "아니면 전부 가져가기",
             "toc_entries": "개 프롬프트, 전부 출력 이미지 포함",
@@ -270,6 +276,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
         },
         "ja": {
             "gallery_link": "ギャラリーを見る →",
+            "follow": "⭐ 次の検証済みドロップを追うにはスターを。",
+            "latest": "新着：検証済み {category} プロンプト {count} 件 →",
             "copy_h": "1 つコピー",
             "all_h": "まとめて持っていく",
             "toc_entries": "件のプロンプト、すべて生成画像付き",
@@ -283,6 +291,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
         },
         "es": {
             "gallery_link": "Ver la galería →",
+            "follow": "⭐ Da una estrella para seguir la próxima colección verificada.",
+            "latest": "Nuevo: {count} prompts verificados de {category} →",
             "copy_h": "Copia uno",
             "all_h": "O llévatelos todos",
             "toc_entries": "prompts, cada uno con su imagen",
@@ -296,6 +306,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
         },
         "fr": {
             "gallery_link": "Voir la galerie →",
+            "follow": "⭐ Ajoutez une étoile pour suivre la prochaine sélection vérifiée.",
+            "latest": "Nouveau : {count} prompts {category} vérifiés →",
             "copy_h": "Copier un prompt",
             "all_h": f"Ou prenez les {n}",
             "toc_entries": "prompts, chacun avec son image",
@@ -309,6 +321,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
         },
         "de": {
             "gallery_link": "Zur Galerie →",
+            "follow": "⭐ Mit einem Stern folgst du dem nächsten geprüften Paket.",
+            "latest": "Neu: {count} geprüfte {category}-Prompts →",
             "copy_h": "Einen kopieren",
             "all_h": "Oder alle mitnehmen",
             "toc_entries": "Prompts, jeder mit seinem Bild",
@@ -322,6 +336,8 @@ def render_readme(data: dict, lang: str = "en") -> str:
         },
         "pt": {
             "gallery_link": "Ver a galeria →",
+            "follow": "⭐ Dê uma estrela para acompanhar o próximo pacote verificado.",
+            "latest": "Novo: {count} prompts verificados de {category} →",
             "copy_h": "Copiar um",
             "all_h": f"Ou leve os {n}",
             "toc_entries": "prompts, cada um com a imagem gerada",
@@ -389,6 +405,22 @@ def render_readme(data: dict, lang: str = "en") -> str:
     nav = links + (f' · <a href="{site}"><b>{T["gallery_link"]}</b></a>' if site else "")
     if nav:
         L.append(f"<p align=\"center\">{nav}</p>\n")
+    if repo_slug and kept:
+        newest_batch = max(e.get("batch", -1) for e in kept)
+        latest = [e for e in kept if e.get("batch", -1) == newest_batch]
+        latest_category = latest[0]["category"]
+        if any(e["category"] != latest_category for e in latest):
+            latest_category = "mixed"
+        latest_label = (T["latest"]
+                        .replace("{count}", str(len(latest)))
+                        .replace("{category}", latest_category))
+        latest_url = ('guides/krea2-editorial-fashion-prompts/'
+                      if latest_category == "fashion"
+                      else f'{site}?category={latest_category}')
+        L.append('<p align="center">'
+                 f'<b><a href="{latest_url}">{latest_label}</a></b> · '
+                 f'{T["follow"]}'
+                 '</p>\n')
 
     # The single highest-scoring Krea 2 post in this subreddit is a wildcards txt
     # at 2,242 points, and a commenter still had to mirror it to pastebin because

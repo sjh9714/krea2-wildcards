@@ -118,9 +118,17 @@ def main() -> int:
           "dataset IDs match the canonical catalog")
         c(all(str(row.get("image_url", "")).startswith("https://") for row in rows),
           "every dataset row links its generated output")
-    c(dataset_card.exists() and "community dataset" in
-      dataset_card.read_text(encoding="utf-8").lower(),
+    dataset_card_text = (
+        dataset_card.read_text(encoding="utf-8") if dataset_card.exists() else ""
+    )
+    c(dataset_card.exists() and "community dataset" in dataset_card_text.lower(),
       "the dataset card identifies this as a community resource")
+    c(f"This dataset contains {len(entries)} usable English prompts" in
+      dataset_card_text,
+      "the dataset card count matches the canonical catalog")
+    c(f"{len(entries)} JSONL prompt records." in
+      (HERE / "README.md").read_text(encoding="utf-8"),
+      "the README Hugging Face count matches the canonical catalog")
 
     print("\nComfyUI workflows")
     workflow_dir = HERE / "workflows"

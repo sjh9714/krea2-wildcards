@@ -349,6 +349,168 @@ Accessories campaign portrait of a model holding a geometric oxblood leather han
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
+### 16. Ivory cocoon coat in brutalist library
+
+<img src="../images/fashion-017.webp" width="420" alt="Ivory cocoon coat in brutalist library">
+
+```text
+Full-length editorial lookbook photograph of a model in a sculptural ivory cocoon coat inside a quiet brutalist library, three-quarter stance beside a long concrete reading table, soft overcast skylight, precise tailoring seams, matte wool texture, restrained ivory and grey palette, 50mm lens, fine film grain.
+```
+
+`Krea asset: b61681f1-08c3-4036-b37d-d530c323aae0` · `aspect: 2:3` · `fashion-017`
+
+<sub>vocabulary: `50mm`, `grain`, `matte`, `palette`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 17. Deconstructed navy suit backstage
+
+<img src="../images/fashion-018.webp" width="420" alt="Deconstructed navy suit backstage">
+
+```text
+Backstage lookbook photograph of a model in a deconstructed midnight-navy suit, standing beside a garment rack in a white fitting studio, relaxed full-body pose, pinned hems and visible hand-basted seams, soft frontal flash, crisp suiting texture, understated magazine styling.
+```
+
+`Krea asset: 8de5d845-886a-4f34-8f43-87f409d158a5` · `aspect: 2:3` · `fashion-018`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 18. Silver quilted outerwear campaign
+
+<img src="../images/fashion-019.webp" width="420" alt="Silver quilted outerwear campaign">
+
+```text
+Full-length studio fashion photograph of a model in silver quilted outerwear and charcoal trousers on a seamless white cyclorama, centered graphic stance, broad overhead softbox with a narrow floor reflection, clearly articulated quilting, cool restrained palette, modern winter campaign.
+```
+
+`Krea asset: 6f03ce56-df06-4b84-9d4e-7844f2b0be46` · `aspect: 2:3` · `fashion-019`
+
+<sub>vocabulary: `overhead`, `palette`, `seamless` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 19. Aubergine lacquer lips under a smoke veil
+
+<img src="../images/fashion-020.webp" width="420" alt="Aubergine lacquer lips under a smoke veil">
+
+```text
+Close beauty editorial of a model wearing deep aubergine lacquered lips and brushed-up brows, damp skin with visible natural texture, face framed by a translucent smoke-grey veil, soft beauty dish above camera, dark plum background, 85mm lens, controlled high-fashion mood.
+```
+
+`Krea asset: 48303217-d487-4dcd-a700-c402f0fe4468` · `aspect: 2:3` · `fashion-020`
+
+<sub>vocabulary: `85mm` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 20. Gold temple ornament in striped light
+
+<img src="../images/fashion-021.webp" width="420" alt="Gold temple ornament in striped light">
+
+```text
+Profile beauty portrait of a model with a shaved head and a single matte-gold temple ornament, narrow bands of warm light passing through an architectural screen across the face, neutral clay background, clean skin texture, minimal styling, refined cosmetic editorial.
+```
+
+`Krea asset: 721e2242-fb80-4ba6-97f8-0936eebd099d` · `aspect: 2:3` · `fashion-021`
+
+<sub>vocabulary: `matte`, `warm light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 21. Icy silver eye and crystal stud
+
+<img src="../images/fashion-022.webp" width="420" alt="Icy silver eye and crystal stud">
+
+```text
+Extreme beauty close-up of one eye, cheek, and ear with icy silver eyeshadow and a tiny crystal ear stud, cool window light, pale blue paper background, visible pores and fine vellus hair, precise editorial crop, restrained winter cosmetics campaign.
+```
+
+`Krea asset: 728b45bb-1364-4358-8fa8-ee1400d137be` · `aspect: 2:3` · `fashion-022`
+
+<sub>vocabulary: `close-up`, `window light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 22. Saffron cape on volcanic shore
+
+<img src="../images/fashion-023.webp" width="420" alt="Saffron cape on volcanic shore">
+
+```text
+Location fashion editorial of a model in a saffron wool cape on a black volcanic beach, full-body stance leaning into coastal wind, rough basalt and white surf behind, low overcast sky, fabric edge lifted cleanly, muted cinematic color, 50mm documentary framing.
+```
+
+`Krea asset: ec152e03-0153-43d0-aa3e-825c1eecca4b` · `aspect: 2:3` · `fashion-023`
+
+<sub>vocabulary: `50mm`, `muted` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 23. Moss coat in a misted greenhouse
+
+<img src="../images/fashion-024.webp" width="420" alt="Moss coat in a misted greenhouse">
+
+```text
+Full-length editorial photograph of a model in a moss-green belted coat inside a fogged glass greenhouse, condensation on panes, lush leaves fading into mist, diffused morning light, clear garment silhouette, quiet botanical palette, fine analog grain.
+```
+
+`Krea asset: 96aca33d-d053-48c0-a89f-fdac058f8a82` · `aspect: 2:3` · `fashion-024`
+
+<sub>vocabulary: `grain`, `palette`, `silhouette` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 24. Sea-green column dress in an empty pool
+
+<img src="../images/fashion-025.webp" width="420" alt="Sea-green column dress in an empty pool">
+
+```text
+Fashion location portrait of a model in a sea-green column dress standing at the deep end of an empty pale-blue tiled swimming pool, long diagonal noon shadow, high camera looking slightly down, precise architectural lines, calm surreal campaign mood.
+```
+
+`Krea asset: 9a2cc192-16f1-4acf-a494-05f90930efc3` · `aspect: 2:3` · `fashion-025`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 25. Graphite fringe frozen in motion
+
+<img src="../images/fashion-026.webp" width="420" alt="Graphite fringe frozen in motion">
+
+```text
+Dynamic studio fashion photograph of a model in a dress covered with long graphite metallic fringe, captured at the apex of a small jump, every strand fanning outward yet sharply frozen, charcoal seamless background, hard side light, 1/1000-second look, crisp material detail.
+```
+
+`Krea asset: 301725aa-a4cd-4746-82b9-7ea3db1f39ca` · `aspect: 2:3` · `fashion-026`
+
+<sub>vocabulary: `seamless`, `side light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 26. Coral organza in a wind tunnel
+
+<img src="../images/fashion-027.webp" width="420" alt="Coral organza in a wind tunnel">
+
+```text
+Editorial fashion photograph of a model surrounded by long translucent coral organza ribbons in a wind tunnel, three-quarter body composition, ribbons spiraling around without hiding the face, bright white cyclorama, clean backlight through the fabric, sharp face and tactile sheer layers.
+```
+
+`Krea asset: c4208e0c-34a0-4525-810e-e3fc23943d2f` · `aspect: 2:3` · `fashion-027`
+
+<sub>vocabulary: `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 27. White chiffon cape in a rooftop crosswind
+
+<img src="../images/fashion-028.webp" width="420" alt="White chiffon cape in a rooftop crosswind">
+
+```text
+Rooftop fashion editorial of a model in a floor-length white chiffon cape caught by a strong crosswind at dawn, stable side-on stance with face visible, cape extending horizontally across the frame, pale city skyline, cool pink sky, crisp frozen fabric edges, restrained cinematic color.
+```
+
+`Krea asset: 21e46255-055d-47d3-a883-0467015cbc1a` · `aspect: 2:3` · `fashion-028`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
 ## automotive
 
 _Cars and motorcycles, studio and location_
@@ -2680,293 +2842,5 @@ Heavy snow blowing through car headlights on an unlit road at night, the flakes 
 `seed: 586384316` · `weather-008`
 
 <sub>vocabulary: `long exposure` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## glass
-
-_Transparency, refraction and caustics_
-
-### 1. Wine glasses, caustics
-
-<img src="../images/glass-001.webp" width="420" alt="Wine glasses, caustics">
-
-```text
-Three empty wine glasses on white paper under one hard light, throwing sharp bright caustic patterns onto the paper beside them, the stems refracting the background into thin bands. High key, nothing else in frame.
-```
-
-`seed: 1386490681` · `glass-001`
-
-<sub>vocabulary: `hard light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Bubbles in blown glass
-
-<img src="../images/glass-002.webp" width="420" alt="Bubbles in blown glass">
-
-```text
-Macro of a hand-blown glass vessel wall showing trapped air bubbles at different depths, the surface slightly uneven, backlit so the bubbles read as bright rings. Extremely shallow focus, no edges of the vessel visible.
-```
-
-`seed: 245613758` · `glass-002`
-
-<sub>vocabulary: `backlit`, `macro`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Frosted and clear, layered
-
-<img src="../images/glass-003.webp" width="420" alt="Frosted and clear, layered">
-
-```text
-Overlapping panes of frosted and clear glass photographed against a bright window, the frosted areas diffusing what is behind them while the clear areas stay sharp. Abstract composition, cool light, no frame visible.
-```
-
-`seed: 1415704346` · `glass-003`
-
-<sub>vocabulary: `frosted` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Broken safety glass
-
-<img src="../images/glass-004.webp" width="420" alt="Broken safety glass">
-
-```text
-Toughened safety glass shattered into its characteristic small cubes but still held together, backlit so the fracture network glows white. Macro, the crumbs varying in size across the sheet. No frame edges in view.
-```
-
-`seed: 620116430` · `glass-004`
-
-<sub>vocabulary: `backlit`, `macro` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Laboratory flask, single light
-
-<img src="../images/glass-005.webp" width="420" alt="Laboratory flask, single light">
-
-```text
-A round-bottomed laboratory flask half filled with clear liquid on a black surface, one hard light behind and above so the liquid line reads as a bright arc and the glass edges as thin highlights. Nothing else in frame.
-```
-
-`seed: 1336644334` · `glass-005`
-
-<sub>vocabulary: `hard light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 6. Rain on a window at night
-
-<img src="../images/glass-006.webp" width="420" alt="Rain on a window at night">
-
-```text
-Rain running down a window at night, each droplet acting as a lens and inverting the street lights behind, the glass itself the plane of focus. Everything beyond thrown completely out of focus. Warm points on cold glass.
-```
-
-`seed: 250096326` · `glass-006`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 7. Stacked tumblers, refraction
-
-<img src="../images/glass-007.webp" width="420" alt="Stacked tumblers, refraction">
-
-```text
-A stack of pressed glass tumblers shot straight on against a plain grey ground, the overlapping walls building up into dense bands of refraction and shadow. Even soft light, the pressed pattern repeating through the stack.
-```
-
-`seed: 1490874051` · `glass-007`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 8. Prism spectrum on a wall
-
-<img src="../images/glass-008.webp" width="420" alt="Prism spectrum on a wall">
-
-```text
-A glass prism on a windowsill throwing a sharp spectrum onto a plain white wall, the prism itself mostly dark and the spectrum crisp and saturated. Hard direct sunlight, everything else in the room falling away.
-```
-
-`seed: 133428439` · `glass-008`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## material
-
-_Surface swatches shot flat_
-
-### 1. Raw concrete, board-marked
-
-<img src="../images/material-001.webp" width="420" alt="Raw concrete, board-marked">
-
-```text
-A flat swatch of board-marked concrete filling the frame: timber grain impressed into the surface, tie holes, a slight colour variation between pours, fine air bubbles. Even raking light so the texture reads. No edges.
-```
-
-`seed: 1252759840` · `material-001`
-
-<sub>vocabulary: `grain`, `raking light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Rusted steel plate
-
-<img src="../images/material-002.webp" width="420" alt="Rusted steel plate">
-
-```text
-A flat swatch of weathered steel plate filling the frame: orange and brown corrosion in layers, some flaking to reveal darker metal, a faint mill scale pattern beneath. Even light, no edges, no rivets.
-```
-
-`seed: 78034212` · `material-002`
-
-<sub>vocabulary: `even light`, `weathered` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Handmade paper
-
-<img src="../images/material-005.webp" width="420" alt="Handmade paper">
-
-```text
-A flat swatch of handmade cotton paper filling the frame, visible fibre inclusions and an uneven surface, one faint watermark shape. Backlit slightly so the thickness variation shows. No deckle edge in frame.
-```
-
-`seed: 2092679551` · `material-005`
-
-<sub>vocabulary: `backlit` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Verdigris copper
-
-<img src="../images/material-006.webp" width="420" alt="Verdigris copper">
-
-```text
-A flat swatch of aged copper sheet filling the frame, green verdigris blooming unevenly over brown patina with a few bright scratches. Even light, no edges, no fixings.
-```
-
-`seed: 1777915710` · `material-006`
-
-<sub>vocabulary: `even light`, `patina` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Riven slate
-
-<img src="../images/material-008.webp" width="420" alt="Riven slate">
-
-```text
-A flat swatch of riven slate filling the frame, the split face stepping in thin layers, dark blue-grey with faint rust staining along one bedding plane. Hard raking light so the steps cast shadow. No edges.
-```
-
-`seed: 1930279593` · `material-008`
-
-<sub>vocabulary: `raking light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## crowd
-
-_Many people at once_
-
-### 1. Concert crowd from behind
-
-<img src="../images/crowd-001.webp" width="420" alt="Concert crowd from behind">
-
-```text
-A concert crowd photographed from behind and above, hundreds of heads and raised arms silhouetted against stage light, the front rows lost in glare. Nobody's face visible, no signage. Long lens compression.
-```
-
-`seed: 1724458665` · `crowd-001`
-
-<sub>vocabulary: `long lens` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Commuters on a platform
-
-<img src="../images/crowd-002.webp" width="420" alt="Commuters on a platform">
-
-```text
-Commuters waiting along a station platform in early light, spaced out and mostly still, coats and bags, a train approaching out of focus. Shot from the far end so the figures compress into a line. No faces sharp.
-```
-
-`seed: 998639787` · `crowd-002`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Market square from a window
-
-<img src="../images/crowd-003.webp" width="420" alt="Market square from a window">
-
-```text
-A busy market square seen from a high window, stalls in rows with people moving between them, canopies and their shadows making the pattern. Late morning sun, everyone small, nobody identifiable.
-```
-
-`seed: 105719758` · `crowd-003`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Beach on a hot day
-
-<img src="../images/crowd-004.webp" width="420" alt="Beach on a hot day">
-
-```text
-A crowded beach photographed from a cliff above: towels, umbrellas and figures scattered across pale sand, the sea edge crowded. High sun, strong colour, everyone small and unidentifiable.
-```
-
-`seed: 96150023` · `crowd-004`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Stadium terrace, rain
-
-<img src="../images/crowd-005.webp" width="420" alt="Stadium terrace, rain">
-
-```text
-A packed stadium terrace in rain, thousands of figures under hoods and umbrellas as a field of texture, floodlights catching the downpour. Shot from across the ground, nobody's face readable.
-```
-
-`seed: 2146359377` · `crowd-005`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 6. Procession in a narrow street
-
-<img src="../images/crowd-006.webp" width="420" alt="Procession in a narrow street">
-
-```text
-A procession filling a narrow street seen from a balcony, the crowd flowing between tall buildings, banners furled, hard shadow cutting the street diagonally. Nobody identifiable, no text on the banners.
-```
-
-`seed: 1077716200` · `crowd-006`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 7. Escalators, morning rush
-
-<img src="../images/crowd-007.webp" width="420" alt="Escalators, morning rush">
-
-```text
-Two long escalators running in opposite directions in a transit hall, both full of people standing, shot straight on so the two streams cross. Even artificial light, faces turned away or blurred by motion.
-```
-
-`seed: 555522559` · `crowd-007`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 8. Queue along a wall
-
-<img src="../images/crowd-008.webp" width="420" alt="Queue along a wall">
-
-```text
-A long queue of people waiting along a plain brick wall in flat overcast light, spaced unevenly, some sitting on the kerb. Shot from far along the line so it compresses. Nobody's face sharp, no signage.
-```
-
-`seed: 1179753599` · `crowd-008`
-
-<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>

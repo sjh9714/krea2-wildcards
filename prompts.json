@@ -3,7 +3,7 @@
   "model": "Krea 2 Turbo",
   "model_url": "https://huggingface.co/krea/Krea-2-Turbo",
   "launched": "2026-06-22",
-  "updated": "2026-08-22",
+  "updated": "2026-08-23",
   "repo": "sjh9714/krea2-wildcards",
   "gen_cmd": "python3 scripts/gen_fal.py --prompt {prompt} --out {out}",
   "categories": {
@@ -5426,6 +5426,174 @@
       "creation_tool": "Krea web app, Krea 2 Turbo"
     },
     {
+      "id": "fashion-017",
+      "category": "fashion",
+      "title": "Ivory cocoon coat in brutalist library",
+      "image": "images/fashion-017.webp",
+      "prompt": "Full-length editorial lookbook photograph of a model in a sculptural ivory cocoon coat inside a quiet brutalist library, three-quarter stance beside a long concrete reading table, soft overcast skylight, precise tailoring seams, matte wool texture, restrained ivory and grey palette, 50mm lens, fine film grain.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "b61681f1-08c3-4036-b37d-d530c323aae0",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-018",
+      "category": "fashion",
+      "title": "Deconstructed navy suit backstage",
+      "image": "images/fashion-018.webp",
+      "prompt": "Backstage lookbook photograph of a model in a deconstructed midnight-navy suit, standing beside a garment rack in a white fitting studio, relaxed full-body pose, pinned hems and visible hand-basted seams, soft frontal flash, crisp suiting texture, understated magazine styling.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "8de5d845-886a-4f34-8f43-87f409d158a5",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-019",
+      "category": "fashion",
+      "title": "Silver quilted outerwear campaign",
+      "image": "images/fashion-019.webp",
+      "prompt": "Full-length studio fashion photograph of a model in silver quilted outerwear and charcoal trousers on a seamless white cyclorama, centered graphic stance, broad overhead softbox with a narrow floor reflection, clearly articulated quilting, cool restrained palette, modern winter campaign.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "6f03ce56-df06-4b84-9d4e-7844f2b0be46",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-020",
+      "category": "fashion",
+      "title": "Aubergine lacquer lips under a smoke veil",
+      "image": "images/fashion-020.webp",
+      "prompt": "Close beauty editorial of a model wearing deep aubergine lacquered lips and brushed-up brows, damp skin with visible natural texture, face framed by a translucent smoke-grey veil, soft beauty dish above camera, dark plum background, 85mm lens, controlled high-fashion mood.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "48303217-d487-4dcd-a700-c402f0fe4468",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-021",
+      "category": "fashion",
+      "title": "Gold temple ornament in striped light",
+      "image": "images/fashion-021.webp",
+      "prompt": "Profile beauty portrait of a model with a shaved head and a single matte-gold temple ornament, narrow bands of warm light passing through an architectural screen across the face, neutral clay background, clean skin texture, minimal styling, refined cosmetic editorial.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "721e2242-fb80-4ba6-97f8-0936eebd099d",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-022",
+      "category": "fashion",
+      "title": "Icy silver eye and crystal stud",
+      "image": "images/fashion-022.webp",
+      "prompt": "Extreme beauty close-up of one eye, cheek, and ear with icy silver eyeshadow and a tiny crystal ear stud, cool window light, pale blue paper background, visible pores and fine vellus hair, precise editorial crop, restrained winter cosmetics campaign.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "728b45bb-1364-4358-8fa8-ee1400d137be",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-023",
+      "category": "fashion",
+      "title": "Saffron cape on volcanic shore",
+      "image": "images/fashion-023.webp",
+      "prompt": "Location fashion editorial of a model in a saffron wool cape on a black volcanic beach, full-body stance leaning into coastal wind, rough basalt and white surf behind, low overcast sky, fabric edge lifted cleanly, muted cinematic color, 50mm documentary framing.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "ec152e03-0153-43d0-aa3e-825c1eecca4b",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-024",
+      "category": "fashion",
+      "title": "Moss coat in a misted greenhouse",
+      "image": "images/fashion-024.webp",
+      "prompt": "Full-length editorial photograph of a model in a moss-green belted coat inside a fogged glass greenhouse, condensation on panes, lush leaves fading into mist, diffused morning light, clear garment silhouette, quiet botanical palette, fine analog grain.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "96aca33d-d053-48c0-a89f-fdac058f8a82",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-025",
+      "category": "fashion",
+      "title": "Sea-green column dress in an empty pool",
+      "image": "images/fashion-025.webp",
+      "prompt": "Fashion location portrait of a model in a sea-green column dress standing at the deep end of an empty pale-blue tiled swimming pool, long diagonal noon shadow, high camera looking slightly down, precise architectural lines, calm surreal campaign mood.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "9a2cc192-16f1-4acf-a494-05f90930efc3",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-026",
+      "category": "fashion",
+      "title": "Graphite fringe frozen in motion",
+      "image": "images/fashion-026.webp",
+      "prompt": "Dynamic studio fashion photograph of a model in a dress covered with long graphite metallic fringe, captured at the apex of a small jump, every strand fanning outward yet sharply frozen, charcoal seamless background, hard side light, 1/1000-second look, crisp material detail.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "301725aa-a4cd-4746-82b9-7ea3db1f39ca",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-027",
+      "category": "fashion",
+      "title": "Coral organza in a wind tunnel",
+      "image": "images/fashion-027.webp",
+      "prompt": "Editorial fashion photograph of a model surrounded by long translucent coral organza ribbons in a wind tunnel, three-quarter body composition, ribbons spiraling around without hiding the face, bright white cyclorama, clean backlight through the fabric, sharp face and tactile sheer layers.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "c4208e0c-34a0-4525-810e-e3fc23943d2f",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
+      "id": "fashion-028",
+      "category": "fashion",
+      "title": "White chiffon cape in a rooftop crosswind",
+      "image": "images/fashion-028.webp",
+      "prompt": "Rooftop fashion editorial of a model in a floor-length white chiffon cape caught by a strong crosswind at dawn, stable side-on stance with face visible, cape extending horizontally across the frame, pale city skyline, cool pink sky, crisp frozen fabric edges, restrained cinematic color.",
+      "params": {
+        "provider": "krea-web",
+        "generation_id": "21e46255-055d-47d3-a883-0467015cbc1a",
+        "aspect_ratio": "2:3"
+      },
+      "batch": 10,
+      "creation_tool": "Krea web app, Krea 2 Turbo"
+    },
+    {
       "id": "product-019",
       "category": "product",
       "title": "Frosted serum on travertine",
@@ -6601,10 +6769,10 @@
       "jamez-bondos has not been pushed since 2025-05-26."
     ]
   },
-  "generations": 657,
-  "discarded_generations": 93,
+  "generations": 705,
+  "discarded_generations": 129,
   "spend": 4.54,
-  "web_credits_spent": 192,
+  "web_credits_spent": 288,
   "attribution": {
     "_default": "Every entry in this catalog was written and generated by the repository owner unless it carries its own attribution. Entries that came from somebody else name them, link them, and say what licence the image is under, and those fields are required rather than encouraged.",
     "owner": "@sjh9714",

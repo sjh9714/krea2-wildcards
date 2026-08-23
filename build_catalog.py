@@ -418,7 +418,7 @@ def render_readme(data: dict, lang: str = "en") -> str:
                  "files in one archive.\n")
         if lang == "en":
             L.append("**[Hugging Face](https://huggingface.co/datasets/sjh9714/krea2-wildcards)**: "
-                     "499 JSONL prompt records.\n")
+                     f"{len(kept)} JSONL prompt records.\n")
         L.append("**[Open in Comfy Cloud](https://cloud.comfy.org/?share=78d328f1548e)**, "
                  "or download the [native](workflows/krea2-native-starter.json) and "
                  "[wildcard](workflows/krea2-wildcards-starter.json) workflows as JSON or "

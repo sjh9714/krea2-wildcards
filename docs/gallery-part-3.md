@@ -1,4 +1,292 @@
 [← the categories](gallery.md)
+## glass
+
+_Transparency, refraction and caustics_
+
+### 1. Wine glasses, caustics
+
+<img src="../images/glass-001.webp" width="420" alt="Wine glasses, caustics">
+
+```text
+Three empty wine glasses on white paper under one hard light, throwing sharp bright caustic patterns onto the paper beside them, the stems refracting the background into thin bands. High key, nothing else in frame.
+```
+
+`seed: 1386490681` · `glass-001`
+
+<sub>vocabulary: `hard light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Bubbles in blown glass
+
+<img src="../images/glass-002.webp" width="420" alt="Bubbles in blown glass">
+
+```text
+Macro of a hand-blown glass vessel wall showing trapped air bubbles at different depths, the surface slightly uneven, backlit so the bubbles read as bright rings. Extremely shallow focus, no edges of the vessel visible.
+```
+
+`seed: 245613758` · `glass-002`
+
+<sub>vocabulary: `backlit`, `macro`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Frosted and clear, layered
+
+<img src="../images/glass-003.webp" width="420" alt="Frosted and clear, layered">
+
+```text
+Overlapping panes of frosted and clear glass photographed against a bright window, the frosted areas diffusing what is behind them while the clear areas stay sharp. Abstract composition, cool light, no frame visible.
+```
+
+`seed: 1415704346` · `glass-003`
+
+<sub>vocabulary: `frosted` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Broken safety glass
+
+<img src="../images/glass-004.webp" width="420" alt="Broken safety glass">
+
+```text
+Toughened safety glass shattered into its characteristic small cubes but still held together, backlit so the fracture network glows white. Macro, the crumbs varying in size across the sheet. No frame edges in view.
+```
+
+`seed: 620116430` · `glass-004`
+
+<sub>vocabulary: `backlit`, `macro` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 5. Laboratory flask, single light
+
+<img src="../images/glass-005.webp" width="420" alt="Laboratory flask, single light">
+
+```text
+A round-bottomed laboratory flask half filled with clear liquid on a black surface, one hard light behind and above so the liquid line reads as a bright arc and the glass edges as thin highlights. Nothing else in frame.
+```
+
+`seed: 1336644334` · `glass-005`
+
+<sub>vocabulary: `hard light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 6. Rain on a window at night
+
+<img src="../images/glass-006.webp" width="420" alt="Rain on a window at night">
+
+```text
+Rain running down a window at night, each droplet acting as a lens and inverting the street lights behind, the glass itself the plane of focus. Everything beyond thrown completely out of focus. Warm points on cold glass.
+```
+
+`seed: 250096326` · `glass-006`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 7. Stacked tumblers, refraction
+
+<img src="../images/glass-007.webp" width="420" alt="Stacked tumblers, refraction">
+
+```text
+A stack of pressed glass tumblers shot straight on against a plain grey ground, the overlapping walls building up into dense bands of refraction and shadow. Even soft light, the pressed pattern repeating through the stack.
+```
+
+`seed: 1490874051` · `glass-007`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 8. Prism spectrum on a wall
+
+<img src="../images/glass-008.webp" width="420" alt="Prism spectrum on a wall">
+
+```text
+A glass prism on a windowsill throwing a sharp spectrum onto a plain white wall, the prism itself mostly dark and the spectrum crisp and saturated. Hard direct sunlight, everything else in the room falling away.
+```
+
+`seed: 133428439` · `glass-008`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+## material
+
+_Surface swatches shot flat_
+
+### 1. Raw concrete, board-marked
+
+<img src="../images/material-001.webp" width="420" alt="Raw concrete, board-marked">
+
+```text
+A flat swatch of board-marked concrete filling the frame: timber grain impressed into the surface, tie holes, a slight colour variation between pours, fine air bubbles. Even raking light so the texture reads. No edges.
+```
+
+`seed: 1252759840` · `material-001`
+
+<sub>vocabulary: `grain`, `raking light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Rusted steel plate
+
+<img src="../images/material-002.webp" width="420" alt="Rusted steel plate">
+
+```text
+A flat swatch of weathered steel plate filling the frame: orange and brown corrosion in layers, some flaking to reveal darker metal, a faint mill scale pattern beneath. Even light, no edges, no rivets.
+```
+
+`seed: 78034212` · `material-002`
+
+<sub>vocabulary: `even light`, `weathered` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Handmade paper
+
+<img src="../images/material-005.webp" width="420" alt="Handmade paper">
+
+```text
+A flat swatch of handmade cotton paper filling the frame, visible fibre inclusions and an uneven surface, one faint watermark shape. Backlit slightly so the thickness variation shows. No deckle edge in frame.
+```
+
+`seed: 2092679551` · `material-005`
+
+<sub>vocabulary: `backlit` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Verdigris copper
+
+<img src="../images/material-006.webp" width="420" alt="Verdigris copper">
+
+```text
+A flat swatch of aged copper sheet filling the frame, green verdigris blooming unevenly over brown patina with a few bright scratches. Even light, no edges, no fixings.
+```
+
+`seed: 1777915710` · `material-006`
+
+<sub>vocabulary: `even light`, `patina` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 5. Riven slate
+
+<img src="../images/material-008.webp" width="420" alt="Riven slate">
+
+```text
+A flat swatch of riven slate filling the frame, the split face stepping in thin layers, dark blue-grey with faint rust staining along one bedding plane. Hard raking light so the steps cast shadow. No edges.
+```
+
+`seed: 1930279593` · `material-008`
+
+<sub>vocabulary: `raking light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+## crowd
+
+_Many people at once_
+
+### 1. Concert crowd from behind
+
+<img src="../images/crowd-001.webp" width="420" alt="Concert crowd from behind">
+
+```text
+A concert crowd photographed from behind and above, hundreds of heads and raised arms silhouetted against stage light, the front rows lost in glare. Nobody's face visible, no signage. Long lens compression.
+```
+
+`seed: 1724458665` · `crowd-001`
+
+<sub>vocabulary: `long lens` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 2. Commuters on a platform
+
+<img src="../images/crowd-002.webp" width="420" alt="Commuters on a platform">
+
+```text
+Commuters waiting along a station platform in early light, spaced out and mostly still, coats and bags, a train approaching out of focus. Shot from the far end so the figures compress into a line. No faces sharp.
+```
+
+`seed: 998639787` · `crowd-002`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 3. Market square from a window
+
+<img src="../images/crowd-003.webp" width="420" alt="Market square from a window">
+
+```text
+A busy market square seen from a high window, stalls in rows with people moving between them, canopies and their shadows making the pattern. Late morning sun, everyone small, nobody identifiable.
+```
+
+`seed: 105719758` · `crowd-003`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 4. Beach on a hot day
+
+<img src="../images/crowd-004.webp" width="420" alt="Beach on a hot day">
+
+```text
+A crowded beach photographed from a cliff above: towels, umbrellas and figures scattered across pale sand, the sea edge crowded. High sun, strong colour, everyone small and unidentifiable.
+```
+
+`seed: 96150023` · `crowd-004`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 5. Stadium terrace, rain
+
+<img src="../images/crowd-005.webp" width="420" alt="Stadium terrace, rain">
+
+```text
+A packed stadium terrace in rain, thousands of figures under hoods and umbrellas as a field of texture, floodlights catching the downpour. Shot from across the ground, nobody's face readable.
+```
+
+`seed: 2146359377` · `crowd-005`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 6. Procession in a narrow street
+
+<img src="../images/crowd-006.webp" width="420" alt="Procession in a narrow street">
+
+```text
+A procession filling a narrow street seen from a balcony, the crowd flowing between tall buildings, banners furled, hard shadow cutting the street diagonally. Nobody identifiable, no text on the banners.
+```
+
+`seed: 1077716200` · `crowd-006`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 7. Escalators, morning rush
+
+<img src="../images/crowd-007.webp" width="420" alt="Escalators, morning rush">
+
+```text
+Two long escalators running in opposite directions in a transit hall, both full of people standing, shot straight on so the two streams cross. Even artificial light, faces turned away or blurred by motion.
+```
+
+`seed: 555522559` · `crowd-007`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 8. Queue along a wall
+
+<img src="../images/crowd-008.webp" width="420" alt="Queue along a wall">
+
+```text
+A long queue of people waiting along a plain brick wall in flat overcast light, spaced unevenly, some sitting on the kerb. Shot from far along the line so it compresses. Nobody's face sharp, no signage.
+```
+
+`seed: 1179753599` · `crowd-008`
+
+<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
 ## weave
 
 _A controlled experiment: rope and chain from separable to fully interpenetrating, one surface and one light throughout_

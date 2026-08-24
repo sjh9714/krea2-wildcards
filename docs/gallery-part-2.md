@@ -511,6 +511,44 @@ Rooftop fashion editorial of a model in a floor-length white chiffon cape caught
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
+### 28. Black leather mule on aluminum plinth
+
+<img src="../images/fashion-029.webp" width="420" alt="Black leather mule on aluminum plinth">
+
+```text
+Luxury accessories still life of a sculptural black leather mule shoe balanced on a brushed aluminum plinth, exact side profile, curved heel and stitching clearly visible, one hard spotlight creating an elliptical shadow, charcoal studio background, premium campaign precision.
+```
+
+`Krea asset: 558964d4-692c-44f9-a663-97ff8c68cbdd` · `aspect: 2:3` · `fashion-029`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 29. Amber resin bangles in sunlit water
+
+<img src="../images/fashion-030.webp" width="420" alt="Amber resin bangles in sunlit water">
+
+```text
+Accessories beauty still life of three translucent amber resin bangles resting in a shallow tray of water, sunlight creating bright caustic patterns across pale stone, top-down composition, crisp edges, tiny water ripples, warm minimal summer campaign.
+```
+
+`Krea asset: d5d23258-053d-42c8-ba08-437570315640` · `aspect: 2:3` · `fashion-030`
+
+<sub>vocabulary: `top-down` · [what each one does](../VOCABULARY.md)</sub>
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
+### 30. Woven cream mini bag on terracotta
+
+<img src="../images/fashion-031.webp" width="420" alt="Woven cream mini bag on terracotta">
+
+```text
+Editorial product photograph of a compact hand-woven cream leather mini bag suspended by its strap against a terracotta wall, late-afternoon sun casting a long geometric shadow, weave and edge paint clearly readable, no model, refined Mediterranean campaign.
+```
+
+`Krea asset: b4635f29-d5c0-4239-94e9-50bbd894648e` · `aspect: 2:3` · `fashion-031`
+
+<sub>[back to the categories](gallery.md#categories)</sub>
+
 ## automotive
 
 _Cars and motorcycles, studio and location_

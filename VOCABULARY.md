@@ -4,7 +4,7 @@ The words in these prompts that carry the technique rather than the subject. The
 
 *A term is in this file only if it appears in at least 3 entries across at least 2 categories. Below that it is subject vocabulary, not transferable vocabulary. build_vocabulary.py enforces the rule and refuses to build if a term stops meeting it.*
 
-62 terms. 379 of 511 prompts carry at least one of them.
+62 terms. 380 of 514 prompts carry at least one of them.
 
 ## Precision notes for 7 terms
 
@@ -47,7 +47,7 @@ These recurring terms work best with an extra composition or medium cue.
 | `straight down` ⚠️ | **17** in 10 categories | Asks for a true plan view. Pair it with a flat subject, symmetrical layout, and no visible horizon. |
 | `isometric` | **12** in 3 categories | Parallel projection, no vanishing point. Reliable enough to be its own category here. |
 | `symmetrical` | **11** in 8 categories | Mirrors the composition about a centre line. Holds well. |
-| `top-down` | **5** in 4 categories | A concise way to request an overhead plan view. Add flat lay or no visible horizon when the angle matters. |
+| `top-down` | **6** in 4 categories | A concise way to request an overhead plan view. Add flat lay or no visible horizon when the angle matters. |
 | `low angle` | **5** in 5 categories | Camera below eye level. Makes the subject loom. |
 | `centred` | **5** in 4 categories | Subject on the axis. Useful when a layout keeps drifting. |
 | `exploded` | **5** in 4 categories | Parts separated along their assembly axes. |
@@ -139,7 +139,7 @@ Entry ids, so you can pull the prompt and the image for any of them.
 - **`long exposure`** (15): `automotive-005`, `exterior-006`, `interior-003`, `interior-009`, `landscape-004`, `night-001`, `night-003`, `night-004`, `night-006`, `period-005`, `period-008`, `photography-006`, `scifi-005`, `vehicle-004`, `weather-008`
 - **`overhead`** (28): `automotive-001`, `fashion-001`, `fashion-019`, `food-002`, `food-010`, `interior-007`, `interior-009`, `isometric-3d-002`, `jewellery-004`, `mirror-007`, `packaging-003`, `photography-003`, `photography-009`, `photography-014`, `plant-007`, `portrait-009`, `product-007`, `product-010`, `product-013`, `scifi-005`, `sport-001`, `stationery-003`, `stationery-004`, `stationery-006`, `still-life-002`, `still-life-008`, `street-007`, `vehicle-009`
 - **`straight down`** (17): `abstract-005`, `aerial-002`, `aerial-004`, `aerial-006`, `anatomy-008`, `food-004`, `knolling-003`, `knolling-005`, `knolling-006`, `knolling-007`, `knolling-008`, `mineral-008`, `pattern-004`, `plant-010`, `seasonal-002`, `seasonal-008`, `still-life-008`
-- **`top-down`** (5): `fashion-006`, `food-010`, `packaging-004`, `product-003`, `product-016`
+- **`top-down`** (6): `fashion-006`, `fashion-030`, `food-010`, `packaging-004`, `product-003`, `product-016`
 - **`flat lay`** (3): `product-003`, `product-010`, `stationery-003`
 - **`low angle`** (5): `automotive-003`, `macro-nature-003`, `miniature-007`, `mirror-007`, `photography-002`
 - **`three-quarter`** (22): `anatomy-006`, `architecture-001`, `architecture-003`, `automotive-001`, `brand-mark-006`, `collectible-006`, `fashion-013`, `fashion-017`, `fashion-027`, `isometric-3d-004`, `isometric-3d-008`, `landscape-008`, `miniature-003`, `packaging-003`, `portrait-007`, `poster-008`, `product-017`, `product-019`, `product-020`, `product-022`, `reference-sheet-001`, `scifi-002`

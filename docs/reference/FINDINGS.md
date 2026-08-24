@@ -14,7 +14,7 @@ Keep the subject and setting concrete. Then change one visual decision at a time
 
 Open with the visual medium, then describe the subject in language that belongs to that medium. For an illustration, prefer linework, painted background, flat colour, paper grain, ink, wash, or brush texture. For a photo, use lens, depth, exposure, and lighting language.
 
-The [style recipe book](styles/README.md) includes eight whole-scene clauses and a neutral base subject you can copy directly.
+The [style recipe book](../../styles/README.md) includes eight whole-scene clauses and a neutral base subject you can copy directly.
 
 ## Describe the light you want to see
 

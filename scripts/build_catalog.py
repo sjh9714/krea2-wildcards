@@ -27,10 +27,10 @@ that cannot be automated: curation. Generation is a separate step you own ,
 
 Usage
 -----
-    python3 build_catalog.py --init                     # scaffold prompts.json
-    python3 build_catalog.py --generate                 # run gen-cmd for missing images
-    python3 build_catalog.py --build                    # write README.md + index
-    python3 build_catalog.py --build --lang zh          # also emit README_ZH.md
+    python3 scripts/build_catalog.py --init                     # scaffold prompts.json
+    python3 scripts/build_catalog.py --generate                 # run gen-cmd for missing images
+    python3 scripts/build_catalog.py --build                    # write README.md + index
+    python3 scripts/build_catalog.py --build --lang zh          # also emit docs/i18n/README_ZH.md
 """
 
 from __future__ import annotations
@@ -43,7 +43,7 @@ import sys
 from collections import OrderedDict
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]
 
 # Every catalog above 8,000 stars in this niche ships translations; the
 # largest ships twelve. The body evidence stays in English, so these are
@@ -74,6 +74,17 @@ def h2(key: str, text: str) -> str:
 
 
 LANGS = ["en", "zh", "ko", "ja", "es", "fr", "de", "pt"]
+
+
+def readme_path(lang: str) -> Path:
+    if lang == "en":
+        return HERE / "README.md"
+    return HERE / "docs/i18n" / f"README_{lang.upper()}.md"
+
+
+def repo_link(lang: str, path: str) -> str:
+    """Return a repository-relative link from the README being rendered."""
+    return path if lang == "en" else f"../../{path}"
 
 from build_vocabulary import load as _load_vocab, mark, term_pattern
 VOCAB_MD = term_pattern([x["t"] for x in _load_vocab()[0]["terms"]])
@@ -366,7 +377,7 @@ def render_readme(data: dict, lang: str = "en") -> str:
         # first version outlived its own claims by three batches, and the second
         # went on describing a success-over-failure grid for weeks after
         # build_hero.py stopped drawing one. Read the image before editing this.
-        L.append('  <img src="hero.webp" width="912" '
+        L.append(f'  <img src="{repo_link(lang, "hero.webp")}" width="912" '
                  'alt="Twelve Krea 2 Turbo outputs in a four by three grid, under the heading '
                  f'{n} tested Krea 2 Turbo prompts: a loft under renovation, a desert dune '
                  'ridge at first light, a backlit seed head, an aurora over snow, ice '
@@ -377,7 +388,7 @@ def render_readme(data: dict, lang: str = "en") -> str:
     else:
         L.append('<p align="center">')
         for e in kept[:8]:
-            L.append(f'  <img src="{e["image"]}" width="180" alt="{e["title"]}">')
+            L.append(f'  <img src="{repo_link(lang, e["image"])}" width="180" alt="{e["title"]}">')
         L.append("</p>\n")
 
     # Badges and a language switcher directly under the title, then a gallery
@@ -393,15 +404,16 @@ def render_readme(data: dict, lang: str = "en") -> str:
     if site:
         L.append(f'<a href="{site}">'
                  '<img src="https://img.shields.io/badge/gallery-browse%20all-1f5d4c" alt="gallery"></a>')
-    L.append('<a href="LICENSE"><img src="https://img.shields.io/badge/prompts-MIT-1f5d4c" alt="license"></a>')
+    L.append(f'<a href="{repo_link(lang, "LICENSE")}"><img src="https://img.shields.io/badge/prompts-MIT-1f5d4c" alt="license"></a>')
     L.append("</p>\n")
 
     others = [x for x in LANGS if x != lang]
     links = " · ".join(
-        f'<a href="README.md">{x.upper()}</a>' if x == "en"
-        else f'<a href="README_{x.upper()}.md">{x.upper()}</a>'
-        for x in others
-    )
+        f'<a href="../../README.md">{x.upper()}</a>' if x == "en"
+        else (f'<a href="docs/i18n/README_{x.upper()}.md">{x.upper()}</a>'
+              if lang == "en" else
+              f'<a href="README_{x.upper()}.md">{x.upper()}</a>')
+        for x in others)
     nav = links + (f' · <a href="{site}"><b>{T["gallery_link"]}</b></a>' if site else "")
     if nav:
         L.append(f"<p align=\"center\">{nav}</p>\n")
@@ -414,7 +426,7 @@ def render_readme(data: dict, lang: str = "en") -> str:
         latest_label = (T["latest"]
                         .replace("{count}", str(len(latest)))
                         .replace("{category}", latest_category))
-        latest_url = ('guides/krea2-editorial-fashion-prompts/'
+        latest_url = (repo_link(lang, 'guides/krea2-editorial-fashion-prompts/')
                       if latest_category == "fashion"
                       else f'{site}?category={latest_category}')
         L.append('<p align="center">'
@@ -452,11 +464,11 @@ def render_readme(data: dict, lang: str = "en") -> str:
             L.append("**[Hugging Face](https://huggingface.co/datasets/sjh9714/krea2-wildcards)**: "
                      f"{len(kept)} JSONL prompt records.\n")
         L.append("**[Open in Comfy Cloud](https://cloud.comfy.org/?share=78d328f1548e)**, "
-                 "or download the [native](workflows/krea2-native-starter.json) and "
-                 "[wildcard](workflows/krea2-wildcards-starter.json) workflows as JSON or "
+                 f"or download the [native]({repo_link(lang, 'workflows/krea2-native-starter.json')}) and "
+                 f"[wildcard]({repo_link(lang, 'workflows/krea2-wildcards-starter.json')}) workflows as JSON or "
                  "drag-and-drop PNG.\n")
         L.append("On ComfyUI you can wire it up instead: put "
-                 "[wildcards/](wildcards/) in `ComfyUI/wildcards/` and write `__all__` "
+                 f"[wildcards/]({repo_link(lang, 'wildcards/')}) in `ComfyUI/wildcards/` and write `__all__` "
                  "in a prompt. That needs a dynamic prompts node, which ComfyUI does not "
                  "come with, so install "
                  "[comfyui-dynamicprompts](https://github.com/adieyal/comfyui-dynamicprompts) "
@@ -478,17 +490,17 @@ def render_readme(data: dict, lang: str = "en") -> str:
     where = gmap["where"]
     if lang == "en":
         L.append(f"All **{len(kept)}** entries are in the repository at "
-                 f"[docs/gallery.md](docs/gallery.md), and on the "
+                 f"[docs/gallery.md]({repo_link(lang, 'docs/gallery.md')}), and on the "
                  f"[web gallery]({site}) if you would rather scroll one page. "
                  f"The category links below go straight to the right section.\n")
     L.append(" · ".join(
-        f"[{c}](docs/{where[c]}#{c.lower().replace(' ', '-')}) {n}"
+        f"[{c}]({repo_link(lang, f'docs/{where[c]}')}#{c.lower().replace(' ', '-')}) {n}"
         for c, n in by_cat.items() if c in where) + "\n")
 
     if lang == "en" and kept:
         sample = next((e for e in kept if e["id"] == "photography-001"), kept[0])
         L.append("### What one entry looks like\n")
-        L.append(f'<img src="{sample["image"]}" width="420" alt="{sample["title"]}">\n')
+        L.append(f'<img src="{repo_link(lang, sample["image"])}" width="420" alt="{sample["title"]}">\n')
         L.append("```text")
         L.append(sample["prompt"].strip())
         L.append("```")
@@ -504,17 +516,19 @@ def render_readme(data: dict, lang: str = "en") -> str:
             L.append("The gallery highlights the words that recur across this catalog and "
                      "travel to other subjects. This one carries "
                      + ", ".join(f"`{m}`" for m in found)
-                     + f". [What each of them does → VOCABULARY.md](VOCABULARY.md)\n")
-        L.append(f"[**All {len(kept)} in the repo →**](docs/gallery.md)"
+                     + f". [What each of them does → VOCABULARY.md]({repo_link(lang, 'docs/reference/VOCABULARY.md')})\n")
+        L.append(f"[**All {len(kept)} in the repo →**]({repo_link(lang, 'docs/gallery.md')})"
                  f" · [**as a web page →**]({site})\n")
 
     # Keep the next useful actions together: learn the recurring visual terms,
     # adapt a prompt formula, browse the compact style set, or reproduce a run.
-    L.append("<sub>Build your next prompt: **[prompt field guide](FINDINGS.md)** "
-             "· [VOCABULARY.md](VOCABULARY.md) · [TEMPLATES.md](TEMPLATES.md) "
-             "· [editing recipes](EDITING_RECIPES.md) "
-             "· [style recipes](styles/README.md) "
-             "· [generation settings](REPRODUCING.md)</sub>\n")
+    L.append("<sub>Build your next prompt: "
+             f"**[prompt field guide]({repo_link(lang, 'docs/reference/FINDINGS.md')})** "
+             f"· [VOCABULARY.md]({repo_link(lang, 'docs/reference/VOCABULARY.md')}) "
+             f"· [TEMPLATES.md]({repo_link(lang, 'docs/reference/TEMPLATES.md')}) "
+             f"· [editing recipes]({repo_link(lang, 'docs/reference/EDITING_RECIPES.md')}) "
+             f"· [style recipes]({repo_link(lang, 'styles/README.md')}) "
+             f"· [generation settings]({repo_link(lang, 'docs/reference/REPRODUCING.md')})</sub>\n")
 
     L.append("\n" + h2("contrib", T["contrib"]) + f"\n{T['contrib_body']}\n")
     L.append(h2("license", T["license"]) + f"\n{T['license_body']}\n")
@@ -539,7 +553,7 @@ def render_findings(data: dict) -> str:
          "belongs to that medium. For an illustration, prefer linework, painted "
          "background, flat colour, paper grain, ink, wash, or brush texture. For a "
          "photo, use lens, depth, exposure, and lighting language.", "",
-         "The [style recipe book](styles/README.md) includes eight whole-scene "
+         "The [style recipe book](../../styles/README.md) includes eight whole-scene "
          "clauses and a neutral base subject you can copy directly.", "",
          "## Describe the light you want to see", "",
          "Use the visible result: soft wraparound light, a narrow rim, hard noon "
@@ -594,12 +608,15 @@ def cmd_build(langs: list[str]) -> int:
     missing = len(data["entries"]) - len(kept)
 
     for lang in langs:
-        name = "README.md" if lang == "en" else f"README_{lang.upper()}.md"
-        (HERE / name).write_text(render_readme(data, lang), encoding="utf-8")
-        print(f"wrote {name}")
+        path = readme_path(lang)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(render_readme(data, lang), encoding="utf-8")
+        print(f"wrote {path.relative_to(HERE)}")
 
-    (HERE / "FINDINGS.md").write_text(render_findings(data), encoding="utf-8")
-    print("wrote FINDINGS.md")
+    reference = HERE / "docs/reference"
+    reference.mkdir(parents=True, exist_ok=True)
+    (reference / "FINDINGS.md").write_text(render_findings(data), encoding="utf-8")
+    print("wrote docs/reference/FINDINGS.md")
     (HERE / "docs").mkdir(exist_ok=True)
     (HERE / "docs/comparison.md").write_text(render_comparison(data), encoding="utf-8")
     print("wrote docs/comparison.md")
@@ -627,7 +644,7 @@ def cmd_build(langs: list[str]) -> int:
     print()
     sys.stdout.flush()  # the child writes straight to the tty; without this its
                         # output lands above ours and reads as a different run
-    rc = subprocess.call([sys.executable, str(HERE / "verify.py")])
+    rc = subprocess.call([sys.executable, str(HERE / "scripts/verify.py")])
     if rc:
         print("\nverify.py failed, the README that was just written contradicts the data.",
               file=sys.stderr)

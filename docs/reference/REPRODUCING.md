@@ -82,7 +82,7 @@ fal. For you:
   graph will not match an undisclosed hosted configuration, so the same seed
   produces a different image.
 - **Use the prompts as prompts**, and pick your own seed. The
-  [wildcards](wildcards/) folder is the whole catalog as one prompt per line for
+  [wildcards](../../wildcards/) folder is the whole catalog as one prompt per line for
   exactly this reason.
 - **The findings still hold**, because they are about what the model does with
   language, not about pixel-level reproduction. Where a finding depends on a

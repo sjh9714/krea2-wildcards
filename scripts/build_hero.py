@@ -6,7 +6,7 @@ The hero is a compact overview of twelve visual categories. Each frame comes
 from a published prompt and prints its seed, so the landing page shows the real
 collection rather than a decorative mockup.
 
-    python3 build_hero.py            # writes hero.webp
+    python3 scripts/build_hero.py            # writes hero.webp
 
 Captions stay ASCII. An earlier hero rendered typographic dashes as tofu because
 the fallback font had no glyph, and it went out that way.
@@ -20,7 +20,7 @@ import pathlib
 
 from PIL import Image, ImageDraw, ImageFont
 
-HERE = pathlib.Path(__file__).resolve().parent
+HERE = pathlib.Path(__file__).resolve().parents[1]
 
 # Twelve frames chosen for how they read at 228px, across as many subjects as the
 # grid allows.

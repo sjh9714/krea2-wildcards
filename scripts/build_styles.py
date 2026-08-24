@@ -10,7 +10,7 @@ Generated, not hand-written: a page that prints prompt text has to print the
 text that was actually sent. These clauses lived only in shell history once and
 had to be recovered from a session transcript.
 
-    python3 build_styles.py
+    python3 scripts/build_styles.py
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from __future__ import annotations
 import json
 import pathlib
 
-HERE = pathlib.Path(__file__).resolve().parent
+HERE = pathlib.Path(__file__).resolve().parents[1]
 DATA = HERE / "styles/data.json"
 SWEEP = HERE / "styles/sweep.json"
 

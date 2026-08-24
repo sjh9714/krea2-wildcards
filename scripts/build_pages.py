@@ -6,7 +6,7 @@ This stays deliberately small: one generated HTML file, no framework, no CDN,
 and no separate build tool. It is served from the root of the default branch so
 that the existing images/ directory remains reachable without duplication.
 
-    python3 build_pages.py            # writes docs/index.html
+    python3 scripts/build_pages.py            # writes index.html
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from build_vocabulary import load as load_vocab, mark, term_pattern
 import json
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]
 
 _V, _D = load_vocab()
 VOCAB = term_pattern([x["t"] for x in _V["terms"]])

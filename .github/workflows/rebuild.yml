@@ -1,7 +1,7 @@
 # Every document in this repo is generated from prompts.json. Adding an entry
 # should mean editing the manifest and nothing else; this puts the README,
 # prompt guide, vocabulary, gallery, wildcards and Pages build back in
-# sync on its own, then refuses to commit if verify.py does not pass.
+# sync on its own, then refuses to commit if scripts/verify.py does not pass.
 name: rebuild
 
 on:
@@ -9,10 +9,10 @@ on:
     branches: [main]
     paths:
       - "prompts.json"
-      - "vocabulary.json"
+      - "data/vocabulary.json"
       - "styles/data.json"
       - "images/**"
-      - "build_*.py"
+      - "scripts/build_*.py"
   workflow_dispatch:
 
 permissions:
@@ -33,19 +33,19 @@ jobs:
           python-version: "3.12"
       - run: pip install pillow
       - run: |
-          python3 build_styles.py
-          python3 build_wildcards.py
-          python3 build_vocabulary.py
-          python3 build_gallery.py
-          python3 build_templates.py
+          python3 scripts/build_styles.py
+          python3 scripts/build_wildcards.py
+          python3 scripts/build_vocabulary.py
+          python3 scripts/build_gallery.py
+          python3 scripts/build_templates.py
           python3 scripts/build_workflows.py --json-only
-          python3 build_pages.py
-          python3 build_site.py
-          python3 build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
+          python3 scripts/build_pages.py
+          python3 scripts/build_site.py
+          python3 scripts/build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
       - name: Nothing ships that does not verify
         run: |
           python3 scripts/audit_prompts.py
-          python3 verify.py
+          python3 scripts/verify.py
       - name: Commit the regenerated files
         run: |
           if git diff --quiet; then

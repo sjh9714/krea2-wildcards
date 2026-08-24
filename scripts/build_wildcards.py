@@ -12,7 +12,7 @@ This catalog already holds the prompts. What it did not have was the one-line
 form a wildcard node can read. That is a formatting gap, not a content gap, so
 it costs nothing to close.
 
-    python3 build_wildcards.py          # writes wildcards/
+    python3 scripts/build_wildcards.py          # writes wildcards/
 
 Emits one file per category plus all.txt, every line a complete prompt with
 newlines collapsed. Failures are excluded, a wildcard file that randomly
@@ -28,7 +28,7 @@ import zipfile
 from collections import OrderedDict
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]
 ZIP_NAME = "krea2-wildcards.zip"
 
 
@@ -106,12 +106,12 @@ prompt per line and has nowhere to put a seed. More to the point, the seeds in
 this catalog were recorded against fal's hosted `krea-2/turbo`, which publishes
 no step count, CFG, sampler or scheduler. In your own graph the same seed gives
 a different image. Take the prompts, pick your own seed, and read
-[REPRODUCING.md](../REPRODUCING.md) before you try to match a specific frame.
+[REPRODUCING.md](../docs/reference/REPRODUCING.md) before you try to match a specific frame.
 
 The wildcard files contain the published prompt collection only. The repository's
 research records stay separate so every random line is ready to use.
 
-Regenerate with `python3 build_wildcards.py`.
+Regenerate with `python3 scripts/build_wildcards.py`.
 """, encoding="utf-8")
 
     # One click, not sixty-three. The highest-scoring post this format has ever

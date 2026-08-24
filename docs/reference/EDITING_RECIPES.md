@@ -58,11 +58,11 @@ Use one visible change per pass, then name the parts of the source image that mu
 
 | Edit | Source | Strength | Result |
 |---|---|---:|---|
-| Relight this coastline | [photography-006](docs/gallery.md#photography-006) | 0.55 | [editing-001](images/editing-001.webp) |
-| Keep this corridor's geometry and perspective exactly. Chang | [photography-003](docs/gallery.md#photography-003) | 0.50 | [editing-002](images/editing-002.webp) |
-| Re-render these terraced fields as a gouache painting with v | [photography-009](docs/gallery.md#photography-009) | 0.60 | [editing-003](images/editing-003.webp) |
-| Recolour this woodblock wave to a dusk palette, deep violet | [illustration-004](docs/gallery.md#illustration-004) | 0.55 | [editing-005](images/editing-005.webp) |
-| Blueprint version of the exploded camera | [isometric-3d-005](docs/gallery.md#isometric-3d-005) | 0.60 | [editing-008](images/editing-008.webp) |
+| Relight this coastline | [photography-006](../gallery.md#photography-006) | 0.55 | [editing-001](../../images/editing-001.webp) |
+| Keep this corridor's geometry and perspective exactly. Chang | [photography-003](../gallery.md#photography-003) | 0.50 | [editing-002](../../images/editing-002.webp) |
+| Re-render these terraced fields as a gouache painting with v | [photography-009](../gallery.md#photography-009) | 0.60 | [editing-003](../../images/editing-003.webp) |
+| Recolour this woodblock wave to a dusk palette, deep violet | [illustration-004](../gallery.md#illustration-004) | 0.55 | [editing-005](../../images/editing-005.webp) |
+| Blueprint version of the exploded camera | [isometric-3d-005](../gallery.md#isometric-3d-005) | 0.60 | [editing-008](../../images/editing-008.webp) |
 
 ## A compact edit order
 

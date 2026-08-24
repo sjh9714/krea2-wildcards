@@ -29,9 +29,9 @@ prompt per line and has nowhere to put a seed. More to the point, the seeds in
 this catalog were recorded against fal's hosted `krea-2/turbo`, which publishes
 no step count, CFG, sampler or scheduler. In your own graph the same seed gives
 a different image. Take the prompts, pick your own seed, and read
-[REPRODUCING.md](../REPRODUCING.md) before you try to match a specific frame.
+[REPRODUCING.md](../docs/reference/REPRODUCING.md) before you try to match a specific frame.
 
 The wildcard files contain the published prompt collection only. The repository's
 research records stay separate so every random line is ready to use.
 
-Regenerate with `python3 build_wildcards.py`.
+Regenerate with `python3 scripts/build_wildcards.py`.

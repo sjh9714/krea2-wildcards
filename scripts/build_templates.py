@@ -15,9 +15,9 @@ from a finished example to a reusable structure.
 Every `evidence` reference is resolved against the manifest, so a template
 cannot outlive the result behind it.
 
-    python3 build_templates.py
+    python3 scripts/build_templates.py
 
-Writes TEMPLATES.md.
+Writes docs/reference/TEMPLATES.md.
 """
 
 from __future__ import annotations
@@ -25,7 +25,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]
 
 
 def resolve(ref: str, d: dict, vocab: dict) -> tuple[bool, str]:
@@ -40,7 +40,7 @@ def resolve(ref: str, d: dict, vocab: dict) -> tuple[bool, str]:
         # wrong citation attached to a correct claim.
         sd = json.loads((HERE / "styles/data.json").read_text(encoding="utf-8"))
         ok = bool(sd.get("rule")) and value in sd
-        return ok, "[the styles page](styles/README.md)"
+        return ok, "[the styles page](../../styles/README.md)"
     if kind == "vocabulary":
         ok = any(t["t"] == value for t in vocab["terms"])
         return ok, f"[`{value}`](VOCABULARY.md)"
@@ -49,7 +49,7 @@ def resolve(ref: str, d: dict, vocab: dict) -> tuple[bool, str]:
 
 def main() -> int:
     d = json.loads((HERE / "prompts.json").read_text(encoding="utf-8"))
-    vocab = json.loads((HERE / "vocabulary.json").read_text(encoding="utf-8"))
+    vocab = json.loads((HERE / "data/vocabulary.json").read_text(encoding="utf-8"))
     tpl = d["templates"]
 
     bad = [i["name"] for i in tpl["items"]
@@ -72,7 +72,7 @@ def main() -> int:
             L.append(f"| `[{k}]` | {v} |")
         L += ["", item["why"], "", f"**Related guide** {ev}"]
         if item.get("file"):
-            L.append(f" · **ready-made** [`{item['file']}`]({item['file']})")
+            L.append(f" · **ready-made** [`{item['file']}`](../../{item['file']})")
         L += ["", "---", ""]
 
     L += ["## How to extend these", "",
@@ -80,8 +80,10 @@ def main() -> int:
           "then the setting, and then one visual slot such as lighting or medium. Save "
           "each useful version so you can compare the effect of one change at a time.", ""]
 
-    (HERE / "TEMPLATES.md").write_text("\n".join(L), encoding="utf-8")
-    print(f"TEMPLATES.md  {len(tpl['items'])} templates, all evidence resolved")
+    out = HERE / "docs/reference/TEMPLATES.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(L), encoding="utf-8")
+    print(f"docs/reference/TEMPLATES.md  {len(tpl['items'])} templates, all evidence resolved")
     return 0
 
 

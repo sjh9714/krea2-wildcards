@@ -46,7 +46,7 @@ body:
         The seed the image was generated at. If you were on ComfyUI or another
         local graph, put the seed anyway and tell us in the notes; seeds do not
         transfer between a hosted endpoint and a local one, and we record which
-        is which. See REPRODUCING.md.
+        is which. See docs/reference/REPRODUCING.md.
     validations:
       required: true
 

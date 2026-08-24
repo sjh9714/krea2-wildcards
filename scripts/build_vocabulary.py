@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_vocabulary.py - turn vocabulary.json into a term index, and mark the terms.
+build_vocabulary.py - turn data/vocabulary.json into a term index, and mark the terms.
 
 Why this exists. A prompt in this catalog is 222 characters of description and
 nothing in it is marked, so a reader cannot see which words are doing the work.
@@ -17,9 +17,9 @@ Some terms carry an extra usage note because they benefit from more precise
 phrasing. Those cross-references are checked against the source data so the
 generated guide stays current.
 
-    python3 build_vocabulary.py
+    python3 scripts/build_vocabulary.py
 
-Writes VOCABULARY.md. build_pages.py imports mark() from here.
+Writes docs/reference/VOCABULARY.md. build_pages.py imports mark() from here.
 """
 
 from __future__ import annotations
@@ -30,14 +30,14 @@ import re
 from collections import OrderedDict
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]
 
 MIN_ENTRIES = 3
 MIN_CATEGORIES = 2
 
 
 def load() -> tuple[dict, dict]:
-    v = json.loads((HERE / "vocabulary.json").read_text(encoding="utf-8"))
+    v = json.loads((HERE / "data/vocabulary.json").read_text(encoding="utf-8"))
     d = json.loads((HERE / "prompts.json").read_text(encoding="utf-8"))
     return v, d
 
@@ -91,7 +91,7 @@ def main() -> int:
         if ref and ref not in finding_titles:
             problems.append(f"{t!r}: cites a finding that does not exist: {ref!r}")
     if problems:
-        print("vocabulary.json does not hold up:")
+        print("data/vocabulary.json does not hold up:")
         for p in problems:
             print("  " + p)
         return 1
@@ -130,8 +130,10 @@ def main() -> int:
                  + ", ".join(f"`{i}`" for i in sorted(r["entries"])))
     L.append("")
 
-    (HERE / "VOCABULARY.md").write_text("\n".join(L), encoding="utf-8")
-    print(f"VOCABULARY.md  {len(by)} terms, {marked}/{len(d['entries'])} prompts marked")
+    out = HERE / "docs/reference/VOCABULARY.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(L), encoding="utf-8")
+    print(f"docs/reference/VOCABULARY.md  {len(by)} terms, {marked}/{len(d['entries'])} prompts marked")
     print(f"  {len(warned)} carry an extra usage note")
     thin = sorted(by.items(), key=lambda kv: len(kv[1]["entries"]))[:3]
     print("  thinnest: " + ", ".join(f"{t} ({len(r['entries'])})" for t, r in thin))

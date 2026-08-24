@@ -34,38 +34,48 @@ Add an object to `prompts.json`:
 ```
 
 Drop the image at that path and open the PR. The attribution fields are required
-on anything that did not come from this repo's own runs, and `verify.py`
+on anything that did not come from this repo's own runs, and `scripts/verify.py`
 enforces that.
 
-**Do not edit the generated files.** `README.md`, `README_ZH.md`, `README_KO.md`,
-`FINDINGS.md`, `VOCABULARY.md`, `TEMPLATES.md`, `docs/gallery*.md`,
+**Do not edit the generated files.** `README.md`, `docs/i18n/README_*.md`,
+`docs/reference/FINDINGS.md`, `docs/reference/VOCABULARY.md`,
+`docs/reference/TEMPLATES.md`, `docs/gallery*.md`,
 `docs/comparison.md`, `wildcards/`, `workflows/`, `guides/`, `index.html`,
-`sitemap.xml`, `robots.txt` and `EDITING_RECIPES.md`
-are all built from `prompts.json` and `vocabulary.json`. A workflow rebuilds them
+`sitemap.xml`, `robots.txt` and `docs/reference/EDITING_RECIPES.md`
+are all built from `prompts.json` and `data/vocabulary.json`. A workflow rebuilds them
 when the manifest changes, and CI fails a pull request whose generated files do
 not match its data.
+
+## Repository layout
+
+- `scripts/` contains builders, verification, and maintenance tools.
+- `docs/i18n/` contains translated catalog READMEs.
+- `docs/reference/` contains long-form usage and data guides.
+- `data/` contains supporting curation and vocabulary records.
+- `images/`, `wildcards/`, `workflows/`, and `dataset/` contain published assets.
+- The root keeps the canonical `prompts.json`, project entry documents, and files served directly by GitHub Pages.
 
 To build them yourself:
 
 ```bash
-python3 build_styles.py
-python3 build_wildcards.py
-python3 build_vocabulary.py
-python3 build_gallery.py
-python3 build_templates.py
+python3 scripts/build_styles.py
+python3 scripts/build_wildcards.py
+python3 scripts/build_vocabulary.py
+python3 scripts/build_gallery.py
+python3 scripts/build_templates.py
 python3 scripts/build_workflows.py
-python3 build_pages.py
-python3 build_site.py
-python3 build_social.py
+python3 scripts/build_pages.py
+python3 scripts/build_site.py
+python3 scripts/build_social.py
 python3 scripts/build_dataset.py
-python3 build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
+python3 scripts/build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
 python3 scripts/audit_prompts.py
-python3 verify.py
+python3 scripts/verify.py
 ```
 
 ## What CI checks
 
-`verify.py` checks that the prose matches the data, every seed is present, every
+`scripts/verify.py` checks that the prose matches the data, every seed is present, every
 category anchor is reachable, download sizes match the files, vocabulary rules
 hold, and generated files are in sync. It keeps every published surface aligned
 with the catalog as new prompts arrive.
@@ -75,7 +85,7 @@ with the catalog as new prompts arrive.
 Seeds here were recorded against fal's hosted `krea-2/turbo`. If you contribute
 from a local graph, include the sampler, scheduler, steps, CFG, and model version
 your setup exposes so another user can follow the same recipe.
-[REPRODUCING.md](REPRODUCING.md) has the hosted generation details.
+[REPRODUCING.md](docs/reference/REPRODUCING.md) has the hosted generation details.
 
 ## Submission checklist
 

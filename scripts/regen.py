@@ -8,7 +8,7 @@ reader. It re-submits the stored prompt with the stored seed and reports whether
 the bytes come back identical.
 
     python3 scripts/regen.py --id typography-008
-    python3 scripts/regen.py --id fail-korean --manifest failures.json --sources prompts.json
+    python3 scripts/regen.py --id fail-korean --manifest data/failures.json --sources prompts.json
     python3 scripts/regen.py --all --limit 5
 
 A note on what "reproducible" can honestly mean here: fal serves Krea 2 Turbo on
@@ -52,7 +52,7 @@ def main() -> int:
 
     mpath = Path(args.manifest)
     manifest = json.loads(mpath.read_text(encoding="utf-8"))
-    root = mpath.parent
+    root = Path(__file__).resolve().parents[1]
     by_id = {e["id"]: e for e in manifest["entries"]}
 
     src_root = root
@@ -60,7 +60,7 @@ def main() -> int:
         extra = json.loads(Path(args.sources).read_text(encoding="utf-8"))
         for e in extra["entries"]:
             by_id.setdefault(e["id"], e)
-        src_root = Path(args.sources).parent
+        src_root = root
 
     if args.id:
         want = [i.strip() for i in args.id.split(",")]

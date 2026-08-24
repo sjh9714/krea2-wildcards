@@ -13,7 +13,7 @@ A mountain ridgeline under breaking storm light: dark cloud filling the upper fr
 
 `seed: 1853365286` · `landscape-001`
 
-<sub>vocabulary: `high contrast` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `high contrast` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -39,7 +39,7 @@ A beech wood in early morning mist, pale trunks receding in even ranks until the
 
 `seed: 1947533128` · `landscape-003`
 
-<sub>vocabulary: `85mm` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `85mm` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -53,7 +53,7 @@ Hexagonal basalt columns exposed at low tide, wet and dark, seaweed in the joint
 
 `seed: 1022031261` · `landscape-004`
 
-<sub>vocabulary: `long exposure`, `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long exposure`, `overcast light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -79,7 +79,7 @@ The snout of a glacier meeting grey moraine, deep blue compressed ice visible in
 
 `seed: 1365266474` · `landscape-006`
 
-<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -93,7 +93,7 @@ A single dune ridge at first light, the windward face lit warm and the lee face 
 
 `seed: 1077975326` · `landscape-007`
 
-<sub>vocabulary: `side light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `side light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -107,7 +107,7 @@ Flooded rice terraces on a steep hillside with low cloud sitting in the valley b
 
 `seed: 1381739119` · `landscape-008`
 
-<sub>vocabulary: `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `three-quarter` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -133,7 +133,7 @@ A coastal cliff in a gale, spray thrown high up the rock face, grass on the clif
 
 `seed: 1122641191` · `landscape-010`
 
-<sub>vocabulary: `35mm`, `flat light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `35mm`, `flat light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -151,7 +151,7 @@ A charcoal wool overcoat laid flat and shot directly overhead on a pale linen su
 
 `seed: 1025323172` · `fashion-001`
 
-<sub>vocabulary: `overhead`, `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overhead`, `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -165,7 +165,7 @@ Macro of a selvedge denim seam: the red-line selvedge edge, chain-stitch run-off
 
 `seed: 374180050` · `fashion-002`
 
-<sub>vocabulary: `macro`, `raking light`, `shallow depth of field` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro`, `raking light`, `shallow depth of field` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -179,7 +179,7 @@ A length of oyster-coloured silk thrown into the air in a studio and frozen mid-
 
 `seed: 74128835` · `fashion-003`
 
-<sub>vocabulary: `hard light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `hard light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -193,7 +193,7 @@ Close-up of a hand-knitted Aran sweater: cable panels, moss stitch, and a visibl
 
 `seed: 1554099169` · `fashion-004`
 
-<sub>vocabulary: `close-up`, `side light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `close-up`, `side light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -207,7 +207,7 @@ A single worn leather boot standing on wet cobblestones, laces uneven, the toe s
 
 `seed: 2059154957` · `fashion-005`
 
-<sub>vocabulary: `overcast light`, `shallow focus`, `worn` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light`, `shallow focus`, `worn` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -221,7 +221,7 @@ A pair of tortoiseshell sunglasses resting on warm limestone in hard midday sun,
 
 `seed: 1961244750` · `fashion-006`
 
-<sub>vocabulary: `high contrast`, `macro`, `top-down` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `high contrast`, `macro`, `top-down` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -235,7 +235,7 @@ A pleated midi skirt caught by wind against a plain concrete wall, the pleats op
 
 `seed: 1497786953` · `fashion-008`
 
-<sub>vocabulary: `side light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `side light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -249,7 +249,7 @@ Editorial beauty portrait of a model with a sculptural silver ear cuff and wet-l
 
 `Krea asset: 9363ad22-9743-474f-af61-d5b0942f560f` · `aspect: 2:3` · `fashion-009`
 
-<sub>vocabulary: `35mm`, `grain`, `palette`, `warm grey` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `35mm`, `grain`, `palette`, `warm grey` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -263,7 +263,7 @@ Full-length editorial photograph of a model in an oversized camel wool suit on c
 
 `Krea asset: 9d6ffdea-b1f7-46f7-a1d9-56a6d59d19b7` · `aspect: 2:3` · `fashion-010`
 
-<sub>vocabulary: `50mm`, `side light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `50mm`, `side light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -277,7 +277,7 @@ Full-length fashion editorial of a model in a liquid black satin evening dress i
 
 `Krea asset: 2627782b-7105-4043-8dfd-f5c4dd3c076d` · `aspect: 2:3` · `fashion-011`
 
-<sub>vocabulary: `grain`, `monochrome`, `palette` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `grain`, `monochrome`, `palette` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -303,7 +303,7 @@ Night street-style editorial of a model in a translucent technical trench coat a
 
 `Krea asset: f7b3019f-bdb1-4aa7-b02c-6fa094a9ab21` · `aspect: 2:3` · `fashion-013`
 
-<sub>vocabulary: `50mm`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `50mm`, `three-quarter` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -317,7 +317,7 @@ Close beauty editorial of a freckled model wearing graphic cobalt eyeliner and a
 
 `Krea asset: edb581d6-89c1-496f-8436-e35add65758d` · `aspect: 2:3` · `fashion-014`
 
-<sub>vocabulary: `85mm`, `palette`, `window light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `85mm`, `palette`, `window light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -331,7 +331,7 @@ Menswear editorial on a pale salt flat at golden hour, model in an unstructured 
 
 `Krea asset: c57c881b-55e7-44d8-9868-9174ffffa314` · `aspect: 2:3` · `fashion-015`
 
-<sub>vocabulary: `grain`, `palette`, `soft shadow` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `grain`, `palette`, `soft shadow` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -345,7 +345,7 @@ Accessories campaign portrait of a model holding a geometric oxblood leather han
 
 `Krea asset: b1b02081-67c1-480f-af72-bb13c2a2cee5` · `aspect: 2:3` · `fashion-016`
 
-<sub>vocabulary: `seamless` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `seamless` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -359,7 +359,7 @@ Full-length editorial lookbook photograph of a model in a sculptural ivory cocoo
 
 `Krea asset: b61681f1-08c3-4036-b37d-d530c323aae0` · `aspect: 2:3` · `fashion-017`
 
-<sub>vocabulary: `50mm`, `grain`, `matte`, `palette`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `50mm`, `grain`, `matte`, `palette`, `three-quarter` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -385,7 +385,7 @@ Full-length studio fashion photograph of a model in silver quilted outerwear and
 
 `Krea asset: 6f03ce56-df06-4b84-9d4e-7844f2b0be46` · `aspect: 2:3` · `fashion-019`
 
-<sub>vocabulary: `overhead`, `palette`, `seamless` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overhead`, `palette`, `seamless` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -399,7 +399,7 @@ Close beauty editorial of a model wearing deep aubergine lacquered lips and brus
 
 `Krea asset: 48303217-d487-4dcd-a700-c402f0fe4468` · `aspect: 2:3` · `fashion-020`
 
-<sub>vocabulary: `85mm` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `85mm` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -413,7 +413,7 @@ Profile beauty portrait of a model with a shaved head and a single matte-gold te
 
 `Krea asset: 721e2242-fb80-4ba6-97f8-0936eebd099d` · `aspect: 2:3` · `fashion-021`
 
-<sub>vocabulary: `matte`, `warm light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `matte`, `warm light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -427,7 +427,7 @@ Extreme beauty close-up of one eye, cheek, and ear with icy silver eyeshadow and
 
 `Krea asset: 728b45bb-1364-4358-8fa8-ee1400d137be` · `aspect: 2:3` · `fashion-022`
 
-<sub>vocabulary: `close-up`, `window light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `close-up`, `window light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -441,7 +441,7 @@ Location fashion editorial of a model in a saffron wool cape on a black volcanic
 
 `Krea asset: ec152e03-0153-43d0-aa3e-825c1eecca4b` · `aspect: 2:3` · `fashion-023`
 
-<sub>vocabulary: `50mm`, `muted` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `50mm`, `muted` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -455,7 +455,7 @@ Full-length editorial photograph of a model in a moss-green belted coat inside a
 
 `Krea asset: 96aca33d-d053-48c0-a89f-fdac058f8a82` · `aspect: 2:3` · `fashion-024`
 
-<sub>vocabulary: `grain`, `palette`, `silhouette` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `grain`, `palette`, `silhouette` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -481,7 +481,7 @@ Dynamic studio fashion photograph of a model in a dress covered with long graphi
 
 `Krea asset: 301725aa-a4cd-4746-82b9-7ea3db1f39ca` · `aspect: 2:3` · `fashion-026`
 
-<sub>vocabulary: `seamless`, `side light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `seamless`, `side light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -495,7 +495,7 @@ Editorial fashion photograph of a model surrounded by long translucent coral org
 
 `Krea asset: c4208e0c-34a0-4525-810e-e3fc23943d2f` · `aspect: 2:3` · `fashion-027`
 
-<sub>vocabulary: `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `three-quarter` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -533,7 +533,7 @@ Accessories beauty still life of three translucent amber resin bangles resting i
 
 `Krea asset: d5d23258-053d-42c8-ba08-437570315640` · `aspect: 2:3` · `fashion-030`
 
-<sub>vocabulary: `top-down` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `top-down` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -563,7 +563,7 @@ A 1960s coupe in a dark studio with two long overhead strip lights reflected as 
 
 `seed: 784853870` · `automotive-001`
 
-<sub>vocabulary: `overhead`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overhead`, `three-quarter` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -577,7 +577,7 @@ A motorcycle leaned into a bend on a wet road, panned at 1/60s so the road and h
 
 `seed: 748778927` · `automotive-003`
 
-<sub>vocabulary: `low angle` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `low angle` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -591,7 +591,7 @@ An engine bay shot directly down with the bonnet removed: cam cover, braided lin
 
 `seed: 1618892058` · `automotive-004`
 
-<sub>vocabulary: `patina` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `patina` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -605,7 +605,7 @@ A car interior at night from the rear seat, instrument cluster and centre screen
 
 `seed: 210253850` · `automotive-005`
 
-<sub>vocabulary: `light source`, `long exposure` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `light source`, `long exposure` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -631,7 +631,7 @@ An abandoned pickup truck sinking into long grass, paint gone to rust and primer
 
 `seed: 1346029088` · `automotive-007`
 
-<sub>vocabulary: `35mm`, `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `35mm`, `overcast light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -645,7 +645,7 @@ Macro of a modern headlight cluster with water beaded across the lens, the LED e
 
 `seed: 2093173173` · `automotive-008`
 
-<sub>vocabulary: `hard light`, `macro`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `hard light`, `macro`, `shallow focus` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -675,7 +675,7 @@ A glass office tower photographed looking up in the rain, the facade reflecting 
 
 `seed: 1527311382` · `exterior-002`
 
-<sub>vocabulary: `desaturated` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `desaturated` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -689,7 +689,7 @@ A row of brick terraced houses in low winter sun, chimney shadows falling across
 
 `seed: 145725328` · `exterior-003`
 
-<sub>vocabulary: `35mm` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `35mm` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -703,7 +703,7 @@ A weathered timber barn with silvered boards and a rusted corrugated roof, stand
 
 `seed: 416415737` · `exterior-004`
 
-<sub>vocabulary: `symmetrical`, `weathered` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `symmetrical`, `weathered` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -717,7 +717,7 @@ A small stone church with a square tower half lost in fog, gravestones leaning i
 
 `seed: 2045582615` · `exterior-005`
 
-<sub>vocabulary: `50mm`, `monochrome`, `muted` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `50mm`, `monochrome`, `muted` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -731,7 +731,7 @@ A single-storey modernist house at dusk with warm interior light spilling throug
 
 `seed: 455391691` · `exterior-006`
 
-<sub>vocabulary: `long exposure`, `silhouette` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long exposure`, `silhouette` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -773,7 +773,7 @@ Black ink dispersing in clear water, frozen mid-bloom, tendrils branching into f
 
 `seed: 1099275261` · `abstract-001`
 
-<sub>vocabulary: `backlit` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -787,7 +787,7 @@ Macro of oil beads floating on water over a coloured background, each bead actin
 
 `seed: 52430611` · `abstract-002`
 
-<sub>vocabulary: `backlit`, `macro` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit`, `macro` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -801,7 +801,7 @@ Macro of crazed ceramic glaze: a fine irregular network of cracks over a celadon
 
 `seed: 801181841` · `abstract-003`
 
-<sub>vocabulary: `macro`, `raking light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro`, `raking light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -815,7 +815,7 @@ An aerial view straight down onto tidal sand ripples, the pattern branching like
 
 `seed: 1425727649` · `abstract-005`
 
-<sub>vocabulary: `straight down` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `straight down` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -829,7 +829,7 @@ Layers of torn coloured paper overlapping, each tear showing the white core of t
 
 `seed: 2097906804` · `abstract-006`
 
-<sub>vocabulary: `muted palette`, `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `muted palette`, `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -843,7 +843,7 @@ Ice crystals growing across a window pane, fern-like branching structures backli
 
 `seed: 370355428` · `abstract-007`
 
-<sub>vocabulary: `backlit` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -873,7 +873,7 @@ Exactly 2 identical white ceramic eggs standing in a row on a dark slate shelf, 
 
 `seed: 1121773227` · `objectcount-2`
 
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -887,7 +887,7 @@ Exactly 3 identical white ceramic eggs standing in a row on a dark slate shelf, 
 
 `seed: 13160654` · `objectcount-3`
 
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -901,7 +901,7 @@ Exactly 4 identical white ceramic eggs standing in a row on a dark slate shelf, 
 
 `seed: 1716350491` · `objectcount-4`
 
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -915,7 +915,7 @@ Exactly 5 identical white ceramic eggs standing in a row on a dark slate shelf, 
 
 `seed: 7277243` · `objectcount-5`
 
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -929,7 +929,7 @@ Exactly 6 identical white ceramic eggs standing in a row on a dark slate shelf, 
 
 `seed: 344187822` · `objectcount-6`
 
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -943,7 +943,7 @@ Exactly 7 identical white ceramic eggs standing in a row on a dark slate shelf, 
 
 `seed: 1044080084` · `objectcount-7`
 
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -957,7 +957,7 @@ Exactly 8 identical white ceramic eggs standing in a row on a dark slate shelf, 
 
 `seed: 205379899` · `objectcount-8`
 
-<sub>vocabulary: `soft even light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `soft even light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -975,7 +975,7 @@ An engraved ligature of the two letters A and E joined into a single form, cut i
 
 `seed: 1348613049` · `monogram-002`
 
-<sub>vocabulary: `engraved`, `macro`, `polished`, `raking light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `engraved`, `macro`, `polished`, `raking light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -989,7 +989,7 @@ The two letters H and B side by side, blind-embossed into cream cotton paper, ra
 
 `seed: 1941203383` · `monogram-003`
 
-<sub>vocabulary: `raking light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `raking light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1019,7 +1019,7 @@ A 1930s-style travel poster, flat screen-printed colour, stylised mountains and 
 
 `seed: 927458607` · `poster-002`
 
-<sub>vocabulary: `muted` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `muted` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1033,7 +1033,7 @@ A square album cover: a single dark circle centred on a warm grey field, the wor
 
 `seed: 1102144654` · `poster-003`
 
-<sub>vocabulary: `centred`, `warm grey` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `centred`, `warm grey` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1047,7 +1047,7 @@ A type-only exhibition poster: "WORKS ON PAPER" set in three stacked lines of a 
 
 `seed: 1486768439` · `poster-005`
 
-<sub>vocabulary: `centred` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `centred` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1061,7 +1061,7 @@ A two-colour risograph gig poster in fluorescent pink and blue with visible misr
 
 `seed: 2144045641` · `poster-006`
 
-<sub>vocabulary: `fluorescent`, `risograph` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `fluorescent`, `risograph` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1075,7 +1075,7 @@ An industrial safety notice printed on a metal plate bolted to a wall: "EYE PROT
 
 `seed: 1652078050` · `poster-007`
 
-<sub>vocabulary: `raking light`, `weathered` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `raking light`, `weathered` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1089,7 +1089,7 @@ A hardback book standing on a plain surface, three-quarter view so the cover and
 
 `seed: 2085405029` · `poster-008`
 
-<sub>vocabulary: `three-quarter`, `warm light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `three-quarter`, `warm light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1103,7 +1103,7 @@ A wine bottle shot straight on against a dark ground, the label reading "CLOS MA
 
 `seed: 278755335` · `poster-009`
 
-<sub>vocabulary: `engraved` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `engraved` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1145,7 +1145,7 @@ A set of woodworking hand tools arranged flat and shot directly overhead on grey
 
 `seed: 1498493405` · `still-life-002`
 
-<sub>vocabulary: `overhead`, `patina` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overhead`, `patina` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1159,7 +1159,7 @@ Five pieces of clear laboratory glassware of different heights arranged in a lin
 
 `seed: 81785803` · `still-life-003`
 
-<sub>vocabulary: `backlit`, `symmetrical` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit`, `symmetrical` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1173,7 +1173,7 @@ A breakfast table in low morning sun: a cafetière, one cup, a torn piece of bre
 
 `seed: 1891948431` · `still-life-004`
 
-<sub>vocabulary: `35mm`, `hard light`, `long shadow` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `35mm`, `hard light`, `long shadow` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1187,7 +1187,7 @@ Six pieces of studio ceramics on a plain wooden shelf, glazes ranging from matte
 
 `seed: 452847039` · `still-life-005`
 
-<sub>vocabulary: `directional light`, `matte` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `directional light`, `matte` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1201,7 +1201,7 @@ Dried seed heads and grasses in a clear glass bottle on a windowsill, backlit so
 
 `seed: 819096213` · `still-life-006`
 
-<sub>vocabulary: `backlit`, `monochrome`, `muted`, `overcast light`, `silhouette` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit`, `monochrome`, `muted`, `overcast light`, `silhouette` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1215,7 +1215,7 @@ Three pears on a matte black surface under a single hard light from above and be
 
 `seed: 1126053453` · `still-life-007`
 
-<sub>vocabulary: `hard light`, `matte` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `hard light`, `matte` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1229,7 +1229,7 @@ An arrangement of desk objects on a concrete surface in cool north light: a foun
 
 `seed: 503659668` · `still-life-008`
 
-<sub>vocabulary: `overhead`, `palette`, `soft shadow`, `straight down` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overhead`, `palette`, `soft shadow`, `straight down` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1247,7 +1247,7 @@ Extreme macro of a dragonfly wing against a dark ground, the venation reading as
 
 `seed: 1381046048` · `macro-nature-001`
 
-<sub>vocabulary: `macro` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1261,7 +1261,7 @@ Macro of dew beads strung along spider silk at dawn, each drop acting as a lens 
 
 `seed: 2054476156` · `macro-nature-002`
 
-<sub>vocabulary: `backlit`, `macro`, `shallow depth of field` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit`, `macro`, `shallow depth of field` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1275,7 +1275,7 @@ Macro of a moss cushion with sporophyte stalks rising from it, each capsule catc
 
 `seed: 36645787` · `macro-nature-003`
 
-<sub>vocabulary: `low angle`, `macro` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `low angle`, `macro` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1289,7 +1289,7 @@ Extreme macro of butterfly wing scales, individual overlapping scales visible li
 
 `seed: 265148793` · `macro-nature-004`
 
-<sub>vocabulary: `macro` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1303,7 +1303,7 @@ Macro of ice crystals growing along the serrated edge of a fallen leaf, needle-l
 
 `seed: 1307082473` · `macro-nature-005`
 
-<sub>vocabulary: `macro`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro`, `shallow focus` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1317,7 +1317,7 @@ A bumblebee working a thistle flower, pollen visible on the leg baskets and dust
 
 `seed: 33348605` · `macro-nature-006`
 
-<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1331,7 +1331,7 @@ A fern crozier beginning to unfurl, the tight spiral covered in fine pale hairs 
 
 `seed: 728116494` · `macro-nature-007`
 
-<sub>vocabulary: `backlit`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit`, `shallow focus` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1345,7 +1345,7 @@ A dandelion seed head backlit against black, each pappus rendered as a fine brig
 
 `seed: 316013847` · `macro-nature-008`
 
-<sub>vocabulary: `backlit` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1363,7 +1363,7 @@ A pedestrian crossing in heavy rain shot from across the road, umbrellas overlap
 
 `seed: 1097435078` · `street-001`
 
-<sub>vocabulary: `35mm` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `35mm` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1401,7 +1401,7 @@ Washing strung on lines between two tenement buildings, seen looking straight up
 
 `seed: 2017379999` · `street-004`
 
-<sub>vocabulary: `high contrast`, `weathered` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `high contrast`, `weathered` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1415,7 +1415,7 @@ A cafe window at dusk with the interior and the reflected street overlapping int
 
 `seed: 1477003290` · `street-005`
 
-<sub>vocabulary: `50mm` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `50mm` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1429,7 +1429,7 @@ A tiled pedestrian underpass lit by strip lights, one distant figure walking awa
 
 `seed: 1057881872` · `street-006`
 
-<sub>vocabulary: `symmetrical` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `symmetrical` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1443,7 +1443,7 @@ An early-morning fish market: crushed ice, crates, hoses running water across a 
 
 `seed: 698283678` · `street-007`
 
-<sub>vocabulary: `overhead` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overhead` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1457,7 +1457,7 @@ A flight of city steps in low evening sun, the treads throwing a hard sawtooth o
 
 `seed: 1750591874` · `street-008`
 
-<sub>vocabulary: `long lens`, `silhouette`, `warm light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long lens`, `silhouette`, `warm light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1475,7 +1475,7 @@ Star trails circling the pole above a dark ridgeline, concentric arcs of white a
 
 `seed: 123461485` · `night-001`
 
-<sub>vocabulary: `long exposure`, `silhouette` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long exposure`, `silhouette` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1489,7 +1489,7 @@ An empty petrol station forecourt at three in the morning, fluorescent canopy li
 
 `seed: 105373578` · `night-003`
 
-<sub>vocabulary: `fluorescent`, `long exposure` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `fluorescent`, `long exposure` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1503,7 +1503,7 @@ Thick fog under a single sodium streetlight, the beam made visible as a solid or
 
 `seed: 1765268212` · `night-004`
 
-<sub>vocabulary: `light source`, `long exposure` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `light source`, `long exposure` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1517,7 +1517,7 @@ A city seen from a hill at the end of blue hour, streetlights and windows as a d
 
 `seed: 662128052` · `night-005`
 
-<sub>vocabulary: `long lens` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long lens` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1531,7 +1531,7 @@ A single lightning bolt striking a flat plain at night, branching downward, the 
 
 `seed: 766980854` · `night-006`
 
-<sub>vocabulary: `long exposure` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long exposure` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1545,7 +1545,7 @@ A campfire at night shot low and close, the flames the only light source, sparks
 
 `seed: 1933212622` · `night-007`
 
-<sub>vocabulary: `light source` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `light source` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1603,7 +1603,7 @@ A hand-painted shopfront sign in Seoul reading exactly "국수" in a bold brush-
 
 `seed: 1004816744` · `hangul-001`
 
-<sub>vocabulary: `overcast light`, `weathered` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light`, `weathered` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1617,7 +1617,7 @@ A hand-painted shopfront sign in Seoul reading exactly "도서관" in a bold bru
 
 `seed: 618455507` · `hangul-002`
 
-<sub>vocabulary: `overcast light`, `weathered` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light`, `weathered` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1631,7 +1631,7 @@ An enamel station sign on a tiled subway wall reading exactly "3번 출구" in a
 
 `seed: 604514947` · `hangul-004`
 
-<sub>vocabulary: `fluorescent` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `fluorescent` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1661,7 +1661,7 @@ A swimmer pushing off the wall mid-tumble-turn, seen from underwater side-on, a 
 
 `seed: 1964486936` · `sport-001`
 
-<sub>vocabulary: `overhead` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overhead` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1675,7 +1675,7 @@ A road cyclist out of the saddle on a wet climb, spray coming off the rear wheel
 
 `seed: 1605016902` · `sport-002`
 
-<sub>vocabulary: `flat light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `flat light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1701,7 +1701,7 @@ A pair of studded football boots caked in mud, left at the edge of a pitch on we
 
 `seed: 1806339463` · `sport-005`
 
-<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1715,7 +1715,7 @@ A skateboarder mid-kickflip over a set of concrete steps, board rotating under t
 
 `seed: 887473494` · `sport-007`
 
-<sub>vocabulary: `long shadow` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long shadow` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1745,7 +1745,7 @@ A utilitarian airlock corridor: ribbed structural frames receding, cable runs bu
 
 `seed: 1381525040` · `scifi-001`
 
-<sub>vocabulary: `worn` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `worn` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1759,7 +1759,7 @@ A handheld scientific scanner on a black surface: milled aluminium body, rubber 
 
 `seed: 1194557595` · `scifi-002`
 
-<sub>vocabulary: `monochrome`, `three-quarter` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `monochrome`, `three-quarter` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1785,7 +1785,7 @@ A six-wheeled rover parked on grey regolith, dust on the solar panels, tracks cu
 
 `seed: 2066153346` · `scifi-004`
 
-<sub>vocabulary: `long shadow` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long shadow` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1799,7 +1799,7 @@ An enormous server hall in a rock-cut cavern, racks receding in ranks with only 
 
 `seed: 1674639635` · `scifi-005`
 
-<sub>vocabulary: `long exposure`, `overhead` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long exposure`, `overhead` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1889,7 +1889,7 @@ A single translucent jellyfish suspended in black water, bell lit from the side 
 
 `seed: 1602945702` · `underwater-004`
 
-<sub>vocabulary: `high contrast`, `macro` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `high contrast`, `macro` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1955,7 +1955,7 @@ Straight down on a braided glacial river, pale sediment channels splitting and r
 
 `seed: 1689942205` · `aerial-002`
 
-<sub>vocabulary: `overcast light`, `straight down` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light`, `straight down` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1969,7 +1969,7 @@ Straight down on salt evaporation ponds, each cell a different saturated colour 
 
 `seed: 1452264526` · `aerial-004`
 
-<sub>vocabulary: `flat light`, `straight down` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `flat light`, `straight down` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -1983,7 +1983,7 @@ Straight down on the edge of a coral reef where pale shallow sand drops abruptly
 
 `seed: 1761378779` · `aerial-006`
 
-<sub>vocabulary: `straight down` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `straight down` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2049,7 +2049,7 @@ A wet plate collodion portrait: a seated figure, long exposure so the hands blur
 
 `seed: 1453420644` · `period-005`
 
-<sub>vocabulary: `long exposure` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long exposure` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2063,7 +2063,7 @@ A still that reads as a VHS frame: scanlines, chroma bleeding on the reds, track
 
 `seed: 1665562957` · `period-006`
 
-<sub>vocabulary: `desaturated` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `desaturated` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2077,7 +2077,7 @@ A 1960s street photograph on Tri-X: high contrast black and white, coarse grain,
 
 `seed: 1263747052` · `period-007`
 
-<sub>vocabulary: `grain`, `high contrast` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `grain`, `high contrast` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2091,7 +2091,7 @@ An autochrome-style image: a garden with flowers, the colour built from a fine m
 
 `seed: 1413778418` · `period-008`
 
-<sub>vocabulary: `grain`, `long exposure`, `muted` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `grain`, `long exposure`, `muted` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2109,7 +2109,7 @@ Macro of a gold signet ring on dark slate, the flat face blank and highly polish
 
 `seed: 1644150464` · `jewellery-001`
 
-<sub>vocabulary: `macro`, `polished`, `shallow depth of field` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro`, `polished`, `shallow depth of field` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2123,7 +2123,7 @@ A mechanical watch movement shot directly down with the caseback off: bridges wi
 
 `seed: 1885237149` · `jewellery-002`
 
-<sub>vocabulary: `macro` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2137,7 +2137,7 @@ A strand of pearls coiled on grey silk, each pearl showing its own orient and a 
 
 `seed: 1355278449` · `jewellery-003`
 
-<sub>vocabulary: `muted`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `muted`, `shallow focus` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2151,7 +2151,7 @@ Rough uncut gemstones scattered on a folded white parcel paper, backlit slightly
 
 `seed: 319879010` · `jewellery-004`
 
-<sub>vocabulary: `backlit`, `macro`, `overhead` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `backlit`, `macro`, `overhead` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2165,7 +2165,7 @@ A heavy silver curb chain on black acrylic under a single hard light, each link 
 
 `seed: 725798732` · `jewellery-005`
 
-<sub>vocabulary: `hard light`, `high contrast` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `hard light`, `high contrast` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2179,7 +2179,7 @@ A cloisonné brooch photographed at a slight angle: gold wire cells filled with 
 
 `seed: 845491635` · `jewellery-006`
 
-<sub>vocabulary: `directional light`, `macro` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `directional light`, `macro` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2193,7 +2193,7 @@ A part-finished ring held in a jeweller's bench pin with a file and a saw frame 
 
 `seed: 889861111` · `jewellery-007`
 
-<sub>vocabulary: `macro`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro`, `shallow focus` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2207,7 +2207,7 @@ A brilliant-cut diamond held in fine tweezers against a dark neutral background,
 
 `seed: 912016671` · `jewellery-008`
 
-<sub>vocabulary: `macro` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `macro` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2225,7 +2225,7 @@ A small creature with the body of a hare and the furred wings of a moth, at rest
 
 `seed: 966994627` · `fantasy-001`
 
-<sub>vocabulary: `muted` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `muted` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2239,7 +2239,7 @@ A stone bell tower standing in flat water up to its second storey, the flooded v
 
 `seed: 1894011275` · `fantasy-002`
 
-<sub>vocabulary: `muted palette` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `muted palette` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2277,7 +2277,7 @@ A vast humanoid figure of weathered granite half-buried in moorland heather, onl
 
 `seed: 561263284` · `fantasy-005`
 
-<sub>vocabulary: `overcast light`, `weathered` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light`, `weathered` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2303,7 +2303,7 @@ A large feathered theropod picking its way across fresh snow at dusk, plumage ba
 
 `seed: 386496751` · `fantasy-007`
 
-<sub>vocabulary: `long lens`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long lens`, `shallow focus` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2317,7 +2317,7 @@ A library cut into a sea cliff, shelves receding into the rock, narrow windows p
 
 `seed: 2135237404` · `fantasy-008`
 
-<sub>vocabulary: `worn` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `worn` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2407,7 +2407,7 @@ A European comic panel in loose watercolour over a light pencil line, a harbour 
 
 `seed: 396778750` · `comic-007`
 
-<sub>vocabulary: `muted palette`, `watercolour` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `muted palette`, `watercolour` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2421,7 +2421,7 @@ A two-colour risograph zine spread in blue and orange with visible misregistrati
 
 `seed: 1935167288` · `comic-008`
 
-<sub>vocabulary: `grain`, `risograph` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `grain`, `risograph` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2439,7 +2439,7 @@ A picture-book illustration in gouache: a bear riding a bicycle along a country 
 
 `seed: 1856219085` · `childrens-book-001`
 
-<sub>vocabulary: `gouache` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `gouache` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2453,7 +2453,7 @@ A picture-book spread made of cut and torn paper collage: a forest of layered gr
 
 `seed: 1369658049` · `childrens-book-002`
 
-<sub>vocabulary: `limited palette` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `limited palette` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2479,7 +2479,7 @@ A picture-book illustration in pen and watercolour wash in the English tradition
 
 `seed: 2105725421` · `childrens-book-004`
 
-<sub>vocabulary: `muted`, `watercolour` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `muted`, `watercolour` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2529,7 +2529,7 @@ A picture-book winter street in soft pastel on tinted paper, snow catching lampl
 
 `seed: 581873004` · `childrens-book-008`
 
-<sub>vocabulary: `grain`, `silhouette` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `grain`, `silhouette` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2559,7 +2559,7 @@ An exploded axonometric of a mortise-and-tenon timber joint, each piece pulled a
 
 `seed: 1851835536` · `technical-drawing-002`
 
-<sub>vocabulary: `exploded` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `exploded` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2585,7 +2585,7 @@ A 19th-century engraved botanical plate: a single plant with root, stem and flow
 
 `seed: 1665122087` · `technical-drawing-004`
 
-<sub>vocabulary: `engraved` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `engraved` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2599,7 +2599,7 @@ A cutaway line drawing of a four-cylinder engine, the near half removed to show 
 
 `seed: 295224223` · `technical-drawing-005`
 
-<sub>vocabulary: `cutaway` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `cutaway` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2665,7 +2665,7 @@ A single-engine seaplane at rest on flat water at dawn, floats making faint ripp
 
 `seed: 1528461534` · `vehicle-002`
 
-<sub>vocabulary: `long lens`, `muted` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long lens`, `muted` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2679,7 +2679,7 @@ A working fishing trawler in heavy grey swell, bow lifting, gulls behind, nets s
 
 `seed: 1930353118` · `vehicle-003`
 
-<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2693,7 +2693,7 @@ An old tram pulling away on a wet street at night, interior lights on and the wi
 
 `seed: 922593345` · `vehicle-004`
 
-<sub>vocabulary: `long exposure` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `long exposure` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2719,7 +2719,7 @@ A narrowboat moored on a still canal in autumn, painted panels scuffed, a stove 
 
 `seed: 1909637109` · `vehicle-006`
 
-<sub>vocabulary: `overcast light` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overcast light` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2757,7 +2757,7 @@ An empty airliner cabin looking down the aisle, overhead bins closed, seatbelts 
 
 `seed: 44600918` · `vehicle-009`
 
-<sub>vocabulary: `overhead` · [what each one does](../VOCABULARY.md)</sub>
+<sub>vocabulary: `overhead` · [what each one does](reference/VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>
 
@@ -2770,115 +2770,5 @@ Looking forward along the deck of an icebreaker as it rides up onto pack ice, th
 ```
 
 `seed: 1167191015` · `vehicle-010`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-## weather
-
-_Atmospheric events and their light_
-
-### 1. Shelf cloud approaching
-
-<img src="../images/weather-001.webp" width="420" alt="Shelf cloud approaching">
-
-```text
-A low shelf cloud advancing across flat farmland, its leading edge sharply defined and turbulent, the sky beneath it dark green-grey and the land still lit. Wide, horizon low, no buildings, no people.
-```
-
-`seed: 1762177641` · `weather-001`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 2. Hoar frost on everything
-
-<img src="../images/weather-002.webp" width="420" alt="Hoar frost on everything">
-
-```text
-Heavy hoar frost coating hedgerow and fence wire, every twig thickened with white needle crystals, a freezing fog reducing the background to pale grey. Cold flat light, no sun, shallow focus falling off quickly.
-```
-
-`seed: 1701694175` · `weather-002`
-
-<sub>vocabulary: `flat light`, `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 3. Rain squall over water
-
-<img src="../images/weather-003.webp" width="420" alt="Rain squall over water">
-
-```text
-A rain squall crossing open water, the downpour visible as a dark curtain hanging from cloud to sea while the water beside it stays lit. Sharp boundary between wet and dry air. Long lens, grey palette.
-```
-
-`seed: 1010061096` · `weather-003`
-
-<sub>vocabulary: `long lens`, `palette` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 4. Fog bank rolling in
-
-<img src="../images/weather-004.webp" width="420" alt="Fog bank rolling in">
-
-```text
-A fog bank rolling in over a headland, the leading edge curling like slow water, the near ground still clear and sunlit and the far ground already gone. Late afternoon, warm light against cold fog.
-```
-
-`seed: 1635293661` · `weather-004`
-
-<sub>vocabulary: `warm light` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 5. Hail on a windscreen
-
-<img src="../images/weather-005.webp" width="420" alt="Hail on a windscreen">
-
-```text
-Hailstones collected in the channel at the base of a car windscreen, the glass streaming, the world beyond reduced to grey shapes. Shot from inside, wipers stopped mid-sweep, shallow focus on the glass.
-```
-
-`seed: 1562253478` · `weather-005`
-
-<sub>vocabulary: `shallow focus` · [what each one does](../VOCABULARY.md)</sub>
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 6. Sun dog and ice halo
-
-<img src="../images/weather-006.webp" width="420" alt="Sun dog and ice halo">
-
-```text
-A 22-degree halo around a low winter sun with a bright sun dog on one side, thin ice cloud, a bare treeline along the bottom of the frame. Cold pale sky, faint spectral colour in the halo.
-```
-
-`seed: 2002802250` · `weather-006`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 7. Dust storm wall
-
-<img src="../images/weather-007.webp" width="420" alt="Dust storm wall">
-
-```text
-A wall of dust advancing across dry ground, hundreds of feet high, the leading face lit ochre and the sky above it clear blue. Scattered scrub in the foreground for scale. No vehicles, no buildings.
-```
-
-`seed: 462916735` · `weather-007`
-
-<sub>[back to the categories](gallery.md#categories)</sub>
-
-### 8. Snow squall in headlights
-
-<img src="../images/weather-008.webp" width="420" alt="Snow squall in headlights">
-
-```text
-Heavy snow blowing through car headlights on an unlit road at night, the flakes streaking toward the camera, the beam picking out only a few metres. Everything beyond black. Long exposure, no other light.
-```
-
-`seed: 586384316` · `weather-008`
-
-<sub>vocabulary: `long exposure` · [what each one does](../VOCABULARY.md)</sub>
 
 <sub>[back to the categories](gallery.md#categories)</sub>

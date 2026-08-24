@@ -19,8 +19,8 @@ Slot-and-fill recipes, the way a reader actually reuses a catalog. Every one of 
 
 Leading with the medium and keeping the subject vocabulary consistent applies one visual language across the subject and background.
 
-**Related guide** [the styles page](styles/README.md)
- · **ready-made** [`wildcards/styles.txt`](wildcards/styles.txt)
+**Related guide** [the styles page](../../styles/README.md)
+ · **ready-made** [`wildcards/styles.txt`](../../wildcards/styles.txt)
 
 ---
 

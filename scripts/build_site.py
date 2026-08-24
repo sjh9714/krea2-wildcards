@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]
 SITE = "https://sjh9714.github.io/krea2-wildcards/"
 REPO = "https://github.com/sjh9714/krea2-wildcards"
 CAMPAIGN = "utm_source=pages&utm_medium=website&utm_campaign=v1_2_launch"
@@ -297,8 +297,8 @@ def main() -> int:
     ])
     for entry in editing:
         recipe_lines.append(
-            f"| {entry['title']} | [{entry['source']}](docs/gallery.md#{entry['source']}) | "
-            f"{entry['strength']:.2f} | [{entry['id']}]({entry['image']}) |"
+            f"| {entry['title']} | [{entry['source']}](../gallery.md#{entry['source']}) | "
+            f"{entry['strength']:.2f} | [{entry['id']}](../../{entry['image']}) |"
         )
     recipe_lines.extend([
         "",
@@ -310,8 +310,10 @@ def main() -> int:
         "4. Inspect the unchanged areas as carefully as the changed area before accepting the result.",
         "",
     ])
-    (HERE / "EDITING_RECIPES.md").write_text("\n".join(recipe_lines), encoding="utf-8")
-    print("EDITING_RECIPES.md")
+    out = HERE / "docs/reference/EDITING_RECIPES.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(recipe_lines), encoding="utf-8")
+    print("docs/reference/EDITING_RECIPES.md")
     return 0
 
 

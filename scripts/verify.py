@@ -18,7 +18,7 @@ that would have caught it:
   - every `seed: N` printed in the README is a seed that is actually in the data
   - the counts add up, and no document contradicts the manifest
 
-    python3 verify.py            # exits non-zero if anything fails
+    python3 scripts/verify.py            # exits non-zero if anything fails
 
 Run it before pushing. It is fast and it has no dependencies.
 """
@@ -27,11 +27,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import struct
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parents[1]
 
 
 class Check:
@@ -170,16 +171,16 @@ def main() -> int:
 
     print("\ndocuments")
     import build_catalog as _bc0
-    docs = [("README.md" if x == "en" else f"README_{x.upper()}.md")
-            for x in _bc0.LANGS] + ["index.html"]
-    for name in docs:
-        p = HERE / name
+    docs = [_bc0.readme_path(x) for x in _bc0.LANGS] + [HERE / "index.html"]
+    for p in docs:
+        name = str(p.relative_to(HERE))
         if not p.exists():
             c(False, f"{name} exists")
             continue
         t = p.read_text(encoding="utf-8")
-        refs = set(re.findall(r'(?:src="|\]\()((?:images|wildcards)/[^")\s]+)', t))
-        broken = sorted(r for r in refs if not (HERE / r).exists())
+        refs = set(re.findall(
+            r'(?:src="|\]\()((?:(?:\.\./)+)?(?:images|wildcards)/[^")\s]+)', t))
+        broken = sorted(r for r in refs if not (p.parent / r).resolve().exists())
         c(not broken, f"{name}: {len(refs)} image references resolve", f"{broken[:4]}")
 
     print("\nseeds quoted in prose")
@@ -235,20 +236,24 @@ def main() -> int:
     # Derived from the generator rather than listed here, so adding a language
     # cannot quietly ship a README nobody checks. Five did exactly that once.
     import build_catalog as _bc
-    names = {x: ("README.md" if x == "en" else f"README_{x.upper()}.md")
-             for x in _bc.LANGS}
-    c(all((HERE / f).exists() for f in names.values()),
+    names = {x: _bc.readme_path(x) for x in _bc.LANGS}
+    c(all(path.exists() for path in names.values()),
       f"all {len(names)} language READMEs are built")
-    for lang, name in names.items():
-        path = HERE / name
+    for lang, path in names.items():
+        name = str(path.relative_to(HERE))
         if not path.exists():
             continue
         text = path.read_text(encoding="utf-8")
         raw = re.findall(r'<(p|div|h\d)[^>]*>[^<]*\[[^\]]+\]\([^)]+\)', text)
         c(not raw, f"{name}: no Markdown links inside HTML blocks",
           f"{len(raw)} would render as literal brackets, e.g. {raw[:1]}")
-        missing = [o for l2, o in names.items()
-                   if l2 != lang and f'href="{o}"' not in text]
+        missing = []
+        for other_lang, other_path in names.items():
+            if other_lang == lang:
+                continue
+            href = Path(os.path.relpath(other_path, path.parent)).as_posix()
+            if f'href="{href}"' not in text:
+                missing.append(str(other_path.relative_to(HERE)))
         c(not missing, f"{name} links to every other translation"
                        + (f", missing {missing}" if missing else ""))
         c("hero.webp" in text, f"{name} carries the hero")
@@ -261,7 +266,7 @@ def main() -> int:
     # said to regenerate it whenever a finding changed, and nobody did. It now
     # shows output with seeds instead, and every frame it names must still be a
     # kept entry with a seed. So it cannot quietly start citing a withdrawn one.
-    hero_src = (HERE / "build_hero.py")
+    hero_src = (HERE / "scripts/build_hero.py")
     if hero_src.exists():
         # Scope to the PICKS literal. Matching ids across the whole file also
         # caught the string "utf-8", which looks exactly like an entry id.
@@ -279,7 +284,7 @@ def main() -> int:
 
     # The long-form guide belongs beside the catalog, not between the hero and the
     # first image. Keep the landing page short and verify the guide separately.
-    findings = HERE / "FINDINGS.md"
+    findings = HERE / "docs/reference/FINDINGS.md"
     findings_md = findings.read_text(encoding="utf-8") if findings.exists() else ""
     c(findings.exists(), "the Krea 2 prompt field guide is built")
     c("# Krea 2 prompt field guide" in findings_md,
@@ -297,8 +302,8 @@ def main() -> int:
     # The catalog heading is localised, so read it out of the generator's own
     # translation table instead of hard-coding one string per language.
     for lang in _bc0.LANGS:
-        name = "README.md" if lang == "en" else f"README_{lang.upper()}.md"
-        path = HERE / name
+        path = _bc0.readme_path(lang)
+        name = str(path.relative_to(HERE))
         if not path.exists():
             continue
         text = path.read_text(encoding="utf-8")
@@ -306,7 +311,7 @@ def main() -> int:
         # by position: the last "## " before the first link into the gallery.
         # Matching on the heading text needed one hard-coded string per language
         # and broke the moment the headings changed.
-        gi = text.find("](docs/gallery")
+        gi = text.find("docs/gallery")
         heads = [l for l in text[:gi].splitlines() if l.startswith("## ")] if gi > 0 else []
         anchor = heads[-1] if heads else None
         if anchor is None or "hero.webp" not in text:
@@ -610,8 +615,8 @@ def main() -> int:
     # retract before, so the rule behind it (3+ entries, 2+ categories) is enforced
     # here as well as in the builder, and every warning has to still name a real
     # finding. If a term drifts below the rule the index quietly becomes an opinion.
-    voc = HERE / "vocabulary.json"
-    c(voc.exists(), "vocabulary.json exists")
+    voc = HERE / "data/vocabulary.json"
+    c(voc.exists(), "data/vocabulary.json exists")
     if voc.exists():
         import build_vocabulary as bv
         v, dd = bv.load()
@@ -625,8 +630,8 @@ def main() -> int:
         bad = [t for t, r in by.items() if r.get("finding") and r["finding"] not in titles]
         c(not bad, "every vocabulary warning names a finding that exists"
                    + (f", but {bad} do not" if bad else ""))
-        vm = HERE / "VOCABULARY.md"
-        c(vm.exists(), "VOCABULARY.md is built")
+        vm = HERE / "docs/reference/VOCABULARY.md"
+        c(vm.exists(), "docs/reference/VOCABULARY.md is built")
         if vm.exists():
             vtext = vm.read_text(encoding="utf-8")
             c(f"{len(by)} terms." in vtext,
@@ -686,8 +691,8 @@ def main() -> int:
     # keep. The endpoint publishes no step count, CFG, sampler or scheduler, so the
     # seed is good on fal and worthless in a local graph. If that caveat ever falls
     # out of the README, the repo goes back to overselling the one column it wins.
-    rep = HERE / "REPRODUCING.md"
-    c(rep.exists(), "REPRODUCING.md exists")
+    rep = HERE / "docs/reference/REPRODUCING.md"
+    c(rep.exists(), "docs/reference/REPRODUCING.md exists")
     if rep.exists():
         rtext = rep.read_text(encoding="utf-8")
         c("REPRODUCING.md" in readme or "REPRODUCING.md" in findings_md, "README.md links to REPRODUCING.md")
@@ -719,8 +724,8 @@ def main() -> int:
     # their largest section on install or configuration. These three guards keep
     # that inversion from coming back, because writing evidence is the easy part.
     rd_bytes = len(readme.encode("utf-8"))
-    c(rd_bytes < 8_000,
-      f"README is {rd_bytes // 1024} KB, under the 8 KB ceiling")
+    c(rd_bytes < 8 * 1024,
+      f"README is {rd_bytes // 1024} KiB, under the 8 KiB ceiling")
     newest_batch = max(e.get("batch", -1) for e in entries)
     newest = [e for e in entries if e.get("batch", -1) == newest_batch]
     newest_category = newest[0]["category"]
@@ -758,8 +763,8 @@ def main() -> int:
     FIRST = 1500
     BANNED = ("seed", "failed", "measured")
     for lang in _bc0.LANGS:
-        name = "README.md" if lang == "en" else f"README_{lang.upper()}.md"
-        path = HERE / name
+        path = _bc0.readme_path(lang)
+        name = str(path.relative_to(HERE))
         if not path.exists():
             continue
         head = path.read_text(encoding="utf-8")[:FIRST]
@@ -786,11 +791,13 @@ def main() -> int:
     dd2 = json.loads((HERE / "prompts.json").read_text(encoding="utf-8"))
     in_prompts = sum(p.count(x) for e in dd2["entries"]
                      for p in [e["prompt"]] for x in DASH)
-    prose = ["README.md", "FINDINGS.md", "VOCABULARY.md", "TEMPLATES.md",
-             "EDITING_RECIPES.md",
-             "REPRODUCING.md", "CONTRIBUTING.md", "styles/README.md",
-             "wildcards/README.md"] + [f"README_{x.upper()}.md"
-                                       for x in _bc0.LANGS if x != "en"]
+    prose = ["README.md", "docs/reference/FINDINGS.md",
+             "docs/reference/VOCABULARY.md", "docs/reference/TEMPLATES.md",
+             "docs/reference/EDITING_RECIPES.md",
+             "docs/reference/REPRODUCING.md", "CONTRIBUTING.md",
+             "styles/README.md", "wildcards/README.md"] + [
+                 str(_bc0.readme_path(x).relative_to(HERE))
+                 for x in _bc0.LANGS if x != "en"]
     dirty = []
     for name in prose:
         p2 = HERE / name
@@ -815,8 +822,9 @@ def main() -> int:
               f"({in_prompts} in the manifest)")
     # And nothing in the source may reintroduce one, including as an escape.
     src_dirty = []
-    for p2 in list(HERE.glob("build_*.py")) + list(HERE.glob("scripts/*.py")) \
-            + [HERE / "vocabulary.json", HERE / "styles/data.json"]:
+    for p2 in [p for p in HERE.glob("scripts/*.py")
+               if p.resolve() != Path(__file__).resolve()] \
+            + [HERE / "data/vocabulary.json", HERE / "styles/data.json"]:
         s2 = p2.read_text(encoding="utf-8")
         if any(x in s2 for x in DASH) or "u2014" in s2 or "u2013" in s2:
             src_dirty.append(p2.name)
@@ -825,12 +833,12 @@ def main() -> int:
 
     # Templates are the one place this repo hands out a shape instead of a
     # measurement, so each one has to keep naming the measurement it came from.
-    tpl_p = HERE / "TEMPLATES.md"
-    c(tpl_p.exists(), "TEMPLATES.md is built")
+    tpl_p = HERE / "docs/reference/TEMPLATES.md"
+    c(tpl_p.exists(), "docs/reference/TEMPLATES.md is built")
     if tpl_p.exists():
         import build_templates as bt
         dd = json.loads((HERE / "prompts.json").read_text(encoding="utf-8"))
-        vv = json.loads((HERE / "vocabulary.json").read_text(encoding="utf-8"))
+        vv = json.loads((HERE / "data/vocabulary.json").read_text(encoding="utf-8"))
         items = dd["templates"]["items"]
         unresolved = [i["name"] for i in items
                       if not bt.resolve(i["evidence"], dd, vv)[0]]
@@ -843,14 +851,14 @@ def main() -> int:
         c("TEMPLATES.md" in readme or "TEMPLATES.md" in findings_md, "README.md links TEMPLATES.md")
 
     print("\nprompt quality and editing recipes")
-    from scripts.audit_prompts import audit as audit_prompts
+    from audit_prompts import audit as audit_prompts
     prompt_errors, prompt_summary = audit_prompts(HERE / "prompts.json")
     c(not prompt_errors,
       f"all {prompt_summary['prompts']} prompts pass duplicate and length checks",
       f"{prompt_errors[:3]}")
     c(prompt_summary["prompts"] == prompt_summary["unique"],
       "every published prompt is unique after whitespace normalization")
-    recipes = HERE / "EDITING_RECIPES.md"
+    recipes = HERE / "docs/reference/EDITING_RECIPES.md"
     recipe_text = recipes.read_text(encoding="utf-8") if recipes.exists() else ""
     c(recipes.exists(), "EDITING_RECIPES.md is built")
     c(all(f"### {index}. {name}" in recipe_text
@@ -889,8 +897,8 @@ def main() -> int:
         credited = [e for e in d["entries"] if e.get("prompt_author")]
         c(True, f"{len(credited)} of {len(d['entries'])} entries carry their own "
                 f"attribution; the rest are the owner's own runs")
-        c("prompt_author" in (HERE / "build_gallery.py").read_text(encoding="utf-8")
-          and "prompt_author" in (HERE / "build_pages.py").read_text(encoding="utf-8"),
+        c("prompt_author" in (HERE / "scripts/build_gallery.py").read_text(encoding="utf-8")
+          and "prompt_author" in (HERE / "scripts/build_pages.py").read_text(encoding="utf-8"),
           "both renderers print attribution when it is there")
 
     # Contribution is a machine or it does not happen. The reference case in this

@@ -24,7 +24,7 @@ configs:
 
 # Krea 2 Turbo Prompt and Output Catalog
 
-This dataset contains 511 usable English prompts across 63 active categories. Every row keeps the exact prompt, the URL of its generated Krea 2 output, and generation provenance for filtering, retrieval, and prompt reuse.
+This dataset contains 514 usable English prompts across 63 active categories. Every row keeps the exact prompt, the URL of its generated Krea 2 output, and generation provenance for filtering, retrieval, and prompt reuse.
 
 It is the row-oriented export of the open [Krea 2 Wildcards](https://github.com/sjh9714/krea2-wildcards) catalog. This is a community dataset, not an official Krea release.
 

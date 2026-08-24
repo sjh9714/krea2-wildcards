@@ -1,9 +1,9 @@
 # Wildcards
 
-511 prompts from [this catalog](https://github.com/sjh9714/krea2-wildcards),
+514 prompts from [this catalog](https://github.com/sjh9714/krea2-wildcards),
 one per line, ready for a wildcard or dynamic-prompt node.
 
-- `all.txt`. Every prompt, 511 lines
+- `all.txt`. Every prompt, 514 lines
 - one file per category (63 of them), if you want to sample within a style
 
 [Download every category as one zip](https://github.com/sjh9714/krea2-wildcards/releases/latest/download/krea2-wildcards.zip).

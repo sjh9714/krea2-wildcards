@@ -78,6 +78,21 @@
       "status": "quota_blocked",
       "error": "ZeroGPU quota exceeded: authenticate with a Hugging Face token for more quota.",
       "review": {"status": "not_generated", "notes": "No image returned. This request is not a completed generation or a quality result."}
+    },
+    {
+      "id": "full-body-02",
+      "shot": "full-body",
+      "observed_on": "2026-09-05",
+      "submission": "Chrome standalone Space UI; original WebP uploaded through the file chooser",
+      "event_id": null,
+      "seed": 230905003,
+      "randomize_seed": false,
+      "reference_sha256": "d49404efb422a0aa3375c6191847a83dd59336d9868fc5e4ddac6a93f146abe5",
+      "instruction": "Photograph this same adult woman standing upright, shown from the top of her head to the soles of both shoes with generous space above and below. Her arms rest naturally at her sides. Add straight dark trousers and simple black flat shoes. Preserve her distinctive face, green eyes, natural skin texture, dark brown hair tied in a low bun and charcoal knit sweater. Full-length studio photograph, camera at waist height, plain warm gray background, soft light from camera left. One photograph, no text.",
+      "settings": {"ref_boost": 2.5, "grounding_px": 768, "lora_strength": 1.0, "steps": 10, "space_guidance_scale": 0.0},
+      "status": "provider_error",
+      "error": "The browser displayed Error with no returned image. A detailed error message and provider event ID were not exposed in the inspected UI.",
+      "review": {"status": "not_generated", "notes": "No output to review; this is not counted as a completed generation. The logged-in Hugging Face account separately displayed Zero GPU 0/5 min used. File chooser automation succeeded on the standalone app but timed out inside the logged-in embedded app."}
     }
   ]
 }

@@ -6,6 +6,11 @@ drag in the matching PNG example; the complete workflow is embedded in the PNG.
 
 ## Choose the right workflow
 
+For a separate, **experimental reference-image shooting pack**, see
+[reference-shoot/](reference-shoot/README.md). It requires a community identity-edit
+LoRA and custom nodes; its hosted samples are not outputs of the two official
+text-to-image starter graphs below.
+
 | Workflow | Extra node | Best for |
 |---|---|---|
 | [`krea2-native-starter.json`](krea2-native-starter.json) | None | Paste one prompt and render it unchanged |

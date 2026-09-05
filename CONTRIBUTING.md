@@ -46,6 +46,12 @@ are all built from `prompts.json` and `data/vocabulary.json`. A workflow rebuild
 when the manifest changes, and CI fails a pull request whose generated files do
 not match its data.
 
+The experimental `workflows/reference-shoot/` pack is separate from the base
+catalog. Its `pack.json`, `runs.json`, `README.md`, and original `examples/` are
+source files; only its four shot graphs and `index.html` are generated. Adapter
+outputs must not inflate the plain Turbo catalog count. See the
+[pack's review and provenance requirements](workflows/reference-shoot/README.md).
+
 ## Repository layout
 
 - `scripts/` contains builders, verification, and maintenance tools.
@@ -64,12 +70,15 @@ python3 scripts/build_vocabulary.py
 python3 scripts/build_gallery.py
 python3 scripts/build_templates.py
 python3 scripts/build_workflows.py
+python3 scripts/build_reference_shoot.py
 python3 scripts/build_pages.py
 python3 scripts/build_site.py
 python3 scripts/build_social.py
 python3 scripts/build_dataset.py
 python3 scripts/build_catalog.py --build --lang zh --lang ko --lang ja --lang es --lang fr --lang de --lang pt
 python3 scripts/audit_prompts.py
+python3 -m unittest discover -s scripts/tests -p 'test_reference_shoot.py' -v
+python3 scripts/build_reference_shoot.py --check
 python3 scripts/verify.py
 ```
 

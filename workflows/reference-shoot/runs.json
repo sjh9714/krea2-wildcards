@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-09-05",
+  "provider": "conradlocke/krea2-identity-edit public Hugging Face ZeroGPU Space",
+  "space_revision_observed": "3a1adc03a1b083e61e98105034f09f7aa407242c",
+  "runtime": "Hosted Diffusers Krea2Pipeline, krea/Krea-2-Turbo with krea2_identity_edit_v1_2.safetensors fused at strength 1.0",
+  "runtime_note": "The Space source revision was observed at execution time. Its model downloads are not revision-pinned; the exact loaded base/adapter weight hashes were not exposed. These are not local ComfyUI results.",
+  "billing": "Free public ZeroGPU quota only; no paid credentials, credits, subscription or purchase used.",
+  "postprocessing": "None by this repository. Originals are the provider-returned WebP bytes, not raw model tensors or guaranteed lossless files.",
+  "runs": [
+    {
+      "id": "front-01",
+      "shot": "front",
+      "event_id": "24ffd6e14e1a45eda207d6631c086141",
+      "seed": 230905001,
+      "randomize_seed": false,
+      "reference_sha256": "d49404efb422a0aa3375c6191847a83dd59336d9868fc5e4ddac6a93f146abe5",
+      "instruction": "Create a new editorial portrait photograph of the same adult woman from the reference image. Keep her face shape, green eyes, nose, natural skin texture, dark brown hair tied in a low bun, and charcoal knit crew-neck sweater. Front-facing head-and-shoulders view, looking directly into the camera, neutral relaxed expression. Plain warm gray studio background. Soft window-like key light from camera left. Natural photographic detail, no text, no collage.",
+      "settings": {"ref_boost": 4.0, "grounding_px": 768, "lora_strength": 1.0, "steps": 10, "space_guidance_scale": 0.0},
+      "status": "completed",
+      "output_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/4154ea423a864dabbffd1035958e089396993c3dfb718a9d4e51e982741e02d9/image.webp",
+      "local_audit_file": "raw/reference-shoot/front-attempt-01.webp",
+      "sha256": "2e7cd160eb36679302825a6c6a81c44077227b5311aae4fc8d64135e6a168afd",
+      "review": {"status": "not_selected", "likeness": "pass", "shot": "not_met", "anatomy": "pass", "materials_light": "pass", "notes": "Background changes coherently and facial features remain recognizable, but the head and gaze stay off-axis. Not a front-facing example."}
+    },
+    {
+      "id": "front-02",
+      "shot": "front",
+      "event_id": "70d6812b4df647ffa8200deb1fd14d37",
+      "seed": 230905001,
+      "randomize_seed": false,
+      "reference_sha256": "d49404efb422a0aa3375c6191847a83dd59336d9868fc5e4ddac6a93f146abe5",
+      "instruction": "Turn this same adult woman to face the camera directly. Her head and shoulders are square to the camera, both ears equally visible, both eyes looking straight into the lens. Preserve her distinctive face, green eyes, natural skin texture, dark brown hair tied in a low bun and charcoal knit sweater. Head-and-shoulders studio portrait, plain warm gray background, soft light from camera left. One photograph, no text.",
+      "settings": {"ref_boost": 2.5, "grounding_px": 768, "lora_strength": 1.0, "steps": 10, "space_guidance_scale": 0.0},
+      "status": "completed",
+      "output_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/66cf33fde9ccc0b47fbf3479bf7c15a90dda4114e0f6c75421b637ffa0be0a08/image.webp",
+      "local_audit_file": "raw/reference-shoot/front-attempt-02.webp",
+      "sha256": "62c6814fbc88bd880656733be2d87881deef465280a7b609d1f0565401049054",
+      "review": {"status": "not_selected", "likeness": "pass", "shot": "not_met", "anatomy": "pass", "materials_light": "pass", "notes": "A revised instruction and lower reference strength still leave the head and gaze off-axis. Do not describe this preset as validated."}
+    },
+    {
+      "id": "profile-01",
+      "shot": "profile",
+      "event_id": "ba713ec2391b4531a911970cd3b0004d",
+      "seed": 230905002,
+      "randomize_seed": false,
+      "reference_sha256": "d49404efb422a0aa3375c6191847a83dd59336d9868fc5e4ddac6a93f146abe5",
+      "instruction": "Photograph this same adult woman in a strict 90-degree side profile facing the left edge of the image. Only one eye and one side of her face are visible; her nose is in profile. Preserve her distinctive face, green eyes, natural skin texture, dark brown hair tied in a low bun and charcoal knit sweater. Head-and-shoulders studio portrait, plain warm gray background, soft light from camera left. One photograph, no text.",
+      "settings": {"ref_boost": 2.5, "grounding_px": 768, "lora_strength": 1.0, "steps": 10, "space_guidance_scale": 0.0},
+      "status": "completed",
+      "output_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/362cba2bd08946598ea05af09881f359fa05191a6fc3a1599943745045df03a8/image.webp",
+      "output": "examples/profile.webp",
+      "sha256": "18812c77d40aa0244b8ad6daae16bca39418e5599878466125c72371da6b7871",
+      "review": {"status": "accepted", "likeness": "pass", "shot": "pass", "anatomy": "pass", "materials_light": "pass", "notes": "Clear left-facing side profile with one visible eye. Nose, lips and jaw remain recognizable; ear and low bun are coherent. Knit texture and soft directional light are plausible. Hands are outside the crop; this does not test hands or unseen facial geometry."}
+    },
+    {
+      "id": "full-body-01",
+      "shot": "full-body",
+      "event_id": "f2a94c09e51648b58c718e249b8fccfd",
+      "seed": 230905003,
+      "randomize_seed": false,
+      "reference_sha256": "d49404efb422a0aa3375c6191847a83dd59336d9868fc5e4ddac6a93f146abe5",
+      "instruction": "Photograph this same adult woman standing upright, shown from the top of her head to the soles of both shoes with generous space above and below. Her arms rest naturally at her sides. Add straight dark trousers and simple black flat shoes. Preserve her distinctive face, green eyes, natural skin texture, dark brown hair tied in a low bun and charcoal knit sweater. Full-length studio photograph, camera at waist height, plain warm gray background, soft light from camera left. One photograph, no text.",
+      "settings": {"ref_boost": 2.5, "grounding_px": 768, "lora_strength": 1.0, "steps": 10, "space_guidance_scale": 0.0},
+      "status": "quota_blocked",
+      "error": "ZeroGPU quota exceeded: authenticate with a Hugging Face token for more quota.",
+      "review": {"status": "not_generated", "notes": "No image returned. This request is not a completed generation or a quality result."}
+    },
+    {
+      "id": "close-up-01",
+      "shot": "close-up",
+      "event_id": "e999fdbdaa1e4d4798a831e778ab0875",
+      "seed": 230905004,
+      "randomize_seed": false,
+      "reference_sha256": "d49404efb422a0aa3375c6191847a83dd59336d9868fc5e4ddac6a93f146abe5",
+      "instruction": "Create a tight beauty close-up photograph of this same adult woman. Her face fills the frame from the forehead to just below the chin, with the eyes in sharp focus, a relaxed closed mouth and a subtle three-quarter turn. Preserve her distinctive face, green eyes, natural skin texture, dark brown hair tied in a low bun and charcoal knit sweater. Natural editorial beauty photograph, visible skin pores, no beauty retouching, plain warm gray background, soft light from camera left. One photograph, no text.",
+      "settings": {"ref_boost": 2.5, "grounding_px": 768, "lora_strength": 1.0, "steps": 10, "space_guidance_scale": 0.0},
+      "status": "quota_blocked",
+      "error": "ZeroGPU quota exceeded: authenticate with a Hugging Face token for more quota.",
+      "review": {"status": "not_generated", "notes": "No image returned. This request is not a completed generation or a quality result."}
+    }
+  ]
+}

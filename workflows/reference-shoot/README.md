@@ -9,24 +9,32 @@ reference. Keep a good shot and rerun only the one you need.
 
 ## What is actually verified
 
-As of **2026-09-05**, the free hosted pilot returned three images: one side-profile
-shot passed visual review; two front-facing attempts did not meet the requested
-viewpoint. The full-body and close-up requests returned a free-quota error, not
-images. This is **one accepted shot out of four planned shots**, not a completed
-four-shot consistency demonstration or a benchmark.
+As of **2026-09-06 (Asia/Seoul)**, **all four planned shots have visually accepted
+hosted samples**. The pilot returned seven images across two sessions; four were
+selected and three earlier front-facing attempts were kept out of the preview.
+Requests that returned only an error are recorded separately and are not counted
+as generated images. This is a completed **one-character shooting demonstration**,
+not a multi-person consistency benchmark or a GPU-tested ComfyUI release.
 
 | Shot | Preset | Hosted sample | ComfyUI execution |
 |---|---|---|---|
-| Front | [front.json](front.json) | Needs a revised camera instruction | Not GPU-run here |
+| Front | [front.json](front.json) | [Visually accepted](examples/front.webp) | Not GPU-run here |
 | Profile | [profile.json](profile.json) | [Visually accepted](examples/profile.webp) | Not GPU-run here |
-| Full-body | [full-body.json](full-body.json) | Pending free quota | Not GPU-run here |
-| Close-up | [close-up.json](close-up.json) | Pending free quota | Not GPU-run here |
+| Full-body | [full-body.json](full-body.json) | [Visually accepted](examples/full-body.webp) | Not GPU-run here |
+| Close-up | [close-up.json](close-up.json) | [Visually accepted](examples/close-up.webp) | Not GPU-run here |
 
-The accepted image is the unchanged provider-returned WebP. The reference is the
+The accepted images are the unchanged provider-returned WebPs. The reference is the
 repository's existing [synthetic adult portrait](../../images/portrait-001.webp),
 not a real person's photograph. Review compared visible face shape, nose, mouth,
 hair, viewpoint, clothing, light and obvious artifacts. It is qualitative, not
 automated biometric matching. The 514-entry base-model catalog is unchanged.
+
+The side-profile API run used the original WebP. The three other accepted shots
+used this [preserved 1024-square browser PNG](reference/portrait-001-browser.png),
+decoded from that same original for clipboard transport. There was no resizing,
+retouching or spatial manipulation. Browser/Pillow decoder rounding differs by
+at most 2/255 in a channel, so the PNG is not claimed to be pixel-identical to a
+Pillow decode of the WebP. Receipts preserve the exact input and output hashes.
 
 ## Choose an execution route
 
@@ -34,7 +42,8 @@ automated biometric matching. The 514-entry base-model catalog is unchanged.
 
 Open [conradlocke's Krea 2 Identity Edit Space](https://huggingface.co/spaces/conradlocke/krea2-identity-edit).
 Upload the original reference and paste one instruction from the preview.
-Set likeness to **2.5**, grounding to **768**, steps to **10**, guidance to **0**,
+Set likeness to **1.0 for front, 2.5 for the other shots**, grounding to **768**,
+steps to **10**, guidance to **0**,
 and turn random seed **off**. Use the shot's recorded seed. LoRA strength is
 already fused at **1.0**. These are the pilot's settings, not universal optima.
 
@@ -71,7 +80,8 @@ This is **not** Krea web's Style Transfer input. The sample uses Krea 2 Turbo
 | [krea2_identity_edit_v1_2.safetensors](https://huggingface.co/conradlocke/krea2-identity-edit/resolve/89e9e7a09ee2e5c9331e952063d79b1b8a703280/krea2_identity_edit_v1_2.safetensors) | `models/loras/` |
 
 Defaults: **992 × 992**, batch **1**, **10** steps, Euler/simple, denoise **1**,
-ComfyUI CFG **1**, reference strength **2.5**, grounding **768**, LoRA **1**.
+ComfyUI CFG **1**, reference strength **1.0 for front / 2.5 otherwise**,
+grounding **768**, LoRA **1**. Each graph already includes its shot's settings.
 The hosted demo's guidance **0** and ComfyUI CFG **1** both mean guidance off
 in their respective implementations; do not copy the numeric value blindly.
 The hosted demo reduces the 1024-square source to a 992-square output under its
@@ -99,25 +109,33 @@ The full-body preset **invents** trousers, shoes and anatomy outside the source
 crop. It cannot recover unseen body dimensions. The profile also synthesizes
 previously unseen geometry. Avoid treating either as a faithful identity record.
 
-For the front shot, try a lower reference strength or shorter angle instruction
-on the next available free run; both are **untested hypotheses**, not fixes already
-demonstrated. Record a new attempt instead of replacing its history. Only a full
-passing visual review promotes an output to the preview.
+For this source, the accepted front shot combined likeness **1.0** with an explicit
+symmetrical passport-view instruction. Lowering likeness alone still left a
+three-quarter view in the preceding attempt. This is an observed result for one
+character and seed, not a generally optimal setting. Keep each shot's original
+reference, instruction and settings together when adapting the pack.
+
+The close-up is visibly tighter than the source but still includes the neckline;
+it is not an extreme forehead-to-chin-only crop. Do not crop a saved output to
+make it appear to have obeyed the instruction more precisely.
 
 ## Scope and next validation
 
-First finish the other three shots, then repeat the four-shot test on at least
-three visibly different consenting or synthetic adult subjects. Only after
-that should this be described as a reusable consistency pack. A GPU smoke test
+Next repeat the four-shot test on at least three visibly different consenting or
+synthetic adult subjects. Only after that should this be described as a reusable
+consistency pack. A GPU smoke test
 of the downloadable ComfyUI graph is a separate requirement. Video, multiple
 people, outfit transfer and automatic likeness scores are outside v0.1.
 
 ## Development
 
 `pack.json` and `runs.json` are source records; `*.json` shot graphs and
-`index.html` are generated. Accepted originals live in `examples/`. Unselected
-outputs may be retained locally under the ignored `raw/reference-shoot/` folder;
-their hashes and provider event IDs remain in the run receipts.
+`index.html` are generated. Accepted originals live in `examples/`; the exact
+browser-transported reference lives in `reference/`. Unselected outputs may be
+retained locally under the ignored `raw/reference-shoot/` folder. Their hashes
+and provider provenance remain in the run receipts. API runs expose event IDs;
+browser runs expose file URLs with **asset/cache IDs, not generation/job IDs**.
+The receipts distinguish these instead of inventing missing job identifiers.
 
 ```bash
 python3 scripts/build_reference_shoot.py
@@ -126,8 +144,9 @@ python3 -m unittest discover -s scripts/tests -p 'test_reference_shoot.py' -v
 ```
 
 The builder performs no inference or upload. It rejects accepted receipts whose
-prompt, seed, settings, source hash, output hash, dimensions or required review
-checks do not match. CI also tests the reference links and individual-shot graph
+prompt, seed, per-shot settings, source/input hashes, provider asset URL, output
+hash, dimensions or required review checks do not match. CI also tests the
+reference links and individual-shot graph
 structure. Do not add these adapter outputs to the plain Turbo catalog count.
 
 ## Attribution and terms

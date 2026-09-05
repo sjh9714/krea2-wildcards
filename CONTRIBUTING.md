@@ -47,7 +47,7 @@ when the manifest changes, and CI fails a pull request whose generated files do
 not match its data.
 
 The experimental `workflows/reference-shoot/` pack is separate from the base
-catalog. Its `pack.json`, `runs.json`, `README.md`, and original `examples/` are
+catalog. Its `pack.json`, `runs.json`, `README.md`, `reference/`, and original `examples/` are
 source files; only its four shot graphs and `index.html` are generated. Adapter
 outputs must not inflate the plain Turbo catalog count. See the
 [pack's review and provenance requirements](workflows/reference-shoot/README.md).

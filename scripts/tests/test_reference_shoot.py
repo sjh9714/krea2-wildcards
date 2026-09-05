@@ -73,12 +73,60 @@ class ReferenceShootTests(unittest.TestCase):
 
     def test_only_reviewed_outputs_are_shown(self):
         accepted = build.accepted_runs(self.pack, self.runs)
-        self.assertIn("profile", accepted)
+        self.assertEqual(set(accepted), {s["id"] for s in self.pack["shots"]})
         rendered = build.render_page(self.pack, self.runs)
-        self.assertIn('src="examples/profile.webp"', rendered)
-        self.assertNotIn('src="examples/front.webp"', rendered)
+        for run in accepted.values():
+            self.assertIn(f'src="{run["output"]}"', rendered)
         self.assertIn("structural checks only", rendered)
-        self.assertIn("Not visually accepted yet", rendered)
+        self.assertNotIn("Not visually accepted yet", rendered)
+        pending = copy.deepcopy(self.runs)
+        for run in pending:
+            if run["shot"] == "front":
+                run["review"]["status"] = "pending"
+        partial = build.render_page(self.pack, pending)
+        self.assertNotIn('src="examples/front.webp"', partial)
+        self.assertIn("Not visually accepted yet", partial)
+
+    def test_per_shot_setting_reaches_graph_and_receipt_validation(self):
+        front = next(s for s in self.pack["shots"] if s["id"] == "front")
+        profile = next(s for s in self.pack["shots"] if s["id"] == "profile")
+        self.assertEqual(build.settings_for(self.pack, front)["ref_boost"], 1.0)
+        self.assertEqual(build.settings_for(self.pack, profile)["ref_boost"], 2.5)
+        for shot in (front, profile):
+            graph = build.workflow(self.pack, shot)
+            patch = next(n for n in graph["nodes"] if n["type"] == "Krea2EditModelPatch")
+            self.assertEqual(patch["widgets_values"][0], build.settings_for(self.pack, shot)["ref_boost"])
+        run = copy.deepcopy(build.accepted_runs(self.pack, self.runs)["front"])
+        run["settings"]["ref_boost"] = 2.5
+        with self.assertRaisesRegex(ValueError, "Setting mismatch"):
+            build.accepted_runs(self.pack, [run])
+
+    def test_browser_asset_and_actual_input_are_required_and_verified(self):
+        original = next(r for r in self.runs
+                        if r["review"]["status"] == "accepted" and r.get("provider_asset_id"))
+        self.assertIsNone(original["event_id"])
+        self.assertIn(original["shot"], build.accepted_runs(self.pack, [original]))
+        mutations = (("provider_asset_id", "wrong"), ("provider_asset_id", "0" * 64),
+                     ("provider_asset_id", None), ("output_url", "https://example.com/image.webp"),
+                     ("reference_input", None))
+        for key, value in mutations:
+            run = copy.deepcopy(original)
+            run[key] = value
+            with self.subTest(key=key, value=value), self.assertRaises(ValueError):
+                build.accepted_runs(self.pack, [run])
+        for key, value in (("sha256", "0" * 64), ("transport", ""),
+                           ("path", "../../images/portrait-001.webp")):
+            run = copy.deepcopy(original)
+            run["reference_input"][key] = value
+            with self.subTest(input_key=key), self.assertRaises(ValueError):
+                build.accepted_runs(self.pack, [run])
+
+    def test_api_event_id_cannot_be_replaced_with_arbitrary_text(self):
+        run = copy.deepcopy(next(r for r in self.runs
+                                 if r["review"]["status"] == "accepted" and r.get("event_id")))
+        run["event_id"] = "made up"
+        with self.assertRaisesRegex(ValueError, "Missing provider provenance"):
+            build.accepted_runs(self.pack, [run])
 
     def test_missing_review_never_passes(self):
         run = copy.deepcopy(next(r for r in self.runs if r["review"]["status"] == "accepted"))

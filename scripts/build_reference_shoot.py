@@ -14,6 +14,7 @@ import hashlib
 import html
 import json
 from pathlib import Path
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 PACK = ROOT / "workflows/reference-shoot"
@@ -29,9 +30,13 @@ def instruction(pack: dict, shot: dict) -> str:
                      pack["finish"][0].lower() + pack["finish"][1:]))
 
 
+def settings_for(pack: dict, shot: dict) -> dict:
+    return pack["settings"] | shot.get("settings", {})
+
+
 def workflow(pack: dict, shot: dict) -> dict:
     """One shot per graph; every graph reads the same original reference."""
-    settings = pack["settings"]
+    settings = settings_for(pack, shot)
     nodes, links = [], []
 
     def add(kind, title, pos, widgets, inputs=(), outputs=(), size=(320, 140)):
@@ -142,19 +147,42 @@ def accepted_runs(pack: dict, runs: list[dict]) -> dict:
             raise ValueError("Review notes are required")
         if run["instruction"] != instruction(pack, shot) or run["seed"] != shot["seed"]:
             raise ValueError(f"Recipe/receipt mismatch: {run['id']}")
+        settings = settings_for(pack, shot)
         for key in ("ref_boost", "grounding_px", "steps", "space_guidance_scale", "lora_strength"):
-            if run["settings"][key] != pack["settings"][key]:
+            if run["settings"][key] != settings[key]:
                 raise ValueError(f"Setting mismatch: {run['id']} / {key}")
-        if run["reference_sha256"] != source_hash or not run.get("event_id"):
+        if run["reference_sha256"] != source_hash:
             raise ValueError(f"Missing/mismatched provenance: {run['id']}")
+        asset_id = run.get("provider_asset_id")
+        event_id = run.get("event_id")
+        if asset_id is not None:
+            expected_url = ("https://conradlocke-krea2-identity-edit.hf.space/"
+                            f"gradio_api/file=/tmp/gradio/{asset_id}/image.webp")
+            if not re.fullmatch(r"[0-9a-f]{64}", asset_id) or run.get("output_url") != expected_url:
+                raise ValueError(f"Mismatched provider asset: {run['id']}")
+            if not run.get("reference_input"):
+                raise ValueError(f"Missing actual browser input: {run['id']}")
+        if not asset_id and not re.fullmatch(r"[0-9a-f]{32}", event_id or ""):
+            raise ValueError(f"Missing provider provenance: {run['id']}")
+        from PIL import Image
+        if actual_input := run.get("reference_input"):
+            input_path = (PACK / actual_input["path"]).resolve()
+            if not input_path.is_relative_to((PACK / "reference").resolve()):
+                raise ValueError("Preserved browser inputs must be inside reference/")
+            if hashlib.sha256(input_path.read_bytes()).hexdigest() != actual_input["sha256"]:
+                raise ValueError(f"Input bytes changed: {run['id']}")
+            if not actual_input.get("transport"):
+                raise ValueError(f"Input transport note required: {run['id']}")
+            with Image.open(input_path) as input_image, Image.open(ROOT / pack["reference"]["image"]) as source:
+                if input_image.size != source.size:
+                    raise ValueError(f"Input dimensions differ: {run['id']}")
         path = (PACK / run["output"]).resolve()
         if not path.is_relative_to((PACK / "examples").resolve()):
             raise ValueError("Accepted outputs must be inside examples/")
         if hashlib.sha256(path.read_bytes()).hexdigest() != run["sha256"]:
             raise ValueError(f"Output bytes changed: {run['id']}")
-        from PIL import Image
         with Image.open(path) as output:
-            if list(output.size) != [pack["settings"]["width"], pack["settings"]["height"]]:
+            if list(output.size) != [settings["width"], settings["height"]]:
                 raise ValueError(f"Output dimensions differ: {run['id']}")
         selected[shot["id"]] = run
     return selected
@@ -172,14 +200,17 @@ def render_page(pack: dict, runs: list[dict]) -> str:
     cards = []
     for shot in sorted(pack["shots"], key=lambda item: item["id"] not in accepted):
         run = accepted.get(shot["id"])
+        settings = settings_for(pack, shot)
         preview = (f'<img src="{escape(run["output"])}" alt="{escape(shot["title"])}" loading="lazy">'
                    if run else '<p class="pending">Not visually accepted yet. No sample claimed.</p>')
+        original_link = (f' · <a href="{escape(run["output"])}" download>Original image</a>'
+                         if run else '')
         cards.append(f'<article class="card">{preview}<div class="cardbody">'
                      f'<h3>{escape(shot["title"])}</h3><p>{escape(run["review"]["notes"] if run else shot["acceptance"])}</p>'
-                     f'<details><summary>Exact instruction · seed {shot["seed"]}</summary>'
+                     f'<details><summary>Exact instruction · seed {shot["seed"]} · likeness {settings["ref_boost"]}</summary>'
                      f'<pre>{escape(instruction(pack, shot))}</pre></details>'
                      f'<button class="copy" data-prompt="{escape(instruction(pack, shot))}">Copy instruction</button> '
-                     f'<a href="{shot["id"]}.json" download>Download workflow</a></div></article>')
+                     f'<a href="{shot["id"]}.json" download>Download workflow</a>{original_link}</div></article>')
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(pack['title'])} · Krea 2 reference shoot</title>

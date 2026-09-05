@@ -309,7 +309,7 @@
         "Node name for S&R": "Krea2EditGroundedEncode"
       },
       "widgets_values": [
-        "Turn this same adult woman to face the camera directly. Her head and shoulders are square to the camera, both ears equally visible, both eyes looking straight into the lens. Preserve her distinctive face, green eyes, natural skin texture, dark brown hair tied in a low bun and charcoal knit sweater. Head-and-shoulders studio portrait, plain warm gray background, soft light from camera left. One photograph, no text.",
+        "Rotate the head and shoulders of this same adult woman into a perfectly straight-on front view. Symmetrical passport portrait, looking directly into the lens, both ears visible. Do not keep the reference camera angle. Preserve her distinctive face, green eyes, natural skin texture, dark brown hair tied in a low bun and charcoal knit sweater. Head-and-shoulders studio portrait, plain warm gray background, soft light from camera left. One photograph, no text.",
         768,
         ""
       ]
@@ -442,7 +442,7 @@
         "Node name for S&R": "Krea2EditModelPatch"
       },
       "widgets_values": [
-        2.5,
+        1.0,
         1.0,
         "fit"
       ]

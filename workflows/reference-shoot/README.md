@@ -5,7 +5,8 @@ profile, full-body and close-up**, each generated independently from one origina
 reference. Keep a good shot and rerun only the one you need.
 
 **[Open the visual preview](index.html)**
-· [Exact recipes](pack.json) · [Run receipts](runs.json)
+· [Additional source checks](validation.html)
+· [Exact recipes](pack.json) · [Pilot receipts](runs.json)
 
 ## What is actually verified
 
@@ -15,6 +16,16 @@ selected and three earlier front-facing attempts were kept out of the preview.
 Requests that returned only an error are recorded separately and are not counted
 as generated images. This is a completed **one-character shooting demonstration**,
 not a multi-person consistency benchmark or a GPU-tested ComfyUI release.
+
+A follow-up on a second synthetic adult returned **four new images, three
+visually accepted**: front, profile and full-body. The close-up did not clearly
+tighten the already-close source, so it is not shown as a successful close-up.
+See the [side-by-side transfer check](validation.html) and its
+[exact recipes and receipts](validation.json). The original pilot and the new
+subject total **seven selected outputs from eleven completed generations**.
+The next two planned sources have not been generated; the free provider blocked
+the next request. This remains partial transfer validation, not a general
+identity-consistency guarantee.
 
 | Shot | Preset | Hosted sample | ComfyUI execution |
 |---|---|---|---|
@@ -93,7 +104,7 @@ latent feeds the patch and sampler, and the VAE + source pixels are connected
 with `fit` mode. A text-only encoder or plain style-reference node is not a
 drop-in replacement.
 
-The ComfyUI graphs are **structurally tested, not GPU-executed here**. Hosted
+The ComfyUI graphs are **structurally tested and imported, not GPU-executed here**. Hosted
 examples use a different Diffusers implementation and checkpoint precision;
 matching prompt and seed do not imply identical pixels. No cloud share link,
 minimum VRAM claim or guaranteed runtime is provided without a real test.
@@ -101,6 +112,24 @@ minimum VRAM claim or guaranteed runtime is provided without a real test.
 The graph IDs are stable, per-shot UUIDs, as required by the
 [ComfyUI frontend workflow schema at `c25e8cb`](https://github.com/Comfy-Org/ComfyUI_frontend/blob/c25e8cbfe514251b581bbc89cf9d0722007f7b3b/src/platform/workflow/validation/schemas/workflowSchema.ts).
 This format check is separate from a successful import or GPU render.
+
+### Actual local import check · 2026-09-06
+
+All four files were opened through **File > Open** in ComfyUI **0.34.0**
+(revision `15eb748b3ec5f8a0a2d470b7fb280e2d7579f916`), frontend **1.51.9**,
+Python **3.13.13**, PyTorch **2.14.0**, on an Apple M4 with 16 GiB unified memory.
+The pinned custom-node revision registered both Krea2Edit node classes.
+Each graph opened with exactly **four missing model files**, not missing node
+classes or an invalid graph ID. A local close-up queue attempt was rejected
+before inference because those weights were absent. No GPU output was produced.
+
+The [import/runtime receipt](runtime-check.json) binds that observation to the
+SHA-256 of each graph. The graph metadata remains conservatively marked
+`structural-only`; it must not be mistaken for a successful generation receipt.
+Required weights total about **20.5 GB (19.1 GiB)**. Downloading them into the
+roughly 21 GiB free disk available during this test would leave too little OS
+and swap headroom, so none were downloaded. This is a local capacity constraint,
+not a minimum VRAM claim or proof that Krea inference works on this MPS setup.
 
 ## Keep / rerun checklist
 
@@ -125,17 +154,28 @@ make it appear to have obeyed the instruction more precisely.
 
 ## Scope and next validation
 
-Next repeat the four-shot test on at least three visibly different consenting or
-synthetic adult subjects. Only after that should this be described as a reusable
-consistency pack. A GPU smoke test
-of the downloadable ComfyUI graph is a separate requirement. Video, multiple
+The three-additional-subject protocol is partially complete: `portrait-002`
+has four tested shots, of which three are selected. Adapt and test its close-up
+framing, then run all four shots on the inspected `portrait-003` and
+`portrait-004` sources when another free request is permitted. The provider
+displayed a daily-limit dialog even though its rounded account meter read
+3.5/5 minutes; the meter is not a guarantee that another job can be allocated.
+No retry through another account, paid plan or quota workaround is part of this
+test. No automatic retry has been scheduled.
+
+Only after the planned source checks should this be described as a reusable
+consistency pack. Actual GPU inference of the downloadable ComfyUI graph is
+still a separate requirement; import validation alone is not enough. Video, multiple
 people, outfit transfer and automatic likeness scores are outside v0.1.
 
 ## Development
 
-`pack.json` and `runs.json` are source records; `*.json` shot graphs and
-`index.html` are generated. Accepted originals live in `examples/`; the exact
-browser-transported reference lives in `reference/`. Unselected outputs may be
+`pack.json`, `runs.json`, `validation.json` and `runtime-check.json` are source
+records; the four shot graphs, `index.html` and `validation.html` are generated.
+Additional subjects keep independent recipe snapshots and source hashes, so
+adapting one person cannot silently rewrite the original pilot's receipts.
+Accepted originals live in `examples/`; exact browser-transported references
+live in `reference/`. Unselected outputs may be
 retained locally under the ignored `raw/reference-shoot/` folder. Their hashes
 and provider provenance remain in the run receipts. API runs expose event IDs;
 browser runs expose file URLs with **asset/cache IDs, not generation/job IDs**.
@@ -152,6 +192,8 @@ prompt, seed, per-shot settings, source/input hashes, provider asset URL, output
 hash, dimensions or required review checks do not match. CI also tests the
 reference links and individual-shot graph
 structure. Do not add these adapter outputs to the plain Turbo catalog count.
+CI also refuses to carry the import receipt over to changed graph bytes or a
+different custom-node revision. Re-import changed graphs before updating it.
 
 ## Attribution and terms
 

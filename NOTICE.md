@@ -18,8 +18,8 @@ repository against the interfaces of lbouaraba's Apache-2.0
 They require conradlocke's
 [Krea 2 Identity Edit LoRA](https://huggingface.co/conradlocke/krea2-identity-edit),
 which uses the Krea 2 Community License. Neither dependency implementation nor
-model weights are bundled or relicensed under MIT. The included synthetic sample
-is provider-returned Krea 2 Turbo + identity-edit adapter output, with separate
+model weights are bundled or relicensed under MIT. The included synthetic samples
+are provider-returned Krea 2 Turbo + identity-edit adapter outputs, with separate
 run receipts and visual review. It is not part of the base Turbo catalog count.
 
 ## Generated images

@@ -191,10 +191,112 @@ def accepted_runs(pack: dict, runs: list[dict]) -> dict:
     return selected
 
 
-def render_page(pack: dict, runs: list[dict]) -> str:
+def validated_subjects(data: dict) -> list[tuple[dict, dict]]:
+    """Each additional subject keeps its own immutable recipe snapshot."""
+    subjects, seen = [], set()
+    for subject in data["subjects"]:
+        source_id = subject["pack"]["reference"]["catalog_id"]
+        if source_id in seen:
+            raise ValueError(f"Duplicate validation subject: {source_id}")
+        seen.add(source_id)
+        subjects.append((subject, accepted_runs(subject["pack"], subject["runs"])))
+    pending = data["pending_references"]
+    if len(set(pending)) != len(pending) or seen.intersection(pending):
+        raise ValueError("Pending references must be unique and not already tested")
+    return subjects
+
+
+def validate_runtime(pack: dict, receipt: dict) -> None:
+    """Do not carry an import check over to a changed graph or dependency."""
+    if receipt["import"]["status"] != "checked_with_missing_models":
+        raise ValueError("Unrecognized import validation status")
+    expected_files = {f"{shot['id']}.json" for shot in pack["shots"]}
+    if set(receipt["import"]["files"]) != expected_files:
+        raise ValueError("Import receipt must cover all four graphs")
+    if receipt["comfyui"]["custom_nodes_revision"] != pack["dependency"]["nodes_revision"]:
+        raise ValueError("Import receipt dependency changed")
+    for shot in pack["shots"]:
+        contents = json.dumps(workflow(pack, shot), indent=2) + "\n"
+        digest = hashlib.sha256(contents.encode()).hexdigest()
+        if receipt["import"]["files"][f"{shot['id']}.json"] != digest:
+            raise ValueError(f"Import receipt graph changed: {shot['id']}")
+    if receipt["gpu_execution"]["status"] != "not_run":
+        raise ValueError("A GPU claim requires a separately reviewed inference receipt")
+
+
+def render_validation(data: dict) -> str:
+    from build_site import CSS
+    escape = lambda value: html.escape(str(value), quote=True)
+    subjects = validated_subjects(data)
+    accepted_count = sum(len(accepted) for _, accepted in subjects)
+    completed = sum(run["status"] == "completed"
+                    for subject, _ in subjects for run in subject["runs"])
+    sections = []
+    for subject, accepted in subjects:
+        pack = subject["pack"]
+        source_id = pack["reference"]["catalog_id"]
+        cards = [f'<figure class="card"><a href="../../{escape(pack["reference"]["image"])}">'
+                 f'<img src="../../{escape(pack["reference"]["image"])}" alt="Original synthetic reference {escape(source_id)}"></a>'
+                 f'<figcaption class="cardbody"><h3>Original reference</h3><p>{escape(subject["label"])}</p>'
+                 '<p>The same original was used independently for every shot.</p></figcaption></figure>']
+        for shot in pack["shots"]:
+            if shot["id"] not in accepted:
+                continue
+            run = accepted[shot["id"]]
+            settings = settings_for(pack, shot)
+            cards.append(f'<article class="card"><a href="{escape(run["output"])}">'
+                         f'<img src="{escape(run["output"])}" alt="{escape(source_id)} {escape(shot["title"])}" loading="lazy"></a>'
+                         f'<div class="cardbody"><h3>{escape(shot["title"])}</h3>'
+                         f'<p>Seed {shot["seed"]} · likeness {settings["ref_boost"]}</p>'
+                         f'<details><summary>Review and exact instruction</summary><p>{escape(run["review"]["notes"])}</p>'
+                         f'<pre>{escape(run["instruction"])}</pre></details>'
+                         f'<button class="copy" data-prompt="{escape(run["instruction"])}">Copy instruction</button> '
+                         f'<a href="{escape(run["output"])}" download>Original image</a></div></article>')
+        unselected = [run for run in subject["runs"]
+                      if run["status"] == "completed" and run["review"]["status"] != "accepted"]
+        notes = ''.join(f'<p><strong>{escape(run["shot"])} adaptation:</strong> '
+                        f'{escape(run["review"]["notes"])}</p>' for run in unselected)
+        sections.append(f'<section><h2>{escape(source_id)} · {len(accepted)} reviewed shots</h2>'
+                        f'<div class="gallery">{"".join(cards)}</div>{notes}</section>')
+    pending = ', '.join(escape(value) for value in data["pending_references"])
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reference-shoot transfer checks · Krea 2 Wildcards</title>
+<meta name="description" content="Additional synthetic-subject checks for the experimental Krea 2 identity-edit shooting recipes, with original files, exact settings and honest validation scope.">
+<style>{CSS}
+.validation-intro{{padding:28px 0 24px}}.validation-intro h1{{font-size:clamp(30px,4vw,48px);line-height:1.12;margin:12px 0}}.validation-intro p{{margin:12px 0}}.gallery{{grid-template-columns:repeat(4,minmax(0,1fr))}}figure.card{{margin:0}}.card img{{object-fit:contain}}.cardbody h3{{font-size:1rem}}.cardbody p{{font-size:.85rem}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.6 ui-monospace,monospace}}details{{margin:12px 0}}summary{{cursor:pointer}}@media(max-width:850px){{.gallery{{grid-template-columns:repeat(2,minmax(0,1fr))}}}}@media(max-width:420px){{.gallery{{grid-template-columns:1fr}}}}</style></head>
+<body><div class="wrap"><header class="topbar"><a class="brand" href="index.html">Reference shoot</a><nav><a href="validation.json">Exact receipts</a><a href="README.md">Setup</a></nav></header>
+<main><section class="validation-intro"><p class="eyebrow">Experimental · additional source checks · {escape(data['observed_on'])}</p>
+<h1>Same recipes. A different reference.</h1>
+<p class="lead">{accepted_count} reviewed outputs from {len(subjects)} additional synthetic adult source. {completed} completed generations; error-only requests and planned sources are excluded.</p>
+<p>The original <a href="index.html">four-shot pilot</a> remains separate. This is a small qualitative transfer check, not a biometric score or a representative consistency benchmark.</p>
+<p>Unchanged Krea 2 Turbo + community identity-edit v1.2 outputs. No crop, retouch or upscale. Settings and seeds stayed fixed; only source, pronouns and visible appearance wording changed.</p></section>
+{''.join(sections)}
+<section><h2>Use the result well</h2><p>Change only the appearance sentence to match the visible source. Check the actual viewpoint and framing before keeping a shot. An already-tight source needs a demonstrably tighter result before calling it a close-up. Full-body outputs invent unseen body details, trousers and shoes.</p>
+<p>Grounding 768 · 10 steps · guidance 0 · LoRA 1.0 · random seed off. Front likeness 1.0; other shots 2.5. These are tested settings for these examples, not universal optima.</p>
+<p>Remaining sources: <strong>{pending}</strong>, not generated. The free provider blocked the next request; no credits or subscription were purchased. The additional close-up also needs a tested framing refinement.</p>
+<p><a href="runtime-check.json">ComfyUI import receipt</a>: all four downloadable graphs opened with their custom nodes registered. Four missing weights blocked inference; no GPU render is claimed.</p></section></main>
+<footer><a href="../../">Krea 2 Wildcards</a> · Adapter outputs do not increase the 514-prompt base catalog. Third-party model terms remain separate.</footer></div>
+<script>document.querySelectorAll('[data-prompt]').forEach(button=>button.addEventListener('click',async()=>{{try{{await navigator.clipboard.writeText(button.dataset.prompt);button.textContent='Copied';}}catch{{button.closest('article').querySelector('details').open=true;button.textContent='Select the instruction above';}}}}));</script></body></html>
+'''
+
+
+def render_page(pack: dict, runs: list[dict], validation: dict | None = None,
+                runtime: dict | None = None) -> str:
     from build_site import CSS
     escape = lambda value: html.escape(str(value), quote=True)
     accepted = accepted_runs(pack, runs)
+    validation_note = ''
+    if validation is not None:
+        subjects = validated_subjects(validation)
+        count = sum(len(selected) for _, selected in subjects)
+        validation_note = (f'<p><a href="validation.html">{count} more reviewed shots from '
+                           f'{len(subjects)} additional synthetic source</a>. Transfer testing is in progress.</p>')
+    runtime_note = 'structural checks only; local GPU execution is not yet verified.'
+    if runtime is not None:
+        validate_runtime(pack, runtime)
+        runtime_note = ('all four imported in local ComfyUI with custom nodes registered; '
+                        '<a href="runtime-check.json">missing model weights blocked GPU execution</a>.')
     first_sample = next(iter(accepted.values()), None)
     result_figure = (f'<figure><img class="reference" src="{escape(first_sample["output"])}" '
                      f'alt="Reviewed reference-edit result"><figcaption>Reviewed result · '
@@ -225,7 +327,7 @@ def render_page(pack: dict, runs: list[dict]) -> str:
 <h1>One reference.<br>A new angle.</h1>
 <p class="lead">Keep a character recognizable while changing the camera. Start every shot from the same original; rerun only the shot you need.</p>
 <p><strong>{len(accepted)} of {len(pack['shots'])} shots visually accepted</strong> in a one-character hosted pilot. This is not a multi-person consistency benchmark.</p>
-<p>Samples: Krea 2 Turbo + community identity-edit LoRA, hosted Diffusers. Downloadable ComfyUI graphs: structural checks only; local GPU execution is not yet verified.</p>
+<p>Samples: Krea 2 Turbo + community identity-edit LoRA, hosted Diffusers. Downloadable ComfyUI graphs: {runtime_note}</p>{validation_note}
 <a class="button" href="#make-it-yours">Use your own reference →</a></div>
 <div class="reference-pair"><figure><img class="reference" src="../../{escape(pack['reference']['image'])}" alt="Original synthetic reference: adult woman in charcoal sweater"><figcaption>Synthetic reference · <a href="../../{escape(pack['reference']['image'])}" download>Download</a></figcaption></figure>{result_figure}</div></section>
 <section><h2>The shooting set</h2><p class="sectionintro">Original provider-returned files. No post-generation retouching, crop or upscale. Visual review is qualitative, not a biometric identity score.</p><div class="gallery">{''.join(cards)}</div></section>
@@ -247,9 +349,12 @@ def main() -> int:
     args = parser.parse_args()
     pack = load_pack()
     runs = json.loads((PACK / "runs.json").read_text(encoding="utf-8"))["runs"]
+    validation = json.loads((PACK / "validation.json").read_text(encoding="utf-8"))
+    runtime = json.loads((PACK / "runtime-check.json").read_text(encoding="utf-8"))
     outputs = {f"{shot['id']}.json": json.dumps(workflow(pack, shot), indent=2) + "\n"
                for shot in pack["shots"]}
-    outputs["index.html"] = render_page(pack, runs)
+    outputs["index.html"] = render_page(pack, runs, validation, runtime)
+    outputs["validation.html"] = render_validation(validation)
     for name, contents in outputs.items():
         path = PACK / name
         if args.check:

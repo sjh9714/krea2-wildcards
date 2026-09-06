@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-09-06",
+  "timezone": "Asia/Seoul",
+  "status": "partial",
+  "protocol": "Transfer the published four-shot recipes to three additional visually inspected synthetic adults. Keep each shot's seed and settings fixed; change only the source, pronouns and visible appearance description. Always edit the original source, never a previous output. Visual review is qualitative. This small convenience sample is not a population benchmark.",
+  "provider": "conradlocke/krea2-identity-edit public Hugging Face ZeroGPU Space",
+  "space_revision_observed": "3a1adc03a1b083e61e98105034f09f7aa407242c",
+  "runtime": "Hosted Diffusers Krea2Pipeline, krea/Krea-2-Turbo with identity-edit v1.2 fused at 1.0. Exact loaded model weight hashes were not exposed; this is not ComfyUI inference.",
+  "billing": "Free public quota only. No paid account, API credit, subscription or quota workaround.",
+  "postprocessing": "None. Original provider-returned WebP bytes are preserved. Browser PNG transport encodes the reference at its original size without crop, resizing or retouching.",
+  "subjects": [
+    {
+      "label": "Receding hairline, short beard and black shirt",
+      "pack": {
+        "schema_version": 1,
+        "id": "krea2-reference-shoot-v0.1-portrait-002",
+        "title": "One reference, four portrait shots",
+        "status": "experimental",
+        "reference": {
+          "catalog_id": "portrait-002",
+          "image": "images/portrait-002.webp",
+          "filename": "portrait-002.webp",
+          "url": "https://raw.githubusercontent.com/sjh9714/krea2-wildcards/aa95e1bd436eac3043e9e71e040c321f39695783/images/portrait-002.webp",
+          "synthetic": true
+        },
+        "identity": "Preserve his distinctive face, blue-green eyes, natural skin texture, short receding brown hair, short salt-and-pepper beard and plain black crew-neck shirt.",
+        "finish": "Plain warm gray background, soft light from camera left. One photograph, no text.",
+        "settings": {
+          "width": 992,
+          "height": 992,
+          "steps": 10,
+          "cfg": 1,
+          "space_guidance_scale": 0,
+          "ref_boost": 2.5,
+          "grounding_px": 768,
+          "lora_strength": 1,
+          "sampler": "euler",
+          "scheduler": "simple"
+        },
+        "dependency": {
+          "nodes": "https://github.com/lbouaraba/comfyui-krea2edit",
+          "nodes_revision": "86f886dac23013d88996e3a2e99093ba44d322fb",
+          "adapter": "conradlocke/krea2-identity-edit",
+          "adapter_revision": "89e9e7a09ee2e5c9331e952063d79b1b8a703280",
+          "adapter_filename": "krea2_identity_edit_v1_2.safetensors",
+          "space": "https://huggingface.co/spaces/conradlocke/krea2-identity-edit",
+          "space_revision_observed": "3a1adc03a1b083e61e98105034f09f7aa407242c"
+        },
+        "shots": [
+          {
+            "id": "front",
+            "title": "Front-facing portrait",
+            "seed": 230905001,
+            "direction": "Rotate the head and shoulders of this same adult man into a perfectly straight-on front view. Symmetrical passport portrait, looking directly into the lens, both ears visible. Do not keep the reference camera angle.",
+            "settings": {
+              "ref_boost": 1
+            },
+            "framing": "Head-and-shoulders studio portrait,",
+            "acceptance": "Face square to camera and direct eye contact; recognizable facial features and hair; no obvious facial or clothing artifacts."
+          },
+          {
+            "id": "profile",
+            "title": "Side-profile portrait",
+            "seed": 230905002,
+            "direction": "Photograph this same adult man in a strict 90-degree side profile facing the left edge of the image. Only one eye and one side of his face are visible; his nose is in profile.",
+            "framing": "Head-and-shoulders studio portrait,",
+            "acceptance": "Clear side profile with one visible eye; coherent nose, ear and jaw; recognizable hair, face and shirt."
+          },
+          {
+            "id": "full-body",
+            "title": "Full-body studio shot",
+            "seed": 230905003,
+            "direction": "Photograph this same adult man standing upright, shown from the top of his head to the soles of both shoes with generous space above and below. His arms rest naturally at his sides. Add straight dark trousers and simple black flat shoes.",
+            "framing": "Full-length studio photograph, camera at waist height,",
+            "acceptance": "Head, hands and both shoes fully in frame; plausible anatomy, clothing and floor contact; recognizable subject. New trousers and shoes are invented, not recovered from the reference."
+          },
+          {
+            "id": "close-up",
+            "title": "Beauty close-up",
+            "seed": 230905004,
+            "direction": "Create a tight beauty close-up photograph of this same adult man. His face fills the frame from the forehead to just below the chin, with the eyes in sharp focus, a relaxed closed mouth and a subtle three-quarter turn.",
+            "framing": "Natural editorial beauty photograph, visible skin pores, no beauty retouching,",
+            "acceptance": "Clearly tighter framing than the source; coherent eyes, mouth and skin texture; recognizable features without obvious smoothing artifacts."
+          }
+        ]
+      },
+      "runs": [
+        {
+          "id": "portrait-002-front-01",
+          "shot": "front",
+          "observed_on": "2026-09-06",
+          "submission": "Logged-in Chrome embedded Space UI; original reference transported as PNG through the browser clipboard",
+          "event_id": null,
+          "provider_asset_id": "ae2fdaf9449dc47744d6b571e3d6afbcf44827c6626d3fe2c8870ec069563335",
+          "seed": 230905001,
+          "randomize_seed": false,
+          "reference_sha256": "69df50abede3fe3b2830ec29e3464f09e94bdba519a29be5c7d8dc843ba05ad8",
+          "reference_input": {
+            "path": "reference/portrait-002-browser.png",
+            "sha256": "1ab47ce5089e25a5d24fd1998b116ff6444065f5305ab58741410d4a200931a6",
+            "transport": "Chrome WebP decode to PNG at the original 1024 x 1024 size; no spatial edits or retouching",
+            "source_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/2a511929662338096c765f6aa2ab2041a79f49f116f1a6a2d0d8ca0e6dd38653/clipboard.png"
+          },
+          "instruction": "Rotate the head and shoulders of this same adult man into a perfectly straight-on front view. Symmetrical passport portrait, looking directly into the lens, both ears visible. Do not keep the reference camera angle. Preserve his distinctive face, blue-green eyes, natural skin texture, short receding brown hair, short salt-and-pepper beard and plain black crew-neck shirt. Head-and-shoulders studio portrait, plain warm gray background, soft light from camera left. One photograph, no text.",
+          "settings": {
+            "ref_boost": 1,
+            "grounding_px": 768,
+            "lora_strength": 1,
+            "steps": 10,
+            "space_guidance_scale": 0
+          },
+          "status": "completed",
+          "output_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/ae2fdaf9449dc47744d6b571e3d6afbcf44827c6626d3fe2c8870ec069563335/image.webp",
+          "output": "examples/portrait-002/front.webp",
+          "sha256": "6ba82c5ad300f21d5fa74d2ab5bccb11bc54e8d31a4bef180aaa48797ba34388",
+          "review": {
+            "status": "accepted",
+            "likeness": "pass",
+            "shot": "pass",
+            "anatomy": "pass",
+            "materials_light": "pass",
+            "notes": "Substantially frontal face and shoulders, direct gaze and both ears visible. Brow creases, nose, mouth, receding hairline, short beard and black crew-neck shirt remain recognizable. No obvious facial or material artifacts; hands not visible. Background and light change as requested. The source was already nearly frontal, so this is not a difficult viewpoint-rotation test."
+          }
+        },
+        {
+          "id": "portrait-002-profile-01",
+          "shot": "profile",
+          "observed_on": "2026-09-06",
+          "submission": "Logged-in Chrome embedded Space UI; original reference transported as PNG through the browser clipboard",
+          "event_id": null,
+          "provider_asset_id": "3bc35f82a244594e2e373fd57890309fb83501663333da87ac3d198dd0de215a",
+          "seed": 230905002,
+          "randomize_seed": false,
+          "reference_sha256": "69df50abede3fe3b2830ec29e3464f09e94bdba519a29be5c7d8dc843ba05ad8",
+          "reference_input": {
+            "path": "reference/portrait-002-browser.png",
+            "sha256": "1ab47ce5089e25a5d24fd1998b116ff6444065f5305ab58741410d4a200931a6",
+            "transport": "Chrome WebP decode to PNG at the original 1024 x 1024 size; no spatial edits or retouching",
+            "source_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/2a511929662338096c765f6aa2ab2041a79f49f116f1a6a2d0d8ca0e6dd38653/clipboard.png"
+          },
+          "instruction": "Photograph this same adult man in a strict 90-degree side profile facing the left edge of the image. Only one eye and one side of his face are visible; his nose is in profile. Preserve his distinctive face, blue-green eyes, natural skin texture, short receding brown hair, short salt-and-pepper beard and plain black crew-neck shirt. Head-and-shoulders studio portrait, plain warm gray background, soft light from camera left. One photograph, no text.",
+          "settings": {
+            "ref_boost": 2.5,
+            "grounding_px": 768,
+            "lora_strength": 1,
+            "steps": 10,
+            "space_guidance_scale": 0
+          },
+          "status": "completed",
+          "output_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/3bc35f82a244594e2e373fd57890309fb83501663333da87ac3d198dd0de215a/image.webp",
+          "output": "examples/portrait-002/profile.webp",
+          "sha256": "f09ab969577e2217ad5aaaeac426af133eb7088bf5ae67411e232474ff7fc8d6",
+          "review": {
+            "status": "accepted",
+            "likeness": "pass",
+            "shot": "pass",
+            "anatomy": "pass",
+            "materials_light": "pass",
+            "notes": "Clear left-facing profile with one eye. Receding hairline, beard, nose, mouth and black shirt remain recognizable. Ear, jaw and neck are coherent, with plausible skin and side lighting. Previously unseen profile geometry is synthesized, not identity ground truth; hands are outside the frame."
+          }
+        },
+        {
+          "id": "portrait-002-full-body-01",
+          "shot": "full-body",
+          "observed_on": "2026-09-06",
+          "submission": "Logged-in Chrome embedded Space UI; original reference transported as PNG through the browser clipboard",
+          "event_id": null,
+          "provider_asset_id": "675db04e8128bbb35ed7aaf9631131afa706eb2724e77d3715851da0694ab43b",
+          "seed": 230905003,
+          "randomize_seed": false,
+          "reference_sha256": "69df50abede3fe3b2830ec29e3464f09e94bdba519a29be5c7d8dc843ba05ad8",
+          "reference_input": {
+            "path": "reference/portrait-002-browser.png",
+            "sha256": "1ab47ce5089e25a5d24fd1998b116ff6444065f5305ab58741410d4a200931a6",
+            "transport": "Chrome WebP decode to PNG at the original 1024 x 1024 size; no spatial edits or retouching",
+            "source_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/2a511929662338096c765f6aa2ab2041a79f49f116f1a6a2d0d8ca0e6dd38653/clipboard.png"
+          },
+          "instruction": "Photograph this same adult man standing upright, shown from the top of his head to the soles of both shoes with generous space above and below. His arms rest naturally at his sides. Add straight dark trousers and simple black flat shoes. Preserve his distinctive face, blue-green eyes, natural skin texture, short receding brown hair, short salt-and-pepper beard and plain black crew-neck shirt. Full-length studio photograph, camera at waist height, plain warm gray background, soft light from camera left. One photograph, no text.",
+          "settings": {
+            "ref_boost": 2.5,
+            "grounding_px": 768,
+            "lora_strength": 1,
+            "steps": 10,
+            "space_guidance_scale": 0
+          },
+          "status": "completed",
+          "output_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/675db04e8128bbb35ed7aaf9631131afa706eb2724e77d3715851da0694ab43b/image.webp",
+          "output": "examples/portrait-002/full-body.webp",
+          "sha256": "c8026140385e8c44347fc67b833def337f85aa973991f8aae57d0751f7e530a2",
+          "review": {
+            "status": "accepted",
+            "likeness": "pass",
+            "shot": "pass",
+            "anatomy": "pass",
+            "materials_light": "pass",
+            "notes": "Head, both hands and both shoes are in frame; arms, fingers at this scale, trousers and floor contact have no obvious structural error. Recognizable brow, receding hairline, beard and black shirt. Facial comparison is less precise at full-body scale. Body proportions, trouser fit and black flats are invented beyond the source crop, not recovered facts."
+          }
+        },
+        {
+          "id": "portrait-002-close-up-01",
+          "shot": "close-up",
+          "observed_on": "2026-09-06",
+          "submission": "Logged-in Chrome embedded Space UI; original reference transported as PNG through the browser clipboard",
+          "event_id": null,
+          "provider_asset_id": "6487ed3ba8a1f009cf482e4365b01e640ebfb890e4799893008097c85db02a83",
+          "seed": 230905004,
+          "randomize_seed": false,
+          "reference_sha256": "69df50abede3fe3b2830ec29e3464f09e94bdba519a29be5c7d8dc843ba05ad8",
+          "reference_input": {
+            "path": "reference/portrait-002-browser.png",
+            "sha256": "1ab47ce5089e25a5d24fd1998b116ff6444065f5305ab58741410d4a200931a6",
+            "transport": "Chrome WebP decode to PNG at the original 1024 x 1024 size; no spatial edits or retouching",
+            "source_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/2a511929662338096c765f6aa2ab2041a79f49f116f1a6a2d0d8ca0e6dd38653/clipboard.png"
+          },
+          "instruction": "Create a tight beauty close-up photograph of this same adult man. His face fills the frame from the forehead to just below the chin, with the eyes in sharp focus, a relaxed closed mouth and a subtle three-quarter turn. Preserve his distinctive face, blue-green eyes, natural skin texture, short receding brown hair, short salt-and-pepper beard and plain black crew-neck shirt. Natural editorial beauty photograph, visible skin pores, no beauty retouching, plain warm gray background, soft light from camera left. One photograph, no text.",
+          "settings": {
+            "ref_boost": 2.5,
+            "grounding_px": 768,
+            "lora_strength": 1,
+            "steps": 10,
+            "space_guidance_scale": 0
+          },
+          "status": "completed",
+          "output_url": "https://conradlocke-krea2-identity-edit.hf.space/gradio_api/file=/tmp/gradio/6487ed3ba8a1f009cf482e4365b01e640ebfb890e4799893008097c85db02a83/image.webp",
+          "local_audit_file": "raw/reference-shoot/validation-20260906/portrait-002-close-up.webp",
+          "sha256": "8b944c1e17942f1b5491de493777a416508fc15495b0e87b5f9122a5677aab8d",
+          "review": {
+            "status": "not_selected",
+            "likeness": "pass",
+            "shot": "not_met",
+            "anatomy": "pass",
+            "materials_light": "pass",
+            "notes": "Face, beard, eyes and texture remain recognizable without obvious anatomy or lighting errors, but the original is already tightly framed and this output is not clearly closer. Neck and shoulders remain, with little viewpoint change. Keep out of the close-up selections and adapt the framing instruction before claiming this shot."
+          }
+        }
+      ]
+    }
+  ],
+  "pending_references": [
+    "portrait-003",
+    "portrait-004"
+  ],
+  "next_checks": [
+    "Adapt and test the close-up framing for the already-tight portrait-002 source.",
+    "Generate all four independent shots for portrait-003 and portrait-004 when the provider permits another free request."
+  ],
+  "error_only_requests": [
+    {
+      "id": "portrait-003-front-01",
+      "intended_reference": "portrait-003",
+      "shot": "front",
+      "status": "provider_quota_blocked",
+      "source_upload_confirmed": false,
+      "event_id": null,
+      "observed_on": "2026-09-06",
+      "error": "You've hit your daily ZeroGPU limit",
+      "quota_ui_after": "Zero GPU 3.5/5 min",
+      "notes": "The next Edit request showed the provider's daily-limit dialog. The new reference upload was not confirmed; the old output URL and old seed remained. No new image was returned, so this is neither a completed generation nor a quality test. No further generation was attempted."
+    }
+  ]
+}

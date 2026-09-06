@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "id": "krea2-reference-shoot-v0.1",
+  "title": "One reference, four portrait shots",
+  "status": "experimental",
+  "reference": {
+    "catalog_id": "portrait-001",
+    "image": "images/portrait-001.webp",
+    "filename": "portrait-001.webp",
+    "url": "https://raw.githubusercontent.com/sjh9714/krea2-wildcards/aa95e1bd436eac3043e9e71e040c321f39695783/images/portrait-001.webp",
+    "synthetic": true
+  },
+  "identity": "Preserve her distinctive face, green eyes, natural skin texture, dark brown hair tied in a low bun and charcoal knit sweater.",
+  "finish": "Plain warm gray background, soft light from camera left. One photograph, no text.",
+  "settings": {
+    "width": 992,
+    "height": 992,
+    "steps": 10,
+    "cfg": 1.0,
+    "space_guidance_scale": 0.0,
+    "ref_boost": 2.5,
+    "grounding_px": 768,
+    "lora_strength": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  },
+  "dependency": {
+    "nodes": "https://github.com/lbouaraba/comfyui-krea2edit",
+    "nodes_revision": "86f886dac23013d88996e3a2e99093ba44d322fb",
+    "adapter": "conradlocke/krea2-identity-edit",
+    "adapter_revision": "89e9e7a09ee2e5c9331e952063d79b1b8a703280",
+    "adapter_filename": "krea2_identity_edit_v1_2.safetensors",
+    "space": "https://huggingface.co/spaces/conradlocke/krea2-identity-edit",
+    "space_revision_observed": "3a1adc03a1b083e61e98105034f09f7aa407242c"
+  },
+  "shots": [
+    {
+      "id": "front",
+      "title": "Front-facing portrait",
+      "seed": 230905001,
+      "direction": "Rotate the head and shoulders of this same adult woman into a perfectly straight-on front view. Symmetrical passport portrait, looking directly into the lens, both ears visible. Do not keep the reference camera angle.",
+      "settings": {"ref_boost": 1.0},
+      "framing": "Head-and-shoulders studio portrait,",
+      "acceptance": "Face square to camera and direct eye contact; recognizable facial features and hair; no obvious facial or clothing artifacts."
+    },
+    {
+      "id": "profile",
+      "title": "Side-profile portrait",
+      "seed": 230905002,
+      "direction": "Photograph this same adult woman in a strict 90-degree side profile facing the left edge of the image. Only one eye and one side of her face are visible; her nose is in profile.",
+      "framing": "Head-and-shoulders studio portrait,",
+      "acceptance": "Clear side profile with one visible eye; coherent nose, ear and jaw; recognizable hair, face and sweater."
+    },
+    {
+      "id": "full-body",
+      "title": "Full-body studio shot",
+      "seed": 230905003,
+      "direction": "Photograph this same adult woman standing upright, shown from the top of her head to the soles of both shoes with generous space above and below. Her arms rest naturally at her sides. Add straight dark trousers and simple black flat shoes.",
+      "framing": "Full-length studio photograph, camera at waist height,",
+      "acceptance": "Head, hands and both shoes fully in frame; plausible anatomy, clothing and floor contact; recognizable subject. New trousers and shoes are invented, not recovered from the reference."
+    },
+    {
+      "id": "close-up",
+      "title": "Beauty close-up",
+      "seed": 230905004,
+      "direction": "Create a tight beauty close-up photograph of this same adult woman. Her face fills the frame from the forehead to just below the chin, with the eyes in sharp focus, a relaxed closed mouth and a subtle three-quarter turn.",
+      "framing": "Natural editorial beauty photograph, visible skin pores, no beauty retouching,",
+      "acceptance": "Clearly tighter framing than the source; coherent eyes, mouth and skin texture; recognizable features without obvious smoothing artifacts."
+    }
+  ]
+}

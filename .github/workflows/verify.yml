@@ -27,6 +27,7 @@ jobs:
           python3 scripts/build_gallery.py
           python3 scripts/build_templates.py
           python3 scripts/build_workflows.py --json-only
+          python3 scripts/build_reference_shoot.py
           python3 scripts/build_pages.py
           python3 scripts/build_site.py
           python3 scripts/build_dataset.py
@@ -39,5 +40,7 @@ jobs:
             exit 1
           fi
       - run: |
+          python3 -m unittest discover -s scripts/tests -p 'test_reference_shoot.py' -v
+          python3 scripts/build_reference_shoot.py --check
           python3 scripts/audit_prompts.py
           python3 scripts/verify.py

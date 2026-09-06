@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-09-06",
+  "timezone": "Asia/Seoul",
+  "comfyui": {
+    "version": "0.34.0",
+    "revision": "15eb748b3ec5f8a0a2d470b7fb280e2d7579f916",
+    "frontend": "1.51.9",
+    "python": "3.13.13",
+    "pytorch": "2.14.0",
+    "device": "Apple M4 / MPS",
+    "unified_memory_gib": 16,
+    "custom_nodes_revision": "86f886dac23013d88996e3a2e99093ba44d322fb",
+    "custom_nodes_version": "1.2.5"
+  },
+  "import": {
+    "status": "checked_with_missing_models",
+    "route": "File > Open in an actual local ComfyUI instance, viewed through the Codex in-app browser.",
+    "files": {
+      "front.json": "a04579bc95bed77904bed2b3484d1e2338f2c21d357d33251e861e27aa615801",
+      "profile.json": "d98d0ef8d72b2ec1928f2800fe2f29658e83a41fe63ccaf1f29805f863015853",
+      "full-body.json": "27151d8622e7f01089fc39a9163e5d9d32c2b12ccebfc688f83e604b3f865288",
+      "close-up.json": "513ca03a80ede558e95adc2a18a3a8e23a50cca226423b8230cc95677f1fd26a"
+    },
+    "notes": "All four files opened as separate graph tabs with their UUIDs. Both custom node classes registered in object_info and appeared in the graph. Each graph showed exactly four missing model files, not missing node classes or an invalid graph ID."
+  },
+  "gpu_execution": {
+    "status": "not_run",
+    "queue_attempt": "close-up.json",
+    "result": "prompt_outputs_failed_validation",
+    "errors": [
+      {
+        "node": "UNETLoader",
+        "field": "unet_name",
+        "file": "krea2_turbo_fp8_scaled.safetensors"
+      },
+      {
+        "node": "CLIPLoader",
+        "field": "clip_name",
+        "file": "qwen3vl_4b_fp8_scaled.safetensors"
+      },
+      {
+        "node": "VAELoader",
+        "field": "vae_name",
+        "file": "qwen_image_vae.safetensors"
+      },
+      {
+        "node": "LoraLoaderModelOnly",
+        "field": "lora_name",
+        "file": "krea2_identity_edit_v1_2.safetensors"
+      }
+    ],
+    "notes": "One local queue attempt was rejected before inference because the four model filenames were not available. The queue remained empty and no image was generated. This does not test sampling, MPS model support, VRAM capacity or output quality."
+  },
+  "storage_preflight": {
+    "available_gib_approx": 21,
+    "model_bytes": {
+      "diffusion": 13141730784,
+      "text_encoder": 5242467968,
+      "vae": 253806246,
+      "adapter": 1828256432
+    },
+    "model_total_bytes": 20466261430,
+    "decision": "Do not download roughly 19.1 GiB of weights into about 21 GiB of free disk, which would leave too little space for the OS and potential swap. No model weights were downloaded.",
+    "sources": [
+      "https://huggingface.co/Comfy-Org/Krea-2/tree/main",
+      "https://huggingface.co/conradlocke/krea2-identity-edit/tree/89e9e7a09ee2e5c9331e952063d79b1b8a703280"
+    ]
+  }
+}

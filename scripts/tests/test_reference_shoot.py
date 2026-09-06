@@ -190,6 +190,63 @@ class ReferenceShootTests(unittest.TestCase):
                 with self.subTest(ref=ref):
                     self.assertTrue((build.PACK / ref).resolve().exists())
 
+    def test_additional_subjects_keep_their_own_source_and_receipts(self):
+        data = json.loads((build.PACK / "validation.json").read_text())
+        subjects = build.validated_subjects(data)
+        self.assertEqual(len(subjects), 1)
+        subject, accepted = subjects[0]
+        self.assertEqual(subject["pack"]["reference"]["catalog_id"], "portrait-002")
+        self.assertEqual(set(accepted), {"front", "profile", "full-body"})
+        self.assertEqual(len(subject["runs"]), 4)
+        mixed = copy.deepcopy(data)
+        mixed["subjects"][0]["pack"]["reference"] = self.pack["reference"]
+        with self.assertRaisesRegex(ValueError, "provenance"):
+            build.validated_subjects(mixed)
+
+    def test_validation_does_not_promote_unselected_or_unrun_shots(self):
+        data = json.loads((build.PACK / "validation.json").read_text())
+        rendered = build.render_validation(data)
+        self.assertIn("3 reviewed outputs", rendered)
+        self.assertIn("4 completed generations", rendered)
+        self.assertNotIn('src="examples/portrait-002/close-up.webp"', rendered)
+        self.assertNotIn('src="../../images/portrait-003.webp"', rendered)
+        self.assertIn("portrait-003", rendered)
+        self.assertIn("not generated", rendered)
+        for shot in ("front", "profile", "full-body"):
+            self.assertIn(f'src="examples/portrait-002/{shot}.webp"', rendered)
+
+    def test_pending_subjects_cannot_also_count_as_tested(self):
+        data = json.loads((build.PACK / "validation.json").read_text())
+        data["pending_references"].append("portrait-002")
+        with self.assertRaisesRegex(ValueError, "Pending"):
+            build.validated_subjects(data)
+
+    def test_import_receipt_matches_the_exact_graphs_not_a_gpu_claim(self):
+        receipt = json.loads((build.PACK / "runtime-check.json").read_text())
+        build.validate_runtime(self.pack, receipt)
+        self.assertEqual(receipt["gpu_execution"]["status"], "not_run")
+        rendered = build.render_page(self.pack, self.runs, runtime=receipt)
+        self.assertIn("imported in local ComfyUI", rendered)
+        self.assertIn("missing model weights blocked GPU execution", rendered)
+        changed = copy.deepcopy(self.pack)
+        changed["shots"][0]["seed"] += 1
+        with self.assertRaisesRegex(ValueError, "Import receipt"):
+            build.validate_runtime(changed, receipt)
+
+    def test_validation_preview_local_links_resolve(self):
+        data = json.loads((build.PACK / "validation.json").read_text())
+        refs = []
+
+        class Links(HTMLParser):
+            def handle_starttag(self, tag, attrs):
+                refs.extend(value for key, value in attrs if key in ("src", "href"))
+
+        Links().feed(build.render_validation(data))
+        for ref in refs:
+            if not ref.startswith(("https://", "http://", "#")):
+                with self.subTest(ref=ref):
+                    self.assertTrue((build.PACK / ref).resolve().exists())
+
 
 if __name__ == "__main__":
     unittest.main()

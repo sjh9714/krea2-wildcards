@@ -15,6 +15,7 @@ import html
 import json
 from pathlib import Path
 import re
+from uuid import NAMESPACE_URL, uuid5
 
 ROOT = Path(__file__).resolve().parents[1]
 PACK = ROOT / "workflows/reference-shoot"
@@ -119,7 +120,9 @@ def workflow(pack: dict, shot: dict) -> dict:
         grounded["inputs"][2]["shape"] = 7
     for optional in patch["inputs"][2:]:
         optional["shape"] = 7
-    return dict(id=f"{pack['id']}-{shot['id']}", revision=1, last_node_id=len(nodes),
+    graph_id = uuid5(NAMESPACE_URL,
+                     f"https://github.com/sjh9714/krea2-wildcards/{pack['id']}/{shot['id']}")
+    return dict(id=str(graph_id), revision=1, last_node_id=len(nodes),
                 last_link_id=len(links), nodes=nodes, links=links, groups=[], config={},
                 extra={"krea2_reference_shoot": {
                     "pack": pack["id"], "shot": shot["id"],
@@ -217,16 +220,21 @@ def render_page(pack: dict, runs: list[dict]) -> str:
 <meta name="description" content="An experimental Krea 2 identity-edit shooting pack with original reference, exact instructions, reviewed output and individual ComfyUI graphs.">
 <style>{CSS}
 .gallery{{grid-template-columns:repeat(2,minmax(0,1fr))}}.card img{{object-fit:contain}}.cardbody p{{font-size:.9rem;color:var(--mut)}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.6 ui-monospace,monospace}}.pending{{padding:32px}}.reference-pair{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}.reference-pair figure{{margin:0}}.reference-pair figcaption{{font-size:.8rem}}.reference{{width:100%;height:auto}}details{{margin:18px 0}}summary{{cursor:pointer}}@media(max-width:600px){{.gallery{{grid-template-columns:1fr}}}}</style></head>
-<body><div class="wrap"><header class="topbar"><a class="brand" href="../../">Krea 2 Wildcards</a><nav><a href="README.md">Setup & limitations</a><a href="runs.json">Run receipts</a></nav></header>
+<body><div class="wrap"><header class="topbar"><a class="brand" href="../../">Krea 2 Wildcards</a><nav><a href="README.md">Full setup (.md)</a><a href="runs.json">Run receipts</a></nav></header>
 <main><section class="hero"><div><p class="eyebrow">Experimental · community identity-edit v1.2</p>
 <h1>One reference.<br>A new angle.</h1>
 <p class="lead">Keep a character recognizable while changing the camera. Start every shot from the same original; rerun only the shot you need.</p>
 <p><strong>{len(accepted)} of {len(pack['shots'])} shots visually accepted</strong> in a one-character hosted pilot. This is not a multi-person consistency benchmark.</p>
 <p>Samples: Krea 2 Turbo + community identity-edit LoRA, hosted Diffusers. Downloadable ComfyUI graphs: structural checks only; local GPU execution is not yet verified.</p>
-<a class="button" href="README.md">Use your own reference →</a></div>
+<a class="button" href="#make-it-yours">Use your own reference →</a></div>
 <div class="reference-pair"><figure><img class="reference" src="../../{escape(pack['reference']['image'])}" alt="Original synthetic reference: adult woman in charcoal sweater"><figcaption>Synthetic reference · <a href="../../{escape(pack['reference']['image'])}" download>Download</a></figcaption></figure>{result_figure}</div></section>
 <section><h2>The shooting set</h2><p class="sectionintro">Original provider-returned files. No post-generation retouching, crop or upscale. Visual review is qualitative, not a biometric identity score.</p><div class="gallery">{''.join(cards)}</div></section>
-<section><h2>Make it yours</h2><ol><li>Install the model and node dependencies in the setup guide, or use the linked community demo.</li><li>Replace the reference and appearance sentence. Use your own consenting adult subject or a synthetic character.</li><li>Run one shot, check face, pose, hands, clothing and light, then keep or rerun it. Never feed a generated shot into the next one.</li></ol>
+<section id="make-it-yours"><h2>Make it yours</h2>
+<p>Start in the <a href="{escape(pack['dependency']['space'])}" target="_blank" rel="noopener noreferrer">free community demo</a>; no local model installation is needed for this route. For ComfyUI, use the <a href="README.md">full setup guide (.md)</a> instead.</p>
+<ol><li>Upload your original reference to the demo. Use a synthetic character or a consenting adult. Do not send private client images to a public third-party demo.</li>
+<li>Choose a shot above and copy its instruction. Replace the example's appearance sentence with the traits visible in your own reference, including hair and clothing.</li>
+<li>Use that card's recorded seed and likeness value. Set grounding to <strong>{pack['settings']['grounding_px']}</strong>, steps to <strong>{pack['settings']['steps']}</strong>, guidance to <strong>{pack['settings']['space_guidance_scale']}</strong>, and random seed off. The demo's LoRA is fused at <strong>{pack['settings']['lora_strength']}</strong>.</li>
+<li>Run one shot and review face, pose, hands, clothing and light before keeping it. Reuse the original reference for every shot, never a generated result. Stop if the free quota is exhausted; no paid plan is needed for this pilot.</li></ol>
 <p>One person, one wardrobe, still images only. The full-body shot invents trousers, shoes and body details absent from the head-and-shoulders reference. No identity guarantee, automatic face matching or video consistency claim.</p></section></main>
 <footer>Unofficial Krea 2 community workflow. <a href="{escape(pack['dependency']['nodes'])}">Nodes by lbouaraba</a> · <a href="https://huggingface.co/{escape(pack['dependency']['adapter'])}">LoRA by conradlocke</a>. Model terms are separate from this repository's MIT scripts and prompts.</footer></div>
 <script>document.querySelectorAll('[data-prompt]').forEach(button=>button.addEventListener('click',async()=>{{try{{await navigator.clipboard.writeText(button.dataset.prompt);button.textContent='Copied';}}catch{{button.closest('article').querySelector('details').open=true;button.textContent='Select the instruction above';}}}}));</script></body></html>

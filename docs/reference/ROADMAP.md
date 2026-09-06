@@ -1,15 +1,36 @@
 # Roadmap
 
-## Local validation
+## Published baseline
 
-Run a fixed 30 prompt sample in a local Krea 2 ComfyUI graph. Publish the local workflow, complete settings, outputs, and measured differences from the hosted fal results.
+The main catalog contains **514** prompts, including the completed **30-image
+editorial fashion pack**. Its Hugging Face export also has 514 rows. The official
+text-to-image starter workflows and focused usage guides are published. Do not
+repeat these completed additions or mix adapter outputs into this catalog count.
 
-## Editorial fashion
+## Reference-image shooting pack: validation before general claims
 
-Build a bounded fashion prompt pack around garment construction, textile detail, casting, lighting, and lookbook layouts. Keep failed hands and text cases in the evidence.
+The separate [reference-shoot pilot](../../workflows/reference-shoot/README.md)
+contains four visually accepted hosted shots of one synthetic adult character,
+with original files, exact instructions, settings and run receipts. It uses Krea
+2 Turbo plus a community identity-edit LoRA, not the base model alone.
 
-## Krea 2 Edit
+Next validation:
 
-Build a separate image editing pack that measures medium transfer, object addition, object removal, and identity retention at fixed strengths.
+1. Repeat the four-shot test on at least three visibly different consenting or
+   synthetic adult subjects. Keep unsuccessful attempts in the run history.
+2. Import and GPU-run the downloadable ComfyUI graphs in a compatible environment.
+   Structural tests and hosted Diffusers samples are not substitutes for this.
+3. Observe whether independent users can produce their own shooting set using
+   the guide. Downloads and stars alone do not establish repeat use.
+
+Use free quota or an already available GPU only. No paid APIs, model subscriptions
+or credit purchases are part of this validation plan.
+
+## Base-model local validation
+
+The original 30-prompt local Krea 2 comparison remains unrun. It is a separate
+test from the identity-edit pilot: publish the actual workflow, settings,
+outputs and measured differences from hosted fal results when a compatible GPU
+environment is available. Do not claim it was completed by the hosted pilot.
 
 Only generated and verified evidence moves from this roadmap into the catalog.

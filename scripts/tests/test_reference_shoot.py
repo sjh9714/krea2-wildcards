@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import sys
 import unittest
+from uuid import UUID
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import build_reference_shoot as build
@@ -28,6 +29,23 @@ class ReferenceShootTests(unittest.TestCase):
             self.assertEqual(sampler["widgets_values"][:4], [shot["seed"], "fixed", 10, 1.0])
             self.assertEqual(sum(n["type"] == "SaveImage" for n in graph["nodes"]), 1)
             self.assertEqual(sum(n["type"] == "LoadImage" for n in graph["nodes"]), 1)
+
+    def test_workflow_ids_match_comfyui_uuid_contract(self):
+        # ComfyUI_frontend workflowSchema.ts, revision c25e8cb: id is UUID, not a slug.
+        ids = []
+        for shot in self.pack["shots"]:
+            workflow_id = build.workflow(self.pack, shot)["id"]
+            with self.subTest(shot=shot["id"]):
+                self.assertEqual(str(UUID(workflow_id)), workflow_id)
+            ids.append(workflow_id)
+        self.assertEqual(len(set(ids)), len(self.pack["shots"]))
+
+    def test_primary_action_opens_inline_setup_not_a_markdown_download(self):
+        rendered = build.render_page(self.pack, self.runs)
+        self.assertIn('class="button" href="#make-it-yours"', rendered)
+        self.assertIn('id="make-it-yours"', rendered)
+        self.assertIn(f'href="{self.pack["dependency"]["space"]}"', rendered)
+        self.assertIn("random seed off", rendered)
 
     def test_links_have_matching_sockets_and_acyclic_dependencies(self):
         for shot in self.pack["shots"]:

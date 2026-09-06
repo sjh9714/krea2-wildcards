@@ -16,6 +16,7 @@ on:
       - "workflows/reference-shoot/pack.json"
       - "workflows/reference-shoot/runs.json"
       - "workflows/reference-shoot/examples/**"
+      - "workflows/reference-shoot/reference/**"
   workflow_dispatch:
 
 permissions:

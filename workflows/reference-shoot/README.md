@@ -98,6 +98,10 @@ examples use a different Diffusers implementation and checkpoint precision;
 matching prompt and seed do not imply identical pixels. No cloud share link,
 minimum VRAM claim or guaranteed runtime is provided without a real test.
 
+The graph IDs are stable, per-shot UUIDs, as required by the
+[ComfyUI frontend workflow schema at `c25e8cb`](https://github.com/Comfy-Org/ComfyUI_frontend/blob/c25e8cbfe514251b581bbc89cf9d0722007f7b3b/src/platform/workflow/validation/schemas/workflowSchema.ts).
+This format check is separate from a successful import or GPU render.
+
 ## Keep / rerun checklist
 
 - Face, hair and distinctive visible traits remain recognizable.
